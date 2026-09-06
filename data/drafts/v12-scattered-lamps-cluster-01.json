@@ -1,0 +1,2060 @@
+{
+  "$schema": "../../schemas/servati-dataset.schema.json",
+  "dataset_id": "SV-DRAFT-V12-SCATTERED-LAMPS-CLUSTER-01",
+  "canon_status": "DRAFT",
+  "schema_basis": {
+    "project": "OnlyWorlds/OnlyWorlds",
+    "revision": "ed84fa19c15c5bfb18019245faacdbdcb7cd9e0f",
+    "licence": "MIT",
+    "scope": "Base fields and selected Location, Collective, Institution, Object, Narrative, Language, Species, and Relation groupings; SERVATI controls remain a separate extension."
+  },
+  "working_pack": {
+    "filename": "SERVATI_V12_GITHUB_FIRST_WORKING_PACK_R1.zip",
+    "sha256": "e1fff0cf6231c2916b48f5f7f44c17d0b04336303ac5a34687c32685543b34ef"
+  },
+  "world_reference": {
+    "Id": "01a07765-3d73-7945-accf-bb285edefe4d",
+    "status": "DRAFT_PLACEHOLDER",
+    "note": "Retained from the working pack solely for interoperability; it is not a canon world entity."
+  },
+  "entries": [
+    {
+      "Id": "01a0784f-d717-7775-b2cb-4c0828e4bbee",
+      "Name": "Relay Twelve Primary System",
+      "Description": "DRAFT parent setting for the Pale Reef. The radiator geometry implies a vacuum installation with a long clear thermal view; the primary, orbit, distances, and formation history are unknown.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Location",
+      "Subtype": "Astronomical setting",
+      "Setting": {
+        "form": "A deliberately underspecified stellar system containing Relay Twelve; no star class or orbital elements are assigned.",
+        "function": "Provide the radiative and route environment in which the Pale Reef remains operable."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-SYS-001",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Memory",
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 18, source lines 1053-1057",
+            "verification": "VERIFIED",
+            "note": "V11 supports an isolated relay and an archive reef with exposed radiator fins. This system interpretation and every astronomical detail are DRAFT."
+          },
+          {
+            "source_kind": "research-source",
+            "source_ref": "research/v12-scattered-lamps-cluster-01/ASTRONOMY_REVIEW.md",
+            "source_location": "Relay Twelve Primary System",
+            "verification": "PENDING-REVIEW",
+            "note": "DRAFT qualitative constraints only; no generated system was adopted."
+          }
+        ],
+        "science_status": "requires-review",
+        "science_review": {
+          "claims": [
+            {
+              "claim": "The habitat can reject operational heat through exposed radiators in vacuum.",
+              "status": "plausible",
+              "basis": "General radiative heat-transfer principle; geometry and heat load remain unspecified."
+            },
+            {
+              "claim": "The stellar primary and station orbit are suitable for long-duration archive survival.",
+              "status": "requires-review",
+              "basis": "No stellar class, flux, radiation environment, or orbit is supplied by V11."
+            }
+          ],
+          "review_note": "Requires an energy budget, radiator-area estimate, orbit, and radiation assessment before any numerical detail is added."
+        },
+        "preservation_problem": "System science must remain useful enough to constrain the Reef without turning absent V11 astronomy into false certainty.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT astronomical setting; qualitative only."
+      }
+    },
+    {
+      "Id": "01a0784f-d718-7a35-b9fa-c3436e11c0d9",
+      "Name": "Transfer Cluster K-6 Debris System",
+      "Description": "DRAFT parent setting for the Ash Roads. A dusty excavated minor body is consistent with an airless debris environment, but its size, composition, spin, orbit, and origin are not established.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Location",
+      "Subtype": "Astronomical setting",
+      "Setting": {
+        "form": "A debris-bearing system containing the mined body designated K-6; no numerical architecture is proposed.",
+        "function": "Provide mineral mass, low-gravity transport constraints, and a route context for burden custody."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-SYS-002",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Remains",
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 18, source line 1055",
+            "verification": "VERIFIED",
+            "note": "V11 supports an unnamed dust-choked asteroid Lamp. The K-6 system and all physical particulars are DRAFT."
+          },
+          {
+            "source_kind": "research-source",
+            "source_ref": "research/v12-scattered-lamps-cluster-01/ASTRONOMY_REVIEW.md",
+            "source_location": "Transfer Cluster K-6 Debris System",
+            "verification": "PENDING-REVIEW",
+            "note": "DRAFT qualitative constraints only; legacy accretion generators were not treated as scientific proof."
+          }
+        ],
+        "science_status": "requires-review",
+        "science_review": {
+          "claims": [
+            {
+              "claim": "An excavated airless minor body can retain mechanically cut internal roads.",
+              "status": "plausible",
+              "basis": "Rock mechanics and low-gravity construction make the broad setting plausible, not the detailed geometry."
+            },
+            {
+              "claim": "K-6 is dynamically stable and materially suitable for long custody.",
+              "status": "requires-review",
+              "basis": "Size, cohesion, spin state, composition, impacts, and orbit are unknown."
+            }
+          ],
+          "review_note": "Requires a rubble-pile versus monolithic-body decision, structural model, dust-control model, and orbital context."
+        },
+        "preservation_problem": "The body must remain stable enough to hold burdens while excavation, spin, and dust movement continually alter the evidence-bearing roads.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT astronomical setting; qualitative only."
+      }
+    },
+    {
+      "Id": "01a0784f-d719-7d23-a458-4ec0923fed33",
+      "Name": "Pelagic Seven Planet-Moon System",
+      "Description": "DRAFT parent setting for the Drowned Threshold. V11 establishes a Lamp above a drowned moon; this profile withholds the primary, host planet, ocean depth, chemistry, and orbital geometry.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Location",
+      "Subtype": "Astronomical setting",
+      "Setting": {
+        "form": "An unspecified planet-moon system containing an ocean-bearing moon and an orbital or elevated custody installation.",
+        "function": "Sustain the black-water environment and the station-to-vault access chain."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-SYS-003",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Structure",
+          "Memory"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 18, source lines 1055-1057",
+            "verification": "VERIFIED",
+            "note": "V11 supports a Lamp above a drowned moon, black water, coral-like towers, and pressure-adapted custodians. Pelagic Seven and all added system details are DRAFT."
+          },
+          {
+            "source_kind": "research-source",
+            "source_ref": "research/v12-scattered-lamps-cluster-01/ASTRONOMY_REVIEW.md",
+            "source_location": "Pelagic Seven Planet-Moon System",
+            "verification": "PENDING-REVIEW",
+            "note": "DRAFT qualitative constraints only; ocean retention and habitability have not been modelled."
+          }
+        ],
+        "science_status": "requires-review",
+        "science_review": {
+          "claims": [
+            {
+              "claim": "A moon can retain a deep global or near-global ocean and support submerged engineered structures.",
+              "status": "plausible",
+              "basis": "Ocean worlds are scientifically plausible; V11 does not specify whether the water is surface, subsurface, natural, or engineered."
+            },
+            {
+              "claim": "The vault access, pressure ecology, and station position are mutually viable.",
+              "status": "requires-review",
+              "basis": "Gravity, pressure, chemistry, tides, radiation, and transfer mechanics are unknown."
+            }
+          ],
+          "review_note": "Requires planetary mass/radius bounds, water phase and chemistry, tidal heating, radiation environment, and access engineering."
+        },
+        "preservation_problem": "Any scientific specification of the moon changes what pressure, route, and transfer can mean, so unsupported precision would distort the custody problem.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT astronomical setting; qualitative only."
+      }
+    },
+    {
+      "Id": "01a0784f-d71a-7f6d-9556-594fbec12663",
+      "Name": "Seed Reserve Thirty-One Cold-Body System",
+      "Description": "DRAFT parent setting for the Unopened Spring. The reserve is placed in or around a cold body only as a candidate inference from V11's broader Seed Lamp imagery, not as a settled fact.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Location",
+      "Subtype": "Astronomical setting",
+      "Setting": {
+        "form": "An unspecified dim-body environment with a buried or shielded cryogenic custody complex.",
+        "function": "Provide passive thermal margin and shielding while the reserve maintains active viability systems."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-SYS-004",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Seed",
+          "Ritual"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 18, source lines 1039-1045",
+            "verification": "VERIFIED",
+            "note": "V11 supports a Seed Lamp with obsolete release conditions and separately allows seed vessels in ice bodies and seed arks orbiting dim bodies. Their combination here is DRAFT."
+          },
+          {
+            "source_kind": "research-source",
+            "source_ref": "research/v12-scattered-lamps-cluster-01/ASTRONOMY_REVIEW.md",
+            "source_location": "Seed Reserve Thirty-One Cold-Body System",
+            "verification": "PENDING-REVIEW",
+            "note": "DRAFT qualitative thermal concept; viability duration and energy supply are unmodelled."
+          }
+        ],
+        "science_status": "requires-review",
+        "science_review": {
+          "claims": [
+            {
+              "claim": "A cold exterior can reduce but not eliminate active cryogenic and maintenance requirements.",
+              "status": "plausible",
+              "basis": "Passive thermal environment can improve margin; living material still needs controlled conditions and repair."
+            },
+            {
+              "claim": "The reserve can keep its stated biological range viable over deep time.",
+              "status": "requires-review",
+              "basis": "Storage modes, repair, radiation dose, energy source, and sampling strategy are unspecified."
+            }
+          ],
+          "review_note": "Requires a biological inventory, viability protocol, shielding and dose model, maintenance ecology, and heat/power budget."
+        },
+        "preservation_problem": "A colder and more isolated reserve protects viability but makes inspection, repair, and accountable release harder.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT astronomical setting; inferred combination, not V11 fact."
+      }
+    },
+    {
+      "Id": "01a0784f-d71b-79e8-a8ac-c2172042f4d7",
+      "Name": "No-Arrival Interstellar Reach",
+      "Description": "DRAFT astronomical setting for the Corridor of No Arrival. It is a route-scale region rather than a claim that one conventional stellar system contains every beacon.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Location",
+      "Subtype": "Astronomical setting",
+      "Setting": {
+        "form": "A chain of unplaced deep-space beacons and service refuges between unidentified route anchors.",
+        "function": "Keep a transfer path inspectable and answerable after traffic and endpoint confirmation have ceased."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-SYS-005",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Ritual",
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 18, source lines 1041-1045",
+            "verification": "VERIFIED",
+            "note": "V11 supports a route Lamp maintaining unused beacon corridors. The reach, anchors, and all route geometry are DRAFT."
+          },
+          {
+            "source_kind": "research-source",
+            "source_ref": "research/v12-scattered-lamps-cluster-01/ASTRONOMY_REVIEW.md",
+            "source_location": "No-Arrival Interstellar Reach",
+            "verification": "PENDING-REVIEW",
+            "note": "DRAFT route abstraction; no faster-than-light, distance, or travel-time claim is made."
+          }
+        ],
+        "science_status": "requires-review",
+        "science_review": {
+          "claims": [
+            {
+              "claim": "A distributed beacon chain requires independent power, navigation references, station-keeping, and repair access.",
+              "status": "plausible",
+              "basis": "General long-duration spacecraft constraints."
+            },
+            {
+              "claim": "The route is traversable under SERVATI transport physics.",
+              "status": "requires-review",
+              "basis": "V11 supplies no distances, propulsion model, endpoint motion, or travel times for this candidate corridor."
+            }
+          ],
+          "review_note": "Requires an explicit transport model and anchor geometry before map placement; the cluster is relational, not a claimed spatial neighbourhood."
+        },
+        "preservation_problem": "Mapping the route too precisely would manufacture transport physics, while leaving it wholly abstract weakens the custodians' maintenance problem.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT route-scale astronomical setting; no map coordinates."
+      }
+    },
+    {
+      "Id": "01a0784f-d71c-7bda-8011-95fa3f6aba45",
+      "Name": "Transfer Site Nine Junction Environment",
+      "Description": "DRAFT parent setting for the Broken Frame Concordance. It is treated as an engineered transfer junction with a damaged local debris field; whether it is planetary, orbital, or free-space remains open.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Location",
+      "Subtype": "Astronomical setting",
+      "Setting": {
+        "form": "An unplaced junction environment containing damaged burden frames and comparison infrastructure.",
+        "function": "Provide a convergence point for matter, memory, and pattern custody routes."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-SYS-006",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Remains",
+          "Memory",
+          "Pattern"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapters 18 and 21, source lines 1053 and 1203-1205",
+            "verification": "VERIFIED",
+            "note": "V11 supports damaged burden-capsule fragments and mixed-site vulnerability separately. This junction environment and their combination are DRAFT."
+          },
+          {
+            "source_kind": "research-source",
+            "source_ref": "research/v12-scattered-lamps-cluster-01/ASTRONOMY_REVIEW.md",
+            "source_location": "Transfer Site Nine Junction Environment",
+            "verification": "PENDING-REVIEW",
+            "note": "DRAFT topology only; no orbit, impact history, or artificial-gravity model is assigned."
+          }
+        ],
+        "science_status": "requires-review",
+        "science_review": {
+          "claims": [
+            {
+              "claim": "A transfer junction can accumulate damaged frames and require controlled relative-motion operations.",
+              "status": "plausible",
+              "basis": "General orbital or free-space operations; the exact setting remains open."
+            },
+            {
+              "claim": "The comparison field and debris can be maintained safely in the same environment.",
+              "status": "requires-review",
+              "basis": "No station architecture, orbit, shielding, debris dynamics, or failure mode has been specified."
+            }
+          ],
+          "review_note": "Requires selection of a physical setting and a debris/traffic model before visual or orbital detail is approved."
+        },
+        "preservation_problem": "A scientifically vague junction cannot support scenes, but choosing a physical model too early could turn a DRAFT synthesis into apparent canon.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT astronomical setting; physical category intentionally unresolved."
+      }
+    },
+    {
+      "Id": "01a0784f-d71d-7594-ab9e-b6a5cbf0d715",
+      "Name": "Rib Quiet Office",
+      "Description": "DRAFT Relay Twelve institution that treats silence as an instrument with logged limits, not as permission to leave unqueried identities permanently isolated.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Institution",
+      "Subtype": "Custody institution",
+      "Foundation": {
+        "doctrine": "Every imposed quiet must name what it protects, what evidence would end it, and which unanswered witnesses it excludes."
+      },
+      "Claims": {
+        "objects": [
+          "01a0784f-d72a-77df-902b-b38201e14817"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-INS-001",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Memory",
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapters 18 and 20, source lines 1053-1057 and 1181",
+            "verification": "VERIFIED",
+            "note": "V11 supports silence cultures and the Quiet Route. The Office, its conditional doctrine, and its procedures are DRAFT."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Its logs must preserve why silence was imposed without turning a temporary protection into unquestionable sacred law.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT local institution and Archive Faith divergence."
+      }
+    },
+    {
+      "Id": "01a0784f-d71e-7fc2-9300-678cb274a662",
+      "Name": "Assembly of Measured Handoffs",
+      "Description": "DRAFT K-6 institution whose benches certify a burden transfer only when load, route, pause, carrier, and dissent remain physically inspectable.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Institution",
+      "Subtype": "Custody institution",
+      "Foundation": {
+        "doctrine": "Weight creates accountability only when the passage of weight leaves evidence another custodian can challenge."
+      },
+      "Claims": {
+        "objects": [
+          "01a0784f-d72b-7983-a8ad-d6d9d1cec7b4"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-INS-002",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Remains",
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapters 18, 20, and 21, source lines 1055-1057, 1183, and 1245",
+            "verification": "VERIFIED",
+            "note": "V11 supports hand-carried burdens, the Weight Doctrine, and contested convoy redirection. This Assembly and audit doctrine are DRAFT."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "A complete physical audit trail can become so burdensome that urgent custody is delayed until the held matter is endangered.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT local institution and Weight Doctrine divergence."
+      }
+    },
+    {
+      "Id": "01a0784f-d71f-79c6-b62d-769e764eaceb",
+      "Name": "Threshold Sounding Office",
+      "Description": "DRAFT Pelagic institution that certifies submerged access routes and records a marker together with its pressure, current, orientation, and approach sequence.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Institution",
+      "Subtype": "Custody institution",
+      "Foundation": {
+        "doctrine": "A record reached by the wrong threshold is evidence removed from part of itself."
+      },
+      "Claims": {
+        "objects": [
+          "01a0784f-d72c-7223-8b6c-f90982f647ac"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-INS-003",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Structure",
+          "Memory"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapters 18 and 21, source lines 1055-1057 and 1245",
+            "verification": "VERIFIED",
+            "note": "V11 supports pressure-adapted custodians and drowned route markers. The Office and its contextual doctrine are DRAFT."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Reproducing full context protects meaning but can make evacuation of a failing submerged archive procedurally impossible.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT local institution and place-centred doctrine."
+      }
+    },
+    {
+      "Id": "01a0784f-d720-7b6d-b6ac-7e66811609d0",
+      "Name": "Chamber of Plural Release",
+      "Description": "DRAFT Seed Reserve Thirty-One institution that maintains incompatible readings of obsolete release conditions and requires each activation claim to expose its irreversible exclusions.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Institution",
+      "Subtype": "Custody institution",
+      "Foundation": {
+        "doctrine": "Non-release is an active custody decision, not a morally neutral default; no single surviving authority may conceal that decision's losses."
+      },
+      "Claims": {
+        "objects": [
+          "01a0784f-d72d-7fcd-9a58-267fcf0b4990"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-INS-004",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Seed",
+          "Ritual"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapters 18 and 21, source lines 1041, 1237, and 1243-1247",
+            "verification": "VERIFIED",
+            "note": "V11 supports obsolete release conditions, doctrinal opening, and false release orders. The Chamber and plural procedure are DRAFT."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "It must record the harm of waiting without letting accumulated harm become a forged mandate to open the reserve.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT local institution and Seed/Ritual divergence."
+      }
+    },
+    {
+      "Id": "01a0784f-d721-7edb-8e54-98bc291a3064",
+      "Name": "Office of Unanswered Intervals",
+      "Description": "DRAFT route institution that keeps receiving windows, failed acknowledgements, and beacon repairs mutually legible without pretending that maintenance proves a destination survives.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Institution",
+      "Subtype": "Custody institution",
+      "Foundation": {
+        "doctrine": "The route owes a faithful opportunity to answer; it does not owe an invented arrival."
+      },
+      "Claims": {
+        "objects": [
+          "01a0784f-d72e-746d-8009-d4115a09b6c9"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-INS-005",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Ritual",
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapters 18 and 20, source lines 1041-1045 and 1179",
+            "verification": "VERIFIED",
+            "note": "V11 supports an unused beacon corridor and route checksum becoming litany. This Office and answer/arrival distinction are DRAFT."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "A maintained interval can preserve honest readiness or become a ritual that consumes the capacity needed to investigate why no answer comes.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT local institution and route-faith divergence."
+      }
+    },
+    {
+      "Id": "01a0784f-d722-72f4-9c2e-3998f3c027f6",
+      "Name": "Concordance of Unequal Fragments",
+      "Description": "DRAFT Transfer Site Nine institution composed of three custody benches that may act together without declaring matter, record, and pattern equivalent.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Institution",
+      "Subtype": "Custody institution",
+      "Foundation": {
+        "doctrine": "No fragment may close the meaning of another; action must retain the dissent that made it provisional."
+      },
+      "Claims": {
+        "objects": [
+          "01a0784f-d72f-7ba1-9580-28aecf8e50cc"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-INS-006",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Remains",
+          "Memory",
+          "Pattern"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 21, source lines 1203-1219 and 1237",
+            "verification": "VERIFIED",
+            "note": "V11 supports mixed sites and loss of comparison. This Concordance, its benches, and its rule are DRAFT."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Its refusal to collapse disagreement preserves evidence but can prevent time-critical repairs that necessarily privilege one account.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT plural custody institution."
+      }
+    },
+    {
+      "Id": "01a0784f-d723-74a7-8d49-1ec1ccc87c53",
+      "Name": "Ribside Witness Houses",
+      "Description": "DRAFT Relay Twelve culture organised in small houses that alternate quiet maintenance, remote comparison, and explicit accounting for records they cannot safely query.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Collective",
+      "Subtype": "Custodial culture",
+      "Formation": {
+        "composition": "Mixed households of archive readers, thermal maintainers, contradiction witnesses, and juveniles learning sealcloth gesture.",
+        "operator": "01a0784f-d71d-7594-ab9e-b6a5cbf0d715",
+        "equipment": [
+          "01a0784f-d72a-77df-902b-b38201e14817"
+        ]
+      },
+      "Dynamics": {
+        "activity": "Rotate between silent reef work and shielded sessions in which conflicting identity records are compared aloud or by gesture.",
+        "disposition": "Patient with contradiction, suspicious of urgent broadcast claims.",
+        "state": "Active but divided over whether the Silence Breach proved isolation or transmission more dangerous."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-COL-001",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Memory",
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapters 18 and 20, source lines 1053-1057 and 1181",
+            "verification": "VERIFIED",
+            "note": "V11 supports silence-shaped Lamp cultures and the Quiet Route. These houses and all social particulars are DRAFT."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "House rotation distributes custody knowledge but also divides responsibility so thoroughly that an excluded record may have no accountable advocate.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT local culture."
+      }
+    },
+    {
+      "Id": "01a0784f-d73f-7104-886e-aebe6395e395",
+      "Name": "Road-Bearer Benches",
+      "Description": "DRAFT K-6 culture in which a bench is simultaneously a rest place, a witness group, and the unit that inherits responsibility for a section of burden road.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Collective",
+      "Subtype": "Custodial culture",
+      "Formation": {
+        "composition": "Load bearers, frame repairers, route readers, and dissent witnesses attached to one sequence of resting thresholds.",
+        "operator": "01a0784f-d71e-7fc2-9300-678cb274a662",
+        "equipment": [
+          "01a0784f-d72b-7983-a8ad-d6d9d1cec7b4"
+        ]
+      },
+      "Dynamics": {
+        "activity": "Carry, rest, inspect, and annotate burdens in overlapping shifts so no transfer has a single unobserved owner.",
+        "disposition": "Slow to accept remote evidence; candid about physical failure.",
+        "state": "The benches preserve mutually incompatible route records left by the Ash Convoy redirection."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-COL-002",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Remains",
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapters 18, 20, and 21, source lines 1055-1057, 1183, and 1245",
+            "verification": "VERIFIED",
+            "note": "V11 supports hand-carried burdens, resting thresholds, and convoy redirection. The benches and their social structure are DRAFT."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "The culture preserves the route through bodily practice, but injury, demographic loss, or a changed road can erase evidence never externalised.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT local culture."
+      }
+    },
+    {
+      "Id": "01a0784f-d740-70fe-9c5b-4d5305adf210",
+      "Name": "Depth-Route Households",
+      "Description": "DRAFT Pelagic culture whose households inherit a set of submerged approaches rather than a fixed dwelling, treating current change as part of the archive's continuing history.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Collective",
+      "Subtype": "Custodial culture",
+      "Formation": {
+        "composition": "Pressure-route custodians, tower maintainers, surface liaisons, and current readers associated with one family of thresholds.",
+        "operator": "01a0784f-d71f-79c6-b62d-769e764eaceb",
+        "equipment": [
+          "01a0784f-d72c-7223-8b6c-f90982f647ac"
+        ]
+      },
+      "Dynamics": {
+        "activity": "Sound routes, replace only failed surfaces, and teach records through repeated embodied approaches.",
+        "disposition": "Context-sensitive and resistant to decontextualised copies.",
+        "state": "Reconstructing the route relations severed by the Drowned Marker Seizure without claiming they are recoverable."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-COL-003",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Structure",
+          "Memory"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapters 18 and 21, source lines 1055-1057 and 1245",
+            "verification": "VERIFIED",
+            "note": "V11 supports pressure-adapted custodians and drowned marker conflict. These households and practices are DRAFT."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Living routes keep context attached to records, yet natural current change means exact repetition can itself become false evidence.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT local culture."
+      }
+    },
+    {
+      "Id": "01a0784f-d741-7e6d-b043-806a0641a5d2",
+      "Name": "Readiness Gardens",
+      "Description": "DRAFT Reserve Thirty-One culture divided into rotating garden cohorts that maintain test ecologies, sterile thresholds, and opposing release arguments.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Collective",
+      "Subtype": "Custodial culture",
+      "Formation": {
+        "composition": "Viability tenders, contamination witnesses, trial-ecology keepers, and paired advocates for release and continued dormancy.",
+        "operator": "01a0784f-d720-7b6d-b6ac-7e66811609d0",
+        "equipment": [
+          "01a0784f-d72d-7fcd-9a58-267fcf0b4990"
+        ]
+      },
+      "Dynamics": {
+        "activity": "Repeat readiness trials while preserving failed conditions, minority interpretations, and the biological cost of delay.",
+        "disposition": "Procedurally divided; neither optimism nor refusal may speak without an assigned critic.",
+        "state": "Maintaining closure after the False Release while distrusting remote authority."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-COL-004",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Seed",
+          "Ritual"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapters 18 and 21, source lines 1041, 1237, and 1243-1247",
+            "verification": "VERIFIED",
+            "note": "V11 supports obsolete release conditions and contested or false release. The gardens and paired-advocate culture are DRAFT."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Trial ecologies generate new evidence but can consume irreplaceable samples or become settlements whose interests distort the release decision.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT local culture."
+      }
+    },
+    {
+      "Id": "01a0784f-d742-7050-bc40-a91d21967fa0",
+      "Name": "Unanswered Crews",
+      "Description": "DRAFT Corridor culture whose mobile crews inherit maintenance intervals and unanswered handoffs instead of permanent territory.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Collective",
+      "Subtype": "Custodial culture",
+      "Formation": {
+        "composition": "Beacon maintainers, route auditors, refuge keepers, and listeners assigned to staggered sections of the corridor.",
+        "operator": "01a0784f-d721-7edb-8e54-98bc291a3064",
+        "equipment": [
+          "01a0784f-d72e-746d-8009-d4115a09b6c9"
+        ]
+      },
+      "Dynamics": {
+        "activity": "Move between beacons, open scheduled receiving intervals, and record failures to answer without converting absence into death.",
+        "disposition": "Exact about procedure, cautious about conclusions.",
+        "state": "Still maintaining the chain while debating whether one section's resources should be diverted to reconnect Relay Twelve."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-COL-005",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Ritual",
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 18, source lines 1041-1045",
+            "verification": "VERIFIED",
+            "note": "V11 supports unused beacon corridors. These crews, their mobility, and their Relay Twelve debate are DRAFT."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "A crew carries procedural continuity between beacons, but each transfer of responsibility can silently replace purpose with habit.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT local culture."
+      }
+    },
+    {
+      "Id": "01a0784f-d743-7912-8d76-3d2684174494",
+      "Name": "Parallel Gallery Keepers",
+      "Description": "DRAFT Site Nine culture whose members are assigned in threes so a material, memorial, and relational reading accompany every intervention.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Collective",
+      "Subtype": "Custodial culture",
+      "Formation": {
+        "composition": "Triads of matter handlers, identity witnesses, and pattern comparators, with no member authorised to certify the whole alone.",
+        "operator": "01a0784f-d722-72f4-9c2e-3998f3c027f6",
+        "equipment": [
+          "01a0784f-d72f-7ba1-9580-28aecf8e50cc"
+        ]
+      },
+      "Dynamics": {
+        "activity": "Maintain parallel inventories, expose contradictions, and execute reversible repairs under explicit dissent.",
+        "disposition": "Suspicious of clean syntheses and equally suspicious of inaction disguised as humility.",
+        "state": "Operating with a damaged comparison rack after the Partition attempt."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-COL-006",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Remains",
+          "Memory",
+          "Pattern"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 21, source lines 1203-1219 and 1237",
+            "verification": "VERIFIED",
+            "note": "V11 supports mixed sites and damaged comparison. These keepers, triads, and procedures are DRAFT."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Triadic custody preserves disagreement but can reproduce three institutional certainties instead of one genuinely shared comparison.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT local culture."
+      }
+    },
+    {
+      "Id": "01a0784f-d724-7671-9ed2-4262c8ca4fdd",
+      "Name": "Rib-Quiet Descendant Branch",
+      "Description": "DRAFT post-human lineage associated with low-vibration archive work: deliberate movement, compliant contact surfaces, and heightened attention to structural noise are treated as task adaptations, not mystical traits.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Species",
+      "Subtype": "Post-human lineage branch",
+      "Biology": {
+        "appearance": "Candidate bodies favour broad compliant foot and hand interfaces, compact movement, and protected sensory membranes; no fixed phenotype or genetic mechanism is approved."
+      },
+      "Psychology": {
+        "sociality": "Work is organised around alternating quiet and witness groups rather than solitary silence.",
+        "communication": "Sealcloth gesture and contact signalling supplement speech near vulnerable systems."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-LIN-001",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Memory",
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 18, source lines 1053-1057",
+            "verification": "VERIFIED",
+            "note": "V11 supports a culture shaped by silence and fragile identity fields, not this lineage phenotype. Every biological and cultural particular is DRAFT."
+          }
+        ],
+        "science_status": "requires-review",
+        "preservation_problem": "A task-adapted body preserves access to the Reef but risks making one ageing infrastructure's constraints hereditary.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT lineage; OnlyWorlds Species is used as an interoperability category, not a claim of non-human origin."
+      }
+    },
+    {
+      "Id": "01a0784f-d725-73d6-9f63-7044e367d847",
+      "Name": "Load-Settled Descendant Branch",
+      "Description": "DRAFT K-6 lineage selected or designed around controlled carrying in low gravity, with joint stabilisation and fine acceleration sensing valued more than raw strength.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Species",
+      "Subtype": "Post-human lineage branch",
+      "Biology": {
+        "appearance": "Candidate morphology includes stabilised joints, broad gripping structures, and dense proprioceptive interfaces; mass, mechanism, and development remain unspecified."
+      },
+      "Psychology": {
+        "instincts": "Training and possible embodied bias favour stopping when load testimony conflicts rather than completing a route at any cost.",
+        "communication": "Load-angle marks and tactile handoff signals accompany ordinary speech."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-LIN-002",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Remains",
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapters 18 and 20, source lines 1055-1057 and 1183",
+            "verification": "VERIFIED",
+            "note": "V11 supports hand-carried burdens and Weight Doctrine cultures. This task-shaped lineage and phenotype are DRAFT."
+          }
+        ],
+        "science_status": "requires-review",
+        "preservation_problem": "Embodied route competence keeps burdens safe but may be impossible to transfer when the lineage, gravity environment, or road changes.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT lineage; adaptations require biomechanical review."
+      }
+    },
+    {
+      "Id": "01a0784f-d726-7c15-967b-14b6dbd61d42",
+      "Name": "Threshold Walkers of Seven",
+      "Description": "DRAFT Pelagic lineage whose candidate pressure tolerance, tactile communication, and navigation are shaped by repeated work between surface station and submerged archive routes.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Species",
+      "Subtype": "Post-human lineage branch",
+      "Biology": {
+        "appearance": "A pressure-adapted human branch is V11-compatible, but respiratory mode, pressure range, body form, and transition between environments remain deliberately unspecified."
+      },
+      "Psychology": {
+        "sociality": "Route competence is taught in paired descents so a record of one body is checked by another.",
+        "communication": "Tactile and pressure-coded registers carry operational meaning where sight and speech are unreliable."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-LIN-003",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Structure",
+          "Memory"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 18, source line 1055",
+            "verification": "VERIFIED",
+            "note": "V11 explicitly supports pressure-adapted custodians. The Threshold Walker name, biology, practices, and limits are DRAFT."
+          }
+        ],
+        "science_status": "requires-review",
+        "preservation_problem": "Specialisation keeps submerged context accessible while making that context increasingly inaccessible to other human branches.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT lineage; pressure physiology requires expert review."
+      }
+    },
+    {
+      "Id": "01a0784f-d727-749f-8b58-d5b2fca73baf",
+      "Name": "Viability Tender Descendant Branch",
+      "Description": "DRAFT Reserve Thirty-One lineage adapted culturally and perhaps biologically for low-contamination work, long maintenance cycles, and careful separation between keeper and held germline.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Species",
+      "Subtype": "Post-human lineage branch",
+      "Biology": {
+        "appearance": "Candidate traits concern controllable shedding, microbiome management, and interface compatibility; no sterile-body fantasy or unsupported mechanism is asserted."
+      },
+      "Psychology": {
+        "temperament": "Training rewards reversible intervention and explicit accounting for delay rather than automatic conservatism.",
+        "communication": "Release arguments are performed in paired conditional forms using the Interval Litany."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-LIN-004",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Seed",
+          "Ritual"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 18, source lines 1031-1045",
+            "verification": "VERIFIED",
+            "note": "V11 supports Seed Lamp custodianship and obsolete release conditions. This lineage, phenotype, and social role are DRAFT."
+          }
+        ],
+        "science_status": "requires-review",
+        "preservation_problem": "Adapting custodians to the reserve reduces contamination but can make their own future dependent on never completing the reserve's purpose.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT lineage; biological feasibility remains open."
+      }
+    },
+    {
+      "Id": "01a0784f-d728-7025-a3a9-66c2e5b8e234",
+      "Name": "Interval Maintainer Descendant Branch",
+      "Description": "DRAFT Corridor lineage shaped by dispersed habitats, maintenance travel, radiation-managed work cycles, and responsibility for receiving windows longer than individual attention spans.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Species",
+      "Subtype": "Post-human lineage branch",
+      "Biology": {
+        "appearance": "No visual form is fixed; candidate adaptations concern repairable radiation exposure, circadian flexibility, and long-isolation health rather than exotic ornament."
+      },
+      "Psychology": {
+        "sociality": "Crews maintain overlapping duty memories so a missed interval cannot be assigned to one heroic keeper.",
+        "communication": "The Interval Litany binds checksum, acknowledgement state, and uncertainty into a repeatable handoff."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-LIN-005",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Ritual",
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 18, source lines 1041-1045",
+            "verification": "VERIFIED",
+            "note": "V11 supports long-maintained unused beacon routes. This descendant branch and its adaptations are DRAFT."
+          }
+        ],
+        "science_status": "requires-review",
+        "preservation_problem": "A lineage optimised for the route may preserve its intervals while losing the capacity to decide whether the route still deserves them.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT lineage; transport and radiation assumptions remain unmodelled."
+      }
+    },
+    {
+      "Id": "01a0784f-d729-7565-973b-6d9c4cd74f3d",
+      "Name": "Plural Frame Descendant Branch",
+      "Description": "DRAFT Site Nine lineage whose sensory and institutional training is designed to hold incompatible material, memorial, and pattern reports without prematurely resolving them.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Species",
+      "Subtype": "Post-human lineage branch",
+      "Biology": {
+        "appearance": "No fixed morphology is approved; candidate interfaces preserve parallel sensory annotations rather than merging inputs into one authoritative display."
+      },
+      "Psychology": {
+        "instincts": "Cultivated habits favour naming incompatible observations before choosing an action.",
+        "sociality": "Triads externalise disagreement; no claim of innate superior objectivity is made."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-LIN-006",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Remains",
+          "Memory",
+          "Pattern"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 21, source lines 1203-1219",
+            "verification": "VERIFIED",
+            "note": "V11 supports mixed evidence and damaged comparison. This lineage and any embodied comparison interface are DRAFT."
+          }
+        ],
+        "science_status": "requires-review",
+        "preservation_problem": "A branch built to preserve contradiction may turn uncertainty into identity and resist justified resolution as a threat to itself.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT lineage; cognitive claims are institutional as much as biological and require review."
+      }
+    },
+    {
+      "Id": "01a0784f-d72a-77df-902b-b38201e14817",
+      "Name": "Rib-Zero Isolation Baffle",
+      "Description": "DRAFT Relay Twelve machine that isolates a witness chamber from structural vibration while preserving a trace of every isolation adjustment.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Object",
+      "Subtype": "Custody machine",
+      "Form": {
+        "aesthetics": "A nested flexible coupling beside one pale radiator rib, its replacement layers left visible instead of faired smooth."
+      },
+      "Function": {
+        "utility": "Reduce transmitted vibration and log the mechanical state under which an identity comparison was made."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-OBJ-001",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Memory",
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapters 18 and 20, source lines 1055-1057 and 1181",
+            "verification": "VERIFIED",
+            "note": "V11 supports radiator ribs and vibration-threatened records. This baffle, logging function, and designation are DRAFT."
+          }
+        ],
+        "science_status": "requires-review",
+        "preservation_problem": "Replacing worn isolation layers improves protection but changes the mechanical history needed to compare old witness readings.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT machine; vibration performance requires engineering review."
+      }
+    },
+    {
+      "Id": "01a0784f-d72b-7983-a8ad-d6d9d1cec7b4",
+      "Name": "K-6 Burden Sledge Four",
+      "Description": "DRAFT passive carrier whose compliant restraints, acceleration record, and replaceable wear surfaces let K-6 custodians move sealed matter without hiding route stress.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Object",
+      "Subtype": "Custody machine",
+      "Form": {
+        "aesthetics": "A low frame with layered skids, visible repair plates, and a load surface marked by successive handoff geometries."
+      },
+      "Function": {
+        "utility": "Carry a burden slowly while recording acceleration, rest thresholds, restraint changes, and disputed control."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-OBJ-002",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Remains",
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapters 20 and 21, source lines 1183 and 1245",
+            "verification": "VERIFIED",
+            "note": "V11 supports load limits, remembered transfer failures, and convoy redirection under vibration law. This sledge is DRAFT."
+          }
+        ],
+        "science_status": "requires-review",
+        "preservation_problem": "Wear records authenticate the route, but allowing wear to accumulate eventually endangers the matter the records are meant to protect.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT machine; load and low-gravity mechanics require review."
+      }
+    },
+    {
+      "Id": "01a0784f-d72c-7223-8b6c-f90982f647ac",
+      "Name": "Marker Seven-Black-Three",
+      "Description": "DRAFT Pelagic route marker whose tactile faces and pressure response encode location, orientation, safe approach, and the uncertainty of its last emplacement.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Object",
+      "Subtype": "Custody artefact",
+      "Form": {
+        "aesthetics": "A dark ribbed marker designed to be read by touch and local pressure response rather than by an exposed visual label."
+      },
+      "Function": {
+        "utility": "Bind a submerged route instruction to its physical depth, current, and tower relation."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-OBJ-003",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Structure",
+          "Memory"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 21, source line 1245",
+            "verification": "VERIFIED",
+            "note": "V11 supports drowned route markers cut from rival-claimed towers. This marker's identity, form, and encoding are DRAFT."
+          }
+        ],
+        "science_status": "requires-review",
+        "preservation_problem": "Once removed, the marker survives as an object but its local pressure response becomes an unrepeatable claim about a lost placement.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT artefact; materials and sensor mechanism require review."
+      }
+    },
+    {
+      "Id": "01a0784f-d72d-7fcd-9a58-267fcf0b4990",
+      "Name": "Thirty-One Release Condition Matrix",
+      "Description": "DRAFT layered interface that retains each surviving release rule, translation, failed environmental test, authority chain, and dissent without reducing them to one permission state.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Object",
+      "Subtype": "Custody artefact",
+      "Form": {
+        "aesthetics": "Concentric sealed panels whose mutually incompatible condition paths remain physically separated and jointly viewable."
+      },
+      "Function": {
+        "utility": "Prevent activation software from treating an incomplete or translated condition set as unanimous release authority."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-OBJ-004",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Seed",
+          "Ritual"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapters 18 and 21, source lines 1041 and 1243-1247",
+            "verification": "VERIFIED",
+            "note": "V11 supports obsolete conditions and false release orders. This matrix and its interface behaviour are DRAFT."
+          }
+        ],
+        "science_status": "requires-review",
+        "preservation_problem": "The matrix must accept new evidence without allowing an update to erase the exact obsolete rule it claims to supersede.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT artefact; information architecture and fail-safe behaviour require review."
+      }
+    },
+    {
+      "Id": "01a0784f-d72e-746d-8009-d4115a09b6c9",
+      "Name": "No-Arrival Interval Clock",
+      "Description": "DRAFT distributed machine that records when a receiving interval was opened, what beacon state was observed, and which acknowledgements failed without displaying absence as a confirmed loss.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Object",
+      "Subtype": "Custody machine",
+      "Form": {
+        "aesthetics": "A serviceable clock core surrounded by separate answer channels; dark channels remain labelled unknown rather than dead."
+      },
+      "Function": {
+        "utility": "Coordinate route maintenance and preserve negative observations without converting them into invented arrivals or deaths."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-OBJ-005",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Ritual",
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 18, source lines 1041-1045",
+            "verification": "VERIFIED",
+            "note": "V11 supports an unused maintained beacon corridor. This interval clock and its semantics are DRAFT."
+          }
+        ],
+        "science_status": "requires-review",
+        "preservation_problem": "Clock drift and reference loss require correction, yet correction can erase the timing uncertainty that makes an old missed answer interpretable.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT machine; timing architecture and transport physics require review."
+      }
+    },
+    {
+      "Id": "01a0784f-d72f-7ba1-9580-28aecf8e50cc",
+      "Name": "Site Nine Parallel Comparison Rack",
+      "Description": "DRAFT rack that keeps matter scans, identity records, and pattern models aligned by relation without allowing any layer to overwrite another.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Object",
+      "Subtype": "Custody machine",
+      "Form": {
+        "aesthetics": "Three offset frames share fiducial lines across an empty central gap, with damaged alignments left visibly discontinuous."
+      },
+      "Function": {
+        "utility": "Support comparison, provisional repair, and dissent annotation while preserving source layers separately."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-OBJ-006",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Remains",
+          "Memory",
+          "Pattern"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 21, source lines 1203-1219 and 1237",
+            "verification": "VERIFIED",
+            "note": "V11 supports damaged relation among evidence and copied records stripped of uncertainty. This rack is DRAFT."
+          }
+        ],
+        "science_status": "requires-review",
+        "preservation_problem": "Restoring damaged alignment helps comparison but can make a reconstructed relation indistinguishable from the relation originally observed.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT machine; sensing and storage mechanisms remain unspecified."
+      }
+    },
+    {
+      "Id": "01a0784f-d730-7e69-be78-741adad0f69e",
+      "Name": "Sealcloth Gesture",
+      "Description": "DRAFT Relay Twelve operational language for communication when speech or equipment vibration is restricted; it carries source, confidence, negation, and request-for-witness explicitly.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Language",
+      "Subtype": "Operational register",
+      "Structure": {
+        "grammar": "Statements begin with evidence source and end with confidence or an unresolved-witness marker; commands require a visible scope gesture.",
+        "lexicon": "The smallest preserved distinction is between not observed, cannot be queried, and confirmed absent.",
+        "writing": "Gesture sequences are logged against a diagram of the radiator rib and witness chamber in which they were used."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-LANG-001",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Memory",
+          "Ritual"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 20 and Appendix XIV, source lines 1181 and 3373",
+            "verification": "VERIFIED",
+            "note": "V11 supports covered mouths and shallow gesture language in the Quiet Route. This register, grammar, and name are DRAFT."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "A vibration-safe register preserves communication locally but loses nuance when copied without the chamber, rib, and witness context logged with it.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT language sketch, not a complete constructed language."
+      }
+    },
+    {
+      "Id": "01a0784f-d731-7425-b41d-0b1b17ab033f",
+      "Name": "Load-Angle Notation",
+      "Description": "DRAFT K-6 engineering and custody register that treats slope, load, pause, transfer authority, and observed strain as one inspectable statement.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Language",
+      "Subtype": "Operational notation",
+      "Structure": {
+        "grammar": "A valid line orders burden identity, carrier, route segment, measured condition, permitted next motion, and dissent mark.",
+        "lexicon": "Terms distinguish weight carried, apparent load in motion, inherited burden, and authority to redirect.",
+        "writing": "Incised route-angle strokes are overlaid with replaceable measurement films so historical marks remain visible beneath later readings."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-LANG-002",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Remains",
+          "Ritual",
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 20, source line 1183",
+            "verification": "VERIFIED",
+            "note": "V11 supports scripture made from route angles, load limits, and failure memory. This formal notation is DRAFT."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Updating measurements is necessary for safe carrying, but replacement can erase the old load conditions needed to understand a past failure.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT language sketch."
+      }
+    },
+    {
+      "Id": "01a0784f-d732-7fbe-8509-bb8b3f8bf6d1",
+      "Name": "Current-Pressure Register",
+      "Description": "DRAFT Pelagic tactile and pressure-coded register used to describe approach, depth, current, contact order, and uncertainty where detached text would omit operational context.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Language",
+      "Subtype": "Operational register",
+      "Structure": {
+        "phonology": "No acoustic inventory is fixed; candidate transmission uses timed pressure changes and contact patterns alongside ordinary language.",
+        "grammar": "Location is expressed as a path of changes rather than a detached coordinate, and every route statement marks whether the current was observed or reconstructed.",
+        "writing": "Ribbed impressions preserve contact order but require a separate pressure and current record to be interpreted."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-LANG-003",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Memory",
+          "Ritual",
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapters 18 and 21, source lines 1055 and 1245",
+            "verification": "VERIFIED",
+            "note": "V11 supports pressure-adapted custodians and route markers. This register and all linguistic particulars are DRAFT."
+          }
+        ],
+        "science_status": "requires-review",
+        "preservation_problem": "The register keeps route context embodied, yet a recovered inscription cannot be read fully once the original pressure and current are gone.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT language sketch; underwater transmission mechanics require review."
+      }
+    },
+    {
+      "Id": "01a0784f-d733-76d0-b259-e4c647f63fb2",
+      "Name": "Interval Litany",
+      "Description": "DRAFT procedural register shared imperfectly by Corridor crews and Reserve Thirty-One, derived from checksum and handoff forms but changed by their different ideas of release.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Language",
+      "Subtype": "Ritual-operational register",
+      "Structure": {
+        "grammar": "Each proposition pairs a condition with its observer, expiry rule, unanswered dependency, and permitted reversible action.",
+        "lexicon": "Corridor usage distinguishes an open interval from an arrival; Seed usage distinguishes viability from authority to release.",
+        "writing": "Checksummed blocks preserve alternative readings in parallel instead of normalising them into one command."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-LANG-004",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": [
+          "Seed",
+          "Ritual",
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapters 18 and 20, source lines 1041 and 1179",
+            "verification": "VERIFIED",
+            "note": "V11 supports route checksum becoming litany and obsolete release conditions. This shared register and its grammar are DRAFT."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "A shared procedural language enables comparison, but local meanings of open, answer, viable, and release can make an apparently valid translation dangerous.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT language sketch; no full lexicon is asserted."
+      }
+    },
+    {
+      "Id": "01a0784f-d734-717c-bec0-b7031864cadb",
+      "Name": "The Sixfold Custody Fracture",
+      "Description": "DRAFT narrative frame that orders the six existing Custody War incidents as one widening loss of comparison rather than six unrelated set pieces.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Narrative",
+      "Subtype": "Historical sequence",
+      "Context": {
+        "story": "A forced witness signal makes isolation politically suspect; a simplified identity index then travels faster than its missing uncertainty can be recognised. Its authority contaminates a release dispute, route jurisdictions harden around matter, contextual markers are removed, and the attempt to allocate a mixed site finally damages the comparison field meant to adjudicate all six harms.",
+        "consequences": "The Lamps become connected by disputed records and failed correction, not by an empire or conventional campaign. The order is editorially proposed and may be revised without changing V11."
+      },
+      "Involves": {
+        "events": [
+          "01a07765-3d75-7eca-b467-344711f9bb9b",
+          "01a07765-3d75-7899-94f1-d7d3c0995d76",
+          "01a07765-3d75-7e30-8970-27990dbb27fa",
+          "01a07765-3d75-73a4-bec2-504582d31848",
+          "01a07765-3d75-7df6-8e2b-5828d3d8ad40",
+          "01a07765-3d75-7700-8f5d-2ce8b437a4d9"
+        ],
+        "locations": [
+          "01a07765-3d75-76f8-a938-08e60a943cdc",
+          "01a07765-3d75-7fcf-a9df-0e46141373b9",
+          "01a07765-3d75-73c7-82ea-5af778bb40c3",
+          "01a07765-3d75-7965-8405-5f75be15d349",
+          "01a07765-3d75-7307-8485-f53ec24f4fb0",
+          "01a07765-3d75-7f99-b3a4-c78b65f81e54"
+        ],
+        "relations": [
+          "01a0784f-d739-7dad-be5b-3db3fb04c7aa",
+          "01a0784f-d73a-7be3-9575-2123d8453a81",
+          "01a0784f-d73b-7377-8c50-f0ac001ca242",
+          "01a0784f-d73c-77d6-826c-d50e8bd11489",
+          "01a0784f-d73d-7f5e-86f4-ec12c83c4755",
+          "01a0784f-d73e-7ad7-80df-57236f2354b4"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-NAR-001",
+        "canon_status": "DRAFT",
+        "era": "Custody Wars",
+        "inheritance_logic": [
+          "Mixed"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 21, source lines 1201-1249",
+            "verification": "VERIFIED",
+            "note": "V11 supports the conflict grammar and example types, not these names, causal links, or order. The complete sequence is DRAFT."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "A coherent sequence makes the incidents legible but can harden a useful editorial arrangement into a falsely recovered chronology.",
+        "first_appearance": "drafts/v12/cluster-01/custody-fracture-sequence.md",
+        "editorial_notes": "DRAFT relative sequence; no absolute dates or durations."
+      }
+    },
+    {
+      "Id": "01a0784f-d735-7efb-8375-2a8316aade9f",
+      "Name": "Quiet-Line Transcript Twelve-B",
+      "Description": "DRAFT recovered custody record presenting the Silence Breach through an exchange between a thermal maintainer and an outside witness channel.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Narrative",
+      "Subtype": "Recovered custody record",
+      "Context": {
+        "story": "The local speaker refuses full-power transmission, names the identities placed at risk by silence, and asks the remote order to accept a slower channel. The remote answer treats delay as abandonment; the transcript ends with both warnings still active.",
+        "consequences": "Neither side is reduced to villainy, and the physical limit of the Reef remains inseparable from the moral claim.",
+        "order": 1,
+        "parent_narrative": "01a0784f-d734-717c-bec0-b7031864cadb",
+        "conservator": "01a0784f-d71d-7594-ab9e-b6a5cbf0d715"
+      },
+      "Involves": {
+        "events": [
+          "01a07765-3d75-7eca-b467-344711f9bb9b"
+        ],
+        "objects": [
+          "01a0784f-d72a-77df-902b-b38201e14817"
+        ],
+        "locations": [
+          "01a07765-3d75-76f8-a938-08e60a943cdc"
+        ],
+        "institutions": [
+          "01a0784f-d71d-7594-ab9e-b6a5cbf0d715"
+        ],
+        "languages": [
+          "01a0784f-d730-7e69-be78-741adad0f69e"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-REC-001",
+        "canon_status": "DRAFT",
+        "era": "Custody Wars",
+        "inheritance_logic": [
+          "Memory",
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "recovered-record",
+            "source_ref": "drafts/v12/cluster-01/recovered-records/quiet-line-transcript.md",
+            "source_location": "Complete DRAFT record",
+            "verification": "PENDING-REVIEW",
+            "note": "The record is authored DRAFT fiction, not an actual source recovered from V11."
+          }
+        ],
+        "science_status": "requires-review",
+        "preservation_problem": "The transcript records competing harms but its damaged amplitude data cannot prove which transmission limit was physically necessary.",
+        "first_appearance": "drafts/v12/cluster-01/recovered-records/quiet-line-transcript.md",
+        "editorial_notes": "DRAFT internal-view record."
+      }
+    },
+    {
+      "Id": "01a0784f-d736-770f-b661-f1733a1ba7f1",
+      "Name": "Refusal Pair Thirty-One",
+      "Description": "DRAFT recovered custody record preserving two simultaneous refusals: one to obey an unverifiable release order and one to pretend continued dormancy is harmless.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Narrative",
+      "Subtype": "Recovered custody record",
+      "Context": {
+        "story": "Paired advocates recite the same condition matrix. One demonstrates that the authority chain is broken; the other enters the viability losses expected from another closed interval. Both sign the continued closure and preserve their accusations against it.",
+        "consequences": "The reserve remains closed without allowing non-release to masquerade as certainty or innocence.",
+        "order": 3,
+        "parent_narrative": "01a0784f-d734-717c-bec0-b7031864cadb",
+        "conservator": "01a0784f-d720-7b6d-b6ac-7e66811609d0"
+      },
+      "Involves": {
+        "events": [
+          "01a07765-3d75-7e30-8970-27990dbb27fa"
+        ],
+        "objects": [
+          "01a0784f-d72d-7fcd-9a58-267fcf0b4990"
+        ],
+        "locations": [
+          "01a07765-3d75-7965-8405-5f75be15d349"
+        ],
+        "institutions": [
+          "01a0784f-d720-7b6d-b6ac-7e66811609d0"
+        ],
+        "languages": [
+          "01a0784f-d733-76d0-b259-e4c647f63fb2"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-REC-002",
+        "canon_status": "DRAFT",
+        "era": "Custody Wars",
+        "inheritance_logic": [
+          "Seed",
+          "Ritual"
+        ],
+        "provenance": [
+          {
+            "source_kind": "recovered-record",
+            "source_ref": "drafts/v12/cluster-01/recovered-records/refusal-pair-thirty-one.md",
+            "source_location": "Complete DRAFT record",
+            "verification": "PENDING-REVIEW",
+            "note": "The record is authored DRAFT fiction, not an actual source recovered from V11."
+          }
+        ],
+        "science_status": "requires-review",
+        "preservation_problem": "The refusal records anticipated loss, but incomplete viability science prevents later custodians from separating honest forecast from doctrinal pressure.",
+        "first_appearance": "drafts/v12/cluster-01/recovered-records/refusal-pair-thirty-one.md",
+        "editorial_notes": "DRAFT internal-view record."
+      }
+    },
+    {
+      "Id": "01a0784f-d737-7aa8-a877-7f1f31d8b63e",
+      "Name": "Ash Convoy Handoff Leaf",
+      "Description": "DRAFT recovered custody record in which two route authorities annotate the same burden movement without either breaking the seal or accepting the other's jurisdiction.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Narrative",
+      "Subtype": "Recovered custody record",
+      "Context": {
+        "story": "A sledge stops between thresholds. One bench enters the angle as lawful continuation; another enters it as the first segment of unlawful diversion. The load record agrees while the authority fields split.",
+        "consequences": "The matter arrives intact, but later keepers inherit two physically evidenced routes and no neutral handoff term.",
+        "order": 4,
+        "parent_narrative": "01a0784f-d734-717c-bec0-b7031864cadb",
+        "conservator": "01a0784f-d71e-7fc2-9300-678cb274a662"
+      },
+      "Involves": {
+        "events": [
+          "01a07765-3d75-73a4-bec2-504582d31848"
+        ],
+        "objects": [
+          "01a0784f-d72b-7983-a8ad-d6d9d1cec7b4"
+        ],
+        "locations": [
+          "01a07765-3d75-7fcf-a9df-0e46141373b9"
+        ],
+        "institutions": [
+          "01a0784f-d71e-7fc2-9300-678cb274a662"
+        ],
+        "languages": [
+          "01a0784f-d731-7425-b41d-0b1b17ab033f"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-REC-003",
+        "canon_status": "DRAFT",
+        "era": "Custody Wars",
+        "inheritance_logic": [
+          "Remains",
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "recovered-record",
+            "source_ref": "drafts/v12/cluster-01/recovered-records/ash-convoy-handoff-leaf.md",
+            "source_location": "Complete DRAFT record",
+            "verification": "PENDING-REVIEW",
+            "note": "The record is authored DRAFT fiction, not an actual source recovered from V11."
+          }
+        ],
+        "science_status": "requires-review",
+        "preservation_problem": "The leaf preserves both readings but cannot preserve the lost shared vocabulary that would have made them comparable.",
+        "first_appearance": "drafts/v12/cluster-01/recovered-records/ash-convoy-handoff-leaf.md",
+        "editorial_notes": "DRAFT internal-view record."
+      }
+    },
+    {
+      "Id": "01a0784f-d738-7819-9c22-3d14997a6e2c",
+      "Name": "Site Nine Parallel Inventory Fragment",
+      "Description": "DRAFT recovered custody record showing three inventories disagreeing over one damaged frame while preserving the exact points at which their categories fail to align.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Narrative",
+      "Subtype": "Recovered custody record",
+      "Context": {
+        "story": "The matter bench lists a frame segment, the memory bench lists two partial names, and the pattern bench lists one uncertain relation. A partition order asks for three holdings; the inventory answers that cutting the frame would also cut the comparison.",
+        "consequences": "The fragment establishes why the Concordance resisted division without proving that every later refusal was justified.",
+        "order": 6,
+        "parent_narrative": "01a0784f-d734-717c-bec0-b7031864cadb",
+        "conservator": "01a0784f-d722-72f4-9c2e-3998f3c027f6"
+      },
+      "Involves": {
+        "events": [
+          "01a07765-3d75-7700-8f5d-2ce8b437a4d9"
+        ],
+        "objects": [
+          "01a0784f-d72f-7ba1-9580-28aecf8e50cc"
+        ],
+        "locations": [
+          "01a07765-3d75-7f99-b3a4-c78b65f81e54"
+        ],
+        "institutions": [
+          "01a0784f-d722-72f4-9c2e-3998f3c027f6"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-REC-004",
+        "canon_status": "DRAFT",
+        "era": "Custody Wars",
+        "inheritance_logic": [
+          "Remains",
+          "Memory",
+          "Pattern"
+        ],
+        "provenance": [
+          {
+            "source_kind": "recovered-record",
+            "source_ref": "drafts/v12/cluster-01/recovered-records/site-nine-parallel-inventory.md",
+            "source_location": "Complete DRAFT record",
+            "verification": "PENDING-REVIEW",
+            "note": "The record is authored DRAFT fiction, not an actual source recovered from V11."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Keeping categories separate makes disagreement visible, but the surviving fragment cannot show whether an omitted fourth account once changed the relation.",
+        "first_appearance": "drafts/v12/cluster-01/recovered-records/site-nine-parallel-inventory.md",
+        "editorial_notes": "DRAFT internal-view record."
+      }
+    },
+    {
+      "Id": "01a0784f-d739-7dad-be5b-3db3fb04c7aa",
+      "Name": "Quiet-Line Witness Accord",
+      "Description": "DRAFT conditional relation between Relay Twelve and Corridor crews: low-energy route channels may carry witness summaries while full archive fields remain locally protected.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Relation",
+      "Subtype": "Inter-Lamp custody relation",
+      "Nature": {
+        "background": "Proposed after the Silence Breach as a compromise between total quiet and compelled high-energy witness transmission.",
+        "events": [
+          "01a07765-3d75-7eca-b467-344711f9bb9b"
+        ]
+      },
+      "Involves": {
+        "locations": [
+          "01a07765-3d75-76f8-a938-08e60a943cdc",
+          "01a07765-3d75-7307-8485-f53ec24f4fb0"
+        ],
+        "institutions": [
+          "01a0784f-d71d-7594-ab9e-b6a5cbf0d715",
+          "01a0784f-d721-7edb-8e54-98bc291a3064"
+        ],
+        "collectives": [
+          "01a0784f-d723-74a7-8d49-1ec1ccc87c53",
+          "01a0784f-d742-7050-bc40-a91d21967fa0"
+        ],
+        "species": [
+          "01a0784f-d724-7671-9ed2-4262c8ca4fdd",
+          "01a0784f-d728-7025-a3a9-66c2e5b8e234"
+        ],
+        "languages": [
+          "01a0784f-d730-7e69-be78-741adad0f69e",
+          "01a0784f-d733-76d0-b259-e4c647f63fb2"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-REL-001",
+        "canon_status": "DRAFT",
+        "era": "Custody Wars",
+        "inheritance_logic": [
+          "Memory",
+          "Ritual",
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "editorial-reconstruction",
+            "source_ref": "drafts/v12/cluster-01/cluster-dossier.md",
+            "source_location": "Inter-Lamp relations",
+            "verification": "PENDING-REVIEW",
+            "note": "DRAFT relation built from existing DRAFT sites and incident; not V11 fact."
+          }
+        ],
+        "science_status": "requires-review",
+        "preservation_problem": "Summaries reduce physical risk but can become detached substitutes for the uncertain records they summarise.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT inter-Lamp relation."
+      }
+    },
+    {
+      "Id": "01a0784f-d73a-7be3-9575-2123d8453a81",
+      "Name": "Ash-Nine Burden Provenance Route",
+      "Description": "DRAFT relation by which K-6 route evidence is compared with damaged frames at Site Nine, making each location useful to the other and vulnerable to the other's doctrine.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Relation",
+      "Subtype": "Inter-Lamp custody relation",
+      "Nature": {
+        "background": "The redirected Ash Convoy leaves incompatible route records that Site Nine can compare but not reconcile; the later Partition threatens the shared field.",
+        "events": [
+          "01a07765-3d75-73a4-bec2-504582d31848",
+          "01a07765-3d75-7700-8f5d-2ce8b437a4d9"
+        ]
+      },
+      "Involves": {
+        "locations": [
+          "01a07765-3d75-7fcf-a9df-0e46141373b9",
+          "01a07765-3d75-7f99-b3a4-c78b65f81e54"
+        ],
+        "institutions": [
+          "01a0784f-d71e-7fc2-9300-678cb274a662",
+          "01a0784f-d722-72f4-9c2e-3998f3c027f6"
+        ],
+        "collectives": [
+          "01a0784f-d73f-7104-886e-aebe6395e395",
+          "01a0784f-d743-7912-8d76-3d2684174494"
+        ],
+        "species": [
+          "01a0784f-d725-73d6-9f63-7044e367d847",
+          "01a0784f-d729-7565-973b-6d9c4cd74f3d"
+        ],
+        "objects": [
+          "01a0784f-d72b-7983-a8ad-d6d9d1cec7b4",
+          "01a0784f-d72f-7ba1-9580-28aecf8e50cc"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-REL-002",
+        "canon_status": "DRAFT",
+        "era": "Custody Wars",
+        "inheritance_logic": [
+          "Remains",
+          "Memory",
+          "Pattern",
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "editorial-reconstruction",
+            "source_ref": "drafts/v12/cluster-01/cluster-dossier.md",
+            "source_location": "Inter-Lamp relations",
+            "verification": "PENDING-REVIEW",
+            "note": "DRAFT relation; V11 does not connect these candidate sites."
+          }
+        ],
+        "science_status": "requires-review",
+        "preservation_problem": "Moving evidence enables cross-checking but adds a new route history whose disputes can obscure the original one.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT inter-Lamp relation."
+      }
+    },
+    {
+      "Id": "01a0784f-d73b-7377-8c50-f0ac001ca242",
+      "Name": "Pelagic-Nine Context Exchange",
+      "Description": "DRAFT relation in which Pelagic route contexts test Site Nine's comparison methods while Site Nine preserves displaced markers without claiming to restore their original placement.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Relation",
+      "Subtype": "Inter-Lamp custody relation",
+      "Nature": {
+        "background": "Created around markers displaced during the Drowned Marker Seizure and contested again when Site Nine is ordered to partition its holdings.",
+        "events": [
+          "01a07765-3d75-7df6-8e2b-5828d3d8ad40",
+          "01a07765-3d75-7700-8f5d-2ce8b437a4d9"
+        ]
+      },
+      "Involves": {
+        "locations": [
+          "01a07765-3d75-73c7-82ea-5af778bb40c3",
+          "01a07765-3d75-7f99-b3a4-c78b65f81e54"
+        ],
+        "institutions": [
+          "01a0784f-d71f-79c6-b62d-769e764eaceb",
+          "01a0784f-d722-72f4-9c2e-3998f3c027f6"
+        ],
+        "collectives": [
+          "01a0784f-d740-70fe-9c5b-4d5305adf210",
+          "01a0784f-d743-7912-8d76-3d2684174494"
+        ],
+        "species": [
+          "01a0784f-d726-7c15-967b-14b6dbd61d42",
+          "01a0784f-d729-7565-973b-6d9c4cd74f3d"
+        ],
+        "objects": [
+          "01a0784f-d72c-7223-8b6c-f90982f647ac",
+          "01a0784f-d72f-7ba1-9580-28aecf8e50cc"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-REL-003",
+        "canon_status": "DRAFT",
+        "era": "Custody Wars",
+        "inheritance_logic": [
+          "Memory",
+          "Pattern",
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "editorial-reconstruction",
+            "source_ref": "drafts/v12/cluster-01/cluster-dossier.md",
+            "source_location": "Inter-Lamp relations",
+            "verification": "PENDING-REVIEW",
+            "note": "DRAFT relation; V11 does not connect these candidate sites."
+          }
+        ],
+        "science_status": "requires-review",
+        "preservation_problem": "A displaced marker needs external custody, yet every external description risks being mistaken for the lost submerged relation itself.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT inter-Lamp relation."
+      }
+    },
+    {
+      "Id": "01a0784f-d73c-77d6-826c-d50e8bd11489",
+      "Name": "Thirty-One Interval Verification",
+      "Description": "DRAFT relation under which Corridor crews verify message path and interval state for Seed Reserve Thirty-One without claiming authority over biological release.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Relation",
+      "Subtype": "Inter-Lamp custody relation",
+      "Nature": {
+        "background": "The False Release exposes the difference between a technically valid route and a valid custody authority.",
+        "events": [
+          "01a07765-3d75-7e30-8970-27990dbb27fa"
+        ]
+      },
+      "Involves": {
+        "locations": [
+          "01a07765-3d75-7965-8405-5f75be15d349",
+          "01a07765-3d75-7307-8485-f53ec24f4fb0"
+        ],
+        "institutions": [
+          "01a0784f-d720-7b6d-b6ac-7e66811609d0",
+          "01a0784f-d721-7edb-8e54-98bc291a3064"
+        ],
+        "collectives": [
+          "01a0784f-d741-7e6d-b043-806a0641a5d2",
+          "01a0784f-d742-7050-bc40-a91d21967fa0"
+        ],
+        "species": [
+          "01a0784f-d727-749f-8b58-d5b2fca73baf",
+          "01a0784f-d728-7025-a3a9-66c2e5b8e234"
+        ],
+        "languages": [
+          "01a0784f-d733-76d0-b259-e4c647f63fb2"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-REL-004",
+        "canon_status": "DRAFT",
+        "era": "Custody Wars",
+        "inheritance_logic": [
+          "Seed",
+          "Ritual",
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "editorial-reconstruction",
+            "source_ref": "drafts/v12/cluster-01/cluster-dossier.md",
+            "source_location": "Inter-Lamp relations",
+            "verification": "PENDING-REVIEW",
+            "note": "DRAFT relation built to preserve a boundary between transport proof and release authority."
+          }
+        ],
+        "science_status": "requires-review",
+        "preservation_problem": "Separating route verification from release authority limits forgery but creates an interface where each institution can disclaim the other's failure.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT inter-Lamp relation."
+      }
+    },
+    {
+      "Id": "01a0784f-d73d-7f5e-86f4-ec12c83c4755",
+      "Name": "Six-Lamp Correction Circuit",
+      "Description": "DRAFT relation linking all six Lamps through partial checks: no site can certify the whole, but each can expose a characteristic failure in another's evidence.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Relation",
+      "Subtype": "Cluster custody relation",
+      "Nature": {
+        "background": "The circuit emerges from shared failures during the Sixfold Custody Fracture, not from political unification or common command.",
+        "events": [
+          "01a07765-3d75-7eca-b467-344711f9bb9b",
+          "01a07765-3d75-7899-94f1-d7d3c0995d76",
+          "01a07765-3d75-7e30-8970-27990dbb27fa",
+          "01a07765-3d75-73a4-bec2-504582d31848",
+          "01a07765-3d75-7df6-8e2b-5828d3d8ad40",
+          "01a07765-3d75-7700-8f5d-2ce8b437a4d9"
+        ]
+      },
+      "Involves": {
+        "locations": [
+          "01a07765-3d75-76f8-a938-08e60a943cdc",
+          "01a07765-3d75-7fcf-a9df-0e46141373b9",
+          "01a07765-3d75-73c7-82ea-5af778bb40c3",
+          "01a07765-3d75-7965-8405-5f75be15d349",
+          "01a07765-3d75-7307-8485-f53ec24f4fb0",
+          "01a07765-3d75-7f99-b3a4-c78b65f81e54"
+        ],
+        "institutions": [
+          "01a0784f-d71d-7594-ab9e-b6a5cbf0d715",
+          "01a0784f-d71e-7fc2-9300-678cb274a662",
+          "01a0784f-d71f-79c6-b62d-769e764eaceb",
+          "01a0784f-d720-7b6d-b6ac-7e66811609d0",
+          "01a0784f-d721-7edb-8e54-98bc291a3064",
+          "01a0784f-d722-72f4-9c2e-3998f3c027f6"
+        ],
+        "collectives": [
+          "01a0784f-d723-74a7-8d49-1ec1ccc87c53",
+          "01a0784f-d73f-7104-886e-aebe6395e395",
+          "01a0784f-d740-70fe-9c5b-4d5305adf210",
+          "01a0784f-d741-7e6d-b043-806a0641a5d2",
+          "01a0784f-d742-7050-bc40-a91d21967fa0",
+          "01a0784f-d743-7912-8d76-3d2684174494"
+        ],
+        "species": [
+          "01a0784f-d724-7671-9ed2-4262c8ca4fdd",
+          "01a0784f-d725-73d6-9f63-7044e367d847",
+          "01a0784f-d726-7c15-967b-14b6dbd61d42",
+          "01a0784f-d727-749f-8b58-d5b2fca73baf",
+          "01a0784f-d728-7025-a3a9-66c2e5b8e234",
+          "01a0784f-d729-7565-973b-6d9c4cd74f3d"
+        ],
+        "narratives": [
+          "01a0784f-d734-717c-bec0-b7031864cadb"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-REL-005",
+        "canon_status": "DRAFT",
+        "era": "Custody Wars",
+        "inheritance_logic": [
+          "Mixed"
+        ],
+        "provenance": [
+          {
+            "source_kind": "editorial-reconstruction",
+            "source_ref": "drafts/v12/cluster-01/cluster-dossier.md",
+            "source_location": "Inter-Lamp relations",
+            "verification": "PENDING-REVIEW",
+            "note": "DRAFT cluster device; V11 supports cross-correction as a lost possibility but not this circuit."
+          }
+        ],
+        "science_status": "requires-review",
+        "preservation_problem": "Cross-correction restores comparison but gives every participant new power to obstruct, reinterpret, or expose another site's custody.",
+        "first_appearance": "drafts/v12/cluster-01/cluster-dossier.md",
+        "editorial_notes": "DRAFT cluster relation; it is not an alliance, empire, or unified authority."
+      }
+    },
+    {
+      "Id": "01a0784f-d73e-7ad7-80df-57236f2354b4",
+      "Name": "Uncertainty-Stripped Index Propagation",
+      "Description": "DRAFT relation tracing how one useful but simplified identity index moves among Relay Twelve, Reserve Thirty-One, and Site Nine and changes decisions before its omissions are recognised.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Relation",
+      "Subtype": "Damaged provenance relation",
+      "Nature": {
+        "background": "The Index Without Uncertainty becomes the connective evidence behind later disputes rather than a weapon belonging to a conventional antagonist.",
+        "events": [
+          "01a07765-3d75-7899-94f1-d7d3c0995d76",
+          "01a07765-3d75-7e30-8970-27990dbb27fa",
+          "01a07765-3d75-7700-8f5d-2ce8b437a4d9"
+        ]
+      },
+      "Involves": {
+        "locations": [
+          "01a07765-3d75-76f8-a938-08e60a943cdc",
+          "01a07765-3d75-7965-8405-5f75be15d349",
+          "01a07765-3d75-7f99-b3a4-c78b65f81e54"
+        ],
+        "narratives": [
+          "01a0784f-d734-717c-bec0-b7031864cadb"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-REL-006",
+        "canon_status": "DRAFT",
+        "era": "Custody Wars",
+        "inheritance_logic": [
+          "Memory",
+          "Pattern"
+        ],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 21, source lines 1237 and 1245",
+            "verification": "VERIFIED",
+            "note": "V11 supports uncertainty-stripped copies and false-certainty poisoning separately. This propagation path and linked sites are DRAFT."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "The copy must remain available as evidence of past decisions while interfaces and custodians must be prevented from treating it as complete identity truth.",
+        "first_appearance": "drafts/v12/cluster-01/custody-fracture-sequence.md",
+        "editorial_notes": "DRAFT damaged-provenance relation."
+      }
+    }
+  ]
+}

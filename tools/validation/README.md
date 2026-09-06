@@ -6,7 +6,8 @@ The GitHub Actions workflow reuses maintained FOSS for general validation:
 - `yamllint` parses and lints tracked YAML;
 - `lychee-action` checks Markdown links and fragments; and
 - `validate_servati.py` contains only project-specific canon, provenance,
-  reference, chronology, and licence invariants.
+  typed cross-reference, preservation-problem, relative chronology, astronomy
+  review, and licence invariants.
 
 Direct Python tools are pinned in `requirements.txt`. GitHub Actions are pinned
 to immutable commit SHAs in `.github/workflows/validate.yml`; readable release

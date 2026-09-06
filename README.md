@@ -32,6 +32,7 @@ basis does not promote any new V12 name, event, culture, or particular.
 - [Automated repository validation](tools/validation/README.md)
 - [Structured data](data/README.md)
 - [DRAFT V12 tranche 01](drafts/v12/tranche-01/README.md)
+- [DRAFT Scattered Lamps cluster 01](drafts/v12/cluster-01/README.md)
 - [Third-party notices](THIRD_PARTY.md)
 
 ## Licence

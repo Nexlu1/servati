@@ -6,7 +6,7 @@
     "project": "OnlyWorlds/OnlyWorlds",
     "revision": "ed84fa19c15c5bfb18019245faacdbdcb7cd9e0f",
     "licence": "MIT",
-    "scope": "Base entity fields plus relevant Location and Event grouping vocabulary; SERVATI metadata is a local extension."
+    "scope": "Base entity fields plus relevant Location, Event, Collective, Institution, Object, Narrative, Language, Species, and Relation grouping vocabulary; SERVATI metadata is a local extension."
   },
   "working_pack": {
     "filename": "SERVATI_V12_GITHUB_FIRST_WORKING_PACK_R1.zip",
@@ -25,6 +25,17 @@
       "World": "01a07765-3d73-7945-accf-bb285edefe4d",
       "Supertype": "Location",
       "Subtype": "Scattered Lamp",
+      "Setting": {
+        "form": "An archive habitat whose exposed heat-rejection ribs and accreted archive glass form one inhabited custody reef.",
+        "function": "Preserve fragile identity relations under strict vibration and signal controls.",
+        "parent_location": "01a0784f-d717-7775-b2cb-4c0828e4bbee",
+        "populations": ["01a0784f-d723-74a7-8d49-1ec1ccc87c53"]
+      },
+      "Politics": {"primary_power": "01a0784f-d71d-7594-ab9e-b6a5cbf0d715"},
+      "Construction": {
+        "architecture": "Occupied volumes follow the thermal ribs; every new enclosure must preserve cooling and evidentiary silence.",
+        "buildings": ["01a0784f-d72a-77df-902b-b38201e14817"]
+      },
       "servati": {
         "servati_id": "SV-DRAFT-LAMP-001",
         "canon_status": "DRAFT",
@@ -40,6 +51,7 @@
           }
         ],
         "science_status": "requires-review",
+        "preservation_problem": "The station must exchange heat and sometimes testimony without the vibration or signal noise its custodians believe can damage identity relations.",
         "editorial_notes": "DRAFT candidate; not present as a verified named entity in the repository baseline."
       }
     },
@@ -50,6 +62,17 @@
       "World": "01a07765-3d73-7945-accf-bb285edefe4d",
       "Supertype": "Location",
       "Subtype": "Scattered Lamp",
+      "Setting": {
+        "form": "A custody settlement excavated through a dusty, low-gravity minor body, with burden roads cut along conservative load paths.",
+        "function": "Move and preserve material burdens while retaining physical route evidence.",
+        "parent_location": "01a0784f-d718-7a35-b9fa-c3436e11c0d9",
+        "populations": ["01a0784f-d73f-7104-886e-aebe6395e395"]
+      },
+      "Politics": {"primary_power": "01a0784f-d71e-7fc2-9300-678cb274a662"},
+      "Construction": {
+        "architecture": "Road angles, rest shelves, and dust seals are kept as accumulated evidence rather than redesigned for speed.",
+        "buildings": ["01a0784f-d72b-7983-a8ad-d6d9d1cec7b4"]
+      },
       "servati": {
         "servati_id": "SV-DRAFT-LAMP-002",
         "canon_status": "DRAFT",
@@ -65,6 +88,7 @@
           }
         ],
         "science_status": "requires-review",
+        "preservation_problem": "Every safer or faster alteration to a burden road risks erasing the load scars used to authenticate past transfers.",
         "editorial_notes": "DRAFT candidate; not present as a verified named entity in the repository baseline."
       }
     },
@@ -75,6 +99,17 @@
       "World": "01a07765-3d73-7945-accf-bb285edefe4d",
       "Supertype": "Location",
       "Subtype": "Scattered Lamp",
+      "Setting": {
+        "form": "A station above an ocean-bearing moon, connected to submerged vaults and coral-like preservation towers in dark water.",
+        "function": "Keep records together with the pressure, current, depth, and approach conditions that give them relational meaning.",
+        "parent_location": "01a0784f-d719-7d23-a458-4ec0923fed33",
+        "populations": ["01a0784f-d740-70fe-9c5b-4d5305adf210"]
+      },
+      "Politics": {"primary_power": "01a0784f-d71f-79c6-b62d-769e764eaceb"},
+      "Construction": {
+        "architecture": "Pressure locks and tactile route surfaces make the path to a record part of the record.",
+        "buildings": ["01a0784f-d72c-7223-8b6c-f90982f647ac"]
+      },
       "servati": {
         "servati_id": "SV-DRAFT-LAMP-003",
         "canon_status": "DRAFT",
@@ -90,6 +125,7 @@
           }
         ],
         "science_status": "requires-review",
+        "preservation_problem": "Moving a record may save its substrate while destroying the depth, current, and threshold relations that authenticate it.",
         "editorial_notes": "DRAFT candidate; not present as a verified named entity in the repository baseline."
       }
     },
@@ -100,6 +136,17 @@
       "World": "01a07765-3d73-7945-accf-bb285edefe4d",
       "Supertype": "Location",
       "Subtype": "Scattered Lamp",
+      "Setting": {
+        "form": "A cryogenic reserve embedded in a cold-body service complex, surrounded by sealed trial ecologies and heat-management works.",
+        "function": "Maintain viable developmental reserves while preserving release conditions no surviving authority can conclusively satisfy.",
+        "parent_location": "01a0784f-d71a-7f6d-9556-594fbec12663",
+        "populations": ["01a0784f-d741-7e6d-b043-806a0641a5d2"]
+      },
+      "Politics": {"primary_power": "01a0784f-d720-7b6d-b6ac-7e66811609d0"},
+      "Construction": {
+        "architecture": "Nested sterile thresholds separate maintenance access, trial environments, and irreversible release access.",
+        "buildings": ["01a0784f-d72d-7fcd-9a58-267fcf0b4990"]
+      },
       "servati": {
         "servati_id": "SV-DRAFT-LAMP-004",
         "canon_status": "DRAFT",
@@ -115,6 +162,7 @@
           }
         ],
         "science_status": "requires-review",
+        "preservation_problem": "Keeping the reserve closed preserves possibility but also consumes finite viability and may turn care into permanent non-release.",
         "editorial_notes": "DRAFT candidate; not present as a verified named entity in the repository baseline."
       }
     },
@@ -125,6 +173,17 @@
       "World": "01a07765-3d73-7945-accf-bb285edefe4d",
       "Supertype": "Location",
       "Subtype": "Scattered Lamp",
+      "Setting": {
+        "form": "A distributed chain of beacons, inspection refuges, and handoff points spanning an unverified interstellar route.",
+        "function": "Maintain the possibility of lawful passage despite the loss of traffic and destination confirmation.",
+        "parent_location": "01a0784f-d71b-79e8-a8ac-c2172042f4d7",
+        "populations": ["01a0784f-d742-7050-bc40-a91d21967fa0"]
+      },
+      "Politics": {"primary_power": "01a0784f-d721-7edb-8e54-98bc291a3064"},
+      "Construction": {
+        "architecture": "Habitats remain subordinate to beacon sight lines, maintenance paths, and receiving intervals.",
+        "buildings": ["01a0784f-d72e-746d-8009-d4115a09b6c9"]
+      },
       "servati": {
         "servati_id": "SV-DRAFT-LAMP-005",
         "canon_status": "DRAFT",
@@ -140,6 +199,7 @@
           }
         ],
         "science_status": "requires-review",
+        "preservation_problem": "Changing an obsolete route could make it useful again but would sever the only surviving evidence of what its handoff sequence once protected.",
         "editorial_notes": "DRAFT candidate; not present as a verified named entity in the repository baseline."
       }
     },
@@ -150,6 +210,17 @@
       "World": "01a07765-3d73-7945-accf-bb285edefe4d",
       "Supertype": "Location",
       "Subtype": "Scattered Lamp",
+      "Setting": {
+        "form": "A junction habitat built through a field of damaged burden frames and incomplete comparison machinery.",
+        "function": "Keep material, memory, and pattern fragments mutually visible without forcing them into one false reconstruction.",
+        "parent_location": "01a0784f-d71c-7bda-8011-95fa3f6aba45",
+        "populations": ["01a0784f-d743-7912-8d76-3d2684174494"]
+      },
+      "Politics": {"primary_power": "01a0784f-d722-72f4-9c2e-3998f3c027f6"},
+      "Construction": {
+        "architecture": "Parallel galleries keep incompatible fragments within one comparison field while making uncertainty visible.",
+        "buildings": ["01a0784f-d72f-7ba1-9580-28aecf8e50cc"]
+      },
       "servati": {
         "servati_id": "SV-DRAFT-LAMP-006",
         "canon_status": "DRAFT",
@@ -165,6 +236,7 @@
           }
         ],
         "science_status": "requires-review",
+        "preservation_problem": "The site must permit urgent use of fragments without allowing a useful reconstruction to overwrite the contradictions that make it honest.",
         "editorial_notes": "DRAFT candidate; not present as a verified named entity in the repository baseline."
       }
     },
@@ -180,12 +252,22 @@
         "consequences": "Becomes a candidate example of why preserving objects while severing relations can still constitute catastrophic loss."
       },
       "Involves": {
-        "locations": ["01a07765-3d75-7f99-b3a4-c78b65f81e54"]
+        "locations": ["01a07765-3d75-7f99-b3a4-c78b65f81e54"],
+        "objects": ["01a0784f-d72f-7ba1-9580-28aecf8e50cc"],
+        "institutions": ["01a0784f-d722-72f4-9c2e-3998f3c027f6", "01a0784f-d71e-7fc2-9300-678cb274a662"],
+        "collectives": ["01a0784f-d743-7912-8d76-3d2684174494"],
+        "narratives": ["01a0784f-d738-7819-9c22-3d14997a6e2c"]
       },
       "servati": {
         "servati_id": "SV-DRAFT-EVT-001",
         "canon_status": "DRAFT",
         "era": "Custody Wars",
+        "relative_sequence": {
+          "sequence_label": "Sixfold Custody Fracture",
+          "position": 6,
+          "confidence": "proposed",
+          "basis": "DRAFT editorial ordering; Version 11 supplies no order among these examples."
+        },
         "inheritance_logic": [],
         "provenance": [
           {
@@ -197,6 +279,7 @@
           }
         ],
         "science_status": "requires-review",
+        "preservation_problem": "Separating the holdings may protect each substrate while destroying the comparison field that lets any of them correct the others.",
         "editorial_notes": "DRAFT event; no chronology date is assigned."
       }
     },
@@ -212,12 +295,23 @@
         "consequences": "The reserve remains closed, but trust in remote authorisation collapses and later Seed communities require stronger plural verification."
       },
       "Involves": {
-        "locations": ["01a07765-3d75-7965-8405-5f75be15d349"]
+        "locations": ["01a07765-3d75-7965-8405-5f75be15d349"],
+        "objects": ["01a0784f-d72d-7fcd-9a58-267fcf0b4990"],
+        "institutions": ["01a0784f-d720-7b6d-b6ac-7e66811609d0"],
+        "collectives": ["01a0784f-d741-7e6d-b043-806a0641a5d2"],
+        "languages": ["01a0784f-d733-76d0-b259-e4c647f63fb2"],
+        "narratives": ["01a0784f-d736-770f-b661-f1733a1ba7f1"]
       },
       "servati": {
         "servati_id": "SV-DRAFT-EVT-002",
         "canon_status": "DRAFT",
         "era": "Custody Wars",
+        "relative_sequence": {
+          "sequence_label": "Sixfold Custody Fracture",
+          "position": 3,
+          "confidence": "proposed",
+          "basis": "DRAFT editorial ordering; Version 11 supplies no order among these examples."
+        },
         "inheritance_logic": [],
         "provenance": [
           {
@@ -229,6 +323,7 @@
           }
         ],
         "science_status": "requires-review",
+        "preservation_problem": "The reserve cannot both obey a possibly false command and retain the option to refuse it after activation.",
         "editorial_notes": "DRAFT event; no chronology date is assigned."
       }
     },
@@ -244,12 +339,23 @@
         "consequences": "Some names are broadcast successfully; other uncertainty structures are damaged. Both sides preserve evidence supporting their accusation."
       },
       "Involves": {
-        "locations": ["01a07765-3d75-76f8-a938-08e60a943cdc"]
+        "locations": ["01a07765-3d75-76f8-a938-08e60a943cdc"],
+        "objects": ["01a0784f-d72a-77df-902b-b38201e14817"],
+        "institutions": ["01a0784f-d71d-7594-ab9e-b6a5cbf0d715"],
+        "collectives": ["01a0784f-d723-74a7-8d49-1ec1ccc87c53"],
+        "languages": ["01a0784f-d730-7e69-be78-741adad0f69e"],
+        "narratives": ["01a0784f-d735-7efb-8375-2a8316aade9f"]
       },
       "servati": {
         "servati_id": "SV-DRAFT-EVT-003",
         "canon_status": "DRAFT",
         "era": "Custody Wars",
+        "relative_sequence": {
+          "sequence_label": "Sixfold Custody Fracture",
+          "position": 1,
+          "confidence": "proposed",
+          "basis": "DRAFT editorial ordering; Version 11 supplies no order among these examples."
+        },
         "inheritance_logic": [],
         "provenance": [
           {
@@ -261,6 +367,7 @@
           }
         ],
         "science_status": "requires-review",
+        "preservation_problem": "Broadcast may rescue unreachable witnesses while irreversibly disturbing the uncertainty structures by which their identities are compared.",
         "editorial_notes": "DRAFT event; no chronology date is assigned."
       }
     },
@@ -276,12 +383,23 @@
         "consequences": "The burdens survive, but their route provenance fractures into incompatible records that later communities cannot fully reconcile."
       },
       "Involves": {
-        "locations": ["01a07765-3d75-7fcf-a9df-0e46141373b9"]
+        "locations": ["01a07765-3d75-7fcf-a9df-0e46141373b9"],
+        "objects": ["01a0784f-d72b-7983-a8ad-d6d9d1cec7b4"],
+        "institutions": ["01a0784f-d71e-7fc2-9300-678cb274a662"],
+        "collectives": ["01a0784f-d73f-7104-886e-aebe6395e395"],
+        "languages": ["01a0784f-d731-7425-b41d-0b1b17ab033f"],
+        "narratives": ["01a0784f-d737-7aa8-a877-7f1f31d8b63e"]
       },
       "servati": {
         "servati_id": "SV-DRAFT-EVT-004",
         "canon_status": "DRAFT",
         "era": "Custody Wars",
+        "relative_sequence": {
+          "sequence_label": "Sixfold Custody Fracture",
+          "position": 4,
+          "confidence": "proposed",
+          "basis": "DRAFT editorial ordering; Version 11 supplies no order among these examples."
+        },
         "inheritance_logic": [],
         "provenance": [
           {
@@ -293,6 +411,7 @@
           }
         ],
         "science_status": "requires-review",
+        "preservation_problem": "The burdens survive only if moved, yet every contested redirection weakens the route history needed to identify a lawful handoff.",
         "editorial_notes": "DRAFT event; no chronology date is assigned."
       }
     },
@@ -308,12 +427,22 @@
         "consequences": "The recovered markers survive physically, but their original currents, depths, and approach geometry cannot be recreated elsewhere."
       },
       "Involves": {
-        "locations": ["01a07765-3d75-73c7-82ea-5af778bb40c3"]
+        "locations": ["01a07765-3d75-73c7-82ea-5af778bb40c3"],
+        "objects": ["01a0784f-d72c-7223-8b6c-f90982f647ac"],
+        "institutions": ["01a0784f-d71f-79c6-b62d-769e764eaceb"],
+        "collectives": ["01a0784f-d740-70fe-9c5b-4d5305adf210"],
+        "languages": ["01a0784f-d732-7fbe-8509-bb8b3f8bf6d1"]
       },
       "servati": {
         "servati_id": "SV-DRAFT-EVT-005",
         "canon_status": "DRAFT",
         "era": "Custody Wars",
+        "relative_sequence": {
+          "sequence_label": "Sixfold Custody Fracture",
+          "position": 5,
+          "confidence": "proposed",
+          "basis": "DRAFT editorial ordering; Version 11 supplies no order among these examples."
+        },
         "inheritance_logic": [],
         "provenance": [
           {
@@ -325,6 +454,7 @@
           }
         ],
         "science_status": "requires-review",
+        "preservation_problem": "A marker can be physically saved while losing the pressure, depth, and current relations that made its route testimony legible.",
         "editorial_notes": "DRAFT event; no chronology date is assigned."
       }
     },
@@ -340,12 +470,23 @@
         "consequences": "Later custody decisions may be internally consistent but historically untrustworthy. No surviving authority can fully reconstruct which corrections were lost."
       },
       "Involves": {
-        "locations": []
+        "locations": [
+          "01a07765-3d75-76f8-a938-08e60a943cdc",
+          "01a07765-3d75-7965-8405-5f75be15d349",
+          "01a07765-3d75-7f99-b3a4-c78b65f81e54"
+        ],
+        "narratives": ["01a0784f-d734-717c-bec0-b7031864cadb"]
       },
       "servati": {
         "servati_id": "SV-DRAFT-EVT-006",
         "canon_status": "DRAFT",
         "era": "Custody Wars",
+        "relative_sequence": {
+          "sequence_label": "Sixfold Custody Fracture",
+          "position": 2,
+          "confidence": "proposed",
+          "basis": "DRAFT editorial ordering; Version 11 supplies no order among these examples."
+        },
         "inheritance_logic": [],
         "provenance": [
           {
@@ -357,6 +498,7 @@
           }
         ],
         "science_status": "requires-review",
+        "preservation_problem": "The simplified copy is operationally useful, so preserving evidence of its omissions without allowing further use requires contradictory custody actions.",
         "editorial_notes": "DRAFT event; no chronology date is assigned."
       }
     }

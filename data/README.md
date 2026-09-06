@@ -14,3 +14,9 @@ used by this foundation: inheritance logics, named schisms and faiths,
 cosmological reliquary systems, principal lineages, principal environments, and
 relative chronology. It reproduces the authoritative manuscript and does not
 add lore.
+
+`drafts/v12-scattered-lamps-cluster-01.json` extends the first tranche into a
+connected DRAFT cluster. It adds parent astronomical settings, institutions,
+custodial cultures, post-human branches, objects, operational languages,
+recovered-record narratives, and explicit relations. All astronomical settings
+remain `requires-review`, and the Custody War order is relative and proposed.

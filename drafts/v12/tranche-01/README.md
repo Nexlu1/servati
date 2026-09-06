@@ -17,6 +17,7 @@ combination, incident, consequence, and other particular remains DRAFT.
 - [DRAFT Scattered Lamp cultures](scattered-lamps.md)
 - [DRAFT Custody War incidents](custody-war-incidents.md)
 - [Machine-readable dataset](../../../data/drafts/v12-tranche-01.json)
+- [DRAFT connected cluster extension](../cluster-01/README.md)
 
 ## Naming rule
 

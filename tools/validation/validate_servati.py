@@ -22,6 +22,43 @@ PROVENANCE_POLICY = ROOT / "canon" / "PROVENANCE.md"
 THIRD_PARTY_ROOT = ROOT / "third_party"
 THIRD_PARTY_REGISTER = ROOT / "THIRD_PARTY.md"
 
+SINGLE_REFERENCE_FIELDS = {
+    "parent_location": "Location",
+    "primary_power": "Institution",
+    "rival": "Location",
+    "partner": "Location",
+    "operator": "Institution",
+    "parent_institution": "Institution",
+    "parent_object": "Object",
+    "parent_narrative": "Narrative",
+    "conservator": "Institution",
+}
+MULTI_REFERENCE_FIELDS = {
+    "populations": "Collective",
+    "secondary_powers": "Institution",
+    "buildings": "Object",
+    "equipment": "Object",
+    "objects": "Object",
+    "events": "Event",
+    "triggers": "Event",
+    "locations": "Location",
+    "species": "Species",
+    "institutions": "Institution",
+    "collectives": "Collective",
+    "languages": "Language",
+    "relations": "Relation",
+    "narratives": "Narrative",
+}
+ABSOLUTE_CHRONOLOGY_KEYS = {
+    "start_date",
+    "end_date",
+    "founding_date",
+    "formation_date",
+    "year",
+    "date",
+    "timestamp",
+}
+
 
 class Validation:
     def __init__(self) -> None:
@@ -79,16 +116,49 @@ def has_absolute_chronology(entry: dict[str, Any]) -> bool:
     for key in ("start", "end"):
         if chronology.get(key) is not None:
             return True
-    nature = entry.get("Nature", {})
-    return "start_date" in nature or "end_date" in nature
+
+    def contains_absolute_key(value: Any) -> bool:
+        if isinstance(value, dict):
+            return any(
+                key in ABSOLUTE_CHRONOLOGY_KEYS or contains_absolute_key(child)
+                for key, child in value.items()
+            )
+        if isinstance(value, list):
+            return any(contains_absolute_key(child) for child in value)
+        return False
+
+    return contains_absolute_key(entry)
+
+
+def iter_entity_references(value: Any, path: str = "entry") -> list[tuple[str, str, str]]:
+    references: list[tuple[str, str, str]] = []
+    if isinstance(value, dict):
+        for key, child in value.items():
+            child_path = f"{path}.{key}"
+            if key in SINGLE_REFERENCE_FIELDS and isinstance(child, str):
+                references.append((child, SINGLE_REFERENCE_FIELDS[key], child_path))
+            elif key in MULTI_REFERENCE_FIELDS and isinstance(child, list):
+                references.extend(
+                    (target, MULTI_REFERENCE_FIELDS[key], f"{child_path}[{index}]")
+                    for index, target in enumerate(child)
+                    if isinstance(target, str)
+                )
+            else:
+                references.extend(iter_entity_references(child, child_path))
+    elif isinstance(value, list):
+        for index, child in enumerate(value):
+            references.extend(iter_entity_references(child, f"{path}[{index}]"))
+    return references
 
 
 def validate_datasets(validation: Validation) -> None:
     dataset_paths = sorted(DATA_ROOT.rglob("*.json"))
     datasets: list[tuple[Path, dict[str, Any]]] = []
     entry_ids: dict[str, str] = {}
+    entry_types: dict[str, str] = {}
     servati_ids: dict[str, str] = {}
     declared_worlds: set[str] = set()
+    sequences: dict[str, list[int]] = {}
 
     for path in dataset_paths:
         dataset = load_json(path, validation)
@@ -117,6 +187,7 @@ def validate_datasets(validation: Validation) -> None:
                     )
                 else:
                     entry_ids[entry_id] = relative(path)
+                    entry_types[entry_id] = entry.get("Supertype", "")
             if isinstance(servati_id, str):
                 if servati_id in servati_ids:
                     validation.errors.append(
@@ -148,19 +219,34 @@ def validate_datasets(validation: Validation) -> None:
                     not has_absolute_chronology(entry),
                     f"{label} assigns absolute chronology inside a relative-only V12 tranche",
                 )
+                validation.require(
+                    bool(metadata.get("preservation_problem")),
+                    f"{label} must state its preservation problem",
+                )
+
+            sequence = metadata.get("relative_sequence")
+            if isinstance(sequence, dict):
+                sequence_label = sequence.get("sequence_label")
+                position = sequence.get("position")
+                if isinstance(sequence_label, str) and isinstance(position, int):
+                    sequences.setdefault(sequence_label, []).append(position)
 
             world = entry.get("World")
             validation.require(
                 world in known_ids or world in declared_worlds,
                 f"{label} references unknown World Id {world}",
             )
-            references = list(entry.get("Involves", {}).get("locations", []))
-            references += list(entry.get("Nature", {}).get("triggers", []))
-            for target in references:
+            for target, expected_type, reference_path in iter_entity_references(entry):
                 validation.require(
                     target in known_ids,
-                    f"{label} references unknown entity Id {target}",
+                    f"{label} {reference_path} references unknown entity Id {target}",
                 )
+                if target in entry_types:
+                    validation.require(
+                        entry_types[target] == expected_type,
+                        f"{label} {reference_path} expects {expected_type} but {target} "
+                        f"is {entry_types[target]}",
+                    )
 
             records = metadata.get("provenance", [])
             validation.require(bool(records), f"{label} requires provenance")
@@ -198,6 +284,52 @@ def validate_datasets(validation: Validation) -> None:
                         record.get("verification") != "SOURCE-UNAVAILABLE",
                         f"{label} CORE material cannot use SOURCE-UNAVAILABLE provenance",
                     )
+
+                source_ref = record.get("source_ref")
+                if isinstance(source_ref, str) and re.search(r"\.(?:json|md|ya?ml)$", source_ref):
+                    source_path = Path(source_ref)
+                    validation.require(
+                        not source_path.is_absolute()
+                        and re.match(r"^[A-Za-z]:[\\/]", source_ref) is None,
+                        f"{label} provenance source_ref must be repository-relative",
+                    )
+                    validation.require(
+                        (ROOT / source_path).is_file(),
+                        f"{label} provenance source does not exist: {source_ref}",
+                    )
+
+            first_appearance = metadata.get("first_appearance")
+            if isinstance(first_appearance, str):
+                appearance_path = Path(first_appearance)
+                validation.require(
+                    not appearance_path.is_absolute()
+                    and re.match(r"^[A-Za-z]:[\\/]", first_appearance) is None,
+                    f"{label} first_appearance must be repository-relative",
+                )
+                validation.require(
+                    (ROOT / appearance_path).is_file(),
+                    f"{label} first_appearance does not exist: {first_appearance}",
+                )
+
+            if entry.get("Subtype") == "Astronomical setting":
+                validation.require(
+                    metadata.get("science_status") == "requires-review",
+                    f"{label} astronomical setting must remain requires-review",
+                )
+                validation.require(
+                    bool(metadata.get("science_review", {}).get("claims")),
+                    f"{label} astronomical setting requires claim-level science review",
+                )
+
+    for sequence_label, positions in sequences.items():
+        validation.require(
+            len(positions) == len(set(positions)),
+            f"relative sequence {sequence_label!r} contains duplicate positions",
+        )
+        validation.require(
+            sorted(positions) == list(range(1, len(positions) + 1)),
+            f"relative sequence {sequence_label!r} positions must be contiguous from 1",
+        )
 
 
 def validate_v12_markdown(validation: Validation) -> None:
