@@ -1,0 +1,5 @@
+# Direct validation tools, pinned to stable upstream releases.
+check-jsonschema==0.38.0
+jsonschema==4.26.0
+PyYAML==6.0.3
+yamllint==1.38.0

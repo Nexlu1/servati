@@ -1,0 +1,73 @@
+name: Validate repository
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validation-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  structured-data:
+    name: Structured data and policy
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97  # v7.0.0
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: tools/validation/requirements.txt
+
+      - name: Install pinned validation tools
+        run: python -m pip install --disable-pip-version-check --requirement tools/validation/requirements.txt
+
+      - name: Validate JSON schema and data
+        run: |
+          check-jsonschema --check-metaschema schemas/servati-dataset.schema.json
+          check-jsonschema --schemafile schemas/servati-dataset.schema.json data/drafts/*.json
+
+      - name: Parse and lint YAML
+        run: yamllint --strict --config-file tools/validation/yamllint.yml .github data tools/validation
+
+      - name: Validate GitHub workflow syntax
+        run: check-jsonschema --builtin-schema vendor.github-workflows .github/workflows/*.yml
+
+      - name: Enforce SERVATI repository invariants
+        run: python tools/validation/validate_servati.py
+
+  markdown-links:
+    name: Markdown links
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Check Markdown links and fragments
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8  # v2.9.0
+        with:
+          args: >-
+            --no-progress
+            --include-fragments
+            --max-concurrency 8
+            './**/*.md'
+          fail: true
+          failIfEmpty: true
+          jobSummary: true
+          lycheeVersion: v0.24.2
