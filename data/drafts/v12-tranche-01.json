@@ -1,0 +1,364 @@
+{
+  "$schema": "../../schemas/servati-dataset.schema.json",
+  "dataset_id": "SV-DRAFT-V12-TRANCHE-01",
+  "canon_status": "DRAFT",
+  "schema_basis": {
+    "project": "OnlyWorlds/OnlyWorlds",
+    "revision": "ed84fa19c15c5bfb18019245faacdbdcb7cd9e0f",
+    "licence": "MIT",
+    "scope": "Base entity fields plus relevant Location and Event grouping vocabulary; SERVATI metadata is a local extension."
+  },
+  "working_pack": {
+    "filename": "SERVATI_V12_GITHUB_FIRST_WORKING_PACK_R1.zip",
+    "sha256": "e1fff0cf6231c2916b48f5f7f44c17d0b04336303ac5a34687c32685543b34ef"
+  },
+  "world_reference": {
+    "Id": "01a07765-3d73-7945-accf-bb285edefe4d",
+    "status": "DRAFT_PLACEHOLDER",
+    "note": "The working pack supplied this root-world UUID but no corresponding entity. It is retained only for relational compatibility and must not be interpreted as canon."
+  },
+  "entries": [
+    {
+      "Id": "01a07765-3d75-76f8-a938-08e60a943cdc",
+      "Name": "The Pale Reef of Relay Twelve",
+      "Description": "A memory-centred continuity station whose cooling structure gradually became architecture, habitat, and sacred boundary. Its keepers treat quiet operation as proof of careful custody because vibration and signal noise once damaged fragile identity systems.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Location",
+      "Subtype": "Scattered Lamp",
+      "servati": {
+        "servati_id": "SV-DRAFT-LAMP-001",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": ["Memory", "Structure"],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 18, The Scattered Lamps (source lines 1051-1057)",
+            "verification": "VERIFIED",
+            "note": "V11 provides an unnamed pale archive-reef Lamp with exposed radiator fins. Relay Twelve, its culture, and all other particulars are DRAFT V12 candidates."
+          }
+        ],
+        "science_status": "requires-review",
+        "editorial_notes": "DRAFT candidate; not present as a verified named entity in the repository baseline."
+      }
+    },
+    {
+      "Id": "01a07765-3d75-7fcf-a9df-0e46141373b9",
+      "Name": "The Ash Roads of Transfer Cluster K-6",
+      "Description": "A matter-first Lamp built through a mined asteroid. Burden movement remains physical and slow. Route gradients, resting thresholds, and load scars become the culture's most trusted historical evidence.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Location",
+      "Subtype": "Scattered Lamp",
+      "servati": {
+        "servati_id": "SV-DRAFT-LAMP-002",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": ["Remains", "Structure"],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 18, The Scattered Lamps (source lines 1051-1057)",
+            "verification": "VERIFIED",
+            "note": "V11 provides an unnamed dust-choked asteroid Lamp with burden routes cut through mineral ash. Cluster K-6, its culture, and all other particulars are DRAFT V12 candidates."
+          }
+        ],
+        "science_status": "requires-review",
+        "editorial_notes": "DRAFT candidate; not present as a verified named entity in the repository baseline."
+      }
+    },
+    {
+      "Id": "01a07765-3d75-73c7-82ea-5af778bb40c3",
+      "Name": "The Drowned Threshold of Pelagic Vault Seven",
+      "Description": "A flooded custody complex whose inhabitants adapt to pressure, darkness, and submerged access. Here, approach is part of truth: a record removed from its depth, route, and threshold is considered dangerously incomplete.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Location",
+      "Subtype": "Scattered Lamp",
+      "servati": {
+        "servati_id": "SV-DRAFT-LAMP-003",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": ["Structure", "Memory"],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 18, The Scattered Lamps (source lines 1051-1057)",
+            "verification": "VERIFIED",
+            "note": "V11 provides an unnamed Lamp above a drowned moon with black-water vaults, coral-like towers, and pressure-adapted custodians. Pelagic Vault Seven and all other particulars are DRAFT V12 candidates."
+          }
+        ],
+        "science_status": "requires-review",
+        "editorial_notes": "DRAFT candidate; not present as a verified named entity in the repository baseline."
+      }
+    },
+    {
+      "Id": "01a07765-3d75-7965-8405-5f75be15d349",
+      "Name": "The Unopened Spring of Seed Reserve Thirty-One",
+      "Description": "A seed reserve whose activation rules outlive the civilisation that wrote them. Its culture grows around maintaining viability while debating whether any surviving authority can honestly declare the required future conditions satisfied.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Location",
+      "Subtype": "Scattered Lamp",
+      "servati": {
+        "servati_id": "SV-DRAFT-LAMP-004",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": ["Seed", "Ritual"],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 18, The Scattered Lamps (source line 1041)",
+            "verification": "VERIFIED",
+            "note": "V11 provides an unnamed Seed Lamp keeping embryos viable after every release condition becomes obsolete. Reserve Thirty-One, its culture, and all other particulars are DRAFT V12 candidates."
+          }
+        ],
+        "science_status": "requires-review",
+        "editorial_notes": "DRAFT candidate; not present as a verified named entity in the repository baseline."
+      }
+    },
+    {
+      "Id": "01a07765-3d75-7307-8485-f53ec24f4fb0",
+      "Name": "The Corridor of No Arrival",
+      "Description": "A route-centred culture that continues maintaining a transfer corridor after its traffic disappears. Correct passage becomes the inheritance itself: markers are repaired, gradients checked, and receiving intervals opened even when nothing arrives.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Location",
+      "Subtype": "Scattered Lamp",
+      "servati": {
+        "servati_id": "SV-DRAFT-LAMP-005",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": ["Ritual", "Structure"],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 18, The Scattered Lamps (source line 1041)",
+            "verification": "VERIFIED",
+            "note": "V11 provides an unnamed route lamp maintaining beacons unused for longer than its recorded history. The Corridor of No Arrival, its culture, and all other particulars are DRAFT V12 candidates."
+          }
+        ],
+        "science_status": "requires-review",
+        "editorial_notes": "DRAFT candidate; not present as a verified named entity in the repository baseline."
+      }
+    },
+    {
+      "Id": "01a07765-3d75-7f99-b3a4-c78b65f81e54",
+      "Name": "The Broken Frame Concordance at Transfer Site Nine",
+      "Description": "A rare mixed Lamp formed around a disaster site where damaged burden frames, partial names, and broken relation fields could not be reconciled honestly. Its keepers preserve fragments side by side rather than constructing a false single account.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Location",
+      "Subtype": "Scattered Lamp",
+      "servati": {
+        "servati_id": "SV-DRAFT-LAMP-006",
+        "canon_status": "DRAFT",
+        "era": "Scattered Lamps",
+        "inheritance_logic": ["Remains", "Memory", "Pattern"],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapters 18 and 21 (source lines 1053, 1203-1205, 1225-1229)",
+            "verification": "VERIFIED",
+            "note": "V11 separately provides damaged burden-capsule fragments and mixed sites vulnerable to division or purification. Their combination as Transfer Site Nine and all particulars are a DRAFT V12 synthesis."
+          }
+        ],
+        "science_status": "requires-review",
+        "editorial_notes": "DRAFT candidate; not present as a verified named entity in the repository baseline."
+      }
+    },
+    {
+      "Id": "01a07765-3d75-7700-8f5d-2ce8b437a4d9",
+      "Name": "The Partition of Transfer Site Nine",
+      "Description": "Three custody authorities attempt to separate a mixed relic complex into matter, record, and pattern holdings. The Concordance refuses because the relations among the fragments are themselves evidence. The attempted partition damages the comparison field even though most physical material survives.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Event",
+      "Subtype": "Custody War incident",
+      "Nature": {
+        "history": "DRAFT event grounded in V11's description of mixed sites being divided, purified, or destroyed during the Custody Wars.",
+        "consequences": "Becomes a candidate example of why preserving objects while severing relations can still constitute catastrophic loss."
+      },
+      "Involves": {
+        "locations": ["01a07765-3d75-7f99-b3a4-c78b65f81e54"]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-EVT-001",
+        "canon_status": "DRAFT",
+        "era": "Custody Wars",
+        "inheritance_logic": [],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 21, The Custody Wars (source lines 1203-1205, 1217-1225)",
+            "verification": "VERIFIED",
+            "note": "V11 explicitly supports the mixed-site conflict type. Transfer Site Nine, the three authorities, actions, and consequences are DRAFT V12 particulars."
+          }
+        ],
+        "science_status": "requires-review",
+        "editorial_notes": "DRAFT event; no chronology date is assigned."
+      }
+    },
+    {
+      "Id": "01a07765-3d75-7e30-8970-27990dbb27fa",
+      "Name": "The False Release at Seed Reserve Thirty-One",
+      "Description": "A release authorisation reaches the reserve carrying valid-looking procedural structure but incompatible provenance. One faction argues that delay is killing the future; another argues that activation under false authority would be irreversible violation.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Event",
+      "Subtype": "Custody War incident",
+      "Nature": {
+        "history": "DRAFT event combining V11's separate examples of a false release order and a seed reserve opened under one doctrine but mourned by another.",
+        "consequences": "The reserve remains closed, but trust in remote authorisation collapses and later Seed communities require stronger plural verification."
+      },
+      "Involves": {
+        "locations": ["01a07765-3d75-7965-8405-5f75be15d349"]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-EVT-002",
+        "canon_status": "DRAFT",
+        "era": "Custody Wars",
+        "inheritance_logic": [],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 21, The Custody Wars (source lines 1237, 1243-1247)",
+            "verification": "VERIFIED",
+            "note": "V11 supports the two separate examples, not this combined incident. Reserve Thirty-One, its factions, outcome, and all other particulars remain DRAFT."
+          }
+        ],
+        "science_status": "requires-review",
+        "editorial_notes": "DRAFT event; no chronology date is assigned."
+      }
+    },
+    {
+      "Id": "01a07765-3d75-7eca-b467-344711f9bb9b",
+      "Name": "The Silence Breach of Relay Twelve",
+      "Description": "An outside order forces a high-energy witness transmission through Relay Twelve, claiming that untransmitted identities are being abandoned. The local keepers argue the signal itself destabilises fragile relation fields.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Event",
+      "Subtype": "Custody War incident",
+      "Nature": {
+        "history": "DRAFT event combining V11's quiet-versus-resonant Lamp cultures with its later descriptions of forced access and data attack.",
+        "consequences": "Some names are broadcast successfully; other uncertainty structures are damaged. Both sides preserve evidence supporting their accusation."
+      },
+      "Involves": {
+        "locations": ["01a07765-3d75-76f8-a938-08e60a943cdc"]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-EVT-003",
+        "canon_status": "DRAFT",
+        "era": "Custody Wars",
+        "inheritance_logic": [],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapters 18 and 21 (source lines 1057, 1201, 1249)",
+            "verification": "VERIFIED",
+            "note": "V11 supports the separate cultural contrast and war methods, but not a Relay Twelve incident. The transmission, actors, damage, and consequences remain DRAFT."
+          }
+        ],
+        "science_status": "requires-review",
+        "editorial_notes": "DRAFT event; no chronology date is assigned."
+      }
+    },
+    {
+      "Id": "01a07765-3d75-73a4-bec2-504582d31848",
+      "Name": "The Redirection of the Ash Convoy",
+      "Description": "Two matter-custody orders claim the same convoy. Neither side wants to damage the burdens, so the conflict becomes a slow contest of route authority, frame control, and lawful handoff rather than conventional battle.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Event",
+      "Subtype": "Custody War incident",
+      "Nature": {
+        "history": "DRAFT event grounded in V11's example of opposing Pallbearer orders redirecting a sealed convoy without breaking vibration law.",
+        "consequences": "The burdens survive, but their route provenance fractures into incompatible records that later communities cannot fully reconcile."
+      },
+      "Involves": {
+        "locations": ["01a07765-3d75-7fcf-a9df-0e46141373b9"]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-EVT-004",
+        "canon_status": "DRAFT",
+        "era": "Custody Wars",
+        "inheritance_logic": [],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 21, The Custody Wars (source line 1245)",
+            "verification": "VERIFIED",
+            "note": "V11 explicitly supports the conflict type. The Ash Convoy name, orders, route dispute, outcome, and other particulars are DRAFT V12 candidates."
+          }
+        ],
+        "science_status": "requires-review",
+        "editorial_notes": "DRAFT event; no chronology date is assigned."
+      }
+    },
+    {
+      "Id": "01a07765-3d75-7df6-8e2b-5828d3d8ad40",
+      "Name": "The Drowned Marker Seizure",
+      "Description": "A rival authority removes submerged route markers from Pelagic Vault Seven, claiming the markers unlawfully bind later transfers to a dead spatial doctrine. Local custodians treat removal as destruction of historical relation.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Event",
+      "Subtype": "Custody War incident",
+      "Nature": {
+        "history": "DRAFT event grounded in V11's example of pressure-adapted custodians cutting drowned route markers from rival-claimed towers in reliquary coral seas.",
+        "consequences": "The recovered markers survive physically, but their original currents, depths, and approach geometry cannot be recreated elsewhere."
+      },
+      "Involves": {
+        "locations": ["01a07765-3d75-73c7-82ea-5af778bb40c3"]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-EVT-005",
+        "canon_status": "DRAFT",
+        "era": "Custody Wars",
+        "inheritance_logic": [],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 21, The Custody Wars (source line 1245)",
+            "verification": "VERIFIED",
+            "note": "V11 explicitly supports the conflict type. Pelagic Vault Seven, the seizure rationale, outcome, and other particulars are DRAFT V12 candidates."
+          }
+        ],
+        "science_status": "requires-review",
+        "editorial_notes": "DRAFT event; no chronology date is assigned."
+      }
+    },
+    {
+      "Id": "01a07765-3d75-7899-94f1-d7d3c0995d76",
+      "Name": "The Index Without Uncertainty",
+      "Description": "A copied identity archive is deliberately simplified so every record resolves to one answer. The copy is easier to use and spreads rapidly. Its missing uncertainty fields are discovered only after it has become the basis for transfers across multiple sites.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Event",
+      "Subtype": "Custody War atrocity",
+      "Nature": {
+        "history": "DRAFT event combining V11's separate examples of an archive copied without uncertainty fields and memory fields poisoned by false certainty.",
+        "consequences": "Later custody decisions may be internally consistent but historically untrustworthy. No surviving authority can fully reconstruct which corrections were lost."
+      },
+      "Involves": {
+        "locations": []
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-EVT-006",
+        "canon_status": "DRAFT",
+        "era": "Custody Wars",
+        "inheritance_logic": [],
+        "provenance": [
+          {
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 21, The Custody Wars (source lines 1237, 1245)",
+            "verification": "VERIFIED",
+            "note": "V11 supports the two separate examples, not this named multi-site incident. The deliberate simplification, spread, discovery, and consequences remain DRAFT."
+          }
+        ],
+        "science_status": "requires-review",
+        "editorial_notes": "DRAFT event; no chronology date is assigned."
+      }
+    }
+  ]
+}

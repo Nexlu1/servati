@@ -1,0 +1,7 @@
+# Local source pack used to prepare the V12 foundation; do not redistribute it
+# as repository content.
+SERVATI_V12_GITHUB_FIRST_WORKING_PACK_R1.zip
+
+# Common local/editor artefacts.
+.DS_Store
+Thumbs.db
