@@ -7,6 +7,9 @@ manuscript](../../../SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md#chapter-18---the-sc
 Verification applies only to that basis; every name and particular below is
 new V12 material and remains **DRAFT**.
 
+Their DRAFT surrounding institutions, lineages, artefacts, and relations are
+developed in [Scattered Lamps Cluster 01](../cluster-01/cluster-dossier.md).
+
 ## The Pale Reef of Relay Twelve
 
 - **Status:** DRAFT

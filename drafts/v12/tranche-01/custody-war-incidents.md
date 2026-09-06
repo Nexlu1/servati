@@ -6,6 +6,10 @@ manuscript](../../../SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md#chapter-21---the-cu
 with Chapter 18 noted where relevant. Verification applies only to the stated
 basis; every named incident and narrative particular remains **DRAFT**.
 
+A connected but still DRAFT relative ordering is proposed in [The Sixfold
+Custody Fracture](../cluster-01/custody-fracture-sequence.md). Version 11 does
+not supply that ordering.
+
 ## The Partition of Transfer Site Nine
 
 - **Status:** DRAFT
