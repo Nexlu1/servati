@@ -16,6 +16,14 @@ permission notice is reproduced at `third_party/onlyworlds/LICENSE` and the
 scope of the adaptation is documented at `third_party/onlyworlds/NOTICE.md`.
 The derivative schema is distributed under those MIT terms.
 
+## Referenced CI dependencies
+
+The validation workflow invokes pinned releases of `actions/checkout`,
+`actions/setup-python`, `check-jsonschema`, `PyYAML`, `yamllint`, and
+`lychee-action`. Their source is not copied into this repository. Exact
+revisions, licence links, adoption boundaries, and the rejected YAML action
+wrapper are recorded in `docs/FOSS_TOOLING_REGISTER.md`.
+
 ## Evaluated but not included
 
 The projects in `docs/FOSS_TOOLING_REGISTER.md` are research candidates, not
