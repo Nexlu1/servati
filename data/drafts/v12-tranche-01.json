@@ -32,11 +32,11 @@
         "inheritance_logic": ["Memory", "Structure"],
         "provenance": [
           {
-            "source_kind": "working-pack",
-            "source_ref": "SERVATI_V12_GITHUB_FIRST_WORKING_PACK_R1.zip",
-            "source_location": "02_PARTICULARIZATION_TRANCHE_01/data/v12_draft_tranche_01.yaml",
-            "verification": "SOURCE-UNAVAILABLE",
-            "note": "The pack attributes a pale archive reef and radiator fins to V11, but the cited manuscript is unavailable. The name and particulars are new V12 candidates."
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 18, The Scattered Lamps (source lines 1051-1057)",
+            "verification": "VERIFIED",
+            "note": "V11 provides an unnamed pale archive-reef Lamp with exposed radiator fins. Relay Twelve, its culture, and all other particulars are DRAFT V12 candidates."
           }
         ],
         "science_status": "requires-review",
@@ -57,11 +57,11 @@
         "inheritance_logic": ["Remains", "Structure"],
         "provenance": [
           {
-            "source_kind": "working-pack",
-            "source_ref": "SERVATI_V12_GITHUB_FIRST_WORKING_PACK_R1.zip",
-            "source_location": "02_PARTICULARIZATION_TRANCHE_01/data/v12_draft_tranche_01.yaml",
-            "verification": "SOURCE-UNAVAILABLE",
-            "note": "The pack attributes a dust-choked asteroid Lamp to V11, but the cited manuscript is unavailable. The name and particulars are new V12 candidates."
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 18, The Scattered Lamps (source lines 1051-1057)",
+            "verification": "VERIFIED",
+            "note": "V11 provides an unnamed dust-choked asteroid Lamp with burden routes cut through mineral ash. Cluster K-6, its culture, and all other particulars are DRAFT V12 candidates."
           }
         ],
         "science_status": "requires-review",
@@ -82,11 +82,11 @@
         "inheritance_logic": ["Structure", "Memory"],
         "provenance": [
           {
-            "source_kind": "working-pack",
-            "source_ref": "SERVATI_V12_GITHUB_FIRST_WORKING_PACK_R1.zip",
-            "source_location": "02_PARTICULARIZATION_TRANCHE_01/data/v12_draft_tranche_01.yaml",
-            "verification": "SOURCE-UNAVAILABLE",
-            "note": "The pack attributes a drowned-moon Lamp and pressure-adapted custodians to V11, but the cited manuscript is unavailable. The name and particulars are new V12 candidates."
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 18, The Scattered Lamps (source lines 1051-1057)",
+            "verification": "VERIFIED",
+            "note": "V11 provides an unnamed Lamp above a drowned moon with black-water vaults, coral-like towers, and pressure-adapted custodians. Pelagic Vault Seven and all other particulars are DRAFT V12 candidates."
           }
         ],
         "science_status": "requires-review",
@@ -107,11 +107,11 @@
         "inheritance_logic": ["Seed", "Ritual"],
         "provenance": [
           {
-            "source_kind": "working-pack",
-            "source_ref": "SERVATI_V12_GITHUB_FIRST_WORKING_PACK_R1.zip",
-            "source_location": "02_PARTICULARIZATION_TRANCHE_01/data/v12_draft_tranche_01.yaml",
-            "verification": "SOURCE-UNAVAILABLE",
-            "note": "The pack attributes embryo-preserving Seed Lamps with obsolete release conditions to V11, but the cited manuscript is unavailable. The name and particulars are new V12 candidates."
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 18, The Scattered Lamps (source line 1041)",
+            "verification": "VERIFIED",
+            "note": "V11 provides an unnamed Seed Lamp keeping embryos viable after every release condition becomes obsolete. Reserve Thirty-One, its culture, and all other particulars are DRAFT V12 candidates."
           }
         ],
         "science_status": "requires-review",
@@ -132,11 +132,11 @@
         "inheritance_logic": ["Ritual", "Structure"],
         "provenance": [
           {
-            "source_kind": "working-pack",
-            "source_ref": "SERVATI_V12_GITHUB_FIRST_WORKING_PACK_R1.zip",
-            "source_location": "02_PARTICULARIZATION_TRANCHE_01/data/v12_draft_tranche_01.yaml",
-            "verification": "SOURCE-UNAVAILABLE",
-            "note": "The pack attributes route Lamps maintaining unused beacon corridors to V11, but the cited manuscript is unavailable. The name and particulars are new V12 candidates."
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 18, The Scattered Lamps (source line 1041)",
+            "verification": "VERIFIED",
+            "note": "V11 provides an unnamed route lamp maintaining beacons unused for longer than its recorded history. The Corridor of No Arrival, its culture, and all other particulars are DRAFT V12 candidates."
           }
         ],
         "science_status": "requires-review",
@@ -157,11 +157,11 @@
         "inheritance_logic": ["Remains", "Memory", "Pattern"],
         "provenance": [
           {
-            "source_kind": "working-pack",
-            "source_ref": "SERVATI_V12_GITHUB_FIRST_WORKING_PACK_R1.zip",
-            "source_location": "02_PARTICULARIZATION_TRANCHE_01/data/v12_draft_tranche_01.yaml",
-            "verification": "SOURCE-UNAVAILABLE",
-            "note": "The pack attributes mixed sites, damaged frames, fragmentary records, and later purification risks to V11, but the cited manuscript is unavailable. The name and particulars are new V12 candidates."
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapters 18 and 21 (source lines 1053, 1203-1205, 1225-1229)",
+            "verification": "VERIFIED",
+            "note": "V11 separately provides damaged burden-capsule fragments and mixed sites vulnerable to division or purification. Their combination as Transfer Site Nine and all particulars are a DRAFT V12 synthesis."
           }
         ],
         "science_status": "requires-review",
@@ -176,7 +176,7 @@
       "Supertype": "Event",
       "Subtype": "Custody War incident",
       "Nature": {
-        "history": "DRAFT event grounded by the working pack in its claim that V11 describes mixed sites being divided, purified, or destroyed during Custody Wars.",
+        "history": "DRAFT event grounded in V11's description of mixed sites being divided, purified, or destroyed during the Custody Wars.",
         "consequences": "Becomes a candidate example of why preserving objects while severing relations can still constitute catastrophic loss."
       },
       "Involves": {
@@ -189,11 +189,11 @@
         "inheritance_logic": [],
         "provenance": [
           {
-            "source_kind": "working-pack",
-            "source_ref": "SERVATI_V12_GITHUB_FIRST_WORKING_PACK_R1.zip",
-            "source_location": "02_PARTICULARIZATION_TRANCHE_01/data/v12_draft_tranche_01.yaml",
-            "verification": "SOURCE-UNAVAILABLE",
-            "note": "The claimed conflict type needs checking against V11; the named incident is a new V12 candidate."
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 21, The Custody Wars (source lines 1203-1205, 1217-1225)",
+            "verification": "VERIFIED",
+            "note": "V11 explicitly supports the mixed-site conflict type. Transfer Site Nine, the three authorities, actions, and consequences are DRAFT V12 particulars."
           }
         ],
         "science_status": "requires-review",
@@ -208,7 +208,7 @@
       "Supertype": "Event",
       "Subtype": "Custody War incident",
       "Nature": {
-        "history": "DRAFT event grounded by the working pack in its claim that V11 names false release orders and conflicts over seed activation.",
+        "history": "DRAFT event combining V11's separate examples of a false release order and a seed reserve opened under one doctrine but mourned by another.",
         "consequences": "The reserve remains closed, but trust in remote authorisation collapses and later Seed communities require stronger plural verification."
       },
       "Involves": {
@@ -221,11 +221,11 @@
         "inheritance_logic": [],
         "provenance": [
           {
-            "source_kind": "working-pack",
-            "source_ref": "SERVATI_V12_GITHUB_FIRST_WORKING_PACK_R1.zip",
-            "source_location": "02_PARTICULARIZATION_TRANCHE_01/data/v12_draft_tranche_01.yaml",
-            "verification": "SOURCE-UNAVAILABLE",
-            "note": "The claimed conflict type needs checking against V11; the named incident is a new V12 candidate."
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 21, The Custody Wars (source lines 1237, 1243-1247)",
+            "verification": "VERIFIED",
+            "note": "V11 supports the two separate examples, not this combined incident. Reserve Thirty-One, its factions, outcome, and all other particulars remain DRAFT."
           }
         ],
         "science_status": "requires-review",
@@ -240,7 +240,7 @@
       "Supertype": "Event",
       "Subtype": "Custody War incident",
       "Nature": {
-        "history": "DRAFT event grounded by the working pack in its claim that V11 contrasts quiet record cultures with emission traditions and describes forced access.",
+        "history": "DRAFT event combining V11's quiet-versus-resonant Lamp cultures with its later descriptions of forced access and data attack.",
         "consequences": "Some names are broadcast successfully; other uncertainty structures are damaged. Both sides preserve evidence supporting their accusation."
       },
       "Involves": {
@@ -253,11 +253,11 @@
         "inheritance_logic": [],
         "provenance": [
           {
-            "source_kind": "working-pack",
-            "source_ref": "SERVATI_V12_GITHUB_FIRST_WORKING_PACK_R1.zip",
-            "source_location": "02_PARTICULARIZATION_TRANCHE_01/data/v12_draft_tranche_01.yaml",
-            "verification": "SOURCE-UNAVAILABLE",
-            "note": "The claimed conflict type needs checking against V11; the named incident is a new V12 candidate."
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapters 18 and 21 (source lines 1057, 1201, 1249)",
+            "verification": "VERIFIED",
+            "note": "V11 supports the separate cultural contrast and war methods, but not a Relay Twelve incident. The transmission, actors, damage, and consequences remain DRAFT."
           }
         ],
         "science_status": "requires-review",
@@ -272,7 +272,7 @@
       "Supertype": "Event",
       "Subtype": "Custody War incident",
       "Nature": {
-        "history": "DRAFT event grounded by the working pack in its claim that V11 describes opposing Pallbearer orders redirecting a sealed convoy without breaking vibration law.",
+        "history": "DRAFT event grounded in V11's example of opposing Pallbearer orders redirecting a sealed convoy without breaking vibration law.",
         "consequences": "The burdens survive, but their route provenance fractures into incompatible records that later communities cannot fully reconcile."
       },
       "Involves": {
@@ -285,11 +285,11 @@
         "inheritance_logic": [],
         "provenance": [
           {
-            "source_kind": "working-pack",
-            "source_ref": "SERVATI_V12_GITHUB_FIRST_WORKING_PACK_R1.zip",
-            "source_location": "02_PARTICULARIZATION_TRANCHE_01/data/v12_draft_tranche_01.yaml",
-            "verification": "SOURCE-UNAVAILABLE",
-            "note": "The claimed conflict type needs checking against V11; the named incident is a new V12 candidate."
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 21, The Custody Wars (source line 1245)",
+            "verification": "VERIFIED",
+            "note": "V11 explicitly supports the conflict type. The Ash Convoy name, orders, route dispute, outcome, and other particulars are DRAFT V12 candidates."
           }
         ],
         "science_status": "requires-review",
@@ -304,7 +304,7 @@
       "Supertype": "Event",
       "Subtype": "Custody War incident",
       "Nature": {
-        "history": "DRAFT event grounded by the working pack in its claim that V11 describes conflicts over submerged route markers in drowned reliquary seas.",
+        "history": "DRAFT event grounded in V11's example of pressure-adapted custodians cutting drowned route markers from rival-claimed towers in reliquary coral seas.",
         "consequences": "The recovered markers survive physically, but their original currents, depths, and approach geometry cannot be recreated elsewhere."
       },
       "Involves": {
@@ -317,11 +317,11 @@
         "inheritance_logic": [],
         "provenance": [
           {
-            "source_kind": "working-pack",
-            "source_ref": "SERVATI_V12_GITHUB_FIRST_WORKING_PACK_R1.zip",
-            "source_location": "02_PARTICULARIZATION_TRANCHE_01/data/v12_draft_tranche_01.yaml",
-            "verification": "SOURCE-UNAVAILABLE",
-            "note": "The claimed conflict type needs checking against V11; the named incident is a new V12 candidate."
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 21, The Custody Wars (source line 1245)",
+            "verification": "VERIFIED",
+            "note": "V11 explicitly supports the conflict type. Pelagic Vault Seven, the seizure rationale, outcome, and other particulars are DRAFT V12 candidates."
           }
         ],
         "science_status": "requires-review",
@@ -336,7 +336,7 @@
       "Supertype": "Event",
       "Subtype": "Custody War atrocity",
       "Nature": {
-        "history": "DRAFT event grounded by the working pack in its claim that V11 describes archives stripped of uncertainty and the resulting false certainty.",
+        "history": "DRAFT event combining V11's separate examples of an archive copied without uncertainty fields and memory fields poisoned by false certainty.",
         "consequences": "Later custody decisions may be internally consistent but historically untrustworthy. No surviving authority can fully reconstruct which corrections were lost."
       },
       "Involves": {
@@ -349,11 +349,11 @@
         "inheritance_logic": [],
         "provenance": [
           {
-            "source_kind": "working-pack",
-            "source_ref": "SERVATI_V12_GITHUB_FIRST_WORKING_PACK_R1.zip",
-            "source_location": "02_PARTICULARIZATION_TRANCHE_01/data/v12_draft_tranche_01.yaml",
-            "verification": "SOURCE-UNAVAILABLE",
-            "note": "The claimed conflict type needs checking against V11; the named incident is a new V12 candidate."
+            "source_kind": "released-manuscript",
+            "source_ref": "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md",
+            "source_location": "Chapter 21, The Custody Wars (source lines 1237, 1245)",
+            "verification": "VERIFIED",
+            "note": "V11 supports the two separate examples, not this named multi-site incident. The deliberate simplification, spread, discovery, and consequences remain DRAFT."
           }
         ],
         "science_status": "requires-review",

@@ -17,13 +17,15 @@ Version 12 is in development. All new V12 lore in this repository is explicitly
 labelled **DRAFT** and has no authority over Version 11 unless it passes the
 documented review and promotion process.
 
-The Version 11 manuscript is not currently stored in this repository. Detailed
-claims attributed to it by the V12 working pack are therefore quarantined for
-source review rather than silently promoted to canon.
+The source-controlled [authoritative Version 11
+manuscript](SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md) is the released canon.
+Structured indexes and V12 foundations cite it directly; verification of a V11
+basis does not promote any new V12 name, event, culture, or particular.
 
 ## Repository map
 
 - [Canon controls](canon/README.md)
+- [Authoritative Version 11 manuscript](SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md)
 - [Provenance policy](canon/PROVENANCE.md)
 - [V12 foundation](docs/V12_FOUNDATION.md)
 - [FOSS and tooling register](docs/FOSS_TOOLING_REGISTER.md)

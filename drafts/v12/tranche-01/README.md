@@ -6,10 +6,11 @@ This is the first controlled attempt to turn the working pack's broad setting
 claims into a populated universe. It contains six candidate Scattered Lamp
 cultures and six candidate Custody War incidents.
 
-The entries are thematically tied to Version 11 descriptions claimed by the
-working pack, but the manuscript is not available in the repository. Their
-grounding is therefore marked `SOURCE-UNAVAILABLE`, while every new name and
-particular remains DRAFT regardless.
+The entries are thematically tied to passages now verified against the
+[authoritative Version 11
+manuscript](../../../SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md). Source
+verification applies only to those stated foundations. Every new name,
+combination, incident, consequence, and other particular remains DRAFT.
 
 ## Contents
 
@@ -29,7 +30,8 @@ exotic.
 
 No entry may leave DRAFT until:
 
-1. its claimed Version 11 basis is checked against the manuscript;
-2. its provenance is changed from `SOURCE-UNAVAILABLE` to `VERIFIED`;
-3. its chronology and relevant science are reviewed; and
+1. its chronology and relevant science are reviewed;
+2. every particular beyond the cited Version 11 basis receives its own evidence
+   or an explicit editorial rationale;
+3. contradictions and canon risks are resolved or recorded; and
 4. an editor deliberately approves the promotion in a pull request.

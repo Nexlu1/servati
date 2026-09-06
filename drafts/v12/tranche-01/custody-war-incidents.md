@@ -1,15 +1,17 @@
 # DRAFT — Custody War Incidents, Tranche 01
 
-These incidents turn conflict types claimed by the V12 working pack into named
-candidate history. They are not canon. Every Version 11 basis below is a pack
-assertion marked **SOURCE-UNAVAILABLE** until the manuscript can be inspected.
+These incidents turn verified Version 11 conflict types into named candidate
+history. They are not canon. Each basis cites [Chapter 21 of the authoritative
+manuscript](../../../SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md#chapter-21---the-custody-wars),
+with Chapter 18 noted where relevant. Verification applies only to the stated
+basis; every named incident and narrative particular remains **DRAFT**.
 
 ## The Partition of Transfer Site Nine
 
 - **Status:** DRAFT
 - **Type:** Custody War incident
 
-**Pack-stated V11 basis:** mixed sites became contested and were divided,
+**Verified V11 basis:** mixed sites became contested and were divided,
 purified, or destroyed during the Custody Wars.
 
 Three custody authorities attempt to separate a mixed relic complex into
@@ -28,8 +30,9 @@ relations can still constitute catastrophic loss.
 - **Status:** DRAFT
 - **Type:** Custody War incident
 
-**Pack-stated V11 basis:** false release orders can be worse than physical
-breaches, and conflicts occur over seed activation.
+**Verified V11 basis:** V11 separately describes false release orders as worse
+than breaches and a seed reserve opened by one doctrine but mourned by another
+as murder. Their combination here is DRAFT.
 
 A release authorisation reaches the reserve carrying valid-looking procedural
 structure but incompatible provenance. One faction argues that delay is killing
@@ -46,8 +49,9 @@ collapses and later Seed communities require stronger plural verification.
 - **Status:** DRAFT
 - **Type:** Custody War incident
 
-**Pack-stated V11 basis:** quiet record cultures contrast with later emission
-traditions, and forced access or data attacks occur.
+**Verified V11 basis:** Chapter 18 contrasts Lamps that require silence with
+Lamps that require resonance; Chapter 21 describes forced access and data
+attacks. V11 does not join these into a Relay Twelve incident.
 
 An outside order forces a high-energy witness transmission through Relay
 Twelve, claiming that untransmitted identities are being abandoned. The local
@@ -64,7 +68,7 @@ accusation.
 - **Status:** DRAFT
 - **Type:** Custody War incident
 
-**Pack-stated V11 basis:** opposing Pallbearer orders redirect the same sealed
+**Verified V11 basis:** opposing Pallbearer orders redirect the same sealed
 convoy without breaking vibration law.
 
 Two matter-custody orders claim the same convoy. Neither side wants to damage
@@ -81,7 +85,7 @@ incompatible records that later communities cannot fully reconcile.
 - **Status:** DRAFT
 - **Type:** Custody War incident
 
-**Pack-stated V11 basis:** silent conflicts in drowned reliquary seas involve
+**Verified V11 basis:** conflicts in reliquary coral seas involve
 pressure-adapted custodians removing route markers from towers claimed by rival
 faiths.
 
@@ -99,8 +103,9 @@ currents, depths, and approach geometry cannot be recreated elsewhere.
 - **Status:** DRAFT
 - **Type:** Custody War atrocity
 
-**Pack-stated V11 basis:** archives are copied, purified, and stripped of
-uncertainty; false certainty can poison later custody decisions.
+**Verified V11 basis:** V11 separately describes an archive copied without its
+uncertainty fields and memory fields poisoned by false certainty. Their
+combination into this incident and its later consequences is DRAFT.
 
 A copied identity archive is deliberately simplified so every record resolves
 to one answer. The copy is easier to use and spreads rapidly. Its missing

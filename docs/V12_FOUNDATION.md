@@ -54,14 +54,20 @@ Accepted and adapted:
   verification;
 - an OnlyWorlds-derived structured-data direction;
 - templates for entities and recovered records;
-- the twelve-entry particularisation tranche, retained as DRAFT with
-  source-unavailable grounding.
+- the twelve-entry particularisation tranche, retained as DRAFT with its exact
+  Version 11 foundations now cited to the authoritative manuscript.
 
 Quarantined or corrected:
 
-- detailed V11 terms, chronology, lineages, and environments whose cited
-  manuscript is not available for comparison;
+- pack-supplied V11 terms, chronology, lineage, environment, doctrine, and
+  cosmological-system inventories were quarantined initially, then promoted
+  only after exact comparison with the authoritative manuscript;
 - mismatched schema/data field names and status values;
 - the undeclared root-world UUID, now explicitly marked as a DRAFT placeholder;
 - operational status, blocker, next-action, and package-manifest files that do
   not belong in the lasting repository structure.
+
+The review verified exact inventories of 6 inheritance logics, 4 named
+schisms/faiths, 5 cosmological reliquary systems, 53 principal lineages, 41
+principal environments, and 22 relative chronology stages. It did not promote
+the new V12 names or narratives, which remain DRAFT.

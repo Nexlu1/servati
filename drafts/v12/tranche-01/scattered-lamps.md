@@ -1,15 +1,18 @@
 # DRAFT — Scattered Lamp Cultures, Tranche 01
 
 These are candidate extensions from the V12 working pack, not recovered canon.
-Every Version 11 basis below is a pack assertion marked
-**SOURCE-UNAVAILABLE** until the manuscript can be inspected.
+Each stated Version 11 basis has been verified against [Chapter 18 of the
+authoritative
+manuscript](../../../SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md#chapter-18---the-scattered-lamps).
+Verification applies only to that basis; every name and particular below is
+new V12 material and remains **DRAFT**.
 
 ## The Pale Reef of Relay Twelve
 
 - **Status:** DRAFT
 - **Inheritance:** Memory, Structure
 
-**Pack-stated V11 basis:** a Lamp whose outer hull became a pale archive reef,
+**Verified V11 basis:** an unnamed Lamp whose outer hull became a pale archive reef,
 with exposed radiator fins resembling frozen ribs.
 
 A memory-centred continuity station whose cooling structure gradually became
@@ -32,7 +35,7 @@ from correction.
 - **Status:** DRAFT
 - **Inheritance:** Remains, Structure
 
-**Pack-stated V11 basis:** a Lamp inside a dust-choked asteroid where burden
+**Verified V11 basis:** an unnamed Lamp inside a dust-choked asteroid where burden
 routes were cut through mineral ash until the corridors resembled eroded
 cathedrals.
 
@@ -54,7 +57,7 @@ Distinctive features:
 - **Status:** DRAFT
 - **Inheritance:** Structure, Memory
 
-**Pack-stated V11 basis:** a Lamp above a drowned moon whose lower vaults
+**Verified V11 basis:** an unnamed Lamp above a drowned moon whose lower vaults
 opened into black water and whose preservation towers became coral-like
 frameworks for pressure-adapted custodians.
 
@@ -77,7 +80,7 @@ nearly impossible.
 - **Status:** DRAFT
 - **Inheritance:** Seed, Ritual
 
-**Pack-stated V11 basis:** Seed Lamps that keep embryos viable after their
+**Verified V11 basis:** a Seed Lamp keeps embryos viable after its
 original release conditions become obsolete.
 
 A seed reserve whose activation rules outlive the civilisation that wrote them.
@@ -100,8 +103,8 @@ refusal to allow life.
 - **Status:** DRAFT
 - **Inheritance:** Ritual, Structure
 
-**Pack-stated V11 basis:** route Lamps maintaining beacon corridors that no
-vessel had used for longer than their own recorded history.
+**Verified V11 basis:** a route lamp maintains beacon corridors that no vessel
+has used for longer than its own recorded history.
 
 A route-centred culture that continues maintaining a transfer corridor after
 its traffic disappears. Correct passage becomes the inheritance itself:
@@ -123,9 +126,10 @@ changed.
 - **Status:** DRAFT
 - **Inheritance:** Remains, Memory, Pattern
 
-**Pack-stated V11 basis:** mixed sites, damaged burden capsules, fragmentary
-records, and a later danger of purifying mixed inheritance into single-doctrine
-systems.
+**Verified V11 basis:** Chapter 18 separately describes a route colony rebuilding
+dignity around damaged burden-capsule fragments; Chapter 21 describes mixed
+sites being divided, purified, or destroyed. Their combination into Transfer
+Site Nine is a DRAFT V12 synthesis, not a V11 site.
 
 A rare mixed Lamp formed around a disaster site where damaged burden frames,
 partial names, and broken relation fields could not be reconciled honestly. Its
