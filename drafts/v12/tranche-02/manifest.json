@@ -1,0 +1,24 @@
+{
+  "title": "SERVATI V12 Archive Faiths Tranche 02",
+  "status": "DRAFT",
+  "new_draft_faiths": [
+    "Covenant of the Cold Interval",
+    "Houses of the Second Witness",
+    "Dormant Mandate",
+    "Testament of the Threshold",
+    "Ledger of Divergence",
+    "The Unnamed Custody",
+    "Empty Chamber Ordination",
+    "Refusal of Completion"
+  ],
+  "v11_named_faiths_referenced": [
+    "Quiet Route",
+    "Weight Doctrine",
+    "Hollow Archivists",
+    "Choir Ascendants"
+  ],
+  "new_faultlines": 8,
+  "scattered_lamps_integrated": 6,
+  "canon_promotions": 0,
+  "next_block": "Choirs and Custody Wars"
+}
