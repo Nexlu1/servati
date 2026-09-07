@@ -1,7 +1,7 @@
 # SERVATI V12 — Archive Faiths Tranche 02
 
-**Status:** DRAFT expansion material unless explicitly marked V11 CORE  
-**Release boundary:** Version 11 remains released canon  
+**Status:** DRAFT expansion material unless explicitly marked V11 CORE
+**Release boundary:** Version 11 remains released canon
 **Purpose:** deepen the Archive Faiths into an interconnected religious/custodial landscape without promoting new material to canon
 
 ---
@@ -25,9 +25,9 @@ Everything below that extends those traditions, creates new named orders, define
 
 ## 1. Quiet Route — V11 CORE name and basis
 
-**Primary inheritance:** Ritual  
-**Secondary inheritance:** Memory / Structure  
-**Original pressure:** vibration and sound once threatened delicate record systems.  
+**Primary inheritance:** Ritual
+**Secondary inheritance:** Memory / Structure
+**Original pressure:** vibration and sound once threatened delicate record systems.
 **Sacred principle:** disturbance near a burden can become betrayal even when the disturbance is intangible.
 
 ### V11-established character
@@ -47,9 +47,9 @@ Their oldest dispute is therefore not “speech versus silence” but **whether 
 
 ## 2. Weight Doctrine — V11 CORE name and basis
 
-**Primary inheritance:** Remains  
-**Secondary inheritance:** Ritual / Structure  
-**Original pressure:** cultures descended from Pallbearer work rejected forms of remote custody that removed direct encounter with physical burden.  
+**Primary inheritance:** Remains
+**Secondary inheritance:** Ritual / Structure
+**Original pressure:** cultures descended from Pallbearer work rejected forms of remote custody that removed direct encounter with physical burden.
 **Sacred principle:** weight compels humility.
 
 ### V11-established character
@@ -66,9 +66,9 @@ This dispute becomes important during the Custody Wars because it determines whe
 
 ## 3. Hollow Archivists — V11 CORE name and basis
 
-**Primary inheritance:** Memory  
-**Secondary inheritance:** Pattern  
-**Original pressure:** singular personal identity proved too fragile to survive deep time intact.  
+**Primary inheritance:** Memory
+**Secondary inheritance:** Pattern
+**Original pressure:** singular personal identity proved too fragile to survive deep time intact.
 **Sacred principle:** relation may preserve what isolated identity cannot.
 
 ### V11-established character
@@ -88,9 +88,9 @@ The debate is foundational to later arguments over whether a copy that preserves
 
 ## 4. Choir Ascendants — V11 CORE name and basis
 
-**Primary inheritance:** Pattern  
-**Secondary inheritance:** Memory / Structure  
-**Original pressure:** unresolved archives began producing measurable patterns across distance.  
+**Primary inheritance:** Pattern
+**Secondary inheritance:** Memory / Structure
+**Original pressure:** unresolved archives began producing measurable patterns across distance.
 **Sacred principle:** continuity can reside in harmonic tension among incomplete systems.
 
 ### V11-established character
@@ -113,8 +113,8 @@ The third interpretation is the most politically dangerous and eventually seeds 
 
 ## 5. Covenant of the Cold Interval — DRAFT
 
-**Inheritance:** Remains + Ritual  
-**Origin pressure:** thermal preservation survived longer than the reasoning that established its exact margins.  
+**Inheritance:** Remains + Ritual
+**Origin pressure:** thermal preservation survived longer than the reasoning that established its exact margins.
 **Core doctrine:** *warmth is permission, not default.*
 
 The Covenant teaches that every rise in temperature is a custodial decision. A sealed burden should not be warmed merely because better machinery exists. Heat is treated as an irreversible handling event whose justification must survive scrutiny.
@@ -140,8 +140,8 @@ They condemn emergency thawing by Seed orders and Pattern recovery teams.
 
 ## 6. Houses of the Second Witness — DRAFT
 
-**Inheritance:** Memory + Ritual  
-**Origin pressure:** single-source identification errors caused irreversible mis-custody.  
+**Inheritance:** Memory + Ritual
+**Origin pressure:** single-source identification errors caused irreversible mis-custody.
 **Core doctrine:** *no identity claim should be strong enough to stand alone.*
 
 A record becomes actionable only when it is independently witnessed from a second chain.
@@ -167,8 +167,8 @@ They oppose doctrinal courts that treat one authoritative archive as sufficient.
 
 ## 7. Dormant Mandate — DRAFT
 
-**Inheritance:** Seed + Ritual  
-**Origin pressure:** viable biological reserves outlived the environmental assumptions under which release was once intended.  
+**Inheritance:** Seed + Ritual
+**Origin pressure:** viable biological reserves outlived the environmental assumptions under which release was once intended.
 **Core doctrine:** *the future is entrusted, not owed.*
 
 The Mandate rejects the idea that preserved life must eventually be awakened. Viability creates obligation, not entitlement.
@@ -194,8 +194,8 @@ They resist Seed factions that equate continued viability with a duty to restart
 
 ## 8. Testament of the Threshold — DRAFT
 
-**Inheritance:** Structure + Ritual + Memory  
-**Origin pressure:** archives repeatedly lost meaning after contents were moved while their approach, order and spatial relation were discarded.  
+**Inheritance:** Structure + Ritual + Memory
+**Origin pressure:** archives repeatedly lost meaning after contents were moved while their approach, order and spatial relation were discarded.
 **Core doctrine:** *arrival is part of evidence.*
 
 The Testament holds that an object is not fully preserved if the route by which it was approached has been erased.
@@ -221,8 +221,8 @@ They violently oppose Pattern cultures that reproduce a place elsewhere and clai
 
 ## 9. Ledger of Divergence — DRAFT
 
-**Inheritance:** Pattern + Memory  
-**Origin pressure:** copied archives remained useful only when their differences were preserved rather than normalized away.  
+**Inheritance:** Pattern + Memory
+**Origin pressure:** copied archives remained useful only when their differences were preserved rather than normalized away.
 **Core doctrine:** *a copy must remember how it stopped being identical.*
 
 The Ledger accepts duplication, translation and substrate change, but insists that divergence is itself part of custody.
@@ -248,8 +248,8 @@ They are natural enemies of purifying archives, doctrinal standardization and an
 
 ## 10. The Unnamed Custody — DRAFT
 
-**Inheritance:** Remains + Memory  
-**Origin pressure:** unidentified burdens were repeatedly forced into false identity categories because institutions could not tolerate unresolved status.  
+**Inheritance:** Remains + Memory
+**Origin pressure:** unidentified burdens were repeatedly forced into false identity categories because institutions could not tolerate unresolved status.
 **Core doctrine:** *an unknown person is not an empty record.*
 
 The Unnamed Custody protects anonymity where identification has not been earned.
@@ -275,8 +275,8 @@ They oppose Memory orders that merge unidentified burdens into larger relational
 
 ## 11. Empty Chamber Ordination — DRAFT
 
-**Inheritance:** Structure + Remains  
-**Origin pressure:** sites survived after their contents were removed, destroyed or lost, and later custodians discovered that the emptiness still carried evidence.  
+**Inheritance:** Structure + Remains
+**Origin pressure:** sites survived after their contents were removed, destroyed or lost, and later custodians discovered that the emptiness still carried evidence.
 **Core doctrine:** *absence can be a held thing.*
 
 An empty vault may remain under custody because its dimensions, seals, wear, residue and access history testify to what can no longer be restored.
@@ -302,8 +302,8 @@ They resist Remains orders that want to reclaim empty infrastructure for active 
 
 ## 12. Refusal of Completion — DRAFT
 
-**Inheritance:** Mixed, strongest in Memory / Pattern / Ritual  
-**Origin pressure:** repeated historical disasters followed declarations that an archive, identity or case was finally settled.  
+**Inheritance:** Mixed, strongest in Memory / Pattern / Ritual
+**Origin pressure:** repeated historical disasters followed declarations that an archive, identity or case was finally settled.
 **Core doctrine:** *closure is a claim that must itself be proven.*
 
 The Refusal does not teach that nothing can ever be known. It teaches that declarations of finality are dangerous because they stop comparison.

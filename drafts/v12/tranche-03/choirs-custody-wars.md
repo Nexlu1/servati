@@ -1,7 +1,7 @@
 # SERVATI V12 — Choirs + Custody Wars Tranche 03
 
-**Status:** DRAFT expansion material unless explicitly marked V11 CORE  
-**Release boundary:** Version 11 remains released canon  
+**Status:** DRAFT expansion material unless explicitly marked V11 CORE
+**Release boundary:** Version 11 remains released canon
 **Purpose:** turn the Archive Faiths and Scattered Lamps into interworld civilizations and historically consequential custody conflicts without drifting into generic empire/war fiction
 
 ---
@@ -31,10 +31,10 @@ Everything newly named or particularized below is **DRAFT**.
 
 ## 1. The Low Concordance — DRAFT
 
-**Choir logic:** Burden  
-**Primary inheritances:** Remains + Structure + Ritual  
-**Faith ancestry:** Weight Doctrine; Covenant of the Cold Interval  
-**Political form:** distributed custody compact bound by transfer obligations rather than common sovereignty  
+**Choir logic:** Burden
+**Primary inheritances:** Remains + Structure + Ritual
+**Faith ancestry:** Weight Doctrine; Covenant of the Cold Interval
+**Political form:** distributed custody compact bound by transfer obligations rather than common sovereignty
 **Signature problem:** how much relation may be sacrificed to keep matter physically safe
 
 The Low Concordance grows from worlds and routes that share one suspicion: custody that becomes weightless becomes too easy to perform without consequence.
@@ -54,7 +54,7 @@ The Concordance is slow, physically conservative and extraordinarily dependable.
 - multi-century rest thresholds between major transfers.
 
 ### Internal schism — DRAFT
-**True Weight** factions reject proxy or symbolic burdens.  
+**True Weight** factions reject proxy or symbolic burdens.
 **Carried Relation** factions accept calibrated substitute masses when original matter cannot move without catastrophic loss.
 
 ### Failure mode
@@ -67,10 +67,10 @@ It can preserve bodies whose identities are becoming unrecoverable elsewhere.
 
 ## 2. The Counterarchive — DRAFT
 
-**Choir logic:** Index  
-**Primary inheritances:** Memory + Pattern + Ritual  
-**Faith ancestry:** Houses of the Second Witness; Ledger of Divergence; Hollow Archivist influence  
-**Political form:** no archive may govern itself without an external contradictory archive  
+**Choir logic:** Index
+**Primary inheritances:** Memory + Pattern + Ritual
+**Faith ancestry:** Houses of the Second Witness; Ledger of Divergence; Hollow Archivist influence
+**Political form:** no archive may govern itself without an external contradictory archive
 **Signature problem:** how to preserve identity without allowing authority to become singular
 
 The Counterarchive is built from a principle that once prevented small identification errors:
@@ -91,7 +91,7 @@ The Counterarchive is argumentative by design. Its greatest institutions preserv
 - “dark thirds”: empty data positions reserved for evidence not yet found.
 
 ### Internal schism — DRAFT
-**Open Hollows** insist every relation merge remain reversible.  
+**Open Hollows** insist every relation merge remain reversible.
 **Deep Hollows** believe reversibility preserves obsolete individual boundaries and prevents true relational rescue.
 
 ### Failure mode
@@ -104,10 +104,10 @@ It can preserve contradiction so successfully that action becomes politically im
 
 ## 3. The Unopened Chorus — DRAFT
 
-**Choir logic:** Seed  
-**Primary inheritances:** Seed + Ritual + Memory  
-**Faith ancestry:** Dormant Mandate; Refusal of Completion  
-**Political form:** networks of reserves governed by conditions rather than rulers  
+**Choir logic:** Seed
+**Primary inheritances:** Seed + Ritual + Memory
+**Faith ancestry:** Dormant Mandate; Refusal of Completion
+**Political form:** networks of reserves governed by conditions rather than rulers
 **Signature problem:** whether viability creates a duty to begin life
 
 The Unopened Chorus is not united by a promise of rebirth. It is united by the refusal to confuse **possible future life** with **authorized future life**.
@@ -124,7 +124,7 @@ The Chorus is patient to the point of terror. It can maintain a future longer th
 - orbital environmental simulators running worlds that may never exist.
 
 ### Internal schism — DRAFT
-**Mandate Keepers** insist that release conditions must survive intact or remain unsatisfied.  
+**Mandate Keepers** insist that release conditions must survive intact or remain unsatisfied.
 **Continuity Reconstructors** argue that lost conditions may be responsibly rebuilt from convergent evidence.
 
 ### Failure mode
@@ -137,10 +137,10 @@ It can preserve life until the question “for whom?” no longer has an answer.
 
 ## 4. The Processional Measure — DRAFT
 
-**Choir logic:** Rite  
-**Primary inheritances:** Ritual + Structure + Memory  
-**Faith ancestry:** Quiet Route; later sequence orders  
-**Political form:** synchronized procedural calendars across worlds  
+**Choir logic:** Rite
+**Primary inheritances:** Ritual + Structure + Memory
+**Faith ancestry:** Quiet Route; later sequence orders
+**Political form:** synchronized procedural calendars across worlds
 **Signature problem:** whether correct sequence can remain meaningful after explanation is lost
 
 The Measure coordinates maintenance acts across vast distances. It is less a nation than a civilization of synchronized obligation.
@@ -157,7 +157,7 @@ The Measure believes that **timing is a form of relation**.
 - calendars that map action rather than date.
 
 ### Internal schism — DRAFT
-**Silent Measures** hold that speech introduces interpretation into inherited sequence.  
+**Silent Measures** hold that speech introduces interpretation into inherited sequence.
 **Annotated Measures** insist that procedure without explanation eventually becomes indistinguishable from superstition.
 
 ### Failure mode
@@ -170,10 +170,10 @@ It may preserve a procedure after the thing the procedure protected has changed 
 
 ## 5. The Threshold Assembly — DRAFT
 
-**Choir logic:** Structure  
-**Primary inheritances:** Structure + Remains + Ritual  
-**Faith ancestry:** Testament of the Threshold; Empty Chamber Ordination  
-**Political form:** jurisdictions defined by approach, chamber and spatial continuity  
+**Choir logic:** Structure
+**Primary inheritances:** Structure + Remains + Ritual
+**Faith ancestry:** Testament of the Threshold; Empty Chamber Ordination
+**Political form:** jurisdictions defined by approach, chamber and spatial continuity
 **Signature problem:** whether meaning can survive relocation
 
 The Threshold Assembly believes a place is not merely where custody happens. Place is part of what is being preserved.
@@ -190,7 +190,7 @@ Assembly custodians treat approach routes, pressure changes, orientation, sequen
 - world-scale threshold maps that function as legal records.
 
 ### Internal schism — DRAFT
-**Site Absolutists** deny that relocation can preserve equivalent obligation.  
+**Site Absolutists** deny that relocation can preserve equivalent obligation.
 **Continuity Cartographers** allow relocation if every spatial relation and rupture is recorded.
 
 ### Failure mode
@@ -203,10 +203,10 @@ It can let a site die because moving it would make survival legally meaningless.
 
 ## 6. The Divergent Harmonic — DRAFT
 
-**Choir logic:** Pattern  
-**Primary inheritances:** Pattern + Memory + Structure  
-**Faith ancestry:** Choir Ascendants; Ledger of Divergence  
-**Political form:** distributed relation-field civilization  
+**Choir logic:** Pattern
+**Primary inheritances:** Pattern + Memory + Structure
+**Faith ancestry:** Choir Ascendants; Ledger of Divergence
+**Political form:** distributed relation-field civilization
 **Signature problem:** whether relation carried across changing substrate remains the same custody
 
 The Harmonic begins when distant incomplete archives discover stable correspondences in their errors.
@@ -223,8 +223,8 @@ Its members may exist as swarms, planetary relation fields, distributed intellig
 - worlds tuned to exchange thermal, electromagnetic and gravitational signatures.
 
 ### Internal schism — DRAFT
-**Evidence Harmonics** treat resonance as evidence only.  
-**Carrier Harmonics** treat resonance as a transmissible bearer of relation.  
+**Evidence Harmonics** treat resonance as evidence only.
+**Carrier Harmonics** treat resonance as a transmissible bearer of relation.
 **Identity Harmonics** treat stable resonance as continuity itself.
 
 ### Failure mode
