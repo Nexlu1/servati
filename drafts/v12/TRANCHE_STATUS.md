@@ -1,4 +1,4 @@
-# SERVATI V12 - Draft Tranche Status
+# SERVATI V12 - DRAFT Tranche Status
 
 Version 11 remains the released canon.
 

@@ -1,4 +1,4 @@
-# SERVATI V12 — Archive Faiths Tranche 02
+# SERVATI V12 - Archive Faiths Tranche 02 - DRAFT
 
 **Status:** DRAFT expansion material unless explicitly marked V11 CORE
 **Release boundary:** Version 11 remains released canon

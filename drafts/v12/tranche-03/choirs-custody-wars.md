@@ -1,4 +1,4 @@
-# SERVATI V12 — Choirs + Custody Wars Tranche 03
+# SERVATI V12 - Choirs + Custody Wars Tranche 03 - DRAFT
 
 **Status:** DRAFT expansion material unless explicitly marked V11 CORE
 **Release boundary:** Version 11 remains released canon
