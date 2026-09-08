@@ -83,8 +83,10 @@ plugins:
     enabled: true
   - source: "./plugin-sources/folder-page"
     enabled: true
+    options: {showFolderCount: true, showSubfolders: true, prefixFolders: false}
   - source: "./plugin-sources/tag-page"
     enabled: true
+    options: {prefixTags: true}
   - source: "./plugin-sources/bases-page"
     enabled: true
     options: {}
@@ -112,6 +114,11 @@ plugins:
     layout: {position: left, priority: 40}
   - source: "./plugin-sources/explorer"
     enabled: true
+    options:
+      title: Archive Registers
+      folderDefaultState: collapsed
+      folderClickBehavior: link
+      useSavedState: true
     layout: {position: left, priority: 50}
   - source: "./plugin-sources/breadcrumbs"
     enabled: true
@@ -132,6 +139,7 @@ plugins:
     layout: {position: beforeBody, priority: 15, display: all}
   - source: "./plugin-sources/content-meta"
     enabled: true
+    options: {showReadingTime: true, showComma: false}
     layout: {position: beforeBody, priority: 20}
   - source: "./plugin-sources/tag-list"
     enabled: true
@@ -141,6 +149,12 @@ plugins:
     layout: {position: right, priority: 40}
   - source: "./plugin-sources/recent-notes"
     enabled: true
+    options:
+      title: Recently Indexed
+      limit: 4
+      showTags: false
+      hideTagPages: true
+      hideFolderPages: true
     layout: {position: right, priority: 60}
   - source: "./plugin-sources/graph"
     enabled: false
@@ -149,7 +163,8 @@ plugins:
     enabled: true
     options:
       links:
-        SERVATI GitHub: https://github.com/Nexlu1/servati
+        Source Repository: https://github.com/Nexlu1/servati
+        V11 Manuscript: https://github.com/Nexlu1/servati/blob/main/SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md
     layout: {position: footer, priority: 50}
 
 layout:

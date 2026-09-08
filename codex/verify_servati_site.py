@@ -104,6 +104,16 @@ def main() -> None:
     generated_count = generation.get("generated_pages")
     require(generated_count == len(source_pages), "Generation manifest does not match Markdown count")
     require(generated_count >= MINIMUM_SOURCE_PAGES, f"Only {generated_count} source pages were generated")
+    source_text = "\n".join(path.read_text(encoding="utf-8") for path in source_pages)
+    require(not re.search(r"^#\s+", source_text, re.M), "Generated content contains body-level H1 headings")
+    require(
+        not re.search(r"\[\[[^\]|#]+\]\]", source_text),
+        "Generated content contains unresolved title-only wikilinks",
+    )
+    require(
+        all(re.search(r'^modified:\s+"\d{4}-\d{2}-\d{2}"$', path.read_text(encoding="utf-8"), re.M) for path in source_pages),
+        "One or more generated pages lack a source-derived modification date",
+    )
 
     plugin_result = json.loads(args.plugin_result.read_text(encoding="utf-8"))
     require(plugin_result.get("operation") == "verify", "Plugin verification result is not final")
@@ -145,6 +155,12 @@ def main() -> None:
 
     index_html = (args.output / "index.html").read_text(encoding="utf-8").lower()
     site_html = "\n".join(path.read_text(encoding="utf-8").lower() for path in html_pages)
+    require(
+        not re.search(r'class="[^"]*\bbroken\b', site_html),
+        "Built site contains broken internal links",
+    )
+    for signature in ('class="archive-portals"', 'class="archive-featured"', 'class="archive-actions"'):
+        require(signature in index_html, f"Homepage archive structure is missing {signature}")
     feature_signatures = {
         "search": r'class="[^"]*\bsearch\b',
         "explorer": r'class="[^"]*\bexplorer\b',
