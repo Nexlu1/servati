@@ -60,13 +60,47 @@ jobs:
           python codex/build_servati_content.py --repo . --out quartz-work/content
           cat quartz-work/content/SERVATI_GENERATION_RESULT.json
 
+      - name: Acquire exact GitHub-pinned Quartz plugins
+        run: |
+          python codex/manage_quartz_plugins.py acquire \
+            --manifest codex/SERVATI_CODEX_BUILD_MANIFEST.json \
+            --config codex/quartz.config.yaml \
+            --source-root quartz-work/plugin-sources \
+            --result quartz-work/SERVATI_PLUGIN_ACQUISITION_RESULT.json
+
       - name: Install exact GitHub-pinned Quartz plugins
         working-directory: quartz-work
-        run: npx quartz plugin install --from-config --concurrency 1
+        run: |
+          set -o pipefail
+          npx quartz plugin install --from-config --concurrency 1 2>&1 | tee plugin-install.log
+          if grep -Eq "[1-9][0-9]* failed|Failed to" plugin-install.log; then
+            echo "Quartz reported one or more plugin installation failures" >&2
+            exit 1
+          fi
+          python ../codex/manage_quartz_plugins.py verify \
+            --manifest ../codex/SERVATI_CODEX_BUILD_MANIFEST.json \
+            --config quartz.config.yaml \
+            --source-root plugin-sources \
+            --installed-root .quartz/plugins \
+            --result SERVATI_PLUGIN_VERIFICATION_RESULT.json
 
       - name: Build SERVATI Codex
         working-directory: quartz-work
-        run: npx quartz build --concurrency 2
+        run: |
+          set -o pipefail
+          npx quartz build --concurrency 2 2>&1 | tee codex-build.log
+          if grep -Eq "Failed to install plugin|Failed to load manifest|Could not determine category|Could not load plugin|has no factory function|factory did not return|missing the required methods|Failed to instantiate plugin" codex-build.log; then
+            echo "Quartz skipped or failed one or more configured plugins" >&2
+            exit 1
+          fi
+
+      - name: Sanity-check built Codex
+        run: |
+          python codex/verify_servati_site.py \
+            --content quartz-work/content \
+            --output quartz-work/public \
+            --plugin-result quartz-work/SERVATI_PLUGIN_VERIFICATION_RESULT.json \
+            --result quartz-work/SERVATI_CODEX_BUILD_RESULT.json
 
       - name: Upload built codex
         uses: actions/upload-artifact@v4
