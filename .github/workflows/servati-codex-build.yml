@@ -72,7 +72,7 @@ jobs:
         working-directory: quartz-work
         run: |
           set -o pipefail
-          npx quartz plugin install --from-config --concurrency 1 2>&1 | tee plugin-install.log
+          npm_config_package_lock=false npx quartz plugin install --from-config --concurrency 1 2>&1 | tee plugin-install.log
           if grep -Eq "[1-9][0-9]* failed|Failed to" plugin-install.log; then
             echo "Quartz reported one or more plugin installation failures" >&2
             exit 1
