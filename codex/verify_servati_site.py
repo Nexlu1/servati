@@ -167,9 +167,26 @@ def main() -> None:
         else BASE_PATH + "/" + urllib.parse.quote(page.as_posix())
         for page in samples.values()
     ]
-    asset_paths = re.findall(r'(?:href|src)="(/servati/[^"]+\.(?:css|js))"', index_html)
-    require(any(path.endswith(".css") for path in asset_paths), "Homepage has no stylesheet asset")
-    require(any(path.endswith(".js") for path in asset_paths), "Homepage has no script asset")
+    asset_urls = re.findall(
+        r'(?:href|src)=["\']([^"\']+\.(?:css|js)(?:\?[^"\']*)?)["\']', index_html
+    )
+    local_asset_urls = [url for url in asset_urls if not url.startswith(("http://", "https://"))]
+    require(
+        any(urllib.parse.urlsplit(url).path.endswith(".css") for url in local_asset_urls),
+        "Homepage has no stylesheet asset",
+    )
+    require(
+        any(urllib.parse.urlsplit(url).path.endswith(".js") for url in local_asset_urls),
+        "Homepage has no script asset",
+    )
+    asset_paths = []
+    for url in local_asset_urls:
+        path = urllib.parse.urlsplit(url).path
+        require(
+            not path.startswith("/") or path.startswith(BASE_PATH + "/"),
+            f"Asset escapes base path: {path}",
+        )
+        asset_paths.append(path if path.startswith("/") else BASE_PATH + "/" + path.lstrip("./"))
     smoke_paths = page_paths + sorted(set(asset_paths)) + [BASE_PATH + "/static/contentIndex.json"]
     http_checks = http_smoke_test(args.output, smoke_paths)
 
