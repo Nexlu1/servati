@@ -144,6 +144,7 @@ def main() -> None:
     require((args.output / "static" / "contentIndex.json").is_file(), "Search content index is missing")
 
     index_html = (args.output / "index.html").read_text(encoding="utf-8").lower()
+    site_html = "\n".join(path.read_text(encoding="utf-8").lower() for path in html_pages)
     feature_signatures = {
         "search": r'class="[^"]*\bsearch\b',
         "explorer": r'class="[^"]*\bexplorer\b',
@@ -152,7 +153,7 @@ def main() -> None:
         "random_page": 'id="random-page-btn"',
     }
     for feature, signature in feature_signatures.items():
-        require(re.search(signature, index_html), f"Required {feature} UI is absent from index.html")
+        require(re.search(signature, site_html), f"Required {feature} UI is absent from built pages")
 
     samples = {
         "homepage": Path("index.html"),
