@@ -1,0 +1,16 @@
+
+:root{--servati-panel:#14181c;--servati-line:#343b41;--servati-amber:#c6a15b;--servati-cyan:#72aebb}
+body{background:#080a0c}
+.page{max-width:1440px}
+.sidebar{background:var(--servati-panel)}
+.sidebar.left{border-right:1px solid var(--servati-line)}
+.sidebar.right{border-left:1px solid var(--servati-line)}
+article{line-height:1.68}
+h1{border-bottom:1px solid #554f47;padding-bottom:.35rem}
+h2{border-bottom:1px solid var(--servati-line);padding-bottom:.2rem}
+a{text-decoration-color:rgba(198,161,91,.45)}
+a:hover{color:var(--servati-cyan)}
+.explorer,.backlinks,.toc,.recent-notes{font-size:.92rem}
+pre,code{background:#0c0f12}
+blockquote{border-left-color:var(--servati-amber);background:#15191d}
+th{background:#1b2025}

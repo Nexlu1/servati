@@ -1,0 +1,237 @@
+{
+  "project": "SERVATI Codex",
+  "architecture": "Quartz v5 + pinned GitHub plugins",
+  "source_root": "E:\\SERVATI\\CODEX_GITHUB_SOURCE",
+  "workspace": "E:\\SERVATI\\CODEX_WORK\\servati-codex",
+  "authoritative_lore_repo": "E:\\SERVATI\\servati",
+  "quartz_requirements": {
+    "node": ">=22",
+    "npm": ">=10.9.2"
+  },
+  "sources": [
+    {
+      "name": "Quartz v5",
+      "repo": "jackyzha0/quartz",
+      "sha": "f1fba3fc55cbf60a60a5d09c95a49c042cdab63a",
+      "license_file": "LICENSE.txt",
+      "role": "engine",
+      "license": "MIT"
+    },
+    {
+      "name": "Search",
+      "repo": "quartz-community/search",
+      "sha": "1d9ba593230b997ee4cf0cc3c1ed4a30b571cee2",
+      "license_file": "LICENSE",
+      "role": "required",
+      "license": "MIT"
+    },
+    {
+      "name": "Explorer",
+      "repo": "quartz-community/explorer",
+      "sha": "06ea3d8e206f0edaab08556191adc75b2403e832",
+      "license_file": "LICENSE",
+      "role": "required",
+      "license": "MIT"
+    },
+    {
+      "name": "Backlinks",
+      "repo": "quartz-community/backlinks",
+      "sha": "cb445dcc3f6969e4088bb0ff4254ba59071e4243",
+      "license_file": "LICENSE",
+      "role": "required",
+      "license": "MIT"
+    },
+    {
+      "name": "Breadcrumbs",
+      "repo": "quartz-community/breadcrumbs",
+      "sha": "4d283d8704fc7c6afb23e88524eda97316df889d",
+      "license_file": "LICENSE",
+      "role": "required",
+      "license": "MIT"
+    },
+    {
+      "name": "Content Index",
+      "repo": "quartz-community/content-index",
+      "sha": "1342d1eacfdabbcefa2c6a26f8346945a9d9860f",
+      "license_file": "LICENSE",
+      "role": "required",
+      "license": "MIT"
+    },
+    {
+      "name": "Obsidian Flavored Markdown",
+      "repo": "quartz-community/obsidian-flavored-markdown",
+      "sha": "dc9256d44b903d6188ef432626dd620090b88c3b",
+      "license_file": "LICENSE",
+      "role": "required",
+      "license": "MIT"
+    },
+    {
+      "name": "Crawl Links",
+      "repo": "quartz-community/crawl-links",
+      "sha": "2673605b9d47a84cc1b0a4a119fe6dfd116b7762",
+      "license_file": "LICENSE",
+      "role": "required",
+      "license": "MIT"
+    },
+    {
+      "name": "Tag Page",
+      "repo": "quartz-community/tag-page",
+      "sha": "a651839686ed2bd7e58beb01709b9a682dc9add8",
+      "license_file": "LICENSE",
+      "role": "required",
+      "license": "MIT"
+    },
+    {
+      "name": "Tag List",
+      "repo": "quartz-community/tag-list",
+      "sha": "4b67adfe21efa5fa2bcfc1436effaea0d0d775e4",
+      "license_file": "LICENSE",
+      "role": "required",
+      "license": "MIT"
+    },
+    {
+      "name": "Folder Page",
+      "repo": "quartz-community/folder-page",
+      "sha": "213a8e98c4347aca9013c0dd5a15bc80a1dca604",
+      "license_file": "LICENSE",
+      "role": "required",
+      "license": "MIT"
+    },
+    {
+      "name": "Bases Page",
+      "repo": "quartz-community/bases-page",
+      "sha": "db114afd1005669b7440b8770603df767147e200",
+      "license_file": "LICENSE",
+      "role": "required",
+      "license": "MIT"
+    },
+    {
+      "name": "Note Properties",
+      "repo": "quartz-community/note-properties",
+      "sha": "e68145b9f11b31d3168ed2755bd74f36a67dbed7",
+      "license_file": "LICENSE",
+      "role": "required",
+      "license": "MIT"
+    },
+    {
+      "name": "Recent Notes",
+      "repo": "quartz-community/recent-notes",
+      "sha": "2c36e87f151431b7fb05a486705adfa790126622",
+      "license_file": "LICENSE",
+      "role": "required",
+      "license": "MIT"
+    },
+    {
+      "name": "Table of Contents",
+      "repo": "quartz-community/table-of-contents",
+      "sha": "02c30261c64610fd0faaa3181263a91d3ff60b45",
+      "license_file": "LICENSE",
+      "role": "required",
+      "license": "MIT"
+    },
+    {
+      "name": "Article Title",
+      "repo": "quartz-community/article-title",
+      "sha": "87499a64e8b9af69bfce23dd5985a33176b14b5e",
+      "license_file": "LICENSE",
+      "role": "required",
+      "license": "MIT"
+    },
+    {
+      "name": "Footer",
+      "repo": "quartz-community/footer",
+      "sha": "9551f6dba23e31d75fbc43a0f78ff2c7450176a0",
+      "license_file": "LICENSE",
+      "role": "required",
+      "license": "MIT"
+    },
+    {
+      "name": "Dark Mode",
+      "repo": "quartz-community/darkmode",
+      "sha": "eafbe135895ac2214d66b4ef5d1cd351e5570201",
+      "license_file": "LICENSE",
+      "role": "required",
+      "license": "MIT"
+    },
+    {
+      "name": "Reader Mode",
+      "repo": "quartz-community/reader-mode",
+      "sha": "5612a68b969da1180853b5524873dabf0f897c34",
+      "license_file": "LICENSE",
+      "role": "optional",
+      "license": "MIT"
+    },
+    {
+      "name": "Graph",
+      "repo": "quartz-community/graph",
+      "sha": "411971434ab698c495dfc42870eb02d3bc539b3a",
+      "license_file": "LICENSE",
+      "role": "optional",
+      "license": "MIT"
+    },
+    {
+      "name": "Random Page",
+      "repo": "duckfuss/quartz_randomPage",
+      "sha": "8e108781107276e3eaf435963fb3676828490ad2",
+      "license_file": "LICENSE",
+      "role": "required",
+      "license": "MIT"
+    },
+    {
+      "name": "Content Page",
+      "repo": "quartz-community/content-page",
+      "sha": "88903bf8ca884c3e66b993b2ccb455824eae7ef1",
+      "license_file": "LICENSE",
+      "role": "required",
+      "license": "MIT"
+    },
+    {
+      "name": "Page Title",
+      "repo": "quartz-community/page-title",
+      "sha": "a2e035fd9a99fc07197c6627bb21d08c57038fc6",
+      "license_file": "LICENSE",
+      "role": "required",
+      "license": "MIT"
+    },
+    {
+      "name": "Content Meta",
+      "repo": "quartz-community/content-meta",
+      "sha": "3066ef3eaf88c08c7e123d07cc3be8e07b2f4e10",
+      "license_file": "LICENSE",
+      "role": "required",
+      "license": "MIT"
+    },
+    {
+      "name": "Created/Modified Date",
+      "repo": "quartz-community/created-modified-date",
+      "sha": "a47474990f34a3b1396cf8972c8b6bfe66e1452d",
+      "license_file": "LICENSE",
+      "role": "required",
+      "license": "MIT"
+    },
+    {
+      "name": "GitHub Flavored Markdown",
+      "repo": "quartz-community/github-flavored-markdown",
+      "sha": "287c709c12806dca76882ab8ab79567d57ede5b4",
+      "license_file": "LICENSE",
+      "role": "required",
+      "license": "MIT"
+    },
+    {
+      "name": "Description",
+      "repo": "quartz-community/description",
+      "sha": "ca7ac65ed60e94eae90ee8eec71160fd76ea6ae2",
+      "license_file": "LICENSE",
+      "role": "required",
+      "license": "MIT"
+    },
+    {
+      "name": "Syntax Highlighting",
+      "repo": "quartz-community/syntax-highlighting",
+      "sha": "071bdbd9b164be42018456c53e86a245c977649c",
+      "license_file": "LICENSE",
+      "role": "optional",
+      "license": "MIT"
+    }
+  ]
+}

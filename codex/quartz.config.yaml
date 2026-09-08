@@ -1,0 +1,163 @@
+# yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
+configuration:
+  pageTitle: "SERVATI CODEX"
+  pageTitleSuffix: " — The Worlds That Held the Dead"
+  enableSPA: true
+  enablePopovers: true
+  analytics: null
+  locale: en-US
+  baseUrl: nexlu1.github.io/servati
+  ignorePatterns: [private, templates, .obsidian]
+  theme:
+    fontOrigin: local
+    cdnCaching: false
+    typography:
+      header: Georgia
+      body: Segoe UI
+      code: Consolas
+    colors:
+      lightMode:
+        light: "#111417"
+        lightgray: "#242a2f"
+        gray: "#697178"
+        darkgray: "#d7d2c9"
+        dark: "#f0e9dd"
+        secondary: "#c6a15b"
+        tertiary: "#72aebb"
+        highlight: "rgba(198,161,91,0.14)"
+        textHighlight: "#8a6c2f88"
+      darkMode:
+        light: "#0b0d0f"
+        lightgray: "#20262b"
+        gray: "#626b72"
+        darkgray: "#ded8ce"
+        dark: "#f2eadc"
+        secondary: "#c6a15b"
+        tertiary: "#72aebb"
+        highlight: "rgba(198,161,91,0.14)"
+        textHighlight: "#8a6c2f88"
+
+plugins:
+  - source: "github:quartz-community/created-modified-date#a47474990f34a3b1396cf8972c8b6bfe66e1452d"
+    enabled: true
+    options:
+      defaultDateType: modified
+      priority: [frontmatter, git, filesystem]
+    order: 10
+  - source: "github:quartz-community/obsidian-flavored-markdown#dc9256d44b903d6188ef432626dd620090b88c3b"
+    enabled: true
+    options:
+      comments: true
+      highlight: true
+      wikilinks: true
+      callouts: true
+      mermaid: true
+      parseTags: true
+      parseArrows: true
+      parseBlockReferences: true
+      enableInHtmlEmbed: false
+      enableYouTubeEmbed: false
+      enableVideoEmbed: false
+      enableCheckbox: true
+    order: 20
+  - source: "github:quartz-community/github-flavored-markdown#287c709c12806dca76882ab8ab79567d57ede5b4"
+    enabled: true
+    order: 30
+  - source: "github:quartz-community/table-of-contents#02c30261c64610fd0faaa3181263a91d3ff60b45"
+    enabled: true
+    order: 40
+    layout: {position: right, priority: 20}
+  - source: "github:quartz-community/crawl-links#2673605b9d47a84cc1b0a4a119fe6dfd116b7762"
+    enabled: true
+    options:
+      markdownLinkResolution: shortest
+      disableBrokenWikilinks: true
+    order: 50
+  - source: "github:quartz-community/description#ca7ac65ed60e94eae90ee8eec71160fd76ea6ae2"
+    enabled: true
+    order: 60
+  - source: "github:quartz-community/content-index#1342d1eacfdabbcefa2c6a26f8346945a9d9860f"
+    enabled: true
+    options: {enableSiteMap: true, enableRSS: false}
+  - source: "github:quartz-community/content-page#88903bf8ca884c3e66b993b2ccb455824eae7ef1"
+    enabled: true
+  - source: "github:quartz-community/folder-page#213a8e98c4347aca9013c0dd5a15bc80a1dca604"
+    enabled: true
+  - source: "github:quartz-community/tag-page#a651839686ed2bd7e58beb01709b9a682dc9add8"
+    enabled: true
+  - source: "github:quartz-community/bases-page#db114afd1005669b7440b8770603df767147e200"
+    enabled: true
+    options: {}
+  - source: "github:quartz-community/page-title#a2e035fd9a99fc07197c6627bb21d08c57038fc6"
+    enabled: true
+    layout: {position: left, priority: 10}
+  - source: "github:quartz-community/search#1d9ba593230b997ee4cf0cc3c1ed4a30b571cee2"
+    enabled: true
+    layout:
+      position: left
+      priority: 20
+      group: toolbar
+      groupOptions: {grow: true}
+  - source: "github:quartz-community/darkmode#eafbe135895ac2214d66b4ef5d1cd351e5570201"
+    enabled: true
+    layout: {position: left, priority: 30, group: toolbar}
+  - source: "github:quartz-community/reader-mode#5612a68b969da1180853b5524873dabf0f897c34"
+    enabled: true
+    layout: {position: left, priority: 35, group: toolbar}
+  - source: "github:duckfuss/quartz_randomPage#8e108781107276e3eaf435963fb3676828490ad2"
+    enabled: true
+    options:
+      excludeTags: [navigation]
+      excludePathPrefixes: [tags]
+    layout: {position: left, priority: 40}
+  - source: "github:quartz-community/explorer#06ea3d8e206f0edaab08556191adc75b2403e832"
+    enabled: true
+    layout: {position: left, priority: 50}
+  - source: "github:quartz-community/breadcrumbs#4d283d8704fc7c6afb23e88524eda97316df889d"
+    enabled: true
+    layout: {position: beforeBody, priority: 5, condition: not-index}
+  - source: "github:quartz-community/article-title#87499a64e8b9af69bfce23dd5985a33176b14b5e"
+    enabled: true
+    layout: {position: beforeBody, priority: 10}
+  - source: "github:quartz-community/note-properties#e68145b9f11b31d3168ed2755bd74f36a67dbed7"
+    enabled: true
+    options:
+      includeAll: false
+      includedProperties: [status, type, era, source_file, source_section, tags]
+      excludedProperties: []
+      hidePropertiesView: false
+      delimiters: "---"
+      language: yaml
+    order: 5
+    layout: {position: beforeBody, priority: 15, display: all}
+  - source: "github:quartz-community/content-meta#3066ef3eaf88c08c7e123d07cc3be8e07b2f4e10"
+    enabled: true
+    layout: {position: beforeBody, priority: 20}
+  - source: "github:quartz-community/tag-list#4b67adfe21efa5fa2bcfc1436effaea0d0d775e4"
+    enabled: true
+    layout: {position: afterBody, priority: 5}
+  - source: "github:quartz-community/backlinks#cb445dcc3f6969e4088bb0ff4254ba59071e4243"
+    enabled: true
+    layout: {position: right, priority: 40}
+  - source: "github:quartz-community/recent-notes#2c36e87f151431b7fb05a486705adfa790126622"
+    enabled: true
+    layout: {position: right, priority: 60}
+  - source: "github:quartz-community/graph#411971434ab698c495dfc42870eb02d3bc539b3a"
+    enabled: false
+    layout: {position: right, priority: 70}
+  - source: "github:quartz-community/footer#9551f6dba23e31d75fbc43a0f78ff2c7450176a0"
+    enabled: true
+    options:
+      links:
+        SERVATI GitHub: https://github.com/Nexlu1/servati
+    layout: {position: footer, priority: 50}
+
+layout:
+  groups:
+    toolbar: {priority: 35, direction: row, gap: 0.5rem}
+  byPageType:
+    "404": {positions: {beforeBody: [], left: [], right: []}}
+    content: {}
+    folder: {}
+    tag: {}
+    bases: {}

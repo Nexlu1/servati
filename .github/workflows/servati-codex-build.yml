@@ -1,0 +1,76 @@
+name: SERVATI Codex build
+
+on:
+  push:
+    branches:
+      - codex-quartz-site-20260908
+    paths:
+      - "codex/**"
+      - ".github/workflows/servati-codex-build.yml"
+      - "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md"
+      - "drafts/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-codex:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout SERVATI
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Fetch V12 draft source branch
+        run: |
+          git fetch origin v12-faiths-choirs-custody-wars-20260907:refs/remotes/origin/v12-faiths-choirs-custody-wars-20260907
+
+      - name: Set up Node 24
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Clone pinned Quartz v5
+        run: |
+          git clone --filter=blob:none https://github.com/jackyzha0/quartz.git quartz-work
+          git -C quartz-work checkout --detach f1fba3fc55cbf60a60a5d09c95a49c042cdab63a
+          test "$(git -C quartz-work rev-parse HEAD)" = "f1fba3fc55cbf60a60a5d09c95a49c042cdab63a"
+
+      - name: Install Quartz dependencies
+        working-directory: quartz-work
+        run: npm ci
+
+      - name: Apply SERVATI Codex configuration
+        run: |
+          cp codex/quartz.config.yaml quartz-work/quartz.config.yaml
+          cp codex/custom.scss quartz-work/quartz/styles/custom.scss
+
+      - name: Generate SERVATI Codex pages
+        run: |
+          python codex/build_servati_content.py --repo . --out quartz-work/content
+          cat quartz-work/content/SERVATI_GENERATION_RESULT.json
+
+      - name: Install exact GitHub-pinned Quartz plugins
+        working-directory: quartz-work
+        run: npx quartz plugin install --from-config --concurrency 1
+
+      - name: Build SERVATI Codex
+        working-directory: quartz-work
+        run: npx quartz build --concurrency 2
+
+      - name: Upload built codex
+        uses: actions/upload-artifact@v4
+        with:
+          name: servati-codex-site
+          path: quartz-work/public
+          if-no-files-found: error
+          retention-days: 14
