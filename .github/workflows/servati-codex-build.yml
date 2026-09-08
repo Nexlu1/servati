@@ -56,6 +56,7 @@ jobs:
 
       - name: Generate SERVATI Codex pages
         run: |
+          rm -rf quartz-work/content
           python codex/build_servati_content.py --repo . --out quartz-work/content
           cat quartz-work/content/SERVATI_GENERATION_RESULT.json
 
