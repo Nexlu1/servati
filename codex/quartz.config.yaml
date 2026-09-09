@@ -130,7 +130,7 @@ plugins:
     enabled: true
     options:
       includeAll: false
-      includedProperties: [status, type, register, era, part, inheritance_logic, source_file, source_branch, source_commit, source_lines]
+      includedProperties: [status, type, register, era, part, inheritance_logic, source_file, source_branch, source_commit, source_lines, source_revision_count, record_sha256]
       excludedProperties: []
       hidePropertiesView: false
       delimiters: "---"

@@ -185,6 +185,17 @@ def main() -> None:
     require(set(ambiguous_links) == EXPECTED_AMBIGUOUS_TITLES, "Ambiguous-title analysis changed")
     require(all(len(paths) == 2 for paths in ambiguous_links.values()), "Ambiguous targets are incomplete")
     require(depth.get("wanted_links") == {"Transfer Site Nine": 1}, "Wanted-link analysis changed")
+    record_provenance = depth.get("record_provenance", {})
+    require(len(record_provenance) == 268, "Record-level Git provenance is incomplete")
+    require(
+        all(
+            re.fullmatch(r"[0-9a-f]{64}", provenance.get("body_sha256", ""))
+            and provenance.get("revisions")
+            and provenance.get("created") <= provenance.get("modified")
+            for provenance in record_provenance.values()
+        ),
+        "Record-level Git provenance contains malformed values",
+    )
     source_files = depth.get("source_files", {})
     require(set(source_files) == set(EXPECTED_SOURCE_REFS), "Depth report source-file set changed")
     for source_path, provenance in source_files.items():
@@ -308,8 +319,19 @@ def main() -> None:
     for signature in ("Semantic record links", "Generated navigation and indexes", "Generated navigation backlinks"):
         require(signature in what_links_html, f"What Links Here is missing {signature}")
     chapter_html = (args.output / "history" / "01-intake-exceeded.html").read_text(encoding="utf-8")
-    for signature in ("Register index", "Next in register", "note-properties", "metadata-container"):
+    for signature in (
+        "Register index",
+        "Next in register",
+        "note-properties",
+        "metadata-container",
+        "Current-line revisions",
+        "Versioned Codex permalink",
+        "Record body SHA-256",
+    ):
         require(signature in chapter_html, f"Context-aware record navigation is missing {signature}")
+    recent_html = (args.output / "special" / "recent-changes.html").read_text(encoding="utf-8")
+    for signature in ("line-level Git blame", "Latest record commit", "Current-line revisions"):
+        require(signature in recent_html, f"Recent Changes is missing record history field {signature}")
     search_html = (args.output / "special" / "search.html").read_text(encoding="utf-8")
     for signature in ("search-facets", "codex-random-modes", "canon/v11", "random-category"):
         require(signature in search_html, f"Search and random discovery is missing {signature}")

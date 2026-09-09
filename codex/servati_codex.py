@@ -9,6 +9,7 @@ import shutil
 import subprocess
 from collections import Counter, defaultdict
 from dataclasses import dataclass, field
+from datetime import datetime, timezone
 from pathlib import Path
 
 
@@ -29,6 +30,14 @@ PART_LABELS = {
 
 
 @dataclass
+class Revision:
+    commit: str
+    date: str
+    author: str
+    summary: str
+
+
+@dataclass
 class Source:
     key: str
     path: str
@@ -41,6 +50,7 @@ class Source:
     first_commit: str
     first_date: str
     sha256: str
+    line_revisions: dict[int, Revision] = field(default_factory=dict)
 
     @property
     def source_url(self) -> str:
@@ -84,6 +94,34 @@ class Entry:
     def word_count(self) -> int:
         text = re.sub(r"[`*#>\[\](){|}_-]", " ", self.body)
         return len(re.findall(r"\b[\w’'-]+\b", text, re.UNICODE))
+
+    @property
+    def revisions(self) -> list[Revision]:
+        unique = {
+            revision.commit: revision
+            for line in range(self.start_line, self.end_line + 1)
+            if (revision := self.source.line_revisions.get(line)) is not None
+        }
+        if not unique:
+            unique[self.source.commit] = Revision(
+                self.source.commit,
+                self.source.modified,
+                self.source.author,
+                "Source snapshot",
+            )
+        return sorted(unique.values(), key=lambda revision: (revision.date, revision.commit), reverse=True)
+
+    @property
+    def modified(self) -> str:
+        return self.revisions[0].date
+
+    @property
+    def created(self) -> str:
+        return self.revisions[-1].date
+
+    @property
+    def body_sha256(self) -> str:
+        return hashlib.sha256(self.body.encode("utf-8")).hexdigest()
 
 
 CATEGORY_DEFINITIONS: dict[str, tuple[str, str | None, str]] = {
@@ -181,6 +219,7 @@ def load_source(repo: Path, key: str, path: str, branch: str, ref: str) -> Sourc
         first_commit=first[0],
         first_date=first[1],
         sha256=hashlib.sha256(text.encode("utf-8")).hexdigest(),
+        line_revisions=line_revisions(repo, ref, path),
     )
 
 
@@ -191,6 +230,33 @@ def slug(value: str) -> str:
 
 def quote(value: str) -> str:
     return '"' + value.replace("\\", "\\\\").replace('"', '\\"').replace("\n", " ") + '"'
+
+
+def line_revisions(repo: Path, ref: str, path: str) -> dict[int, Revision]:
+    blame = run_git(repo, "blame", "--line-porcelain", ref, "--", path)
+    revisions: dict[int, Revision] = {}
+    current_line = 0
+    current: dict[str, str] = {}
+    for line in blame.splitlines():
+        header = re.fullmatch(r"([0-9a-f]{40}) \d+ (\d+)(?: \d+)?", line)
+        if header:
+            current_line = int(header.group(2))
+            current = {"commit": header.group(1)}
+        elif line.startswith("author "):
+            current["author"] = line.removeprefix("author ")
+        elif line.startswith("author-time "):
+            timestamp = int(line.removeprefix("author-time "))
+            current["date"] = datetime.fromtimestamp(timestamp, timezone.utc).date().isoformat()
+        elif line.startswith("summary "):
+            current["summary"] = line.removeprefix("summary ")
+        elif line.startswith("\t") and current_line:
+            revisions[current_line] = Revision(
+                current["commit"],
+                current.get("date", "1970-01-01"),
+                current.get("author", "Unknown"),
+                current.get("summary", "No commit summary"),
+            )
+    return revisions
 
 
 def wikilink(title: str, rel: str) -> str:
@@ -740,6 +806,13 @@ def source_line_url(entry: Entry, permanent: bool = False) -> str:
     return f"{base}#L{entry.start_line}-L{entry.end_line}"
 
 
+def codex_permalink(entry: Entry, generated: Source) -> str:
+    return (
+        f"https://nexlu1.github.io/servati/{entry.slug}.html"
+        f"?codex={generated.commit}&source={entry.source.commit}#source-and-provenance"
+    )
+
+
 def type_label(entry: Entry) -> str:
     return entry.record_type.upper().replace(" / ", " · ")
 
@@ -785,7 +858,12 @@ def render_navbox(entry: Entry, entries_by_rel: dict[str, Entry]) -> str:
 """
 
 
-def render_entry(entry: Entry, entries_by_rel: dict[str, Entry], incoming: dict[str, list[tuple[Entry, str]]]) -> str:
+def render_entry(
+    entry: Entry,
+    entries_by_rel: dict[str, Entry],
+    incoming: dict[str, list[tuple[Entry, str]]],
+    generated: Source,
+) -> str:
     aliases = build_alias_map(list(entries_by_rel.values()))
     body = resolve_source_links(demote_headings(entry.body), aliases, entry)
     inheritance = " / ".join(entry.inheritance) if entry.inheritance else "Not explicitly assigned"
@@ -828,13 +906,28 @@ def render_entry(entry: Entry, entries_by_rel: dict[str, Entry], incoming: dict[
         for category in entry.categories
     )
     source = entry.source
+    revision_rows = [
+        [
+            revision.date,
+            f"[{revision.commit[:12]}]({REPOSITORY_URL}/commit/{revision.commit})",
+            revision.author,
+            revision.summary,
+        ]
+        for revision in entry.revisions
+    ]
     provenance = f"""## Source and provenance
 
 - **Source record:** [{source.path} lines {entry.start_line}-{entry.end_line}]({source_line_url(entry)})
 - **Permanent source:** [{source.commit[:12]} lines {entry.start_line}-{entry.end_line}]({source_line_url(entry, permanent=True)})
+- **Versioned Codex permalink:** [{entry.slug} at Codex {generated.commit[:12]}]({codex_permalink(entry, generated)})
 - **Source section:** {entry.section}
-- **First source commit:** [{source.first_commit[:12]}]({REPOSITORY_URL}/commit/{source.first_commit}) on {source.first_date}
-- **Last source commit:** [{source.commit[:12]}]({REPOSITORY_URL}/commit/{source.commit}) on {source.modified}, by {source.author}
+- **Record body SHA-256:** `{entry.body_sha256}`
+- **Record created:** {entry.created}
+- **Record modified:** {entry.modified}
+
+### Current-line revisions
+
+{table(revision_rows, ["Date", "Commit", "Author", "Summary"])}
 """
     toolbox = f"""## Page tools
 
@@ -842,6 +935,7 @@ def render_entry(entry: Entry, entries_by_rel: dict[str, Entry], incoming: dict[
 {tools_html}
 <a href="{source_line_url(entry)}">GitHub source</a>
 <a href="{source_line_url(entry, permanent=True)}">Permanent source version</a>
+<a href="{codex_permalink(entry, generated)}">Versioned Codex permalink</a>
 <span><strong>Canon state:</strong> {entry.status}</span>
 <span><strong>Record ID:</strong> {entry.slug}</span>
 <span><strong>Words:</strong> {entry.word_count}</span>
@@ -883,8 +977,10 @@ def frontmatter(entry: Entry) -> list[str]:
         f"type: {quote(entry.record_type)}",
         f"template: {quote(entry.template)}",
         f"register: {quote(entry.register)}",
-        f"modified: {quote(entry.source.modified)}",
-        f"created: {quote(entry.source.first_date)}",
+        f"modified: {quote(entry.modified)}",
+        f"created: {quote(entry.created)}",
+        f"record_sha256: {quote(entry.body_sha256)}",
+        f"source_revision_count: {len(entry.revisions)}",
     ]
     if entry.era:
         rows.append(f"era: {quote(entry.era)}")
@@ -1217,16 +1313,23 @@ def generate_special_pages(
         "Special: Long Records",
         table(record_rows(long[:75]), ["Record", "Type", "State", "Register", "Words"]),
     )
-    recent = sorted(listed, key=lambda item: (item.source.modified, item.source.commit, item.title), reverse=True)
+    recent = sorted(listed, key=lambda item: (item.modified, item.revisions[0].commit, item.title), reverse=True)
     recent_rows = [
-        [wikilink(entry.title, entry.rel), entry.source.modified, f"[{entry.source.commit[:12]}]({REPOSITORY_URL}/commit/{entry.source.commit})", entry.source.path]
+        [
+            wikilink(entry.title, entry.rel),
+            entry.modified,
+            f"[{entry.revisions[0].commit[:12]}]({REPOSITORY_URL}/commit/{entry.revisions[0].commit})",
+            entry.revisions[0].summary,
+            str(len(entry.revisions)),
+            entry.source.path,
+        ]
         for entry in recent
     ]
     special(
         "recent-changes",
         "Special: Recent Source Changes",
-        "This is generated from authoritative Git history, not filesystem timestamps. Extracted records share their source file's commit.\n\n"
-        + table(recent_rows, ["Record", "Date", "Commit", "Source file"]),
+        "This is generated from line-level Git blame at the immutable authority revisions, not filesystem timestamps. Each row reports the latest commit contributing surviving lines to that record.\n\n"
+        + table(recent_rows, ["Record", "Date", "Latest record commit", "Summary", "Current-line revisions", "Source file"]),
     )
     stat_rows = [
         ["Total content records", str(stats["total_records"])],
@@ -1588,8 +1691,8 @@ def generate_homepage(source: Source, entries: list[Entry], stats: dict[str, obj
         f'<a href="{relative_href("index.md", entry.rel)}"><span>{label.upper()}</span><strong>{html.escape(entry.title)}</strong><b>{html.escape(entry.status)}</b></a>'
         for label, entry in featured.items()
     )
-    recent = sorted(listed, key=lambda item: (item.source.modified, item.title), reverse=True)[:8]
-    recent_links = "\n".join(f"- {wikilink(entry.title, entry.rel)} — {entry.source.modified}; {entry.status}" for entry in recent)
+    recent = sorted(listed, key=lambda item: (item.modified, item.title), reverse=True)[:8]
+    recent_links = "\n".join(f"- {wikilink(entry.title, entry.rel)} — {entry.modified}; {entry.status}" for entry in recent)
     portal_links = "\n".join(
         f'<a class="archive-portal" href="./portals/{path}"><span class="archive-portal-code">PORTAL / {label.upper()}</span><strong>{label}</strong><span>{description}</span></a>'
         for path, label, description in (
@@ -1780,7 +1883,7 @@ def build(repo: Path, out: Path) -> dict[str, object]:
     staging_marker.write_text("generated\n", encoding="utf-8")
 
     for entry in entries:
-        write_entry(out, entry, render_entry(entry, entries_by_rel, incoming))
+        write_entry(out, entry, render_entry(entry, entries_by_rel, incoming, generated))
     for page in [*special_pages, *category_pages, *portal_pages, *register_pages, homepage]:
         body = global_navigation(page.rel) + "\n\n" + demote_headings(page.body)
         write_entry(out, page, body)
@@ -1817,6 +1920,15 @@ def build(repo: Path, out: Path) -> dict[str, object]:
                 "sha256": source.sha256,
             }
             for source in sources
+        },
+        "record_provenance": {
+            entry.rel: {
+                "body_sha256": entry.body_sha256,
+                "created": entry.created,
+                "modified": entry.modified,
+                "revisions": [revision.commit for revision in entry.revisions],
+            }
+            for entry in listed
         },
         "generator": {
             "path": generated.path,
