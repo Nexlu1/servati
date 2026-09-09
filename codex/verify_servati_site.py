@@ -152,6 +152,15 @@ def main() -> None:
     depth_path = args.content / "SERVATI_DEPTH_REPORT.json"
     require(depth_path.is_file(), "Depth and integrity report is missing")
     depth = json.loads(depth_path.read_text(encoding="utf-8"))
+    statistics = depth.get("statistics", {})
+    require(
+        statistics.get("generated_navigation_backlinks", 0) >= 1000,
+        "Generated navigation backlink graph is unexpectedly sparse",
+    )
+    require(
+        statistics.get("records_with_navigation_backlinks") == 268,
+        "Not every record is represented in generated navigation",
+    )
     integrity = depth.get("integrity", {})
     required_integrity = {
         "duplicate_slugs",
@@ -290,6 +299,11 @@ def main() -> None:
     ]
     for route in required_routes:
         require((args.output / route).is_file(), f"Required encyclopedia route is missing: {route}")
+    what_links_html = (
+        args.output / "special" / "what-links-here" / "history--01-intake-exceeded.html"
+    ).read_text(encoding="utf-8")
+    for signature in ("Semantic record links", "Generated navigation and indexes", "Generated navigation backlinks"):
+        require(signature in what_links_html, f"What Links Here is missing {signature}")
     feature_signatures = {
         "search": r'class="[^"]*\bsearch\b',
         "explorer": r'class="[^"]*\bexplorer\b',

@@ -781,6 +781,7 @@ def render_entry(entry: Entry, entries_by_rel: dict[str, Entry], incoming: dict[
             html_link("What links here", what_links_rel, entry.rel),
             '<a href="#related-records">Related records</a>',
             html_link("Categories", "categories/index.md", entry.rel),
+            html_link("Special pages", "special/index.md", entry.rel),
         )
     )
     categories = " · ".join(
@@ -803,6 +804,8 @@ def render_entry(entry: Entry, entries_by_rel: dict[str, Entry], incoming: dict[
 <a href="{source_line_url(entry)}">GitHub source</a>
 <a href="{source_line_url(entry, permanent=True)}">Permanent source version</a>
 <span><strong>Canon state:</strong> {entry.status}</span>
+<span><strong>Record ID:</strong> {entry.slug}</span>
+<span><strong>Words:</strong> {entry.word_count}</span>
 </div>
 """
     category_section = f"## Categories\n\n<div class=\"article-categories\">{categories}</div>\n"
@@ -1268,6 +1271,91 @@ def generate_special_pages(
     return pages, stats
 
 
+def expand_what_links_here(
+    entries: list[Entry],
+    special_pages: list[Entry],
+    generated_pages: list[Entry],
+    incoming: dict[str, list[tuple[Entry, str]]],
+) -> dict[str, int]:
+    listed = [entry for entry in entries if entry.listed]
+    targets = {entry.slug: entry for entry in listed}
+    generated_incoming: dict[str, list[Entry]] = defaultdict(list)
+    for page in generated_pages:
+        if page.rel.startswith("special/what-links-here/"):
+            continue
+        linked_slugs = set(re.findall(r"\[\[([^\]|#]+)", page.body))
+        linked_slugs.update(
+            href
+            for href in re.findall(r'<a\s+[^>]*href="([^"]+)"', page.body)
+            if not href.startswith(("#", "http://", "https://", "mailto:"))
+        )
+        for linked_slug in linked_slugs:
+            target = targets.get(Path(linked_slug).with_suffix("").as_posix())
+            if target is not None and target.rel != page.rel:
+                generated_incoming[target.rel].append(page)
+
+    pages_by_rel = {page.rel: page for page in special_pages}
+    what_links_rows = []
+    for entry in sorted(listed, key=lambda item: item.title.casefold()):
+        semantic_sources = incoming.get(entry.rel, [])
+        navigation_sources = sorted(
+            {page.rel: page for page in generated_incoming.get(entry.rel, [])}.values(),
+            key=lambda page: (page.record_type, page.title.casefold()),
+        )
+        route = f"special/what-links-here/{entry.slug.replace('/', '--')}.md"
+        what_links_rows.append(
+            [
+                wikilink(entry.title, route),
+                str(len(semantic_sources)),
+                str(len(navigation_sources)),
+                entry.record_type,
+                entry.status,
+            ]
+        )
+        semantic_items = []
+        for source_entry, source_excerpt in semantic_sources:
+            snippet = "" if source_excerpt == "Register navigation." else f"\n  > {source_excerpt}"
+            semantic_items.append(
+                f"- {wikilink(source_entry.title, source_entry.rel)} — {source_entry.record_type}; {source_entry.status}{snippet}"
+            )
+        navigation_items = [
+            f"- {wikilink(page.title, page.rel)} — {page.record_type}"
+            for page in navigation_sources
+        ]
+        pages_by_rel[route].body = f"""{wikilink('Return to the target record', entry.rel)}
+
+This reverse-link inventory separates manuscript-derived relationships from links introduced by the generated encyclopedia interface.
+
+## Semantic record links
+
+{chr(10).join(semantic_items) if semantic_items else "No content records link to this record."}
+
+## Generated navigation and indexes
+
+{chr(10).join(navigation_items) if navigation_items else "No generated navigation pages link to this record."}
+
+## Target metadata
+
+- **Type:** {entry.record_type}
+- **Canon state:** {entry.status}
+- **Register:** {entry.register}
+- **Semantic backlinks:** {len(semantic_sources)}
+- **Generated navigation backlinks:** {len(navigation_sources)}
+"""
+
+    pages_by_rel["special/what-links-here/index.md"].body = (
+        "Counts distinguish source-derived semantic relationships from links created by categories, registers, portals, and Special pages.\n\n"
+        + table(
+            what_links_rows,
+            ["Target record", "Semantic", "Navigation", "Type", "State"],
+        )
+    )
+    return {
+        "generated_navigation_backlinks": sum(len(value) for value in generated_incoming.values()),
+        "records_with_navigation_backlinks": len(generated_incoming),
+    }
+
+
 def portal_body(
     current_rel: str,
     title: str,
@@ -1548,6 +1636,14 @@ def build(repo: Path, out: Path) -> dict[str, object]:
     portal_pages = generate_portals(generated, entries)
     register_pages = generate_register_indexes(generated, entries)
     homepage = generate_homepage(generated, entries, statistics)
+    statistics.update(
+        expand_what_links_here(
+            entries,
+            special_pages,
+            [*special_pages, *category_pages, *portal_pages, *register_pages, homepage],
+            incoming,
+        )
+    )
 
     out = target.with_name(f"{target.name}.building")
     staging_marker = out / ".servati_generated_content"
