@@ -1450,17 +1450,42 @@ def portal_body(
     branches: list[str],
     related: list[tuple[str, str]],
 ) -> str:
-    featured = members[:6]
+    featured = sorted(members, key=lambda entry: (-len(entry.outgoing), entry.source_order, entry.title))[:6]
+    canon = [entry for entry in members if entry.status == "V11 CORE"]
+    drafts = [entry for entry in members if entry.status == "V12 DRAFT"]
+    type_counts = Counter(entry.record_type for entry in members)
+    inheritance_counts = Counter(logic for entry in members for logic in entry.inheritance)
+    source_counts = Counter(entry.source.path for entry in members)
     branch_links = "\n".join(f"- {category_link(category)}" for category in branches)
     featured_links = "\n".join(
         f'<a href="{relative_href(current_rel, entry.rel)}"><span>{html.escape(entry.record_type.upper())}</span><strong>{html.escape(entry.title)}</strong><b>{html.escape(entry.status)}</b></a>'
         for entry in featured
     )
     browse_rows = table(record_rows(members), ["Record", "Type", "State", "Register", "Words"])
+    type_rows = [
+        [record_type, str(count), ", ".join(wikilink(entry.title, entry.rel) for entry in members if entry.record_type == record_type) ]
+        for record_type, count in sorted(type_counts.items())
+    ]
+    inheritance_rows = [
+        [category_link(f"inheritance/{logic.lower()}"), str(count)]
+        for logic, count in sorted(inheritance_counts.items())
+    ]
+    source_rows = [
+        [path, str(count)] for path, count in sorted(source_counts.items())
+    ]
     related_links = " · ".join(wikilink(label, rel) for label, rel in related)
     return f"""<div class="portal-masthead"><span>CURATED PORTAL</span><strong>{html.escape(title)}</strong><b>{len(members)} records</b></div>
 
 {overview}
+
+<div class="portal-statistics" aria-label="Portal record summary">
+  <span><b>{len(members)}</b>controlled records</span>
+  <span><b>{len(canon)}</b>V11 canon</span>
+  <span><b>{len(drafts)}</b>V12 draft</span>
+  <span><b>{len(type_counts)}</b>entity types</span>
+  <span><b>{len(inheritance_counts)}</b>inheritance lenses</span>
+  <span><b>{len(source_counts)}</b>source strata</span>
+</div>
 
 ## Major branches
 
@@ -1471,6 +1496,28 @@ def portal_body(
 <div class="portal-featured">
 {featured_links}
 </div>
+
+## Entity lenses
+
+<div class="portal-lenses">
+{table(type_rows, ["Entity type", "Records", "Controlled entries"])}
+</div>
+
+## Inheritance lenses
+
+{table(inheritance_rows, ["Inheritance logic", "Records"]) if inheritance_rows else "No inheritance logic is explicitly assigned to records in this portal."}
+
+## Source strata
+
+{table(source_rows, ["Authoritative source file", "Records"])}
+
+## V11 canon records
+
+{table(record_rows(canon), ["Record", "Type", "State", "Register", "Words"]) if canon else "No V11 canon records are included in this portal."}
+
+## V12 draft records
+
+{table(record_rows(drafts), ["Record", "Type", "State", "Register", "Words"]) if drafts else "No V12 draft records are included in this portal."}
 
 ## Browse this portal
 
@@ -1495,17 +1542,23 @@ def generate_portals(source: Source, entries: list[Entry]) -> list[Entry]:
         ("v12-draft", "Version 12 Development Portal", "GitHub-hosted development material. Every record in this portal remains visibly DRAFT.", lambda e: e.status == "V12 DRAFT", ["canon-state/v12-draft"], [("Faiths", "portals/faiths.md"), ("Choirs", "portals/choirs.md")]),
     ]
     pages = []
+    portal_cards = []
     for slug_name, title, overview, predicate, branches, related in specs:
         members = sorted((entry for entry in listed if predicate(entry)), key=lambda item: (item.source_order, item.title))
         rel = f"portals/{slug_name}.md"
         pages.append(page_entry(source, rel, title, portal_body(rel, title, overview, members, branches, related), "portal", "portal", "Portals"))
+        portal_cards.append(
+            f'<a href="{relative_href("portals/index.md", rel)}"><span>{len(members)} records</span><strong>{html.escape(title)}</strong><b>{sum(entry.status == "V12 DRAFT" for entry in members)} draft</b><small>{html.escape(overview)}</small></a>'
+        )
     pages.append(
         page_entry(
             source,
             "portals/index.md",
             "SERVATI Portals",
-            "Curated paths through the archive.\n\n"
-            + "\n".join(f"- {wikilink(title, f'portals/{slug_name}.md')}" for slug_name, title, *_ in specs),
+            "Curated paths through the archive. Each portal separates canon from draft material and exposes entity, inheritance, and source-file lenses.\n\n"
+            + '<nav class="portal-index-grid" aria-label="Curated SERVATI portals">\n'
+            + "\n".join(portal_cards)
+            + "\n</nav>",
             "portal-index",
             "portal index",
             "Portals",

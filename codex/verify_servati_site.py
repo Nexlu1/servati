@@ -313,6 +313,10 @@ def main() -> None:
     search_html = (args.output / "special" / "search.html").read_text(encoding="utf-8")
     for signature in ("search-facets", "codex-random-modes", "canon/v11", "random-category"):
         require(signature in search_html, f"Search and random discovery is missing {signature}")
+    for portal in ("history", "worlds", "lineages", "custody", "faiths", "choirs", "core-terms", "v12-draft"):
+        portal_html = (args.output / "portals" / f"{portal}.html").read_text(encoding="utf-8")
+        for signature in ("portal-statistics", "portal-lenses", "V11 canon records", "V12 draft records", "Source strata"):
+            require(signature in portal_html, f"Portal {portal} is missing curated section {signature}")
     feature_signatures = {
         "search": r'class="[^"]*\bsearch\b',
         "explorer": r'class="[^"]*\bexplorer\b',
