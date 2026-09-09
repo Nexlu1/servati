@@ -17,6 +17,10 @@ The branch names remain visible for editorial context and current-source links.
 Generation exact revisions above control extraction and make repeated builds of a
 Codex commit deterministic.
 
+`codex/SERVATI_CODEX_BUILD_MANIFEST.json` is the complete dependency revision
+inventory. This register records adoption decisions and authority pins rather
+than duplicating every configured plugin.
+
 ## Reused Components
 
 | Project | Exact revision | Licence | Phase 2 use |

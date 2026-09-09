@@ -115,7 +115,7 @@ plugins:
   - source: "./plugin-sources/explorer"
     enabled: true
     options:
-      title: Archive Registers
+      title: Archive Index
       folderDefaultState: collapsed
       folderClickBehavior: link
       useSavedState: true

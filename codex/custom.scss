@@ -166,6 +166,12 @@ body {
   .explorer-content .folder-outer > ul {
     border-left-color: var(--archive-line-bright);
   }
+
+  .explorer-content a.active {
+    color: var(--archive-bone);
+    background: var(--highlight);
+    box-shadow: inset 2px 0 var(--archive-cyan);
+  }
 }
 
 .article-title {
@@ -580,6 +586,7 @@ a.internal.tag-link,
   }
 
   a.current,
+  a[aria-current="location"],
   a:hover {
     color: var(--archive-bone);
     background: var(--highlight);
@@ -601,7 +608,8 @@ body:has(.codex-navbar) :is(h1, h2, h3, h4, h5, h6) {
 
 .record-identity,
 .category-header,
-.portal-masthead {
+.portal-masthead,
+.register-header {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;

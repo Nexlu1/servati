@@ -188,7 +188,7 @@ def main() -> None:
     require(len(depth.get("record_depth", {})) == 268, "Per-record depth metrics are incomplete")
     category_population = depth.get("category_population", {})
     require(
-        len(category_population) == 33
+        len(category_population) == 32
         and all(set(population) == {"direct", "descendants"} for population in category_population.values()),
         "Category population analysis is malformed",
     )
@@ -275,6 +275,10 @@ def main() -> None:
     random_modes_script = args.output / "static" / "codex-random-modes.js"
     require(random_modes_script.is_file(), "Random discovery modes script is missing")
     require("fetchData" in random_modes_script.read_text(encoding="utf-8"), "Random modes do not use the search content index")
+    require(
+        random_modes_script.read_bytes() == (args.repo / "codex" / "codex-random-modes.js").read_bytes(),
+        "Built random discovery script differs from its controlled source",
+    )
 
     index_html = (args.output / "index.html").read_text(encoding="utf-8").lower()
     site_html = "\n".join(path.read_text(encoding="utf-8").lower() for path in html_pages)
@@ -320,6 +324,25 @@ def main() -> None:
         site_html.count('class="codex-navbar"') == generated_count,
         "Permanent archive navigation is not present on every controlled page",
     )
+    active_navigation_samples = {
+        "history/01-intake-exceeded.html": "History",
+        "categories/history/burdened-earth.html": "History",
+        "events-and-crises/index.html": "Entities",
+        "portals/worlds.html": "Entities",
+        "v12-draft/index.html": "V12 Draft",
+        "special/index.html": "Special",
+    }
+    for route, label in active_navigation_samples.items():
+        route_html = (args.output / route).read_text(encoding="utf-8")
+        require(
+            route_html.count('aria-current="location"') == 1
+            and re.search(
+                rf'<a\b[^>]*aria-current="location"[^>]*>{re.escape(label)}</a>',
+                route_html,
+                re.IGNORECASE,
+            ),
+            f"Active archive navigation is incorrect for {route}",
+        )
     required_routes = [
         "special/index.html",
         "special/all-pages.html",
@@ -337,6 +360,8 @@ def main() -> None:
         "special/long-pages.html",
         "special/statistics.html",
         "categories/index.html",
+        "portals/index.html",
+        "portals/core-terms.html",
         "portals/custody.html",
         "portals/faiths.html",
         "portals/choirs.html",
@@ -368,10 +393,19 @@ def main() -> None:
     search_html = (args.output / "special" / "search.html").read_text(encoding="utf-8")
     for signature in ("search-facets", "codex-random-modes", "canon/v11", "random-category"):
         require(signature in search_html, f"Search and random discovery is missing {signature}")
+    require("codex-random-modes.js" in search_html, "Search page does not load random discovery modes")
+    require("Core Terms" in index_html and "All portals" in index_html, "Homepage portal discovery is incomplete")
+    v12_index_html = (args.output / "v12-draft" / "index.html").read_text(encoding="utf-8")
+    require(
+        "58 records" in v12_index_html and "No records currently exist" not in v12_index_html,
+        "V12 development register does not expose its draft records",
+    )
+    require('class="register-header"' in v12_index_html, "Register masthead is missing")
     for portal in ("history", "worlds", "lineages", "custody", "faiths", "choirs", "core-terms", "v12-draft"):
         portal_html = (args.output / "portals" / f"{portal}.html").read_text(encoding="utf-8")
         for signature in ("portal-statistics", "portal-lenses", "V11 canon records", "V12 draft records", "Source strata"):
             require(signature in portal_html, f"Portal {portal} is missing curated section {signature}")
+        require("Browse this portal" not in portal_html, f"Portal {portal} repeats its full record inventory")
     feature_signatures = {
         "search": r'class="[^"]*\bsearch\b',
         "explorer": r'class="[^"]*\bexplorer\b',
@@ -414,7 +448,11 @@ def main() -> None:
             f"Asset escapes base path: {path}",
         )
         asset_paths.append(path if path.startswith("/") else BASE_PATH + "/" + path.lstrip("./"))
-    smoke_paths = page_paths + sorted(set(asset_paths)) + [BASE_PATH + "/static/contentIndex.json"]
+    smoke_paths = page_paths + sorted(set(asset_paths)) + [
+        BASE_PATH + "/special/search.html",
+        BASE_PATH + "/static/codex-random-modes.js",
+        BASE_PATH + "/static/contentIndex.json",
+    ]
     http_checks = http_smoke_test(args.output, smoke_paths)
 
     all_files = [path for path in args.output.rglob("*") if path.is_file()]

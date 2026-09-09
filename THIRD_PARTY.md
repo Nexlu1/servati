@@ -30,11 +30,14 @@ The Codex build acquires Quartz v5 and its configured plugins directly from
 GitHub at exact commits. Their source is not committed to this repository. The
 complete revision, licence, and role inventory is recorded in
 `codex/SERVATI_CODEX_BUILD_MANIFEST.json`; Phase 2 adoption decisions are
-documented in `docs/CODEX_PHASE2_FOSS_REGISTER.md`.
+documented in `docs/CODEX_PHASE2_FOSS_REGISTER.md`. Workflow actions orchestrate
+the build but are not part of the Quartz/plugin inventory.
 
 ## Evaluated but not included
 
-The projects in `docs/FOSS_TOOLING_REGISTER.md` are research candidates, not
-bundled dependencies. Listing a project does not copy, endorse, or relicense
-its code. Any future integration must add the exact upstream revision,
-licence, attribution, and copied-file inventory here before release.
+The projects in `docs/FOSS_TOOLING_REGISTER.md`,
+`docs/CODEX_PHASE2_FOSS_REGISTER.md`, and `docs/CODEX_RELIQUARY_AUDIT.md` that are
+marked reference-only or evaluated are not bundled dependencies. Listing a
+project does not copy, endorse, or relicense its code. Any future integration
+must add the exact upstream revision, licence, attribution, and copied-file
+inventory here before release.

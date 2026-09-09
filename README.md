@@ -29,6 +29,7 @@ basis does not promote any new V12 name, event, culture, or particular.
 - [Provenance policy](canon/PROVENANCE.md)
 - [V12 foundation](docs/V12_FOUNDATION.md)
 - [FOSS and tooling register](docs/FOSS_TOOLING_REGISTER.md)
+- [Generated Codex build and maintenance](codex/README.md)
 - [Automated repository validation](tools/validation/README.md)
 - [Structured data](data/README.md)
 - [DRAFT V12 tranche 01](drafts/v12/tranche-01/README.md)

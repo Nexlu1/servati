@@ -268,16 +268,23 @@ def relative_href(current_rel: str, target_rel: str) -> str:
     return Path(target_rel).with_suffix("").as_posix()
 
 
-def html_link(title: str, rel: str, current_rel: str, class_name: str | None = None) -> str:
+def html_link(
+    title: str,
+    rel: str,
+    current_rel: str,
+    class_name: str | None = None,
+    aria_current: str | None = None,
+) -> str:
     classes = f' class="{class_name}"' if class_name else ""
-    return f'<a href="{relative_href(current_rel, rel)}"{classes}>{html.escape(title)}</a>'
+    current_state = f' aria-current="{aria_current}"' if aria_current else ""
+    return f'<a href="{relative_href(current_rel, rel)}"{classes}{current_state}>{html.escape(title)}</a>'
 
 
 def global_navigation(current_rel: str) -> str:
     current = Path(current_rel).with_suffix("").as_posix()
     links = (
         ("SERVATI", "index.md", ("index",)),
-        ("History", "portals/history.md", ("history/", "portals/history")),
+        ("History", "portals/history.md", ("history/", "portals/history", "categories/history")),
         (
             "Entities",
             "categories/entities.md",
@@ -285,24 +292,42 @@ def global_navigation(current_rel: str) -> str:
                 "artefacts-and-technologies/",
                 "choirs/",
                 "core-terms/",
-                "events-crises-and-wars/",
+                "events-and-crises/",
                 "faiths/",
                 "lineages/",
                 "people-and-collective-minds/",
                 "recovered-records/",
                 "worlds-and-places/",
                 "categories/entities",
+                "portals/worlds",
+                "portals/lineages",
+                "portals/custody",
+                "portals/faiths",
+                "portals/choirs",
+                "portals/core-terms",
             ),
         ),
         ("Timeline", "timeline/index.md", ("timeline/",)),
         ("Inheritance", "categories/inheritance.md", ("categories/inheritance",)),
-        ("V12 Draft", "portals/v12-draft.md", ("v12-draft/", "portals/v12-draft")),
+        (
+            "V12 Draft",
+            "portals/v12-draft.md",
+            ("v12-draft/", "portals/v12-draft", "categories/canon-state/v12-draft"),
+        ),
         ("Special", "special/index.md", ("special/",)),
     )
     items = []
     for label, target, prefixes in links:
         active = any(current == prefix or current.startswith(prefix) for prefix in prefixes)
-        items.append(html_link(label, target, current_rel, "current" if active else None))
+        items.append(
+            html_link(
+                label,
+                target,
+                current_rel,
+                "current" if active else None,
+                "location" if active else None,
+            )
+        )
     return '<nav class="codex-navbar" aria-label="SERVATI encyclopedia">' + "".join(items) + "</nav>"
 
 
@@ -1523,30 +1548,47 @@ def generate_special_pages(
 <script src="../static/codex-random-modes.js"></script>
 """,
     )
-    special(
-        "index",
-        "SERVATI Special Pages",
-        "Static-build equivalents of MediaWiki Special pages, derived from the generated corpus.\n\n"
-        + "\n".join(
-            f"- {wikilink(label, f'special/{rel}.md')}"
-            for rel, label in (
+    special_groups = (
+        (
+            "Browse",
+            (
                 ("all-pages", "All Pages"),
                 ("categories", "Categories"),
                 ("canon", "All Canon Pages"),
                 ("drafts", "All Draft Pages"),
+                ("disambiguation", "Disambiguation"),
+                ("taxonomy", "Taxonomy Tree"),
+                ("search", "Search Help and Filters"),
+            ),
+        ),
+        (
+            "Source history and provenance",
+            (
                 ("recent-changes", "Recent Source Changes"),
+                ("what-links-here/index", "What Links Here Index"),
+            ),
+        ),
+        (
+            "Maintenance and analysis",
+            (
+                ("integrity", "Depth and Integrity"),
                 ("most-linked", "Most Linked Records"),
                 ("orphaned", "Orphaned Records"),
                 ("wanted-links", "Wanted and Missing Links"),
-                ("disambiguation", "Disambiguation"),
-                ("taxonomy", "Taxonomy Tree"),
-                ("integrity", "Depth and Integrity"),
                 ("short-pages", "Short Records"),
                 ("long-pages", "Long Records"),
                 ("statistics", "Statistics"),
-                ("search", "Search Help and Filters"),
-                ("what-links-here/index", "What Links Here Index"),
-            )
+            ),
+        ),
+    )
+    special(
+        "index",
+        "SERVATI Special Pages",
+        "Static-build equivalents of MediaWiki Special pages, derived from the generated corpus.\n\n"
+        + "\n\n".join(
+            f"## {heading}\n\n"
+            + "\n".join(f"- {wikilink(label, f'special/{rel}.md')}" for rel, label in links)
+            for heading, links in special_groups
         ),
     )
 
@@ -1686,7 +1728,6 @@ def portal_body(
         f'<a href="{relative_href(current_rel, entry.rel)}"><span>{html.escape(entry.record_type.upper())}</span><strong>{html.escape(entry.title)}</strong><b>{html.escape(entry.status)}</b></a>'
         for entry in featured
     )
-    browse_rows = table(record_rows(members), ["Record", "Type", "State", "Register", "Words"])
     type_rows = [
         [record_type, str(count), ", ".join(wikilink(entry.title, entry.rel) for entry in members if entry.record_type == record_type) ]
         for record_type, count in sorted(type_counts.items())
@@ -1744,10 +1785,6 @@ def portal_body(
 
 {table(record_rows(drafts), ["Record", "Type", "State", "Register", "Words"]) if drafts else "No V12 draft records are included in this portal."}
 
-## Browse this portal
-
-{browse_rows}
-
 ## Related portals
 
 {related_links}
@@ -1795,8 +1832,28 @@ def generate_portals(source: Source, entries: list[Entry]) -> list[Entry]:
 def generate_register_indexes(source: Source, entries: list[Entry]) -> list[Entry]:
     pages = []
     for register, (rel, title) in REGISTER_PATHS.items():
-        members = sorted((entry for entry in entries if entry.listed and entry.register == register), key=lambda item: (item.source_order, item.title))
-        body = table(record_rows(members), ["Record", "Type", "State", "Register", "Words"]) if members else "No records currently exist in this register."
+        members = sorted(
+            (
+                entry
+                for entry in entries
+                if entry.listed
+                and (
+                    entry.status == "V12 DRAFT"
+                    if register == "Version 12 Development"
+                    else entry.register == register
+                )
+            ),
+            key=lambda item: (item.source_order, item.title),
+        )
+        header = f'<div class="register-header"><span>REGISTER</span><strong>{html.escape(title)}</strong><b>{len(members)} records</b></div>'
+        if register == "Version 12 Development":
+            listing = table(record_rows(members), ["Record", "Type", "State", "Register", "Words"])
+        else:
+            listing = table(
+                [[wikilink(entry.title, entry.rel), entry.record_type, entry.status, str(entry.word_count)] for entry in members],
+                ["Record", "Type", "State", "Words"],
+            )
+        body = f"{header}\n\n{listing}" if members else f"{header}\n\nNo records currently exist in this register."
         pages.append(page_entry(source, rel, title, body, "register-index", "register index", register))
     return pages
 
@@ -1824,6 +1881,7 @@ def generate_homepage(source: Source, entries: list[Entry], stats: dict[str, obj
             ("custody", "Custody / Continuance", "Concepts, events, and custody systems."),
             ("faiths", "Faiths", "Archive Faiths, doctrines, and schisms."),
             ("choirs", "Choirs", "Choir civilizations and their logics."),
+            ("core-terms", "Core Terms", "Controlled vocabulary from Version 11 Appendix I."),
             ("v12-draft", "V12 Development", "Clearly separated unreleased development records."),
         )
     )
@@ -1888,6 +1946,7 @@ Released Version 11 records and Version 12 development records share navigation 
   <a href="./special/most-linked">Most linked</a>
   <a href="./special/orphaned">Orphaned records</a>
   <a href="./special/wanted-links">Wanted links</a>
+  <a href="./portals/index">All portals</a>
   <a href="./special/index">Special pages</a>
 </nav>
 

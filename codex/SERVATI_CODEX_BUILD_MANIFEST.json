@@ -1,9 +1,6 @@
 {
   "project": "SERVATI Codex",
   "architecture": "Quartz v5 + pinned GitHub plugins",
-  "source_root": "E:\\SERVATI\\CODEX_GITHUB_SOURCE",
-  "workspace": "E:\\SERVATI\\CODEX_WORK\\servati-codex",
-  "authoritative_lore_repo": "E:\\SERVATI\\servati",
   "quartz_requirements": {
     "node": ">=22",
     "npm": ">=10.9.2"
