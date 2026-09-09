@@ -18,6 +18,10 @@ V11_BRANCH = "main"
 V11_REF = "21b72ea0bbdaa4c8f9372270bb06b9501c5b9965"
 V12_BRANCH = "v12-faiths-choirs-custody-wars-20260907"
 V12_REF = "5bd417299c4e99163404f655e569dcc2fc03789b"
+PARTICULARISATION_PATH = "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md"
+PARTICULARISATION_DATA_PATH = "data/drafts/v12-particularisation-tranches-05-08.json"
+PARTICULARISATION_SHA256 = "efd87f65a33cfaf560fcf0d239f8c6fa2ebddc754c8e6cf6a3c19346ff5505f0"
+CODEX_BRANCH = "codex-quartz-site-20260908"
 INHERITANCE_LOGICS = ("Remains", "Memory", "Seed", "Ritual", "Structure", "Pattern")
 PART_LABELS = {
     "Part I — The Burdened Earth": "burdened-earth",
@@ -79,6 +83,7 @@ class Entry:
     era: str | None = None
     part: str | None = None
     inheritance: list[str] = field(default_factory=list)
+    source_ranges: list[tuple[int, int]] = field(default_factory=list)
     listed: bool = True
     aliases: list[str] = field(default_factory=list)
     outgoing: set[str] = field(default_factory=set)
@@ -99,7 +104,8 @@ class Entry:
     def revisions(self) -> list[Revision]:
         unique = {
             revision.commit: revision
-            for line in range(self.start_line, self.end_line + 1)
+            for start, end in (self.source_ranges or [(self.start_line, self.end_line)])
+            for line in range(start, end + 1)
             if (revision := self.source.line_revisions.get(line)) is not None
         }
         if not unique:
@@ -143,6 +149,9 @@ CATEGORY_DEFINITIONS: dict[str, tuple[str, str | None, str]] = {
     "entities/events": ("Events, Crises, and Wars", "entities", "Conflicts, crises, and controlled historical events."),
     "entities/artefacts": ("Artefacts and Technologies", "entities", "Custody objects, systems, and megastructures."),
     "entities/people": ("People and Collective Minds", "entities", "Named actors, offices, and collective intelligences."),
+    "entities/institutions": ("Institutions", "entities", "Named custodial offices, courts, houses, and correspondence traditions."),
+    "entities/sites": ("Local Sites", "entities", "Named chambers, halls, gates, annexes, platforms, and shores within larger worlds."),
+    "entities/draft-terminology": ("V12 DRAFT Terminology", "entities/concepts", "Draft vocabulary particular to unreleased Version 12 cultures."),
     "entities/recovered-records": ("Recovered Records", "entities", "Version 11 archaeological recovery fragments."),
     "inheritance": ("Inheritance Logic", None, "The six controlled preservation logics."),
     "inheritance/remains": ("Remains", "inheritance", "Physical custody of preserved dead matter."),
@@ -171,6 +180,9 @@ REGISTER_PATHS = {
     "People & Collective Minds": ("people-and-collective-minds/index.md", "People & Collective Minds Register"),
     "Recovered Records": ("recovered-records/index.md", "Recovered Records Register"),
     "Version 12 Development": ("v12-draft/index.md", "Version 12 Development Register"),
+    "Institutions": ("v12-draft/institutions/index.md", "V12 Institutions Register"),
+    "Sites & Locations": ("v12-draft/sites/index.md", "V12 Sites & Locations Register"),
+    "V12 Terminology": ("v12-draft/terms/index.md", "V12 Terminology Register"),
 }
 
 
@@ -221,6 +233,14 @@ def load_source(repo: Path, key: str, path: str, branch: str, ref: str) -> Sourc
         sha256=hashlib.sha256(text.encode("utf-8")).hexdigest(),
         line_revisions=line_revisions(repo, ref, path),
     )
+
+
+def load_current_source(repo: Path, key: str, path: str) -> Source:
+    local_text = (repo / path).read_text(encoding="utf-8")
+    committed_text = git_show(repo, f"HEAD:{path}")
+    if committed_text != local_text:
+        raise SystemExit(f"Current source must be committed before Codex generation: {path}")
+    return load_source(repo, key, path, CODEX_BRANCH, "HEAD")
 
 
 def slug(value: str) -> str:
@@ -397,6 +417,9 @@ def category_for_type(record_type: str) -> str:
         "event / crisis / war": "entities/events",
         "artefact / technology": "entities/artefacts",
         "person / collective mind": "entities/people",
+        "institution": "entities/institutions",
+        "site / location": "entities/sites",
+        "draft term": "entities/draft-terminology",
         "recovered record": "entities/recovered-records",
         "chronology stage": "history",
     }.get(record_type, "entities/concepts")
@@ -427,6 +450,7 @@ def make_entry(
     categories: list[str] | None = None,
     listed: bool = True,
     aliases: list[str] | None = None,
+    source_ranges: list[tuple[int, int]] | None = None,
 ) -> Entry:
     all_categories = list(categories) if categories is not None else base_categories(status, record_type)
     for logic in inheritance or []:
@@ -448,6 +472,7 @@ def make_entry(
         era=era,
         part=part,
         inheritance=list(inheritance or []),
+        source_ranges=list(source_ranges or []),
         listed=listed,
         aliases=list(aliases or []),
     )
@@ -710,6 +735,181 @@ def extract_draft(source: Source, folder: str, label: str) -> list[Entry]:
     return entries
 
 
+PARTICULARISATION_CONTEXT = {
+    "Low Receiving World K-11": (
+        ("Choir civilization", "The Low Concordance", "v12-draft/entries/the-low-concordance.md"),
+        ("V11 world type", "Burden World", "worlds-and-places/burden-world.md"),
+        ("Post-human lineage", "Pallbearer", "lineages/pallbearer.md"),
+        ("Faith / doctrine", "Weight Doctrine", "v12-draft/entries/weight-doctrine.md"),
+        ("Custody War context", "The Redirection of the Ash Convoy", "v12-draft/entries/the-redirection-of-the-ash-convoy.md"),
+    ),
+    "Paired Index Basins": (
+        ("Choir civilization", "The Counterarchive", "v12-draft/entries/the-counterarchive.md"),
+        ("V11 world type", "Index World", "worlds-and-places/index-world.md"),
+        ("Post-human lineage", "Archive Symbiont", "lineages/archive-symbiont.md"),
+        ("Faith / doctrine", "Hollow Archivists", "v12-draft/entries/hollow-archivists.md"),
+        ("Custody War context", "The Index Without Uncertainty", "v12-draft/entries/the-index-without-uncertainty.md"),
+    ),
+    "Reserve World Thirty-One-Outer": (
+        ("Choir civilization", "The Unopened Chorus", "v12-draft/entries/the-unopened-chorus.md"),
+        ("V11 world type", "Seed World", "worlds-and-places/seed-world.md"),
+        ("Post-human lineage", "Seed Warden", "lineages/seed-warden.md"),
+        ("Faith / doctrine", "Dormant Mandate", "v12-draft/entries/dormant-mandate.md"),
+        ("Custody War context", "The False Release at Seed Reserve Thirty-One", "v12-draft/entries/the-false-release-at-seed-reserve-thirty-one.md"),
+    ),
+    "Long Bell Meridian": (
+        ("Choir civilization", "The Processional Measure", "v12-draft/entries/the-processional-measure.md"),
+        ("V11 world type", "Rite World", "worlds-and-places/rite-world.md"),
+        ("Post-human lineage", "Rite Custodian", "lineages/rite-custodian.md"),
+        ("Faith / doctrine", "Quiet Route", "v12-draft/entries/quiet-route.md"),
+        ("Custody War context", "The Silence Breach of Relay Twelve", "v12-draft/entries/the-silence-breach-of-relay-twelve.md"),
+    ),
+    "World of Seven Approaches": (
+        ("Choir civilization", "The Threshold Assembly", "v12-draft/entries/the-threshold-assembly.md"),
+        ("V11 world type", "Structure World", "worlds-and-places/structure-world.md"),
+        ("Post-human lineage", "Threshold Walker", "lineages/threshold-walker.md"),
+        ("Faith / doctrine", "Testament of the Threshold", "v12-draft/entries/testament-of-the-threshold.md"),
+        ("Custody War context", "The Closed Threshold Campaign", "v12-draft/entries/the-closed-threshold-campaign.md"),
+    ),
+    "Detuned Sea": (
+        ("Choir civilization", "The Divergent Harmonic", "v12-draft/entries/the-divergent-harmonic.md"),
+        ("V11 world type", "Pattern World", "worlds-and-places/pattern-world.md"),
+        ("Post-human lineage", "Pattern Swarm", "lineages/pattern-swarm.md"),
+        ("Faith / doctrine", "Choir Ascendants", "v12-draft/entries/choir-ascendants.md"),
+        ("Custody War context", "The First Harmonic Excommunication", "v12-draft/entries/the-first-harmonic-excommunication.md"),
+    ),
+}
+
+
+def extract_particularisation(repo: Path, source: Source) -> list[Entry]:
+    dataset = json.loads((repo / PARTICULARISATION_DATA_PATH).read_text(encoding="utf-8"))
+    if dataset.get("canon_status") != "DRAFT" or dataset.get("working_pack", {}).get("sha256") != PARTICULARISATION_SHA256:
+        raise SystemExit("Particularisation dataset authority state or source hash changed")
+    if source.sha256 != PARTICULARISATION_SHA256:
+        raise SystemExit("Particularisation Codex source differs from its pinned hash")
+
+    source_lines = source.text.splitlines()
+    line_starts = [0]
+    for match in re.finditer("\n", source.text):
+        line_starts.append(match.end())
+
+    def source_slice(start: int, end: int, include_heading: bool = False) -> str:
+        first = start - 1 if include_heading else start
+        return "\n".join(source_lines[first:end]).strip()
+
+    def source_ranges(entry_data: dict[str, object]) -> list[tuple[int, int]]:
+        provenance = entry_data["servati"]["provenance"][0]  # type: ignore[index]
+        location = provenance["source_location"]  # type: ignore[index]
+        ranges = [
+            (int(match.group(1)), int(match.group(2) or match.group(1)))
+            for match in re.finditer(r"(?:source )?lines? (\d+)(?:-(\d+))?", str(location), re.IGNORECASE)
+        ]
+        if entry_data["Name"] == "The Refusal Correspondence":
+            ranges.extend([(386, 408), (568, 590)])
+        return ranges
+
+    type_profile = {
+        ("Location", "Choir-age world"): ("world / environment", "Worlds & Environments", "world-environment", "v12-draft/worlds"),
+        ("Location", "Local site"): ("site / location", "Sites & Locations", "site-location", "v12-draft/sites"),
+        ("Agent", "Custodial actor"): ("person / collective mind", "People & Collective Minds", "person-collective-mind", "v12-draft/actors"),
+        ("Collective", "Collective mind"): ("person / collective mind", "People & Collective Minds", "person-collective-mind", "v12-draft/actors"),
+        ("Institution", "Custodial institution"): ("institution", "Institutions", "institution", "v12-draft/institutions"),
+        ("Institution", "Correspondence tradition"): ("institution", "Institutions", "institution", "v12-draft/institutions"),
+        ("Object", "Artefact"): ("artefact / technology", "Artefacts & Technologies", "artefact-technology", "v12-draft/artefacts"),
+        ("Narrative", "Recovered custody record"): ("recovered record", "Recovered Records", "recovered-record", "v12-draft/recovered-records"),
+        ("Concept", "DRAFT terminology"): ("draft term", "V12 Terminology", "draft-term", "v12-draft/terms"),
+    }
+    data_entries = dataset["entries"]
+    descriptors: dict[str, tuple[str, str, str, str]] = {}
+    rel_by_id: dict[str, str] = {}
+    title_by_id: dict[str, str] = {}
+    for item in data_entries:
+        profile = type_profile[(item["Supertype"], item["Subtype"])]
+        rel = f"{profile[3]}/{slug(item['Name'])}.md"
+        descriptors[item["Id"]] = profile
+        rel_by_id[item["Id"]] = rel
+        title_by_id[item["Id"]] = item["Name"]
+
+    world_names = {
+        item["Id"]: item["Name"]
+        for item in data_entries
+        if item["Supertype"] == "Location" and item["Subtype"] == "Choir-age world"
+    }
+    tranche_labels = ("Tranche 05 — Inhabited Choir World", "Tranche 06 — Rivalries and Additional Records", "Tranche 07 — Everyday Life and Material Culture", "Tranche 08 — Social Life, Intimacy and Culture")
+    entries: list[Entry] = []
+    for order, item in enumerate(data_entries, start=1):
+        record_type, register, template, _ = descriptors[item["Id"]]
+        ranges = source_ranges(item)
+        if not ranges:
+            raise SystemExit(f"Particularisation record lacks source lines: {item['Name']}")
+        if item["Name"] in world_names.values():
+            body_parts = [
+                f"## {label}\n\n{source_slice(start, end)}"
+                for label, (start, end) in zip(tranche_labels, ranges, strict=True)
+            ]
+            established = "\n".join(
+                f"- **{kind}:** {wikilink(label, rel)}"
+                for kind, label, rel in PARTICULARISATION_CONTEXT[item["Name"]]
+            )
+            body_parts.append(f"## Established context\n\n{established}")
+            body = "\n\n".join(body_parts)
+        elif item["Name"] == "The Refusal Correspondence":
+            body = "\n\n".join(
+                (
+                    "## Correspondence tradition\n\n" + source_slice(235, 256),
+                    "## Cross-world material contrast\n\n" + source_slice(386, 408),
+                    "## Cross-world intimacy model\n\n" + source_slice(568, 590),
+                )
+            )
+        elif item["Supertype"] == "Narrative":
+            body = "\n".join(f"> {line}" for line in item["Description"].splitlines())
+        else:
+            body = item["Description"]
+
+        related_ids = []
+        world_id = item.get("World")
+        if world_id in world_names and world_id != item["Id"]:
+            related_ids.append(world_id)
+        for values in item.get("Involves", {}).values():
+            related_ids.extend(values)
+        related_ids = list(dict.fromkeys(target for target in related_ids if target in rel_by_id and target != item["Id"]))
+        if related_ids:
+            links = "\n".join(f"- {wikilink(title_by_id[target], rel_by_id[target])}" for target in related_ids)
+            body += f"\n\n## Structured relationships\n\n{links}"
+
+        start_line = min(start for start, _ in ranges)
+        end_line = max(end for _, end in ranges)
+        start_char = line_starts[start_line - 1]
+        end_char = line_starts[end_line] if end_line < len(line_starts) else len(source.text)
+        inheritance = item["servati"]["inheritance_logic"]
+        categories = base_categories("V12 DRAFT", record_type)
+        if record_type == "site / location":
+            categories.append("entities/sites")
+        elif record_type == "draft term":
+            categories.append("entities/draft-terminology")
+        entries.append(
+            make_entry(
+                rel=rel_by_id[item["Id"]],
+                title=item["Name"],
+                status="V12 DRAFT",
+                record_type=record_type,
+                source=source,
+                section=item["servati"]["provenance"][0]["source_location"],
+                body=body,
+                start=start_char,
+                end=end_char,
+                source_order=order,
+                template=template,
+                register=register,
+                era="Choir age",
+                inheritance=inheritance,
+                categories=categories,
+                source_ranges=ranges,
+            )
+        )
+    return entries
+
+
 def build_alias_map(entries: list[Entry]) -> dict[str, set[str]]:
     aliases: dict[str, set[str]] = defaultdict(set)
     for entry in entries:
@@ -828,7 +1028,14 @@ def category_link(category: str) -> str:
 
 def source_line_url(entry: Entry, permanent: bool = False) -> str:
     base = entry.source.permanent_url if permanent else entry.source.source_url
-    return f"{base}#L{entry.start_line}-L{entry.end_line}"
+    start, end = (entry.source_ranges or [(entry.start_line, entry.end_line)])[0]
+    return f"{base}#L{start}-L{end}"
+
+
+def source_range_links(entry: Entry, permanent: bool = False) -> str:
+    base = entry.source.permanent_url if permanent else entry.source.source_url
+    ranges = entry.source_ranges or [(entry.start_line, entry.end_line)]
+    return "; ".join(f"[{start}-{end}]({base}#L{start}-L{end})" for start, end in ranges)
 
 
 def codex_permalink(entry: Entry, generated: Source) -> str:
@@ -855,6 +1062,9 @@ def render_template_dossier(entry: Entry) -> str:
         "event-crisis-war": ("INCIDENT FILE", "Incident position"),
         "artefact-technology": ("CUSTODY OBJECT", "Object position"),
         "person-collective-mind": ("ACTOR RECORD", "Actor position"),
+        "institution": ("CUSTODIAL INSTITUTION", "Institution position"),
+        "site-location": ("LOCAL SITE", "Site position"),
+        "draft-term": ("DRAFT LEXICON", "Term position"),
         "recovered-record": ("RECOVERED EVIDENCE", "Fragment position"),
     }
     code, sequence_label = profiles[entry.template]
@@ -976,8 +1186,8 @@ def render_entry(
     ]
     provenance = f"""## Source and provenance
 
-- **Source record:** [{source.path} lines {entry.start_line}-{entry.end_line}]({source_line_url(entry)})
-- **Permanent source:** [{source.commit[:12]} lines {entry.start_line}-{entry.end_line}]({source_line_url(entry, permanent=True)})
+- **Source record:** {source.path}, lines {source_range_links(entry)}
+- **Permanent source:** {source.commit[:12]}, lines {source_range_links(entry, permanent=True)}
 - **Versioned Codex permalink:** [{entry.slug} at Codex {generated.commit[:12]}]({codex_permalink(entry, generated)})
 - **Source section:** {entry.section}
 - **Record body SHA-256:** `{entry.body_sha256}`
@@ -1053,7 +1263,7 @@ def frontmatter(entry: Entry) -> list[str]:
             f"source_branch: {quote(entry.source.branch)}",
             f"source_commit: {quote(entry.source.commit)}",
             f"source_section: {quote(entry.section)}",
-            f"source_lines: {quote(f'{entry.start_line}-{entry.end_line}')}",
+            f"source_lines: {quote('; '.join(f'{start}-{end}' for start, end in (entry.source_ranges or [(entry.start_line, entry.end_line)])))}",
             f"source_order: {entry.source_order}",
             f"word_count: {entry.word_count}",
             "categories:",
@@ -1085,7 +1295,7 @@ def generated_source(repo: Path, latest: Source) -> Source:
     return Source(
         key="generated",
         path=path,
-        branch="codex-quartz-site-20260908",
+        branch=CODEX_BRANCH,
         ref="HEAD",
         text=text,
         commit=commit,
@@ -1795,9 +2005,9 @@ def generate_portals(source: Source, entries: list[Entry]) -> list[Entry]:
     listed = [entry for entry in entries if entry.listed]
     specs = [
         ("history", "History & Eras Portal", "The controlled chapter sequence and chronology of the Continuance.", lambda e: e.record_type in {"chapter", "chronology stage"}, ["history"], [("Custody / Continuance", "portals/custody.md"), ("Worlds", "portals/worlds.md")]),
-        ("worlds", "Worlds Portal", "Worlds, environments, Lamps, and custody settings explicitly present in the sources.", lambda e: e.record_type in {"world", "environment", "world / environment"}, ["entities/worlds", "entities/environments"], [("Lineages", "portals/lineages.md"), ("History", "portals/history.md")]),
+        ("worlds", "Worlds Portal", "Worlds, environments, Lamps, and custody settings explicitly present in the sources.", lambda e: e.record_type in {"world", "environment", "world / environment", "site / location"}, ["entities/worlds", "entities/environments", "entities/sites"], [("Lineages", "portals/lineages.md"), ("History", "portals/history.md")]),
         ("lineages", "Lineages Portal", "Principal custodial and post-human lineages across the controlled record.", lambda e: e.record_type == "lineage", ["entities/lineages"], [("Worlds", "portals/worlds.md"), ("Custody / Continuance", "portals/custody.md")]),
-        ("custody", "Custody / Continuance Portal", "Concepts, events, and systems concerned with custody and the Continuance.", lambda e: e.record_type in {"core term", "event / crisis / war", "artefact / technology"}, ["entities/concepts", "entities/events", "entities/artefacts"], [("Faiths", "portals/faiths.md"), ("Choirs", "portals/choirs.md")]),
+        ("custody", "Custody / Continuance Portal", "Concepts, events, institutions, and systems concerned with custody and the Continuance.", lambda e: e.record_type in {"core term", "draft term", "event / crisis / war", "artefact / technology", "institution"}, ["entities/concepts", "entities/events", "entities/artefacts", "entities/institutions"], [("Faiths", "portals/faiths.md"), ("Choirs", "portals/choirs.md")]),
         ("faiths", "Faiths Portal", "Source-backed Archive Faiths, doctrines, and schisms with canon state kept explicit.", lambda e: e.record_type == "faith / doctrine", ["entities/faiths", "evidence/doctrinal"], [("Choirs", "portals/choirs.md"), ("V12 Development", "portals/v12-draft.md")]),
         ("choirs", "Choirs Portal", "Choir civilizations and the inheritance logics they enlarge.", lambda e: e.record_type == "Choir civilization", ["entities/choirs", "inheritance"], [("Faiths", "portals/faiths.md"), ("Worlds", "portals/worlds.md")]),
         ("core-terms", "Core Terms Portal", "Controlled vocabulary from Version 11 Appendix I.", lambda e: e.record_type == "core term", ["entities/concepts", "inheritance"], [("History", "portals/history.md"), ("Custody / Continuance", "portals/custody.md")]),
@@ -1985,7 +2195,7 @@ def validate_entries(entries: list[Entry]) -> dict[str, object]:
     leakage = [
         entry.rel
         for entry in entries
-        if (entry.source.branch == V12_BRANCH and entry.status != "V12 DRAFT")
+        if (entry.source.key.startswith("v12-") and entry.status != "V12 DRAFT")
         or (entry.source.branch == V11_BRANCH and entry.status != "V11 CORE")
     ]
     if duplicate_slugs:
@@ -2028,6 +2238,7 @@ def build(repo: Path, out: Path) -> dict[str, object]:
         load_source(repo, "v12-incidents", "drafts/v12/tranche-01/custody-war-incidents.md", V12_BRANCH, V12_REF),
         load_source(repo, "v12-faiths", "drafts/v12/tranche-02/archive-faiths.md", V12_BRANCH, V12_REF),
         load_source(repo, "v12-choirs", "drafts/v12/tranche-03/choirs-custody-wars.md", V12_BRANCH, V12_REF),
+        load_current_source(repo, "v12-particularisation-05-08", PARTICULARISATION_PATH),
     ]
     v11 = sources[0]
     entries = extract_v11(v11)
@@ -2035,6 +2246,7 @@ def build(repo: Path, out: Path) -> dict[str, object]:
     entries.extend(extract_draft(sources[2], "custody-war-incidents", "Custody War Incidents, Tranche 01"))
     entries.extend(extract_draft(sources[3], "archive-faiths", "Archive Faiths, Tranche 02"))
     entries.extend(extract_draft(sources[4], "choirs-custody-wars", "Choirs and Custody Wars, Tranche 03"))
+    entries.extend(extract_particularisation(repo, sources[5]))
 
     integrity = validate_entries(entries)
     incoming, wanted = analyze_relations(entries)

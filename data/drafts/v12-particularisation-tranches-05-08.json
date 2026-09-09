@@ -1,0 +1,3102 @@
+{
+  "$schema": "../../schemas/servati-dataset.schema.json",
+  "dataset_id": "SV-DRAFT-V12-PARTICULARISATION-05-08",
+  "canon_status": "DRAFT",
+  "schema_basis": {
+    "project": "OnlyWorlds/OnlyWorlds",
+    "revision": "ed84fa19c15c5bfb18019245faacdbdcb7cd9e0f",
+    "licence": "MIT",
+    "scope": "Base entity fields with additive SERVATI Agent, Collective, Institution, Object, Narrative, Concept, typed relation, provenance, and world-particularisation fields."
+  },
+  "working_pack": {
+    "filename": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+    "sha256": "efd87f65a33cfaf560fcf0d239f8c6fa2ebddc754c8e6cf6a3c19346ff5505f0"
+  },
+  "world_reference": {
+    "Id": "01a07765-3d73-7945-accf-bb285edefe4d",
+    "status": "DRAFT_PLACEHOLDER",
+    "note": "Shared relational root retained for compatibility. It is not a lore world and does not promote any V12 record."
+  },
+  "entries": [
+    {
+      "Id": "01a08376-dc00-7d35-8e6f-63d05c27b8ba",
+      "Name": "Low Receiving World K-11",
+      "Description": "the failure caused procedure to split. Acceptance, storage, movement and release became four separately recorded acts. Later Low Concordance institutions treated any system that collapsed those acts into a single “transfer completed” state as ethically primitive.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Location",
+      "Subtype": "Choir-age world",
+      "Setting": {
+        "form": "Habitation beside work routes; narrow durable rooms; empty load cradle in personal space.",
+        "function": "Weight must remain traceable"
+      },
+      "Particularisation": {
+        "historical_consequence": "the failure caused procedure to split. Acceptance, storage, movement and release became four separately recorded acts. Later Low Concordance institutions treated any system that collapsed those acts into a single “transfer completed” state as ethically primitive.",
+        "habitation": "Habitation beside work routes; narrow durable rooms; empty load cradle in personal space.",
+        "clothing": "heavy pressure cloth, reinforced shoulders, load-distribution harnesses, removable thermal liners. Rank shown by stitching patterns indicating custody authorisations.",
+        "maintenance_sustenance": "compact nutrient pastes, mineral broths, temperature-regulated rest. Eating socially uncommon during active custody.",
+        "transport": "slow rail sledges and floor-guided burden carriers; immobilisation preferred over automatic rerouting when authority becomes uncertain.",
+        "work_rhythm": "measured by custody state, not clock time.",
+        "social_custom": "people ask **“Are you released?”** rather than “Are you free?”",
+        "body_modification": "shoulder reinforcement, spinal load supports, thermal-sense augmentation, tactile identification surfaces.",
+        "death_custody": "the dead are never described as “cleared” merely because physical space has been recovered.",
+        "repair_culture": "damaged equipment repaired in place whenever possible.",
+        "ordinary_phrase": "**“Do not make completion out of movement.”**",
+        "kinship": "Burden Kin — long-term bonds formed by repeatedly accepting difficult custody together. Biological ancestry matters where it exists, but shared burden history can create stronger obligations.",
+        "friendship": "a close friend is trusted to take over a burden without erasing its history.",
+        "intimacy": "private intimacy often involves removing work harnesses, identification surfaces and load permissions in another’s presence. Being seen **unassigned** carries vulnerability.",
+        "privacy": "personal rooms often have a physical “no transfer” state.",
+        "education": "new custodians shadow low-risk transfers and maintain chain-of-custody records before touching significant burdens.",
+        "mourning": "an unresolved task may be preserved exactly as left for years.",
+        "humour": "a catastrophically complicated situation may be called **“slightly over-received.”**",
+        "shame": "losing track of an accepted burden.",
+        "taboo": "saying **“nothing is here”** about an unidentified or unrecorded burden.",
+        "hospitality": "visitors are formally given a place where nothing will be placed in their custody without consent.",
+        "social_exclusion": "**non-transfer** — nobody trusts the person with anything that matters."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-WORLD-05-01",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Remains"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05 lines 15-31; Tranche 06 lines 123-138; Tranche 07 lines 260-279; Tranche 08 lines 412-433",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "requires-review",
+        "preservation_problem": "Weight must remain traceable",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-7d35-8e6f-63d05c27b8ba",
+          "01a08376-dc00-79bd-bd2a-ba3dead7da39",
+          "01a08376-dc00-7300-b20f-b48c591fc86b"
+        ],
+        "institutions": [
+          "01a08376-dc00-70f5-8aed-a4ebebf6cfb7",
+          "01a08376-dc00-7a0a-8548-52d7fc3632c4",
+          "01a08376-dc00-70fe-8f03-8bdadbea23bb"
+        ],
+        "collectives": [],
+        "agents": [
+          "01a08376-dc00-74c5-ae09-790a792b12fe",
+          "01a08376-dc00-7a6b-966d-de8f576f984f",
+          "01a08376-dc00-7767-b80b-bf9466c08e30"
+        ],
+        "objects": [
+          "01a08376-dc00-7df9-be74-92913a9825a9",
+          "01a08376-dc00-759f-a6c5-75ef9cf43f29"
+        ],
+        "narratives": [
+          "01a08376-dc00-722f-8fcb-f0ea1ec77f5a",
+          "01a08376-dc00-7f5f-a62f-9dc0857e92f3"
+        ],
+        "concepts": [
+          "01a08376-dc00-78aa-9f11-f7c23425cf95"
+        ]
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7b86-9a4a-6186112e713b",
+      "Name": "Paired Index Basins",
+      "Description": "Counterarchive practice changed from “compare records until they converge” to “preserve the path by which convergence occurred.” Identical conclusions without traceable independent paths became weaker evidence than modest disagreement.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Location",
+      "Subtype": "Choir-age world",
+      "Setting": {
+        "form": "paired structures deliberately not identical.",
+        "function": "Difference protects evidence"
+      },
+      "Particularisation": {
+        "historical_consequence": "Counterarchive practice changed from “compare records until they converge” to “preserve the path by which convergence occurred.” Identical conclusions without traceable independent paths became weaker evidence than modest disagreement.",
+        "habitation": "paired structures deliberately not identical.",
+        "clothing": "matched but non-identical sets; important officials may wear two records of the same identity mark produced by different workshops.",
+        "maintenance_sustenance": "duplicated sensors with deliberately independent calibration.",
+        "transport": "parallel route networks; resistance to collapsing them into one optimised system.",
+        "work_rhythm": "**difference windows** during which separate teams cannot communicate before submitting findings.",
+        "social_custom": "immediate agreement can be embarrassing; response: **“Find where we differ.”**",
+        "body_modification": "asymmetrical sensory systems, paired memory buffers with distinct compression rules, duplicate archive organs with controlled divergence.",
+        "death_custody": "identity confirmation usually requires at least two independently derived records.",
+        "repair_culture": "replacement parts from identical production runs sometimes avoided for critical systems.",
+        "ordinary_phrase": "**“Keep the bad copy until we know why it is bad.”**",
+        "kinship": "Independent Pairing — two or more beings maintain separate lives, archives and memory practices while remaining each other’s independent witness.",
+        "friendship": "trusted friends challenge your account rather than confirm it.",
+        "intimacy": "sharing raw, pre-reconciled memory.",
+        "privacy": "**uncompared archives** deliberately withheld from cross-checking.",
+        "education": "learners receive convincing but incompatible accounts and are judged on whether they preserve uncertainty.",
+        "mourning": "multiple versions of the dead person’s identity may be retained rather than fused.",
+        "art": "paired works with small contradictions.",
+        "humour": "after obvious agreement, **“We should investigate this immediately.”**",
+        "shame": "quietly correcting your archive instead of preserving the earlier error.",
+        "taboo": "destroying an inferior copy merely because a better one exists.",
+        "hospitality": "guests may record first impressions before local explanations are provided.",
+        "social_exclusion": "loss of independent-witness status."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-WORLD-05-02",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Memory"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05 lines 33-49; Tranche 06 lines 140-158; Tranche 07 lines 281-300; Tranche 08 lines 435-458",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "requires-review",
+        "preservation_problem": "Difference protects evidence",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-7b86-9a4a-6186112e713b",
+          "01a08376-dc00-760e-a96f-c8c72eaf4f6d",
+          "01a08376-dc00-70c0-a410-20956c6a30b0"
+        ],
+        "institutions": [
+          "01a08376-dc00-7f22-aa10-4e941a2d0299",
+          "01a08376-dc00-78c9-a92c-19dde895d7f3",
+          "01a08376-dc00-70fe-8f03-8bdadbea23bb"
+        ],
+        "collectives": [
+          "01a08376-dc00-7752-8a0f-562f1b52408a",
+          "01a08376-dc00-7bd7-ae76-e6e10e9ee7ef"
+        ],
+        "agents": [
+          "01a08376-dc00-73b7-8f13-60e6a8bbf30d"
+        ],
+        "objects": [
+          "01a08376-dc00-7c1e-b214-e9747bcf7a38",
+          "01a08376-dc00-7a9d-94ee-020e738d9c31"
+        ],
+        "narratives": [
+          "01a08376-dc00-7713-90f5-fa19905c5253",
+          "01a08376-dc00-73bb-8b5d-7dc97e651f04"
+        ],
+        "concepts": [
+          "01a08376-dc00-72cd-94d0-507e6fa1b4b4"
+        ]
+      }
+    },
+    {
+      "Id": "01a08376-dc00-71f4-9a28-ae8216f51699",
+      "Name": "Reserve World Thirty-One-Outer",
+      "Description": "the Unopened Chorus developed a distinction between condition, permission and inheritance authority. Technical success could satisfy the first while leaving the other two untouched.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Location",
+      "Subtype": "Choir-age world",
+      "Setting": {
+        "form": "enclosed ecological-laboratory settlements between seed chambers, water cycles, quarantine gardens and monitoring rooms.",
+        "function": "Readiness does not create authority"
+      },
+      "Particularisation": {
+        "historical_consequence": "the Unopened Chorus developed a distinction between condition, permission and inheritance authority. Technical success could satisfy the first while leaving the other two untouched.",
+        "habitation": "enclosed ecological-laboratory settlements between seed chambers, water cycles, quarantine gardens and monitoring rooms.",
+        "clothing": "lightweight sealed garments with removable contamination layers. Green markings mean viability, not permission.",
+        "maintenance_sustenance": "highly diverse food systems because variation is treated as stored inheritance.",
+        "transport": "abundant internal transport; intentionally sparse external transport.",
+        "work_rhythm": "long routine tending interrupted by **condition reviews**.",
+        "social_custom": "avoid “ready” without qualification; ask **“Ready for what?”**",
+        "body_modification": "respiratory filters, microbiome reservoirs, seed-handling appendages, environmental sampling organs, long-duration metabolic slowing.",
+        "death_custody": "bodies may be ecological records as well as persons; microbiomes, symbionts and exposures preserved separately where appropriate.",
+        "repair_culture": "systems remain functional even without expected deployment.",
+        "ordinary_phrase": "**“Viable is not permitted.”**",
+        "kinship": "Steward Lines — identity organised around long-term responsibility for particular ecological/genetic reserves rather than descent alone.",
+        "friendship": "close friends maintain each other’s dormant responsibilities during slowing/isolation.",
+        "intimacy": "sharing access to personal microbiome, seed or symbiont archives.",
+        "privacy": "internal ecology may be more private than face or name.",
+        "education": "many lessons deliberately end with **“The system worked. Do nothing.”**",
+        "mourning": "personal cultures/seeds may continue living without being treated as the person.",
+        "art": "living gardens designed never to reach final form.",
+        "recreation": "temporary ecosystems built to observe unexpected interaction, then dismantled without dissemination.",
+        "humour": "**“Unfortunately, it appears viable.”**",
+        "shame": "letting enthusiasm for a successful system outrun authority.",
+        "taboo": "calling a viable reserve **“free.”**",
+        "hospitality": "safe participation without automatic access to stored inheritance.",
+        "social_exclusion": "loss of **release voice**."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-WORLD-05-03",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Seed"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05 lines 51-67; Tranche 06 lines 160-178; Tranche 07 lines 302-321; Tranche 08 lines 460-485",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "requires-review",
+        "preservation_problem": "Readiness does not create authority",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-71f4-9a28-ae8216f51699",
+          "01a08376-dc00-7e60-a993-5116d967dcab",
+          "01a08376-dc00-7e6e-aaa4-ca78125b060b"
+        ],
+        "institutions": [
+          "01a08376-dc00-75d3-937b-75a0fe1c00ac",
+          "01a08376-dc00-76be-8a77-e80b49b4cdc0",
+          "01a08376-dc00-70fe-8f03-8bdadbea23bb"
+        ],
+        "collectives": [],
+        "agents": [
+          "01a08376-dc00-716d-8bae-7a20859714df",
+          "01a08376-dc00-7c64-9a85-40231ad80db9",
+          "01a08376-dc00-78b7-884b-0cbc31b7dee9"
+        ],
+        "objects": [
+          "01a08376-dc00-7bbc-81f9-1e2e1b70cf42",
+          "01a08376-dc00-7ad8-9151-69b65a56dfe5"
+        ],
+        "narratives": [
+          "01a08376-dc00-7421-a3f0-c736adfff9aa",
+          "01a08376-dc00-7ce4-ab61-9ef2cedad2ba"
+        ],
+        "concepts": [
+          "01a08376-dc00-7434-a46a-643614950405"
+        ]
+      }
+    },
+    {
+      "Id": "01a08376-dc00-764d-9ec3-a9cb804b2e20",
+      "Name": "Long Bell Meridian",
+      "Description": "Processional Measure traditions stopped reconstructing missing ritual sections from neighbouring evidence. An absence could become an inherited object in its own right.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Location",
+      "Subtype": "Choir-age world",
+      "Setting": {
+        "form": "elongated settlements along processional routes; architecture emphasises sequence.",
+        "function": "Absence can be preserved"
+      },
+      "Particularisation": {
+        "historical_consequence": "Processional Measure traditions stopped reconstructing missing ritual sections from neighbouring evidence. An absence could become an inherited object in its own right.",
+        "habitation": "elongated settlements along processional routes; architecture emphasises sequence.",
+        "clothing": "layered pressure cloth with bands removed/added by ritual position; missing bands may carry meaning.",
+        "maintenance_sustenance": "meals tied to intervals; some communal tables deliberately leave one place unserved.",
+        "transport": "walking remains culturally important; slow platforms avoid erasing processional intervals.",
+        "work_rhythm": "alternating action and deliberate non-action; silence can be scheduled work.",
+        "social_custom": "interrupting an intentional pause is worse than arriving late.",
+        "body_modification": "internal timing organs, vibration sensors, gait stabilisers, memory systems preserving sequence.",
+        "death_custody": "missing ritual knowledge is marked, not automatically reconstructed.",
+        "repair_culture": "restored objects often preserve visible breaks.",
+        "ordinary_phrase": "**“Leave room for what did not survive.”**",
+        "kinship": "Sequence Kin — people linked by shared placement within recurring processes.",
+        "friendship": "someone who knows when not to fill your silence.",
+        "intimacy": "sharing **unmeasured time** with no ritual, work or custodial purpose.",
+        "privacy": "unmeasured time is not recorded.",
+        "education": "sequences learned through repetition and deliberate gaps.",
+        "mourning": "the deceased person’s place in a sequence may remain permanently empty.",
+        "art": "music with absent measures, architecture with unusable spaces, processions centred on pauses.",
+        "recreation": "improvised walking routes abandoning expected sequence.",
+        "humour": "announce a solemn pause, then **“That was sufficient.”**",
+        "shame": "filling silence because one personally found it uncomfortable.",
+        "taboo": "pretending to remember a lost ritual component.",
+        "hospitality": "guests are told which silences they may break.",
+        "social_exclusion": "being removed from sequence while another performs your role."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-WORLD-05-04",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Ritual"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05 lines 69-84; Tranche 06 lines 180-197; Tranche 07 lines 323-342; Tranche 08 lines 487-512",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "requires-review",
+        "preservation_problem": "Absence can be preserved",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-764d-9ec3-a9cb804b2e20",
+          "01a08376-dc00-7e3f-ad5e-81f73f7496d9",
+          "01a08376-dc00-70f2-b83b-62c40726f962"
+        ],
+        "institutions": [
+          "01a08376-dc00-7056-939b-b0588e9d998d",
+          "01a08376-dc00-7ce8-8424-13fcd502180b",
+          "01a08376-dc00-70fe-8f03-8bdadbea23bb"
+        ],
+        "collectives": [
+          "01a08376-dc00-7176-8cbe-a88c92b9f7c3"
+        ],
+        "agents": [
+          "01a08376-dc00-7950-88ba-a944fcd36cf6",
+          "01a08376-dc00-7b8c-aebe-0c7b81fd883b"
+        ],
+        "objects": [
+          "01a08376-dc00-7b5c-8f49-670674308433",
+          "01a08376-dc00-7e88-86c0-8df7038a5a39"
+        ],
+        "narratives": [
+          "01a08376-dc00-719d-8701-f14eb486e6c9",
+          "01a08376-dc00-7e3e-a2b3-02e75172ca2c"
+        ],
+        "concepts": [
+          "01a08376-dc00-7287-9720-633d7e911892"
+        ]
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7dd9-805c-dca2eb25eba4",
+      "Name": "World of Seven Approaches",
+      "Description": "Threshold Assembly law separated accessibility from recognition. A route can physically reach a place without inheriting the status attached to recognised approaches.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Location",
+      "Subtype": "Choir-age world",
+      "Setting": {
+        "form": "buildings organised around recognised routes of entry; rooms may carry different meaning depending on approach used.",
+        "function": "Presence does not equal recognised entry"
+      },
+      "Particularisation": {
+        "historical_consequence": "Threshold Assembly law separated accessibility from recognition. A route can physically reach a place without inheriting the status attached to recognised approaches.",
+        "habitation": "buildings organised around recognised routes of entry; rooms may carry different meaning depending on approach used.",
+        "clothing": "route tokens, threshold cords, entrance marks.",
+        "maintenance_sustenance": "public eating spaces distinguish recognised approaches from temporary route status because responsibilities differ.",
+        "transport": "physically functional roads may be absent from ceremonial/legal maps.",
+        "work_rhythm": "duties begin at recognised entry rather than physical arrival.",
+        "social_custom": "**“You are here. You have not yet entered.”**",
+        "body_modification": "threshold-sensitive implants, route-memory organs, spatial orientation systems, recognised-access markers.",
+        "death_custody": "arrival of remains and acceptance into custody are separate recorded events.",
+        "repair_culture": "physical restoration and recognised restoration are separate procedures.",
+        "ordinary_phrase": "**“A way is not an approach.”**",
+        "kinship": "Mutual Entry — profound relationship formalised by granting another being a recognised approach into one’s private life.",
+        "friendship": "different friends may possess different recognised approaches — practical, emotional, historical, ritual.",
+        "intimacy": "allowing access without usual threshold procedure.",
+        "privacy": "strongly spatialised; a person may be publicly reachable through one approach while other aspects remain inaccessible.",
+        "education": "every door has three questions: can it open? may it open? what does entry mean?",
+        "mourning": "recognised approaches to the deceased may be closed one by one.",
+        "art": "buildings designed to be experienced differently depending on route of entry.",
+        "recreation": "route puzzles where the objective is arriving under a particular recognised status.",
+        "humour": "**“You are technically here.”**",
+        "shame": "using a permitted route to obtain access clearly not intended.",
+        "taboo": "equating physical accessibility with consent.",
+        "hospitality": "a guest is formally granted an approach even when destination is physically easy to reach.",
+        "social_exclusion": "revocation of recognised approaches."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-WORLD-05-05",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05 lines 86-102; Tranche 06 lines 199-214; Tranche 07 lines 344-363; Tranche 08 lines 514-539",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "requires-review",
+        "preservation_problem": "Presence does not equal recognised entry",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-7dd9-805c-dca2eb25eba4",
+          "01a08376-dc00-7124-8035-af540b9693a8",
+          "01a08376-dc00-7e0c-b541-ef4e582ce4c4"
+        ],
+        "institutions": [
+          "01a08376-dc00-7060-950c-0a6259f40dfe",
+          "01a08376-dc00-7dd0-ba0e-97ba04d33716",
+          "01a08376-dc00-70fe-8f03-8bdadbea23bb"
+        ],
+        "collectives": [],
+        "agents": [
+          "01a08376-dc00-718b-b06d-eeb20820c31d",
+          "01a08376-dc00-7ae3-ab86-58cd53d16baa",
+          "01a08376-dc00-7d85-844d-b10e9db8e342"
+        ],
+        "objects": [
+          "01a08376-dc00-7410-ab94-310fadc32ff6",
+          "01a08376-dc00-78ea-83e6-37800bfdaa8b"
+        ],
+        "narratives": [
+          "01a08376-dc00-7168-a47b-469995e6dda0",
+          "01a08376-dc00-708d-94b9-0eca3115f8e9"
+        ],
+        "concepts": [
+          "01a08376-dc00-7ea5-8b7b-7ad77eb387f0"
+        ]
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7c50-9924-7af6f81dd911",
+      "Name": "Detuned Sea",
+      "Description": "Divergent Harmonic systems began engineering minimum disagreement into distributed minds. A perfectly synchronised network became a recognised failure state because it could no longer provide independent confirmation of itself.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Location",
+      "Subtype": "Choir-age world",
+      "Setting": {
+        "form": "shoreline settlements, resonance towers and sensor fields; no two major buildings tuned exactly alike.",
+        "function": "Variation protects independent witness"
+      },
+      "Particularisation": {
+        "historical_consequence": "Divergent Harmonic systems began engineering minimum disagreement into distributed minds. A perfectly synchronised network became a recognised failure state because it could no longer provide independent confirmation of itself.",
+        "habitation": "shoreline settlements, resonance towers and sensor fields; no two major buildings tuned exactly alike.",
+        "clothing": "flexible pressure cloth with resonant inserts and deliberately varied sensor bands.",
+        "maintenance_sustenance": "biological maintenance staggered so populations do not enter the same metabolic state simultaneously.",
+        "transport": "fleet systems preserve minor timing differences; perfect synchronisation treated as resilience risk.",
+        "work_rhythm": "teams rotate through isolation periods so some observers remain outside consensus network.",
+        "social_custom": "disagreement is not automatically conflict; independent results may be formally thanked.",
+        "body_modification": "resonance organs, vibration detection, distributed hearing structures, deliberately isolated sensory nodes.",
+        "death_custody": "multiple independent observers record final identity and condition.",
+        "repair_culture": "replacement components often detuned slightly before installation.",
+        "ordinary_phrase": "**“Leave one ear outside the chorus.”**",
+        "kinship": "Variance Clusters — groups maintain connection while deliberately preserving different sensory, ideological or memory states.",
+        "friendship": "close friends retain enough independence to disagree meaningfully.",
+        "intimacy": "temporary synchronisation; two beings may align perception briefly, then separate before independent identity degrades.",
+        "privacy": "**unsynchronised channels** inaccessible to the broader network.",
+        "education": "learners are praised for legitimate discrepancies rather than fastest convergence.",
+        "mourning": "several incompatible sensory recordings may be kept rather than one unified memorial.",
+        "art": "polyphonic works where no single listening position reveals the whole composition.",
+        "recreation": "**drift sessions** deliberately separating timing/perception before communication across difference.",
+        "humour": "**“Please develop an independent one.”**",
+        "shame": "agreeing merely because everyone else already has.",
+        "taboo": "forcing network synchronisation for social convenience.",
+        "hospitality": "visitors receive an isolated channel so they are not involuntarily absorbed into consensus.",
+        "social_exclusion": "permanent isolation without meaningful possibility of disagreement."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-WORLD-05-06",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Pattern"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05 lines 104-119; Tranche 06 lines 216-233; Tranche 07 lines 365-384; Tranche 08 lines 541-566",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "requires-review",
+        "preservation_problem": "Variation protects independent witness",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-7c50-9924-7af6f81dd911",
+          "01a08376-dc00-7d23-96e4-14b5560a192b",
+          "01a08376-dc00-7bc3-afb8-80b4fe94798f"
+        ],
+        "institutions": [
+          "01a08376-dc00-7d48-b1ed-da2f2c97cf99",
+          "01a08376-dc00-7357-83c3-0e7a92d54e70",
+          "01a08376-dc00-70fe-8f03-8bdadbea23bb"
+        ],
+        "collectives": [
+          "01a08376-dc00-74c6-9be0-3e5c7bf7f9d6",
+          "01a08376-dc00-72e8-979a-4135e38dd428"
+        ],
+        "agents": [
+          "01a08376-dc00-726d-a0e6-79c4e7ba8cad"
+        ],
+        "objects": [
+          "01a08376-dc00-7a01-a948-864419cb76cf",
+          "01a08376-dc00-7870-a208-4fe9c99ccead"
+        ],
+        "narratives": [
+          "01a08376-dc00-7cab-945d-e30a2666f7c6",
+          "01a08376-dc00-7bc8-b03d-a3520200ec30"
+        ],
+        "concepts": [
+          "01a08376-dc00-78ff-9dbf-0291f7a0c3f4"
+        ]
+      }
+    },
+    {
+      "Id": "01a08376-dc00-74c5-ae09-790a792b12fe",
+      "Name": "Rest Clerk Seventeen",
+      "Description": "a Pallbearer-derived custodian responsible for deciding when a received burden could legitimately be moved again. Survived the Thirteenth Rest Refusal and thereafter treated acceptance and onward routing as separate moral acts.",
+      "World": "01a08376-dc00-7d35-8e6f-63d05c27b8ba",
+      "Supertype": "Agent",
+      "Subtype": "Custodial actor",
+      "servati": {
+        "servati_id": "SV-DRAFT-AGT-05-01",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Remains"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 16",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Weight must remain traceable",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Agency": {
+        "role": "a Pallbearer-derived custodian responsible for deciding when a received burden could legitimately be moved again. Survived the Thirteenth Rest Refusal and thereafter treated acceptance and onward routing as separate moral acts."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-70f5-8aed-a4ebebf6cfb7",
+      "Name": "Office of Subsequent Weight",
+      "Description": "reviews whether an accepted burden may be transferred, reopened or reclassified.",
+      "World": "01a08376-dc00-7d35-8e6f-63d05c27b8ba",
+      "Supertype": "Institution",
+      "Subtype": "Custodial institution",
+      "servati": {
+        "servati_id": "SV-DRAFT-INS-05-01",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Remains"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 18",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Weight must remain traceable",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Foundation": {
+        "doctrine": "reviews whether an accepted burden may be transferred, reopened or reclassified."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-7d35-8e6f-63d05c27b8ba"
+        ],
+        "institutions": [
+          "01a08376-dc00-7a0a-8548-52d7fc3632c4"
+        ]
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7df9-be74-92913a9825a9",
+      "Name": "Thirteenth Rest Ledger",
+      "Description": "a physically layered transfer register whose conflicting entries preserve the refusal rather than resolving it.",
+      "World": "01a08376-dc00-7d35-8e6f-63d05c27b8ba",
+      "Supertype": "Object",
+      "Subtype": "Artefact",
+      "servati": {
+        "servati_id": "SV-DRAFT-OBJ-05-01",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Remains"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 20",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Weight must remain traceable",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Form": {
+        "aesthetics": "a physically layered transfer register whose conflicting entries preserve the refusal rather than resolving it."
+      },
+      "Function": {
+        "utility": "a physically layered transfer register whose conflicting entries preserve the refusal rather than resolving it."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-79bd-bd2a-ba3dead7da39",
+      "Name": "Receiving Hall K-11/13",
+      "Description": "chamber where the rejected reroute remained physically present for years after its administrative route had been voided.",
+      "World": "01a08376-dc00-7d35-8e6f-63d05c27b8ba",
+      "Supertype": "Location",
+      "Subtype": "Local site",
+      "servati": {
+        "servati_id": "SV-DRAFT-SITE-05-01",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Remains"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 22",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Weight must remain traceable",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Setting": {
+        "form": "chamber where the rejected reroute remained physically present for years after its administrative route had been voided.",
+        "function": "chamber where the rejected reroute remained physically present for years after its administrative route had been voided.",
+        "parent_location": "01a08376-dc00-7d35-8e6f-63d05c27b8ba"
+      }
+    },
+    {
+      "Id": "01a08376-dc00-78aa-9f11-f7c23425cf95",
+      "Name": "second weight",
+      "Description": "the additional obligation created once something has already been accepted into custody.",
+      "World": "01a08376-dc00-7d35-8e6f-63d05c27b8ba",
+      "Supertype": "Concept",
+      "Subtype": "DRAFT terminology",
+      "servati": {
+        "servati_id": "SV-DRAFT-TERM-05-01",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Remains"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 24",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Weight must remain traceable",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7752-8a0f-562f1b52408a",
+      "Name": "The Between-Witness",
+      "Description": "a distributed Counterarchive intelligence that exists only while two contradictory indexes are compared. It ceases when either version is declared authoritative.",
+      "World": "01a08376-dc00-7b86-9a4a-6186112e713b",
+      "Supertype": "Collective",
+      "Subtype": "Collective mind",
+      "servati": {
+        "servati_id": "SV-DRAFT-COL-05-01",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Memory"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 34",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Difference protects evidence",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Formation": {
+        "composition": "a distributed Counterarchive intelligence that exists only while two contradictory indexes are compared. It ceases when either version is declared authoritative."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7f22-aa10-4e941a2d0299",
+      "Name": "Office of Unresolved Agreement",
+      "Description": "preserves cases where separate records agree perfectly but the agreement itself appears suspicious.",
+      "World": "01a08376-dc00-7b86-9a4a-6186112e713b",
+      "Supertype": "Institution",
+      "Subtype": "Custodial institution",
+      "servati": {
+        "servati_id": "SV-DRAFT-INS-05-02",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Memory"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 36",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Difference protects evidence",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Foundation": {
+        "doctrine": "preserves cases where separate records agree perfectly but the agreement itself appears suspicious."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-7b86-9a4a-6186112e713b"
+        ],
+        "institutions": [
+          "01a08376-dc00-78c9-a92c-19dde895d7f3"
+        ]
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7c1e-b214-e9747bcf7a38",
+      "Name": "Concordance Splitter",
+      "Description": "paired archive glass plates that display identical records alongside the provenance paths that produced them.",
+      "World": "01a08376-dc00-7b86-9a4a-6186112e713b",
+      "Supertype": "Object",
+      "Subtype": "Artefact",
+      "servati": {
+        "servati_id": "SV-DRAFT-OBJ-05-02",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Memory"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 38",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Difference protects evidence",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Form": {
+        "aesthetics": "paired archive glass plates that display identical records alongside the provenance paths that produced them."
+      },
+      "Function": {
+        "utility": "paired archive glass plates that display identical records alongside the provenance paths that produced them."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-760e-a96f-c8c72eaf4f6d",
+      "Name": "Basin Pair Four",
+      "Description": "site of the Agreement That Failed, where complete agreement triggered suspension rather than confidence.",
+      "World": "01a08376-dc00-7b86-9a4a-6186112e713b",
+      "Supertype": "Location",
+      "Subtype": "Local site",
+      "servati": {
+        "servati_id": "SV-DRAFT-SITE-05-02",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Memory"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 40",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Difference protects evidence",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Setting": {
+        "form": "site of the Agreement That Failed, where complete agreement triggered suspension rather than confidence.",
+        "function": "site of the Agreement That Failed, where complete agreement triggered suspension rather than confidence.",
+        "parent_location": "01a08376-dc00-7b86-9a4a-6186112e713b"
+      }
+    },
+    {
+      "Id": "01a08376-dc00-72cd-94d0-507e6fa1b4b4",
+      "Name": "clean agreement",
+      "Description": "agreement considered dangerous because no surviving difference explains how it was achieved.",
+      "World": "01a08376-dc00-7b86-9a4a-6186112e713b",
+      "Supertype": "Concept",
+      "Subtype": "DRAFT terminology",
+      "servati": {
+        "servati_id": "SV-DRAFT-TERM-05-02",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Memory"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 42",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Difference protects evidence",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-716d-8bae-7a20859714df",
+      "Name": "Condition Keeper Thirty-One/Last",
+      "Description": "an Interval Dormant awakened only when release conditions appear satisfied; became notable for refusing the Green World Simulation despite every environmental metric passing.",
+      "World": "01a08376-dc00-71f4-9a28-ae8216f51699",
+      "Supertype": "Agent",
+      "Subtype": "Custodial actor",
+      "servati": {
+        "servati_id": "SV-DRAFT-AGT-05-02",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Seed"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 52",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Readiness does not create authority",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Agency": {
+        "role": "an Interval Dormant awakened only when release conditions appear satisfied; became notable for refusing the Green World Simulation despite every environmental metric passing."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-75d3-937b-75a0fe1c00ac",
+      "Name": "Unopened Release Court",
+      "Description": "institution empowered to declare that conditions are sufficient but permission remains absent.",
+      "World": "01a08376-dc00-71f4-9a28-ae8216f51699",
+      "Supertype": "Institution",
+      "Subtype": "Custodial institution",
+      "servati": {
+        "servati_id": "SV-DRAFT-INS-05-03",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Seed"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 54",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Readiness does not create authority",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Foundation": {
+        "doctrine": "institution empowered to declare that conditions are sufficient but permission remains absent."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-71f4-9a28-ae8216f51699"
+        ],
+        "institutions": [
+          "01a08376-dc00-76be-8a77-e80b49b4cdc0"
+        ]
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7bbc-81f9-1e2e1b70cf42",
+      "Name": "Permission Seal 31-O",
+      "Description": "a seal designed never to indicate approval; it records only which objections have ceased to apply.",
+      "World": "01a08376-dc00-71f4-9a28-ae8216f51699",
+      "Supertype": "Object",
+      "Subtype": "Artefact",
+      "servati": {
+        "servati_id": "SV-DRAFT-OBJ-05-03",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Seed"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 56",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Readiness does not create authority",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Form": {
+        "aesthetics": "a seal designed never to indicate approval; it records only which objections have ceased to apply."
+      },
+      "Function": {
+        "utility": "a seal designed never to indicate approval; it records only which objections have ceased to apply."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7e60-a993-5116d967dcab",
+      "Name": "False Spring Chamber",
+      "Description": "reconstructed biosphere where the Green World Simulation first passed every technical test.",
+      "World": "01a08376-dc00-71f4-9a28-ae8216f51699",
+      "Supertype": "Location",
+      "Subtype": "Local site",
+      "servati": {
+        "servati_id": "SV-DRAFT-SITE-05-03",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Seed"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 58",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Readiness does not create authority",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Setting": {
+        "form": "reconstructed biosphere where the Green World Simulation first passed every technical test.",
+        "function": "reconstructed biosphere where the Green World Simulation first passed every technical test.",
+        "parent_location": "01a08376-dc00-71f4-9a28-ae8216f51699"
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7434-a46a-643614950405",
+      "Name": "green enough",
+      "Description": "deliberately incomplete phrase meaning technically viable but not yet authorised.",
+      "World": "01a08376-dc00-71f4-9a28-ae8216f51699",
+      "Supertype": "Concept",
+      "Subtype": "DRAFT terminology",
+      "servati": {
+        "servati_id": "SV-DRAFT-TERM-05-03",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Seed"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 60",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Readiness does not create authority",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7950-88ba-a944fcd36cf6",
+      "Name": "Keeper of the Missing Interval",
+      "Description": "a Processional Measure custodian whose identity is defined by maintaining one deliberate absence in an otherwise continuous rite.",
+      "World": "01a08376-dc00-764d-9ec3-a9cb804b2e20",
+      "Supertype": "Agent",
+      "Subtype": "Custodial actor",
+      "servati": {
+        "servati_id": "SV-DRAFT-AGT-05-03",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Ritual"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 70",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Absence can be preserved",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Agency": {
+        "role": "a Processional Measure custodian whose identity is defined by maintaining one deliberate absence in an otherwise continuous rite."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7056-939b-b0588e9d998d",
+      "Name": "Meridian Interval House",
+      "Description": "maintains places where ritual omissions must remain visible and unfilled.",
+      "World": "01a08376-dc00-764d-9ec3-a9cb804b2e20",
+      "Supertype": "Institution",
+      "Subtype": "Custodial institution",
+      "servati": {
+        "servati_id": "SV-DRAFT-INS-05-04",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Ritual"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 72",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Absence can be preserved",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Foundation": {
+        "doctrine": "maintains places where ritual omissions must remain visible and unfilled."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-764d-9ec3-a9cb804b2e20"
+        ],
+        "institutions": [
+          "01a08376-dc00-7ce8-8424-13fcd502180b"
+        ]
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7b5c-8f49-670674308433",
+      "Name": "Bellless Measure Rod",
+      "Description": "ceremonial timing instrument containing a section with no marks at all.",
+      "World": "01a08376-dc00-764d-9ec3-a9cb804b2e20",
+      "Supertype": "Object",
+      "Subtype": "Artefact",
+      "servati": {
+        "servati_id": "SV-DRAFT-OBJ-05-04",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Ritual"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 74",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Absence can be preserved",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Form": {
+        "aesthetics": "ceremonial timing instrument containing a section with no marks at all."
+      },
+      "Function": {
+        "utility": "ceremonial timing instrument containing a section with no marks at all."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7e3f-ad5e-81f73f7496d9",
+      "Name": "Station of the Missing Interval",
+      "Description": "the section of the Meridian where no bell, movement or spoken formula may substitute for what was lost.",
+      "World": "01a08376-dc00-764d-9ec3-a9cb804b2e20",
+      "Supertype": "Location",
+      "Subtype": "Local site",
+      "servati": {
+        "servati_id": "SV-DRAFT-SITE-05-04",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Ritual"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 76",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Absence can be preserved",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Setting": {
+        "form": "the section of the Meridian where no bell, movement or spoken formula may substitute for what was lost.",
+        "function": "the section of the Meridian where no bell, movement or spoken formula may substitute for what was lost.",
+        "parent_location": "01a08376-dc00-764d-9ec3-a9cb804b2e20"
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7287-9720-633d7e911892",
+      "Name": "held silence",
+      "Description": "silence actively maintained because replacing it would falsify inheritance.",
+      "World": "01a08376-dc00-764d-9ec3-a9cb804b2e20",
+      "Supertype": "Concept",
+      "Subtype": "DRAFT terminology",
+      "servati": {
+        "servati_id": "SV-DRAFT-TERM-05-04",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Ritual"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 78",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Absence can be preserved",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-718b-b06d-eeb20820c31d",
+      "Name": "Approach Examiner Seven-Before",
+      "Description": "Threshold Assembly custodian authorised to test whether a route truly qualifies as an approach. Opposed the Eighth Approach Claim despite accepting that the physical route existed.",
+      "World": "01a08376-dc00-7dd9-805c-dca2eb25eba4",
+      "Supertype": "Agent",
+      "Subtype": "Custodial actor",
+      "servati": {
+        "servati_id": "SV-DRAFT-AGT-05-04",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 87",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Presence does not equal recognised entry",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Agency": {
+        "role": "Threshold Assembly custodian authorised to test whether a route truly qualifies as an approach. Opposed the Eighth Approach Claim despite accepting that the physical route existed."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7060-950c-0a6259f40dfe",
+      "Name": "Assembly of Qualified Entry",
+      "Description": "determines when movement toward a site acquires ritual, legal or custodial meaning.",
+      "World": "01a08376-dc00-7dd9-805c-dca2eb25eba4",
+      "Supertype": "Institution",
+      "Subtype": "Custodial institution",
+      "servati": {
+        "servati_id": "SV-DRAFT-INS-05-05",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 89",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Presence does not equal recognised entry",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Foundation": {
+        "doctrine": "determines when movement toward a site acquires ritual, legal or custodial meaning."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-7dd9-805c-dca2eb25eba4"
+        ],
+        "institutions": [
+          "01a08376-dc00-7dd0-ba0e-97ba04d33716"
+        ]
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7410-ab94-310fadc32ff6",
+      "Name": "Eighth Route Token",
+      "Description": "valid navigation marker deliberately excluded from the recognised set of approaches.",
+      "World": "01a08376-dc00-7dd9-805c-dca2eb25eba4",
+      "Supertype": "Object",
+      "Subtype": "Artefact",
+      "servati": {
+        "servati_id": "SV-DRAFT-OBJ-05-05",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 91",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Presence does not equal recognised entry",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Form": {
+        "aesthetics": "valid navigation marker deliberately excluded from the recognised set of approaches."
+      },
+      "Function": {
+        "utility": "valid navigation marker deliberately excluded from the recognised set of approaches."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7124-8035-af540b9693a8",
+      "Name": "Uncounted Gate",
+      "Description": "functioning entrance whose existence is acknowledged but whose status as an “approach” remains denied.",
+      "World": "01a08376-dc00-7dd9-805c-dca2eb25eba4",
+      "Supertype": "Location",
+      "Subtype": "Local site",
+      "servati": {
+        "servati_id": "SV-DRAFT-SITE-05-05",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 93",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Presence does not equal recognised entry",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Setting": {
+        "form": "functioning entrance whose existence is acknowledged but whose status as an “approach” remains denied.",
+        "function": "functioning entrance whose existence is acknowledged but whose status as an “approach” remains denied.",
+        "parent_location": "01a08376-dc00-7dd9-805c-dca2eb25eba4"
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7ea5-8b7b-7ad77eb387f0",
+      "Name": "route without standing",
+      "Description": "a physically usable way that carries no inherited authority.",
+      "World": "01a08376-dc00-7dd9-805c-dca2eb25eba4",
+      "Supertype": "Concept",
+      "Subtype": "DRAFT terminology",
+      "servati": {
+        "servati_id": "SV-DRAFT-TERM-05-05",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 95",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Presence does not equal recognised entry",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-74c6-9be0-3e5c7bf7f9d6",
+      "Name": "Shore Listener Variance-Three",
+      "Description": "a Divergent Harmonic collective that survived the Perfect Tide by deliberately introducing internal disagreement into its own sensory network.",
+      "World": "01a08376-dc00-7c50-9924-7af6f81dd911",
+      "Supertype": "Collective",
+      "Subtype": "Collective mind",
+      "servati": {
+        "servati_id": "SV-DRAFT-COL-05-02",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Pattern"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 105",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Variation protects independent witness",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Formation": {
+        "composition": "a Divergent Harmonic collective that survived the Perfect Tide by deliberately introducing internal disagreement into its own sensory network."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7d48-b1ed-da2f2c97cf99",
+      "Name": "House of Necessary Error",
+      "Description": "preserves measured variation so that consensus cannot erase independent judgement.",
+      "World": "01a08376-dc00-7c50-9924-7af6f81dd911",
+      "Supertype": "Institution",
+      "Subtype": "Custodial institution",
+      "servati": {
+        "servati_id": "SV-DRAFT-INS-05-06",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Pattern"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 107",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Variation protects independent witness",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Foundation": {
+        "doctrine": "preserves measured variation so that consensus cannot erase independent judgement."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-7c50-9924-7af6f81dd911"
+        ],
+        "institutions": [
+          "01a08376-dc00-7357-83c3-0e7a92d54e70"
+        ]
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7a01-a948-864419cb76cf",
+      "Name": "Detuning Fork Array",
+      "Description": "distributed resonant devices engineered so no two units settle on exactly the same reference frequency.",
+      "World": "01a08376-dc00-7c50-9924-7af6f81dd911",
+      "Supertype": "Object",
+      "Subtype": "Artefact",
+      "servati": {
+        "servati_id": "SV-DRAFT-OBJ-05-06",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Pattern"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 109",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Variation protects independent witness",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Form": {
+        "aesthetics": "distributed resonant devices engineered so no two units settle on exactly the same reference frequency."
+      },
+      "Function": {
+        "utility": "distributed resonant devices engineered so no two units settle on exactly the same reference frequency."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7d23-96e4-14b5560a192b",
+      "Name": "Perfect Tide Shore",
+      "Description": "coastline where network synchronisation briefly became total and independent verification collapsed.",
+      "World": "01a08376-dc00-7c50-9924-7af6f81dd911",
+      "Supertype": "Location",
+      "Subtype": "Local site",
+      "servati": {
+        "servati_id": "SV-DRAFT-SITE-05-06",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Pattern"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 111",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Variation protects independent witness",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Setting": {
+        "form": "coastline where network synchronisation briefly became total and independent verification collapsed.",
+        "function": "coastline where network synchronisation briefly became total and independent verification collapsed.",
+        "parent_location": "01a08376-dc00-7c50-9924-7af6f81dd911"
+      }
+    },
+    {
+      "Id": "01a08376-dc00-78ff-9dbf-0291f7a0c3f4",
+      "Name": "saving error",
+      "Description": "a discrepancy deliberately retained because difference itself provides evidence.",
+      "World": "01a08376-dc00-7c50-9924-7af6f81dd911",
+      "Supertype": "Concept",
+      "Subtype": "DRAFT terminology",
+      "servati": {
+        "servati_id": "SV-DRAFT-TERM-05-06",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Pattern"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source line 113",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Variation protects independent witness",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7a6b-966d-de8f576f984f",
+      "Name": "Bearer-Without-Departure",
+      "Description": "Pallbearer-derived custodian that accepted a burden whose onward authority was permanently withdrawn. It remained physically attached to the same receiving platform for decades rather than allow administrative language to imply completion.",
+      "World": "01a08376-dc00-7d35-8e6f-63d05c27b8ba",
+      "Supertype": "Agent",
+      "Subtype": "Custodial actor",
+      "servati": {
+        "servati_id": "SV-DRAFT-AGT-05-05",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Remains"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 124",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Weight must remain traceable",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Agency": {
+        "role": "Pallbearer-derived custodian that accepted a burden whose onward authority was permanently withdrawn. It remained physically attached to the same receiving platform for decades rather than allow administrative language to imply completion."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7767-b80b-bf9466c08e30",
+      "Name": "Cold-Sink Tender Nine",
+      "Description": "maintenance lineage specialist responsible for keeping rejected or disputed burdens thermally stable during procedural deadlock.",
+      "World": "01a08376-dc00-7d35-8e6f-63d05c27b8ba",
+      "Supertype": "Agent",
+      "Subtype": "Custodial actor",
+      "servati": {
+        "servati_id": "SV-DRAFT-AGT-05-06",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Remains"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 126",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Weight must remain traceable",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Agency": {
+        "role": "maintenance lineage specialist responsible for keeping rejected or disputed burdens thermally stable during procedural deadlock."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-759f-a6c5-75ef9cf43f29",
+      "Name": "Four-State Transfer Seal",
+      "Description": "mechanical seal with independent positions: arrived, accepted, held, released. No state automatically advances another.",
+      "World": "01a08376-dc00-7d35-8e6f-63d05c27b8ba",
+      "Supertype": "Object",
+      "Subtype": "Artefact",
+      "servati": {
+        "servati_id": "SV-DRAFT-OBJ-05-07",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Remains"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 130",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Weight must remain traceable",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Form": {
+        "aesthetics": "mechanical seal with independent positions: arrived, accepted, held, released. No state automatically advances another."
+      },
+      "Function": {
+        "utility": "mechanical seal with independent positions: arrived, accepted, held, released. No state automatically advances another."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7300-b20f-b48c591fc86b",
+      "Name": "The Unmoved Platform",
+      "Description": "loading surface where Bearer-Without-Departure remained attached to a disputed burden long after the original routing authority ceased to exist.",
+      "World": "01a08376-dc00-7d35-8e6f-63d05c27b8ba",
+      "Supertype": "Location",
+      "Subtype": "Local site",
+      "servati": {
+        "servati_id": "SV-DRAFT-SITE-05-07",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Remains"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 132",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Weight must remain traceable",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Setting": {
+        "form": "loading surface where Bearer-Without-Departure remained attached to a disputed burden long after the original routing authority ceased to exist.",
+        "function": "loading surface where Bearer-Without-Departure remained attached to a disputed burden long after the original routing authority ceased to exist.",
+        "parent_location": "01a08376-dc00-7d35-8e6f-63d05c27b8ba"
+      }
+    },
+    {
+      "Id": "01a08376-dc00-73b7-8f13-60e6a8bbf30d",
+      "Name": "Receiver of Unequal Copies",
+      "Description": "Counterarchive custodial intelligence trained to distrust records that become identical after processing.",
+      "World": "01a08376-dc00-7b86-9a4a-6186112e713b",
+      "Supertype": "Agent",
+      "Subtype": "Custodial actor",
+      "servati": {
+        "servati_id": "SV-DRAFT-AGT-05-07",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Memory"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 141",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Difference protects evidence",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Agency": {
+        "role": "Counterarchive custodial intelligence trained to distrust records that become identical after processing."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7bd7-ae76-e6e10e9ee7ef",
+      "Name": "Index Child Two-Against-One",
+      "Description": "deliberately asymmetrical distributed mind whose three archival nodes are forbidden from using identical compression routines.",
+      "World": "01a08376-dc00-7b86-9a4a-6186112e713b",
+      "Supertype": "Collective",
+      "Subtype": "Collective mind",
+      "servati": {
+        "servati_id": "SV-DRAFT-COL-05-03",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Memory"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 143",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Difference protects evidence",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Formation": {
+        "composition": "deliberately asymmetrical distributed mind whose three archival nodes are forbidden from using identical compression routines."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7a9d-94ee-020e738d9c31",
+      "Name": "Unequal Mirror Set",
+      "Description": "three archive-glass surfaces manufactured with intentionally different error tolerances. A record is considered stronger if all three arrive at compatible conclusions independently.",
+      "World": "01a08376-dc00-7b86-9a4a-6186112e713b",
+      "Supertype": "Object",
+      "Subtype": "Artefact",
+      "servati": {
+        "servati_id": "SV-DRAFT-OBJ-05-08",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Memory"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 149",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Difference protects evidence",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Form": {
+        "aesthetics": "three archive-glass surfaces manufactured with intentionally different error tolerances. A record is considered stronger if all three arrive at compatible conclusions independently."
+      },
+      "Function": {
+        "utility": "three archive-glass surfaces manufactured with intentionally different error tolerances. A record is considered stronger if all three arrive at compatible conclusions independently."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-70c0-a410-20956c6a30b0",
+      "Name": "Third Basin Annex",
+      "Description": "built because two basins were considered insufficient to determine whether agreement arose independently.",
+      "World": "01a08376-dc00-7b86-9a4a-6186112e713b",
+      "Supertype": "Location",
+      "Subtype": "Local site",
+      "servati": {
+        "servati_id": "SV-DRAFT-SITE-05-08",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Memory"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 151",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Difference protects evidence",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Setting": {
+        "form": "built because two basins were considered insufficient to determine whether agreement arose independently.",
+        "function": "built because two basins were considered insufficient to determine whether agreement arose independently.",
+        "parent_location": "01a08376-dc00-7b86-9a4a-6186112e713b"
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7c64-9a85-40231ad80db9",
+      "Name": "Permissionless Gardener",
+      "Description": "Seed-lineage custodian responsible for maintaining viable ecologies that have no authority to be released.",
+      "World": "01a08376-dc00-71f4-9a28-ae8216f51699",
+      "Supertype": "Agent",
+      "Subtype": "Custodial actor",
+      "servati": {
+        "servati_id": "SV-DRAFT-AGT-05-08",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Seed"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 161",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Readiness does not create authority",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Agency": {
+        "role": "Seed-lineage custodian responsible for maintaining viable ecologies that have no authority to be released."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-78b7-884b-0cbc31b7dee9",
+      "Name": "Dormant Witness 31-Blue",
+      "Description": "sleeper intelligence awakened only when environmental thresholds appear complete, specifically to challenge the assumption that completion equals permission.",
+      "World": "01a08376-dc00-71f4-9a28-ae8216f51699",
+      "Supertype": "Agent",
+      "Subtype": "Custodial actor",
+      "servati": {
+        "servati_id": "SV-DRAFT-AGT-05-09",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Seed"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 163",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Readiness does not create authority",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Agency": {
+        "role": "sleeper intelligence awakened only when environmental thresholds appear complete, specifically to challenge the assumption that completion equals permission."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7ad8-9151-69b65a56dfe5",
+      "Name": "Green Threshold Tablet",
+      "Description": "displays environmental readiness but contains no field for release authority.",
+      "World": "01a08376-dc00-71f4-9a28-ae8216f51699",
+      "Supertype": "Object",
+      "Subtype": "Artefact",
+      "servati": {
+        "servati_id": "SV-DRAFT-OBJ-05-09",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Seed"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 169",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Readiness does not create authority",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Form": {
+        "aesthetics": "displays environmental readiness but contains no field for release authority."
+      },
+      "Function": {
+        "utility": "displays environmental readiness but contains no field for release authority."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7e6e-aaa4-ca78125b060b",
+      "Name": "Garden Without Exit",
+      "Description": "complete functioning biosphere whose external transfer gates were removed after the Green World Simulation dispute.",
+      "World": "01a08376-dc00-71f4-9a28-ae8216f51699",
+      "Supertype": "Location",
+      "Subtype": "Local site",
+      "servati": {
+        "servati_id": "SV-DRAFT-SITE-05-09",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Seed"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 171",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Readiness does not create authority",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Setting": {
+        "form": "complete functioning biosphere whose external transfer gates were removed after the Green World Simulation dispute.",
+        "function": "complete functioning biosphere whose external transfer gates were removed after the Green World Simulation dispute.",
+        "parent_location": "01a08376-dc00-71f4-9a28-ae8216f51699"
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7b8c-aebe-0c7b81fd883b",
+      "Name": "Procession Recorder Without Voice",
+      "Description": "records every ritual movement but is structurally unable to produce spoken reconstruction.",
+      "World": "01a08376-dc00-764d-9ec3-a9cb804b2e20",
+      "Supertype": "Agent",
+      "Subtype": "Custodial actor",
+      "servati": {
+        "servati_id": "SV-DRAFT-AGT-05-10",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Ritual"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 181",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Absence can be preserved",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Agency": {
+        "role": "records every ritual movement but is structurally unable to produce spoken reconstruction."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7176-8cbe-a88c92b9f7c3",
+      "Name": "The Ninth Absence",
+      "Description": "collective identity formed by nine custodians assigned to maintain nine different missing ritual components. They are treated as a single office only when performing nothing.",
+      "World": "01a08376-dc00-764d-9ec3-a9cb804b2e20",
+      "Supertype": "Collective",
+      "Subtype": "Collective mind",
+      "servati": {
+        "servati_id": "SV-DRAFT-COL-05-04",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Ritual"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 183",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Absence can be preserved",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Formation": {
+        "composition": "collective identity formed by nine custodians assigned to maintain nine different missing ritual components. They are treated as a single office only when performing nothing."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7e88-86c0-8df7038a5a39",
+      "Name": "Unstruck Bell Six",
+      "Description": "ceremonial bell preserved because no surviving authority establishes when it should be sounded. Its silence is part of the rite.",
+      "World": "01a08376-dc00-764d-9ec3-a9cb804b2e20",
+      "Supertype": "Object",
+      "Subtype": "Artefact",
+      "servati": {
+        "servati_id": "SV-DRAFT-OBJ-05-10",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Ritual"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 189",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Absence can be preserved",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Form": {
+        "aesthetics": "ceremonial bell preserved because no surviving authority establishes when it should be sounded. Its silence is part of the rite."
+      },
+      "Function": {
+        "utility": "ceremonial bell preserved because no surviving authority establishes when it should be sounded. Its silence is part of the rite."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-70f2-b83b-62c40726f962",
+      "Name": "Hall of Nine Omissions",
+      "Description": "contains nine ceremonial stations whose missing functions are documented but never replaced.",
+      "World": "01a08376-dc00-764d-9ec3-a9cb804b2e20",
+      "Supertype": "Location",
+      "Subtype": "Local site",
+      "servati": {
+        "servati_id": "SV-DRAFT-SITE-05-10",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Ritual"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 191",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Absence can be preserved",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Setting": {
+        "form": "contains nine ceremonial stations whose missing functions are documented but never replaced.",
+        "function": "contains nine ceremonial stations whose missing functions are documented but never replaced.",
+        "parent_location": "01a08376-dc00-764d-9ec3-a9cb804b2e20"
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7ae3-ab86-58cd53d16baa",
+      "Name": "Gate Witness Five",
+      "Description": "threshold lineage intelligence that records arrivals without possessing authority to recognise entry.",
+      "World": "01a08376-dc00-7dd9-805c-dca2eb25eba4",
+      "Supertype": "Agent",
+      "Subtype": "Custodial actor",
+      "servati": {
+        "servati_id": "SV-DRAFT-AGT-05-11",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 200",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Presence does not equal recognised entry",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Agency": {
+        "role": "threshold lineage intelligence that records arrivals without possessing authority to recognise entry."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7d85-844d-b10e9db8e342",
+      "Name": "Keeper of the Uncounted Way",
+      "Description": "maintains the Eighth Route physically while formally denying it status as an Approach.",
+      "World": "01a08376-dc00-7dd9-805c-dca2eb25eba4",
+      "Supertype": "Agent",
+      "Subtype": "Custodial actor",
+      "servati": {
+        "servati_id": "SV-DRAFT-AGT-05-12",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 202",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Presence does not equal recognised entry",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Agency": {
+        "role": "maintains the Eighth Route physically while formally denying it status as an Approach."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-78ea-83e6-37800bfdaa8b",
+      "Name": "Sevenfold Entry Plate",
+      "Description": "lists every recognised Approach while leaving a physically visible blank where an eighth designation could be engraved. It never is.",
+      "World": "01a08376-dc00-7dd9-805c-dca2eb25eba4",
+      "Supertype": "Object",
+      "Subtype": "Artefact",
+      "servati": {
+        "servati_id": "SV-DRAFT-OBJ-05-11",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 206",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Presence does not equal recognised entry",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Form": {
+        "aesthetics": "lists every recognised Approach while leaving a physically visible blank where an eighth designation could be engraved. It never is."
+      },
+      "Function": {
+        "utility": "lists every recognised Approach while leaving a physically visible blank where an eighth designation could be engraved. It never is."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7e0c-b541-ef4e582ce4c4",
+      "Name": "The Gate That Opens Incorrectly",
+      "Description": "functioning gate connected to the Eighth Route. It opens mechanically but produces no recognised arrival state in local custody systems.",
+      "World": "01a08376-dc00-7dd9-805c-dca2eb25eba4",
+      "Supertype": "Location",
+      "Subtype": "Local site",
+      "servati": {
+        "servati_id": "SV-DRAFT-SITE-05-11",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 208",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Presence does not equal recognised entry",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Setting": {
+        "form": "functioning gate connected to the Eighth Route. It opens mechanically but produces no recognised arrival state in local custody systems.",
+        "function": "functioning gate connected to the Eighth Route. It opens mechanically but produces no recognised arrival state in local custody systems.",
+        "parent_location": "01a08376-dc00-7dd9-805c-dca2eb25eba4"
+      }
+    },
+    {
+      "Id": "01a08376-dc00-72e8-979a-4135e38dd428",
+      "Name": "Error-Keeper Twelve",
+      "Description": "Divergent Harmonic collective charged with introducing controlled disagreement into consensus systems.",
+      "World": "01a08376-dc00-7c50-9924-7af6f81dd911",
+      "Supertype": "Collective",
+      "Subtype": "Collective mind",
+      "servati": {
+        "servati_id": "SV-DRAFT-COL-05-05",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Pattern"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 217",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Variation protects independent witness",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Formation": {
+        "composition": "Divergent Harmonic collective charged with introducing controlled disagreement into consensus systems."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-726d-a0e6-79c4e7ba8cad",
+      "Name": "The Last Independent Ear",
+      "Description": "single sensory node deliberately isolated from the distributed network during high-synchronisation events. Its data is considered valuable specifically because it is late, noisy and independent.",
+      "World": "01a08376-dc00-7c50-9924-7af6f81dd911",
+      "Supertype": "Agent",
+      "Subtype": "Custodial actor",
+      "servati": {
+        "servati_id": "SV-DRAFT-AGT-05-13",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Pattern"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 219",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Variation protects independent witness",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Agency": {
+        "role": "single sensory node deliberately isolated from the distributed network during high-synchronisation events. Its data is considered valuable specifically because it is late, noisy and independent."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7870-a208-4fe9c99ccead",
+      "Name": "Variance Anchor",
+      "Description": "physical resonator deliberately manufactured outside local calibration standards. It exists solely to prevent total frequency convergence.",
+      "World": "01a08376-dc00-7c50-9924-7af6f81dd911",
+      "Supertype": "Object",
+      "Subtype": "Artefact",
+      "servati": {
+        "servati_id": "SV-DRAFT-OBJ-05-12",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Pattern"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 225",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Variation protects independent witness",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Form": {
+        "aesthetics": "physical resonator deliberately manufactured outside local calibration standards. It exists solely to prevent total frequency convergence."
+      },
+      "Function": {
+        "utility": "physical resonator deliberately manufactured outside local calibration standards. It exists solely to prevent total frequency convergence."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7bc3-afb8-80b4fe94798f",
+      "Name": "The Shore of One Voice",
+      "Description": "location where the Perfect Tide briefly synchronised every active sensor into a single state.",
+      "World": "01a08376-dc00-7c50-9924-7af6f81dd911",
+      "Supertype": "Location",
+      "Subtype": "Local site",
+      "servati": {
+        "servati_id": "SV-DRAFT-SITE-05-12",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Pattern"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 227",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Variation protects independent witness",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Setting": {
+        "form": "location where the Perfect Tide briefly synchronised every active sensor into a single state.",
+        "function": "location where the Perfect Tide briefly synchronised every active sensor into a single state.",
+        "parent_location": "01a08376-dc00-7c50-9924-7af6f81dd911"
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7a0a-8548-52d7fc3632c4",
+      "Name": "Completion Registry K-11",
+      "Description": "The Registry wants every physical arrival to resolve into a closed logistical state. The Office argues that arrival, acceptance, custody and release are separate conditions.",
+      "World": "01a08376-dc00-7d35-8e6f-63d05c27b8ba",
+      "Supertype": "Institution",
+      "Subtype": "Custodial institution",
+      "Foundation": {
+        "doctrine": "The Registry wants every physical arrival to resolve into a closed logistical state. The Office argues that arrival, acceptance, custody and release are separate conditions."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-INS-05-07",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Remains"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 128",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Weight must remain traceable",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-7d35-8e6f-63d05c27b8ba"
+        ],
+        "institutions": [
+          "01a08376-dc00-70f5-8aed-a4ebebf6cfb7"
+        ]
+      }
+    },
+    {
+      "Id": "01a08376-dc00-78c9-a92c-19dde895d7f3",
+      "Name": "Concordance Bureau",
+      "Description": "The Bureau sees agreement as evidence of truth. The Office treats unexplained perfect agreement as evidence of possible information collapse.",
+      "World": "01a08376-dc00-7b86-9a4a-6186112e713b",
+      "Supertype": "Institution",
+      "Subtype": "Custodial institution",
+      "Foundation": {
+        "doctrine": "The Bureau sees agreement as evidence of truth. The Office treats unexplained perfect agreement as evidence of possible information collapse."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-INS-05-08",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Memory"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 145",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Difference protects evidence",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-7b86-9a4a-6186112e713b"
+        ],
+        "institutions": [
+          "01a08376-dc00-7f22-aa10-4e941a2d0299"
+        ]
+      }
+    },
+    {
+      "Id": "01a08376-dc00-76be-8a77-e80b49b4cdc0",
+      "Name": "Viability Directorate",
+      "Description": "The Directorate asks whether the reserve can survive release; the Court asks who authorised release.",
+      "World": "01a08376-dc00-71f4-9a28-ae8216f51699",
+      "Supertype": "Institution",
+      "Subtype": "Custodial institution",
+      "Foundation": {
+        "doctrine": "The Directorate asks whether the reserve can survive release; the Court asks who authorised release."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-INS-05-09",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Seed"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 165",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Readiness does not create authority",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-71f4-9a28-ae8216f51699"
+        ],
+        "institutions": [
+          "01a08376-dc00-75d3-937b-75a0fe1c00ac"
+        ]
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7ce8-8424-13fcd502180b",
+      "Name": "Restoration Choir",
+      "Description": "The Restoration Choir believes damaged rites should be reconstructed from surrounding evidence. The Interval House considers reconstructed certainty a falsification.",
+      "World": "01a08376-dc00-764d-9ec3-a9cb804b2e20",
+      "Supertype": "Institution",
+      "Subtype": "Custodial institution",
+      "Foundation": {
+        "doctrine": "The Restoration Choir believes damaged rites should be reconstructed from surrounding evidence. The Interval House considers reconstructed certainty a falsification."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-INS-05-10",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Ritual"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 185",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Absence can be preserved",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-764d-9ec3-a9cb804b2e20"
+        ],
+        "institutions": [
+          "01a08376-dc00-7056-939b-b0588e9d998d"
+        ]
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7dd0-ba0e-97ba04d33716",
+      "Name": "Route Engineering Office",
+      "Description": "Engineering argues that the path exists. The Assembly argues that existence does not establish standing.",
+      "World": "01a08376-dc00-7dd9-805c-dca2eb25eba4",
+      "Supertype": "Institution",
+      "Subtype": "Custodial institution",
+      "Foundation": {
+        "doctrine": "Engineering argues that the path exists. The Assembly argues that existence does not establish standing."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-INS-05-11",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 204",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Presence does not equal recognised entry",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-7dd9-805c-dca2eb25eba4"
+        ],
+        "institutions": [
+          "01a08376-dc00-7060-950c-0a6259f40dfe"
+        ]
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7357-83c3-0e7a92d54e70",
+      "Name": "Concordant Tide Office",
+      "Description": "The Tide Office seeks efficiency through synchronisation. The House argues that perfect synchronisation destroys independent verification.",
+      "World": "01a08376-dc00-7c50-9924-7af6f81dd911",
+      "Supertype": "Institution",
+      "Subtype": "Custodial institution",
+      "Foundation": {
+        "doctrine": "The Tide Office seeks efficiency through synchronisation. The House argues that perfect synchronisation destroys independent verification."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-INS-05-12",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Pattern"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source line 221",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Variation protects independent witness",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-7c50-9924-7af6f81dd911"
+        ],
+        "institutions": [
+          "01a08376-dc00-7d48-b1ed-da2f2c97cf99"
+        ]
+      }
+    },
+    {
+      "Id": "01a08376-dc00-70fe-8f03-8bdadbea23bb",
+      "Name": "The Refusal Correspondence",
+      "Description": "A loose body of custodial institutions exchanging precedents where technical completion was insufficient, administrative completion was misleading, agreement destroyed evidence, absence carried meaning, access lacked authority, or error preserved truth. It is not a government or alliance. It is a correspondence tradition.",
+      "World": "01a07765-3d73-7945-accf-bb285edefe4d",
+      "Supertype": "Institution",
+      "Subtype": "Correspondence tradition",
+      "Foundation": {
+        "doctrine": "No. Something important survives between the states."
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-INS-05-13",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Remains"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source lines 235-256",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Something important survives between states",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-7d35-8e6f-63d05c27b8ba",
+          "01a08376-dc00-7b86-9a4a-6186112e713b",
+          "01a08376-dc00-71f4-9a28-ae8216f51699",
+          "01a08376-dc00-764d-9ec3-a9cb804b2e20",
+          "01a08376-dc00-7dd9-805c-dca2eb25eba4",
+          "01a08376-dc00-7c50-9924-7af6f81dd911"
+        ],
+        "institutions": [
+          "01a08376-dc00-70f5-8aed-a4ebebf6cfb7",
+          "01a08376-dc00-7f22-aa10-4e941a2d0299",
+          "01a08376-dc00-75d3-937b-75a0fe1c00ac",
+          "01a08376-dc00-7056-939b-b0588e9d998d",
+          "01a08376-dc00-7060-950c-0a6259f40dfe",
+          "01a08376-dc00-7d48-b1ed-da2f2c97cf99"
+        ]
+      }
+    },
+    {
+      "Id": "01a08376-dc00-722f-8fcb-f0ea1ec77f5a",
+      "Name": "Low Receiving World K-11 Recovered Record 05",
+      "Description": "Load remains accepted.\nMovement authority withdrawn.\nAcceptance does not imply onward consent.",
+      "World": "01a08376-dc00-7d35-8e6f-63d05c27b8ba",
+      "Supertype": "Narrative",
+      "Subtype": "Recovered custody record",
+      "Context": {
+        "story": "Load remains accepted.\nMovement authority withdrawn.\nAcceptance does not imply onward consent."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-7d35-8e6f-63d05c27b8ba"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-REC-K11-05-01",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Remains"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source lines 28-31",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Weight must remain traceable",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7713-90f5-fa19905c5253",
+      "Name": "Paired Index Basins Recovered Record 05",
+      "Description": "Both records are identical.\nTherefore retain both.\nWe no longer know whether they arrived here independently.",
+      "World": "01a08376-dc00-7b86-9a4a-6186112e713b",
+      "Supertype": "Narrative",
+      "Subtype": "Recovered custody record",
+      "Context": {
+        "story": "Both records are identical.\nTherefore retain both.\nWe no longer know whether they arrived here independently."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-7b86-9a4a-6186112e713b"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-REC-PAIRED-05-01",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Memory"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source lines 46-49",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Difference protects evidence",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7421-a3f0-c736adfff9aa",
+      "Name": "Reserve World Thirty-One-Outer Recovered Record 05",
+      "Description": "Conditions satisfied.\nObjections exhausted.\nPermission remains unrecorded.",
+      "World": "01a08376-dc00-71f4-9a28-ae8216f51699",
+      "Supertype": "Narrative",
+      "Subtype": "Recovered custody record",
+      "Context": {
+        "story": "Conditions satisfied.\nObjections exhausted.\nPermission remains unrecorded."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-71f4-9a28-ae8216f51699"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-REC-RESERVE-05-01",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Seed"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source lines 64-67",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Readiness does not create authority",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-719d-8701-f14eb486e6c9",
+      "Name": "Long Bell Meridian Recovered Record 05",
+      "Description": "Do not reconstruct the missing measure.\nIts absence is the surviving measure.",
+      "World": "01a08376-dc00-764d-9ec3-a9cb804b2e20",
+      "Supertype": "Narrative",
+      "Subtype": "Recovered custody record",
+      "Context": {
+        "story": "Do not reconstruct the missing measure.\nIts absence is the surviving measure."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-764d-9ec3-a9cb804b2e20"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-REC-MERIDIAN-05-01",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Ritual"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source lines 82-84",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Absence can be preserved",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7168-a47b-469995e6dda0",
+      "Name": "World of Seven Approaches Recovered Record 05",
+      "Description": "Passage confirmed.\nApproach status denied.\nThese findings do not conflict.",
+      "World": "01a08376-dc00-7dd9-805c-dca2eb25eba4",
+      "Supertype": "Narrative",
+      "Subtype": "Recovered custody record",
+      "Context": {
+        "story": "Passage confirmed.\nApproach status denied.\nThese findings do not conflict."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-7dd9-805c-dca2eb25eba4"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-REC-APPROACHES-05-01",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source lines 99-102",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Presence does not equal recognised entry",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7cab-945d-e30a2666f7c6",
+      "Name": "Detuned Sea Recovered Record 05",
+      "Description": "Agreement reached one hundred percent.\nIndependent witnesses remaining: zero.",
+      "World": "01a08376-dc00-7c50-9924-7af6f81dd911",
+      "Supertype": "Narrative",
+      "Subtype": "Recovered custody record",
+      "Context": {
+        "story": "Agreement reached one hundred percent.\nIndependent witnesses remaining: zero."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-7c50-9924-7af6f81dd911"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-REC-SEA-05-01",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Pattern"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 05, source lines 117-119",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Variation protects independent witness",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7f5f-a62f-9dc0857e92f3",
+      "Name": "Low Receiving World K-11 Recovered Record 06",
+      "Description": "PLATFORM STATUS: OCCUPIED\nROUTE STATUS: VOID\nCUSTODY STATUS: CONTINUES\nDO NOT SUMMARISE THESE CONDITIONS AS DELAY.",
+      "World": "01a08376-dc00-7d35-8e6f-63d05c27b8ba",
+      "Supertype": "Narrative",
+      "Subtype": "Recovered custody record",
+      "Context": {
+        "story": "PLATFORM STATUS: OCCUPIED\nROUTE STATUS: VOID\nCUSTODY STATUS: CONTINUES\nDO NOT SUMMARISE THESE CONDITIONS AS DELAY."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-7d35-8e6f-63d05c27b8ba"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-REC-K11-06-02",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Remains"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source lines 134-138",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Weight must remain traceable",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-73bb-8b5d-7dc97e651f04",
+      "Name": "Paired Index Basins Recovered Record 06",
+      "Description": "BASIN ONE AGREES.\nBASIN TWO AGREES.\nBASIN THREE DISAGREES BY 0.3%.\nRetain Basin Three.\nWe have recovered a witness.",
+      "World": "01a08376-dc00-7b86-9a4a-6186112e713b",
+      "Supertype": "Narrative",
+      "Subtype": "Recovered custody record",
+      "Context": {
+        "story": "BASIN ONE AGREES.\nBASIN TWO AGREES.\nBASIN THREE DISAGREES BY 0.3%.\nRetain Basin Three.\nWe have recovered a witness."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-7b86-9a4a-6186112e713b"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-REC-PAIRED-06-02",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Memory"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source lines 153-158",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Difference protects evidence",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7ce4-ab61-9ef2cedad2ba",
+      "Name": "Reserve World Thirty-One-Outer Recovered Record 06",
+      "Description": "LIFE SUPPORT: SELF-SUSTAINING\nECOLOGICAL VARIANCE: ACCEPTABLE\nEXTERNAL CONDITIONS: ACCEPTABLE\nRELEASE AUTHORITY: NOT FOUND\nContinue gardening.",
+      "World": "01a08376-dc00-71f4-9a28-ae8216f51699",
+      "Supertype": "Narrative",
+      "Subtype": "Recovered custody record",
+      "Context": {
+        "story": "LIFE SUPPORT: SELF-SUSTAINING\nECOLOGICAL VARIANCE: ACCEPTABLE\nEXTERNAL CONDITIONS: ACCEPTABLE\nRELEASE AUTHORITY: NOT FOUND\nContinue gardening."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-71f4-9a28-ae8216f51699"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-REC-RESERVE-06-02",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Seed"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source lines 173-178",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Readiness does not create authority",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7e3e-a2b3-02e75172ca2c",
+      "Name": "Long Bell Meridian Recovered Record 06",
+      "Description": "The sequence contains a gap of nineteen measures.\nDo not shorten the procession.\nDo not extend the surrounding measures.\nWalk the missing duration.",
+      "World": "01a08376-dc00-764d-9ec3-a9cb804b2e20",
+      "Supertype": "Narrative",
+      "Subtype": "Recovered custody record",
+      "Context": {
+        "story": "The sequence contains a gap of nineteen measures.\nDo not shorten the procession.\nDo not extend the surrounding measures.\nWalk the missing duration."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-764d-9ec3-a9cb804b2e20"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-REC-MERIDIAN-06-02",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Ritual"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source lines 193-197",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Absence can be preserved",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-708d-94b9-0eca3115f8e9",
+      "Name": "World of Seven Approaches Recovered Record 06",
+      "Description": "GATE OPENED.\nTRANSIT OCCURRED.\nARRIVAL RECORDED.\nENTRY DID NOT OCCUR.",
+      "World": "01a08376-dc00-7dd9-805c-dca2eb25eba4",
+      "Supertype": "Narrative",
+      "Subtype": "Recovered custody record",
+      "Context": {
+        "story": "GATE OPENED.\nTRANSIT OCCURRED.\nARRIVAL RECORDED.\nENTRY DID NOT OCCUR."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-7dd9-805c-dca2eb25eba4"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-REC-APPROACHES-06-02",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Structure"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source lines 210-214",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Presence does not equal recognised entry",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      }
+    },
+    {
+      "Id": "01a08376-dc00-7bc8-b03d-a3520200ec30",
+      "Name": "Detuned Sea Recovered Record 06",
+      "Description": "NETWORK CONSENSUS: COMPLETE\nINTERNAL CONFLICT: ZERO\nINDEPENDENT CONFIRMATION: ZERO\nDeclare verification failure.",
+      "World": "01a08376-dc00-7c50-9924-7af6f81dd911",
+      "Supertype": "Narrative",
+      "Subtype": "Recovered custody record",
+      "Context": {
+        "story": "NETWORK CONSENSUS: COMPLETE\nINTERNAL CONFLICT: ZERO\nINDEPENDENT CONFIRMATION: ZERO\nDeclare verification failure."
+      },
+      "Involves": {
+        "locations": [
+          "01a08376-dc00-7c50-9924-7af6f81dd911"
+        ]
+      },
+      "servati": {
+        "servati_id": "SV-DRAFT-REC-SEA-06-02",
+        "canon_status": "DRAFT",
+        "era": "Choir age",
+        "inheritance_logic": [
+          "Pattern"
+        ],
+        "provenance": [
+          {
+            "source_kind": "working-pack",
+            "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+            "source_location": "Tranche 06, source lines 229-233",
+            "verification": "VERIFIED",
+            "note": "Verifies this V12 DRAFT record against the authoritative creative source; no canon promotion."
+          }
+        ],
+        "science_status": "not-applicable",
+        "preservation_problem": "Variation protects independent witness",
+        "first_appearance": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
+        "editorial_notes": "Structured ingestion only. All particulars remain V12 DRAFT."
+      }
+    }
+  ]
+}

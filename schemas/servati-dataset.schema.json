@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "urn:servati:schema:dataset:1",
+  "$id": "urn:servati:schema:dataset:2",
   "title": "SERVATI structured lore dataset",
   "description": "OnlyWorlds-derived entity vocabulary with SERVATI canon, provenance, chronology, and science controls.",
   "type": "object",
@@ -78,6 +78,11 @@
     "uuidV7": {
       "type": "string",
       "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "idArray": {
+      "type": "array",
+      "items": {"$ref": "#/definitions/uuidV7"},
+      "uniqueItems": true
     },
     "provenance": {
       "type": "object",
@@ -199,8 +204,113 @@
           "type": "array",
           "items": {"type": "string"}
         },
+        "preservation_problem": {"type": "string", "minLength": 1},
         "first_appearance": {"type": ["string", "null"]},
         "editorial_notes": {"type": "string", "minLength": 1}
+      }
+    },
+    "Setting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["form", "function"],
+      "properties": {
+        "form": {"type": "string", "minLength": 1},
+        "function": {"type": "string", "minLength": 1},
+        "parent_location": {"$ref": "#/definitions/uuidV7"}
+      }
+    },
+    "Agency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["role"],
+      "properties": {
+        "role": {"type": "string", "minLength": 1}
+      }
+    },
+    "Formation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["composition"],
+      "properties": {
+        "composition": {"type": "string", "minLength": 1}
+      }
+    },
+    "Foundation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["doctrine"],
+      "properties": {
+        "doctrine": {"type": "string", "minLength": 1}
+      }
+    },
+    "Form": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["aesthetics"],
+      "properties": {
+        "aesthetics": {"type": "string", "minLength": 1}
+      }
+    },
+    "Function": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["utility"],
+      "properties": {
+        "utility": {"type": "string", "minLength": 1}
+      }
+    },
+    "Context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["story"],
+      "properties": {
+        "story": {"type": "string", "minLength": 1}
+      }
+    },
+    "Particularisation": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "historical_consequence": {"type": "string", "minLength": 1},
+        "habitation": {"type": "string", "minLength": 1},
+        "clothing": {"type": "string", "minLength": 1},
+        "maintenance_sustenance": {"type": "string", "minLength": 1},
+        "transport": {"type": "string", "minLength": 1},
+        "work_rhythm": {"type": "string", "minLength": 1},
+        "social_custom": {"type": "string", "minLength": 1},
+        "body_modification": {"type": "string", "minLength": 1},
+        "death_custody": {"type": "string", "minLength": 1},
+        "repair_culture": {"type": "string", "minLength": 1},
+        "ordinary_phrase": {"type": "string", "minLength": 1},
+        "kinship": {"type": "string", "minLength": 1},
+        "friendship": {"type": "string", "minLength": 1},
+        "intimacy": {"type": "string", "minLength": 1},
+        "privacy": {"type": "string", "minLength": 1},
+        "education": {"type": "string", "minLength": 1},
+        "mourning": {"type": "string", "minLength": 1},
+        "art": {"type": "string", "minLength": 1},
+        "recreation": {"type": "string", "minLength": 1},
+        "humour": {"type": "string", "minLength": 1},
+        "shame": {"type": "string", "minLength": 1},
+        "taboo": {"type": "string", "minLength": 1},
+        "hospitality": {"type": "string", "minLength": 1},
+        "social_exclusion": {"type": "string", "minLength": 1}
+      }
+    },
+    "Involves": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "events": {"$ref": "#/definitions/idArray"},
+        "objects": {"$ref": "#/definitions/idArray"},
+        "locations": {"$ref": "#/definitions/idArray"},
+        "institutions": {"$ref": "#/definitions/idArray"},
+        "collectives": {"$ref": "#/definitions/idArray"},
+        "agents": {"$ref": "#/definitions/idArray"},
+        "narratives": {"$ref": "#/definitions/idArray"},
+        "concepts": {"$ref": "#/definitions/idArray"}
       }
     },
     "entry": {
@@ -220,8 +330,18 @@
         "Name": {"type": "string", "minLength": 1},
         "Description": {"type": "string", "minLength": 1},
         "World": {"$ref": "#/definitions/uuidV7"},
-        "Supertype": {"enum": ["Location", "Event"]},
+        "Supertype": {
+          "enum": ["Location", "Event", "Agent", "Collective", "Institution", "Object", "Narrative", "Concept"]
+        },
         "Subtype": {"type": "string", "minLength": 1},
+        "Setting": {"$ref": "#/definitions/Setting"},
+        "Agency": {"$ref": "#/definitions/Agency"},
+        "Formation": {"$ref": "#/definitions/Formation"},
+        "Foundation": {"$ref": "#/definitions/Foundation"},
+        "Form": {"$ref": "#/definitions/Form"},
+        "Function": {"$ref": "#/definitions/Function"},
+        "Context": {"$ref": "#/definitions/Context"},
+        "Particularisation": {"$ref": "#/definitions/Particularisation"},
         "Nature": {
           "type": "object",
           "additionalProperties": false,
@@ -239,18 +359,7 @@
             }
           }
         },
-        "Involves": {
-          "type": "object",
-          "additionalProperties": false,
-          "required": ["locations"],
-          "properties": {
-            "locations": {
-              "type": "array",
-              "items": {"$ref": "#/definitions/uuidV7"},
-              "uniqueItems": true
-            }
-          }
-        },
+        "Involves": {"$ref": "#/definitions/Involves"},
         "servati": {"$ref": "#/definitions/servatiMetadata"}
       },
       "allOf": [
@@ -259,6 +368,26 @@
             "properties": {"Supertype": {"const": "Event"}}
           },
           "then": {"required": ["Nature", "Involves"]}
+        },
+        {
+          "if": {"properties": {"Supertype": {"const": "Agent"}}},
+          "then": {"required": ["Agency"]}
+        },
+        {
+          "if": {"properties": {"Supertype": {"const": "Collective"}}},
+          "then": {"required": ["Formation"]}
+        },
+        {
+          "if": {"properties": {"Supertype": {"const": "Institution"}}},
+          "then": {"required": ["Foundation"]}
+        },
+        {
+          "if": {"properties": {"Supertype": {"const": "Object"}}},
+          "then": {"required": ["Form", "Function"]}
+        },
+        {
+          "if": {"properties": {"Supertype": {"const": "Narrative"}}},
+          "then": {"required": ["Context", "Involves"]}
         }
       ]
     }

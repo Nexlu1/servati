@@ -21,6 +21,25 @@ V11_INDEX = DATA_ROOT / "v11-canon-index.yaml"
 PROVENANCE_POLICY = ROOT / "canon" / "PROVENANCE.md"
 THIRD_PARTY_ROOT = ROOT / "third_party"
 THIRD_PARTY_REGISTER = ROOT / "THIRD_PARTY.md"
+PARTICULARISATION_SOURCE = (
+    ROOT / "sources" / "v12" / "SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md"
+)
+PARTICULARISATION_SHA256 = "efd87f65a33cfaf560fcf0d239f8c6fa2ebddc754c8e6cf6a3c19346ff5505f0"
+
+SINGLE_REFERENCE_FIELDS = {
+    "parent_location": "Location",
+}
+MULTI_REFERENCE_FIELDS = {
+    "objects": "Object",
+    "events": "Event",
+    "triggers": "Event",
+    "locations": "Location",
+    "institutions": "Institution",
+    "collectives": "Collective",
+    "agents": "Agent",
+    "narratives": "Narrative",
+    "concepts": "Concept",
+}
 
 
 class Validation:
@@ -83,10 +102,33 @@ def has_absolute_chronology(entry: dict[str, Any]) -> bool:
     return "start_date" in nature or "end_date" in nature
 
 
+def iter_entity_references(value: Any, path: str = "entry") -> list[tuple[str, str, str]]:
+    references: list[tuple[str, str, str]] = []
+    if isinstance(value, dict):
+        for key, child in value.items():
+            child_path = f"{path}.{key}"
+            if key in SINGLE_REFERENCE_FIELDS and isinstance(child, str):
+                references.append((child, SINGLE_REFERENCE_FIELDS[key], child_path))
+            elif key in MULTI_REFERENCE_FIELDS and isinstance(child, list):
+                references.extend(
+                    (target, MULTI_REFERENCE_FIELDS[key], f"{child_path}[{index}]")
+                    for index, target in enumerate(child)
+                    if isinstance(target, str)
+                )
+            else:
+                references.extend(iter_entity_references(child, child_path))
+    elif isinstance(value, list):
+        for index, child in enumerate(value):
+            references.extend(iter_entity_references(child, f"{path}[{index}]"))
+    return references
+
+
 def validate_datasets(validation: Validation) -> None:
     dataset_paths = sorted(DATA_ROOT.rglob("*.json"))
     datasets: list[tuple[Path, dict[str, Any]]] = []
     entry_ids: dict[str, str] = {}
+    entry_types: dict[str, str] = {}
+    entry_names: dict[str, str] = {}
     servati_ids: dict[str, str] = {}
     declared_worlds: set[str] = set()
 
@@ -117,6 +159,17 @@ def validate_datasets(validation: Validation) -> None:
                     )
                 else:
                     entry_ids[entry_id] = relative(path)
+                    entry_types[entry_id] = entry.get("Supertype", "")
+            entry_name = entry.get("Name")
+            if isinstance(entry_name, str):
+                normalized_name = entry_name.casefold()
+                if normalized_name in entry_names:
+                    validation.errors.append(
+                        f"duplicate structured Name {entry_name!r} in {entry_names[normalized_name]} "
+                        f"and {relative(path)}"
+                    )
+                else:
+                    entry_names[normalized_name] = relative(path)
             if isinstance(servati_id, str):
                 if servati_id in servati_ids:
                     validation.errors.append(
@@ -154,13 +207,17 @@ def validate_datasets(validation: Validation) -> None:
                 world in known_ids or world in declared_worlds,
                 f"{label} references unknown World Id {world}",
             )
-            references = list(entry.get("Involves", {}).get("locations", []))
-            references += list(entry.get("Nature", {}).get("triggers", []))
-            for target in references:
+            for target, expected_type, reference_path in iter_entity_references(entry):
                 validation.require(
                     target in known_ids,
-                    f"{label} references unknown entity Id {target}",
+                    f"{label} {reference_path} references unknown entity Id {target}",
                 )
+                if target in entry_types:
+                    validation.require(
+                        entry_types[target] == expected_type,
+                        f"{label} {reference_path} expects {expected_type} but {target} "
+                        f"is {entry_types[target]}",
+                    )
 
             records = metadata.get("provenance", [])
             validation.require(bool(records), f"{label} requires provenance")
@@ -193,11 +250,47 @@ def validate_datasets(validation: Validation) -> None:
                             "DRAFT" in record.get("note", ""),
                             f"{label} must scope VERIFIED V11 provenance away from DRAFT details",
                         )
+                source_ref = record.get("source_ref")
+                if isinstance(source_ref, str) and re.search(r"\.(?:json|md|ya?ml)$", source_ref):
+                    source_path = Path(source_ref)
+                    validation.require(
+                        not source_path.is_absolute()
+                        and re.match(r"^[A-Za-z]:[\\/]", source_ref) is None,
+                        f"{label} provenance source_ref must be repository-relative",
+                    )
+                    validation.require(
+                        (ROOT / source_path).is_file(),
+                        f"{label} provenance source does not exist: {source_ref}",
+                    )
                 if metadata.get("canon_status") == "CORE":
                     validation.require(
                         record.get("verification") != "SOURCE-UNAVAILABLE",
                         f"{label} CORE material cannot use SOURCE-UNAVAILABLE provenance",
                     )
+
+            first_appearance = metadata.get("first_appearance")
+            if isinstance(first_appearance, str):
+                appearance_path = Path(first_appearance)
+                validation.require(
+                    not appearance_path.is_absolute()
+                    and re.match(r"^[A-Za-z]:[\\/]", first_appearance) is None,
+                    f"{label} first_appearance must be repository-relative",
+                )
+                validation.require(
+                    (ROOT / appearance_path).is_file(),
+                    f"{label} first_appearance does not exist: {first_appearance}",
+                )
+
+        working_pack = dataset.get("working_pack", {})
+        filename = working_pack.get("filename")
+        if isinstance(filename, str) and "/" in filename:
+            pack_path = ROOT / filename
+            validation.require(pack_path.is_file(), f"{relative(path)} working pack does not exist: {filename}")
+            if pack_path.is_file():
+                validation.require(
+                    file_sha256(pack_path) == working_pack.get("sha256"),
+                    f"{relative(path)} working pack hash differs from {filename}",
+                )
 
 
 def validate_v12_markdown(validation: Validation) -> None:
@@ -250,6 +343,12 @@ def validate_authoritative_source(validation: Validation) -> None:
                 file_sha256(manuscript) == match.group(1),
                 "authoritative Version 11 manuscript hash differs from canon/PROVENANCE.md",
             )
+    validation.require(PARTICULARISATION_SOURCE.is_file(), "V12 Particularisation 05-08 source is missing")
+    if PARTICULARISATION_SOURCE.is_file():
+        validation.require(
+            file_sha256(PARTICULARISATION_SOURCE) == PARTICULARISATION_SHA256,
+            "V12 Particularisation 05-08 source hash differs from the ingestion pin",
+        )
 
 
 def validate_third_party(validation: Validation) -> None:

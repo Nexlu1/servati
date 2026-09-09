@@ -802,12 +802,14 @@ body[data-slug^="v12-draft/"] .record-identity > span:first-child {
 
 .entity-template--chapter,
 .entity-template--core-term,
+.entity-template--draft-term,
 .entity-template--artefact-technology {
   --template-accent: var(--archive-amber);
 }
 
 .entity-template--lineage,
-.entity-template--person-collective-mind {
+.entity-template--person-collective-mind,
+.entity-template--institution {
   --template-accent: var(--archive-verified);
 }
 
@@ -823,11 +825,16 @@ body[data-slug^="v12-draft/"] .record-identity > span:first-child {
 }
 
 .entity-template--environment,
-.entity-template--world-environment {
+.entity-template--world-environment,
+.entity-template--site-location {
   background: linear-gradient(145deg, rgb(19 31 34 / 82%), rgb(11 14 16 / 48%));
 }
 
 .entity-template--chronology-stage .entity-template__heading {
+  border-bottom-style: dashed;
+}
+
+.entity-template--draft-term .entity-template__heading {
   border-bottom-style: dashed;
 }
 
