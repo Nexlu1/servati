@@ -32,7 +32,6 @@ Codex commit deterministic.
 
 | Project | Exact revision | Licence | Adoption boundary |
 | --- | --- | --- | --- |
-| [satche/quartz-navbar](https://github.com/satche/quartz-navbar/tree/b62e37616a1cc08451ff2f4e6f07d39963f61140) | `b62e37616a1cc08451ff2f4e6f07d39963f61140` | MIT | Reference implementation for a Quartz v5 component manifest and curated navigation. Any SERVATI component remains first-party code and records attribution if source is copied. |
 | [foambubble/foam](https://github.com/foambubble/foam/tree/97b82e4ed7f363ff9cdbbfab0bb4dd90c7c4d487) | `97b82e4ed7f363ff9cdbbfab0bb4dd90c7c4d487` | MIT | Graph terminology for backlinks, orphans, and missing-link reports. No VS Code UI code is used. |
 | [Pagefind/pagefind](https://github.com/Pagefind/pagefind/tree/3e48197b82b20c0a31a5c13e662efe37f49ce431) | `3e48197b82b20c0a31a5c13e662efe37f49ce431` | MIT | Evaluated for static facets. Not bundled because Quartz Search already supplies full text and hierarchical tag conjunction without another index. |
 
@@ -45,3 +44,12 @@ behavioural reference only.
 
 Generated Special pages, category indexes, provenance, mention analysis, and
 depth reports are original SERVATI build logic in `codex/servati_codex.py`.
+
+## Evaluated but not included
+
+[`satche/quartz-navbar`](https://github.com/satche/quartz-navbar/tree/b62e37616a1cc08451ff2f4e6f07d39963f61140)
+at `b62e37616a1cc08451ff2f4e6f07d39963f61140` was tested under its MIT licence.
+Its transformer and component registered under pinned Quartz v5, but the
+pre-built component bundled a separate Preact runtime and its VNode was omitted
+from emitted pages. The upstream code is not copied or patched. SERVATI instead
+generates a small static navigation landmark from its own controlled routes.

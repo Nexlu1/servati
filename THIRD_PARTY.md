@@ -24,6 +24,14 @@ The validation workflow invokes pinned releases of `actions/checkout`,
 revisions, licence links, adoption boundaries, and the rejected YAML action
 wrapper are recorded in `docs/FOSS_TOOLING_REGISTER.md`.
 
+## Referenced Codex dependencies
+
+The Codex build acquires Quartz v5 and its configured plugins directly from
+GitHub at exact commits. Their source is not committed to this repository. The
+complete revision, licence, and role inventory is recorded in
+`codex/SERVATI_CODEX_BUILD_MANIFEST.json`; Phase 2 adoption decisions are
+documented in `docs/CODEX_PHASE2_FOSS_REGISTER.md`.
+
 ## Evaluated but not included
 
 The projects in `docs/FOSS_TOOLING_REGISTER.md` are research candidates, not

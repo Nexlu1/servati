@@ -148,7 +148,7 @@ def verify(
         missing_files = [name for name in required_files if not (installed_dir / name).is_file()]
         if missing_files:
             raise SystemExit(f"Plugin {spec['name']} is not built: {', '.join(missing_files)}")
-        if not installed_dir.is_symlink() or installed_dir.resolve() != source_dir.resolve():
+        if installed_dir.resolve() != source_dir.resolve():
             raise SystemExit(f"Plugin {spec['name']} is not linked to its acquired exact-SHA source")
         source_sha = run_git("rev-parse", "HEAD", cwd=source_dir, capture=True)
         installed_sha = run_git("rev-parse", "HEAD", cwd=installed_dir, capture=True)

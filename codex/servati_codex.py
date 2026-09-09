@@ -193,6 +193,39 @@ def html_link(title: str, rel: str, current_rel: str, class_name: str | None = N
     return f'<a href="{relative_href(current_rel, rel)}"{classes}>{html.escape(title)}</a>'
 
 
+def global_navigation(current_rel: str) -> str:
+    current = Path(current_rel).with_suffix("").as_posix()
+    links = (
+        ("SERVATI", "index.md", ("index",)),
+        ("History", "portals/history.md", ("history/", "portals/history")),
+        (
+            "Entities",
+            "categories/entities.md",
+            (
+                "artefacts-and-technologies/",
+                "choirs/",
+                "core-terms/",
+                "events-crises-and-wars/",
+                "faiths/",
+                "lineages/",
+                "people-and-collective-minds/",
+                "recovered-records/",
+                "worlds-and-places/",
+                "categories/entities",
+            ),
+        ),
+        ("Timeline", "portals/timeline.md", ("timeline/", "portals/timeline")),
+        ("Inheritance", "categories/inheritance.md", ("categories/inheritance",)),
+        ("V12 Draft", "portals/v12-draft.md", ("v12-draft/", "portals/v12-draft")),
+        ("Special", "special/index.md", ("special/",)),
+    )
+    items = []
+    for label, target, prefixes in links:
+        active = any(current == prefix or current.startswith(prefix) for prefix in prefixes)
+        items.append(html_link(label, target, current_rel, "current" if active else None))
+    return '<nav class="codex-navbar" aria-label="SERVATI encyclopedia">' + "".join(items) + "</nav>"
+
+
 def line_number(text: str, position: int) -> int:
     return text.count("\n", 0, position) + 1
 
@@ -776,6 +809,7 @@ def render_entry(entry: Entry, entries_by_rel: dict[str, Entry], incoming: dict[
     return "\n\n".join(
         part.strip()
         for part in (
+            global_navigation(entry.rel),
             context,
             body,
             mention_section,
@@ -1435,7 +1469,8 @@ def build(repo: Path, out: Path) -> dict[str, object]:
     for entry in entries:
         write_entry(out, entry, render_entry(entry, entries_by_rel, incoming))
     for page in [*special_pages, *category_pages, *portal_pages, *register_pages, homepage]:
-        write_entry(out, page, demote_headings(page.body))
+        body = global_navigation(page.rel) + "\n\n" + demote_headings(page.body)
+        write_entry(out, page, body)
 
     listed = [entry for entry in entries if entry.listed]
     aliases = build_alias_map(entries)

@@ -251,6 +251,13 @@ def main() -> None:
         'class="category-browse"',
     ):
         require(signature in index_html, f"Homepage archive structure is missing {signature}")
+    require('class="codex-navbar"' in index_html, "Permanent archive navigation is missing")
+    for label in ("SERVATI", "History", "Entities", "Timeline", "Inheritance", "V12 Draft", "Special"):
+        require(f">{label.lower()}</a>" in index_html, f"Permanent archive navigation is missing {label}")
+    require(
+        site_html.count('class="codex-navbar"') == generated_count,
+        "Permanent archive navigation is not present on every controlled page",
+    )
     required_routes = [
         "special/index.html",
         "special/all-pages.html",
