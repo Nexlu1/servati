@@ -130,7 +130,7 @@ plugins:
     enabled: true
     options:
       includeAll: false
-      includedProperties: [status, type, era, source_file, source_section, tags]
+      includedProperties: [status, type, register, era, part, inheritance_logic, source_file, source_branch, source_commit, source_lines]
       excludedProperties: []
       hidePropertiesView: false
       delimiters: "---"
@@ -148,14 +148,14 @@ plugins:
     enabled: true
     layout: {position: right, priority: 40}
   - source: "./plugin-sources/recent-notes"
-    enabled: true
+    enabled: false
     options:
-      title: Recently Indexed
-      limit: 4
+      title: Recent Source Records
+      limit: 3
       showTags: false
       hideTagPages: true
       hideFolderPages: true
-    layout: {position: right, priority: 60}
+      linkToMore: special/recent-changes
   - source: "./plugin-sources/graph"
     enabled: false
     layout: {position: right, priority: 70}

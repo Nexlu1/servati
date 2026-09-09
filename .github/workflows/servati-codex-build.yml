@@ -97,6 +97,7 @@ jobs:
       - name: Sanity-check built Codex
         run: |
           python codex/verify_servati_site.py \
+            --repo . \
             --content quartz-work/content \
             --output quartz-work/public \
             --plugin-result quartz-work/SERVATI_PLUGIN_VERIFICATION_RESULT.json \

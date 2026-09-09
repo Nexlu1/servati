@@ -2,8 +2,10 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
+import subprocess
 import threading
 import urllib.parse
 import urllib.request
@@ -12,8 +14,21 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 
-MINIMUM_SOURCE_PAGES = 228
+EXPECTED_SOURCE_PAGES = 605
 BASE_PATH = "/servati"
+EXPECTED_SOURCE_REFS = {
+    "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md": "21b72ea0bbdaa4c8f9372270bb06b9501c5b9965",
+    "drafts/v12/tranche-01/scattered-lamps.md": "5bd417299c4e99163404f655e569dcc2fc03789b",
+    "drafts/v12/tranche-01/custody-war-incidents.md": "5bd417299c4e99163404f655e569dcc2fc03789b",
+    "drafts/v12/tranche-02/archive-faiths.md": "5bd417299c4e99163404f655e569dcc2fc03789b",
+    "drafts/v12/tranche-03/choirs-custody-wars.md": "5bd417299c4e99163404f655e569dcc2fc03789b",
+}
+EXPECTED_AMBIGUOUS_TITLES = {
+    "Choir Ascendants",
+    "Hollow Archivists",
+    "Quiet Route",
+    "Weight Doctrine",
+}
 EXPECTED_PLUGIN_NAMES = {
     "article-title",
     "backlinks",
@@ -64,6 +79,16 @@ def require(condition: bool, message: str) -> None:
         raise SystemExit(message)
 
 
+def committed_source_hash(repo: Path, commit: str, path: str) -> str:
+    result = subprocess.run(
+        ["git", "-C", str(repo), "show", f"{commit}:{path}"],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
+    require(result.returncode == 0, f"Cannot load committed source {commit}:{path}")
+    return hashlib.sha256(result.stdout).hexdigest()
+
+
 def find_sample(content: Path, output: Path, directory: str) -> Path:
     source = next(iter(sorted((content / directory).glob("*.md"))), None)
     require(source is not None, f"No generated source page found in {directory}")
@@ -82,6 +107,7 @@ def http_smoke_test(output: Path, paths: list[str]) -> list[dict[str, object]]:
         for path in paths:
             with urllib.request.urlopen(f"http://127.0.0.1:{server.server_port}{path}") as response:
                 require(response.status == 200, f"HTTP smoke test failed for {path}: {response.status}")
+                response.read()
                 results.append({"path": path, "status": response.status})
     finally:
         server.shutdown()
@@ -96,6 +122,7 @@ def main() -> None:
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--plugin-result", required=True, type=Path)
     parser.add_argument("--result", required=True, type=Path)
+    parser.add_argument("--repo", type=Path, default=Path("."))
     args = parser.parse_args()
 
     generation_path = args.content / "SERVATI_GENERATION_RESULT.json"
@@ -103,7 +130,11 @@ def main() -> None:
     source_pages = sorted(args.content.rglob("*.md"))
     generated_count = generation.get("generated_pages")
     require(generated_count == len(source_pages), "Generation manifest does not match Markdown count")
-    require(generated_count >= MINIMUM_SOURCE_PAGES, f"Only {generated_count} source pages were generated")
+    require(generated_count == EXPECTED_SOURCE_PAGES, f"Expected {EXPECTED_SOURCE_PAGES} source pages, found {generated_count}")
+    require(generation.get("content_records") == 268, "Content record count changed")
+    require(generation.get("special_pages") == 282, "Special-page count changed")
+    require(generation.get("category_pages") == 33, "Category-page count changed")
+    require(generation.get("portal_pages") == 9, "Portal-page count changed")
     source_text = "\n".join(path.read_text(encoding="utf-8") for path in source_pages)
     require(not re.search(r"^#\s+", source_text, re.M), "Generated content contains body-level H1 headings")
     require(
@@ -113,6 +144,59 @@ def main() -> None:
     require(
         all(re.search(r'^modified:\s+"\d{4}-\d{2}-\d{2}"$', path.read_text(encoding="utf-8"), re.M) for path in source_pages),
         "One or more generated pages lack a source-derived modification date",
+    )
+    require(
+        all(re.search(r'^source_commit:\s+"[0-9a-f]{40}"$', path.read_text(encoding="utf-8"), re.M) for path in source_pages),
+        "One or more generated pages lack an exact source commit",
+    )
+    depth_path = args.content / "SERVATI_DEPTH_REPORT.json"
+    require(depth_path.is_file(), "Depth and integrity report is missing")
+    depth = json.loads(depth_path.read_text(encoding="utf-8"))
+    integrity = depth.get("integrity", {})
+    required_integrity = {
+        "duplicate_slugs",
+        "duplicate_titles",
+        "uncategorized_records",
+        "malformed_records",
+        "canon_draft_leakage",
+    }
+    require(required_integrity <= set(integrity), "Depth report is missing required integrity checks")
+    require(not integrity.get("duplicate_slugs"), "Generated records contain duplicate slugs")
+    require(not integrity.get("uncategorized_records"), "Content records without categories were generated")
+    require(not integrity.get("malformed_records"), "Malformed content metadata was generated")
+    require(not integrity.get("canon_draft_leakage"), "Canon/draft authority leakage was detected")
+    ambiguous_links = depth.get("ambiguous_links")
+    require(isinstance(ambiguous_links, dict), "Depth report is missing ambiguous-link analysis")
+    require(set(ambiguous_links) == EXPECTED_AMBIGUOUS_TITLES, "Ambiguous-title analysis changed")
+    require(all(len(paths) == 2 for paths in ambiguous_links.values()), "Ambiguous targets are incomplete")
+    require(depth.get("wanted_links") == {"Transfer Site Nine": 1}, "Wanted-link analysis changed")
+    source_files = depth.get("source_files", {})
+    require(set(source_files) == set(EXPECTED_SOURCE_REFS), "Depth report source-file set changed")
+    for source_path, provenance in source_files.items():
+        source_ref = provenance.get("ref", "")
+        commit = provenance.get("commit", "")
+        expected_hash = provenance.get("sha256", "")
+        require(source_ref == EXPECTED_SOURCE_REFS[source_path], f"Wrong pinned source revision for {source_path}")
+        require(re.fullmatch(r"[0-9a-f]{40}", commit) is not None, f"Invalid source commit for {source_path}")
+        require(re.fullmatch(r"[0-9a-f]{64}", expected_hash) is not None, f"Invalid source hash for {source_path}")
+        require(
+            committed_source_hash(args.repo.resolve(), source_ref, source_path) == expected_hash,
+            f"Source hash does not match committed bytes for {source_path}",
+        )
+    generator = depth.get("generator", {})
+    generator_path = generator.get("path")
+    head = subprocess.run(
+        ["git", "-C", str(args.repo.resolve()), "rev-parse", "HEAD"],
+        check=True,
+        stdout=subprocess.PIPE,
+        text=True,
+        encoding="utf-8",
+    ).stdout.strip()
+    require(generator_path == "codex/servati_codex.py", "Depth report identifies the wrong generator")
+    require(generator.get("commit") == head, "Generated-page provenance does not match HEAD")
+    require(
+        committed_source_hash(args.repo.resolve(), head, generator_path) == generator.get("sha256"),
+        "Generated-page source hash does not match committed generator bytes",
     )
 
     plugin_result = json.loads(args.plugin_result.read_text(encoding="utf-8"))
@@ -159,8 +243,34 @@ def main() -> None:
         not re.search(r'class="[^"]*\bbroken\b', site_html),
         "Built site contains broken internal links",
     )
-    for signature in ('class="archive-portals"', 'class="archive-featured"', 'class="archive-actions"'):
+    for signature in (
+        'class="archive-portals"',
+        'class="archive-featured"',
+        'class="archive-actions"',
+        'class="archive-statistics"',
+        'class="category-browse"',
+    ):
         require(signature in index_html, f"Homepage archive structure is missing {signature}")
+    required_routes = [
+        "special/index.html",
+        "special/all-pages.html",
+        "special/categories.html",
+        "special/canon.html",
+        "special/drafts.html",
+        "special/recent-changes.html",
+        "special/most-linked.html",
+        "special/orphaned.html",
+        "special/wanted-links.html",
+        "special/short-pages.html",
+        "special/long-pages.html",
+        "special/statistics.html",
+        "categories/index.html",
+        "portals/custody.html",
+        "portals/faiths.html",
+        "portals/choirs.html",
+    ]
+    for route in required_routes:
+        require((args.output / route).is_file(), f"Required encyclopedia route is missing: {route}")
     feature_signatures = {
         "search": r'class="[^"]*\bsearch\b',
         "explorer": r'class="[^"]*\bexplorer\b',
@@ -214,6 +324,9 @@ def main() -> None:
         "artifact_file_count": len(all_files) + 2,
         "search_index": "static/contentIndex.json",
         "features": sorted(feature_signatures),
+        "depth_statistics": depth.get("statistics", {}),
+        "special_page_count": generation.get("special_pages"),
+        "category_page_count": generation.get("category_pages"),
         "samples": {name: path.as_posix() for name, path in samples.items()},
         "http_checks": http_checks,
     }
