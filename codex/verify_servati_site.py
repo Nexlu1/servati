@@ -14,7 +14,7 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 
-EXPECTED_SOURCE_PAGES = 607
+EXPECTED_SOURCE_PAGES = 608
 BASE_PATH = "/servati"
 EXPECTED_SOURCE_REFS = {
     "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md": "21b72ea0bbdaa4c8f9372270bb06b9501c5b9965",
@@ -132,7 +132,7 @@ def main() -> None:
     require(generated_count == len(source_pages), "Generation manifest does not match Markdown count")
     require(generated_count == EXPECTED_SOURCE_PAGES, f"Expected {EXPECTED_SOURCE_PAGES} source pages, found {generated_count}")
     require(generation.get("content_records") == 268, "Content record count changed")
-    require(generation.get("special_pages") == 284, "Special-page count changed")
+    require(generation.get("special_pages") == 285, "Special-page count changed")
     require(generation.get("category_pages") == 33, "Category-page count changed")
     require(generation.get("portal_pages") == 9, "Portal-page count changed")
     source_text = "\n".join(path.read_text(encoding="utf-8") for path in source_pages)
@@ -185,6 +185,16 @@ def main() -> None:
     require(set(ambiguous_links) == EXPECTED_AMBIGUOUS_TITLES, "Ambiguous-title analysis changed")
     require(all(len(paths) == 2 for paths in ambiguous_links.values()), "Ambiguous targets are incomplete")
     require(depth.get("wanted_links") == {"Transfer Site Nine": 1}, "Wanted-link analysis changed")
+    require(len(depth.get("record_depth", {})) == 268, "Per-record depth metrics are incomplete")
+    category_population = depth.get("category_population", {})
+    require(
+        len(category_population) == 33
+        and all(set(population) == {"direct", "descendants"} for population in category_population.values()),
+        "Category population analysis is malformed",
+    )
+    require(isinstance(depth.get("empty_categories"), list), "Empty-category analysis is missing")
+    require(isinstance(depth.get("isolated_records"), list), "Semantic isolation analysis is missing")
+    require(isinstance(depth.get("no_semantic_backlinks"), list), "Semantic backlink coverage is missing")
     record_provenance = depth.get("record_provenance", {})
     require(len(record_provenance) == 268, "Record-level Git provenance is incomplete")
     require(
@@ -322,6 +332,7 @@ def main() -> None:
         "special/wanted-links.html",
         "special/disambiguation.html",
         "special/taxonomy.html",
+        "special/integrity.html",
         "special/short-pages.html",
         "special/long-pages.html",
         "special/statistics.html",
@@ -351,6 +362,9 @@ def main() -> None:
     recent_html = (args.output / "special" / "recent-changes.html").read_text(encoding="utf-8")
     for signature in ("line-level Git blame", "Latest record commit", "Current-line revisions"):
         require(signature in recent_html, f"Recent Changes is missing record history field {signature}")
+    integrity_html = (args.output / "special" / "integrity.html").read_text(encoding="utf-8")
+    for signature in ("integrity-status", "Per-record depth", "Semantically isolated records", "Wanted and ambiguous links"):
+        require(signature in integrity_html, f"Depth and integrity dashboard is missing {signature}")
     search_html = (args.output / "special" / "search.html").read_text(encoding="utf-8")
     for signature in ("search-facets", "codex-random-modes", "canon/v11", "random-category"):
         require(signature in search_html, f"Search and random discovery is missing {signature}")

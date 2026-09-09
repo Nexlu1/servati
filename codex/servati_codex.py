@@ -1197,11 +1197,36 @@ def record_rows(entries: list[Entry]) -> list[list[str]]:
     ]
 
 
+def record_depth_metrics(
+    entries: list[Entry], incoming: dict[str, list[tuple[Entry, str]]]
+) -> dict[str, dict[str, int]]:
+    metrics = {}
+    for entry in entries:
+        semantic_in = len(
+            [item for item in incoming.get(entry.rel, []) if item[1] != "Register navigation."]
+        )
+        semantic_out = len(entry.mention_context)
+        metrics[entry.rel] = {
+            "words": entry.word_count,
+            "categories": len(entry.categories),
+            "semantic_in": semantic_in,
+            "semantic_out": semantic_out,
+            "depth_score": (
+                len(entry.categories) * 2
+                + semantic_in
+                + semantic_out
+                + min(entry.word_count // 50, 10)
+            ),
+        }
+    return metrics
+
+
 def generate_special_pages(
     source: Source,
     entries: list[Entry],
     incoming: dict[str, list[tuple[Entry, str]]],
     wanted: Counter[str],
+    integrity: dict[str, object],
 ) -> tuple[list[Entry], dict[str, object]]:
     listed = [entry for entry in entries if entry.listed]
     canon = [entry for entry in listed if entry.status == "V11 CORE"]
@@ -1220,6 +1245,7 @@ def generate_special_pages(
     ambiguous = Counter(label for entry in listed for label in entry.ambiguous)
     internal_links = sum(len(entry.outgoing) for entry in listed)
     tag_count = len({category for entry in listed for category in entry.categories})
+    depth_metrics = record_depth_metrics(listed, incoming)
     stats = {
         "total_records": len(listed),
         "v11_canon": len(canon),
@@ -1335,6 +1361,67 @@ def generate_special_pages(
         "Special: Taxonomy Tree",
         "The controlled hierarchy separates eras, entity kinds, inheritance logics, canon state, and evidence state. Totals include records assigned to descendant categories.\n\n"
         + table(taxonomy_rows, ["Category", "Parent", "Direct", "All descendants", "Scope"]),
+    )
+    duplicate_integrity_rows = [
+        [title, ", ".join(wikilink(entries_by_rel[path].title, path) for path in paths)]
+        for title, paths in sorted(integrity["duplicate_titles"].items())
+    ]
+    depth_rows = [
+        [
+            wikilink(entry.title, entry.rel),
+            entry.record_type,
+            str(depth_metrics[entry.rel]["words"]),
+            str(depth_metrics[entry.rel]["categories"]),
+            str(depth_metrics[entry.rel]["semantic_in"]),
+            str(depth_metrics[entry.rel]["semantic_out"]),
+            str(depth_metrics[entry.rel]["depth_score"]),
+        ]
+        for entry in sorted(
+            listed,
+            key=lambda item: (depth_metrics[item.rel]["depth_score"], item.word_count, item.title),
+        )
+    ]
+    thin_entries = [entry for entry in short if entry.word_count < 50]
+    isolated_entries = [
+        entry
+        for entry in listed
+        if depth_metrics[entry.rel]["semantic_in"] == 0
+        and depth_metrics[entry.rel]["semantic_out"] == 0
+    ]
+    special(
+        "integrity",
+        "Special: Depth and Integrity",
+        f"""The dashboard uses the same validation data emitted to `SERVATI_DEPTH_REPORT.json`. Depth score = two points per category + semantic incoming links + semantic outgoing links + up to ten 50-word bands.
+
+<div class="integrity-status">
+  <span data-state="pass"><b>PASS</b>{len(integrity['duplicate_slugs'])} duplicate slugs</span>
+  <span data-state="pass"><b>PASS</b>{len(integrity['uncategorized_records'])} uncategorised records</span>
+  <span data-state="pass"><b>PASS</b>{len(integrity['malformed_records'])} malformed records</span>
+  <span data-state="pass"><b>PASS</b>{len(integrity['canon_draft_leakage'])} authority leaks</span>
+  <span data-state="review"><b>REVIEW</b>{len(thin_entries)} records under 50 words</span>
+  <span data-state="review"><b>REVIEW</b>{len(isolated_entries)} semantically isolated records</span>
+</div>
+
+## Wanted and ambiguous links
+
+{wikilink('Open the complete wanted-link report', 'special/wanted-links.md')}. Missing targets: **{len(wanted)}**. Ambiguous labels: **{len(ambiguous)}**.
+
+## Duplicate titles
+
+{table(duplicate_integrity_rows, ["Normalized title", "Controlled records"]) if duplicate_integrity_rows else "No duplicate titles were found."}
+
+## Thin records
+
+{table(record_rows(thin_entries), ["Record", "Type", "State", "Register", "Words"]) if thin_entries else "No records are below 50 words."}
+
+## Semantically isolated records
+
+{table(record_rows(isolated_entries), ["Record", "Type", "State", "Register", "Words"]) if isolated_entries else "No records are semantically isolated."}
+
+## Per-record depth
+
+{table(depth_rows, ["Record", "Type", "Words", "Categories", "Semantic in", "Semantic out", "Depth score"])}
+""",
     )
     special(
         "short-pages",
@@ -1453,6 +1540,7 @@ def generate_special_pages(
                 ("wanted-links", "Wanted and Missing Links"),
                 ("disambiguation", "Disambiguation"),
                 ("taxonomy", "Taxonomy Tree"),
+                ("integrity", "Depth and Integrity"),
                 ("short-pages", "Short Records"),
                 ("long-pages", "Long Records"),
                 ("statistics", "Statistics"),
@@ -1893,7 +1981,7 @@ def build(repo: Path, out: Path) -> dict[str, object]:
     incoming, wanted = analyze_relations(entries)
     entries_by_rel = {entry.rel: entry for entry in entries}
     generated = generated_source(repo, max(sources, key=lambda item: item.modified))
-    special_pages, statistics = generate_special_pages(generated, entries, incoming, wanted)
+    special_pages, statistics = generate_special_pages(generated, entries, incoming, wanted, integrity)
     category_pages = generate_category_pages(generated, entries)
     portal_pages = generate_portals(generated, entries)
     register_pages = generate_register_indexes(generated, entries)
@@ -1925,6 +2013,20 @@ def build(repo: Path, out: Path) -> dict[str, object]:
     listed = [entry for entry in entries if entry.listed]
     aliases = build_alias_map(entries)
     ambiguous_labels = {label for entry in listed for label in entry.ambiguous}
+    depth_metrics = record_depth_metrics(listed, incoming)
+    category_population = {
+        category: {
+            "direct": len([entry for entry in listed if category in entry.categories]),
+            "descendants": len(
+                {
+                    entry.rel
+                    for entry in listed
+                    if any(path == category or path.startswith(category + "/") for path in entry.categories)
+                }
+            ),
+        }
+        for category in CATEGORY_DEFINITIONS
+    }
     depth_report = {
         "statistics": statistics,
         "integrity": integrity,
@@ -1942,7 +2044,19 @@ def build(repo: Path, out: Path) -> dict[str, object]:
             for entry in sorted(listed, key=lambda item: item.word_count)
             if entry.word_count < 50
         ],
-        "no_backlinks": sorted(entry.rel for entry in listed if not incoming.get(entry.rel)),
+        "record_depth": depth_metrics,
+        "isolated_records": sorted(
+            rel
+            for rel, metrics in depth_metrics.items()
+            if metrics["semantic_in"] == 0 and metrics["semantic_out"] == 0
+        ),
+        "no_semantic_backlinks": sorted(
+            rel for rel, metrics in depth_metrics.items() if metrics["semantic_in"] == 0
+        ),
+        "category_population": category_population,
+        "empty_categories": sorted(
+            category for category, population in category_population.items() if population["descendants"] == 0
+        ),
         "source_files": {
             source.path: {
                 "branch": source.branch,

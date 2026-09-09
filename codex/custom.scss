@@ -699,6 +699,33 @@ body:has(.codex-navbar) :is(h1, h2, h3, h4, h5, h6) {
   }
 }
 
+.integrity-status {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--archive-line-bright);
+  border-left: 1px solid var(--archive-line-bright);
+
+  > span {
+    display: grid;
+    gap: 0.25rem;
+    padding: 0.7rem;
+    border-right: 1px solid var(--archive-line);
+    border-bottom: 1px solid var(--archive-line);
+    color: var(--archive-muted);
+    font: 0.66rem var(--codeFont);
+    text-transform: uppercase;
+  }
+
+  b {
+    color: var(--archive-verified);
+    letter-spacing: 0.08em;
+  }
+
+  [data-state="review"] b {
+    color: var(--archive-draft);
+  }
+}
+
 body[data-slug^="v12-draft/"] .record-identity > span:first-child {
   color: var(--archive-draft);
 }
@@ -1345,7 +1372,8 @@ footer {
   .archive-statistics,
   .codex-random-modes,
   .portal-statistics,
-  .portal-index-grid {
+  .portal-index-grid,
+  .integrity-status {
     grid-template-columns: 1fr;
   }
 
