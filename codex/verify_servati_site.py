@@ -14,7 +14,7 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 
-EXPECTED_SOURCE_PAGES = 605
+EXPECTED_SOURCE_PAGES = 607
 BASE_PATH = "/servati"
 EXPECTED_SOURCE_REFS = {
     "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md": "21b72ea0bbdaa4c8f9372270bb06b9501c5b9965",
@@ -132,7 +132,7 @@ def main() -> None:
     require(generated_count == len(source_pages), "Generation manifest does not match Markdown count")
     require(generated_count == EXPECTED_SOURCE_PAGES, f"Expected {EXPECTED_SOURCE_PAGES} source pages, found {generated_count}")
     require(generation.get("content_records") == 268, "Content record count changed")
-    require(generation.get("special_pages") == 282, "Special-page count changed")
+    require(generation.get("special_pages") == 284, "Special-page count changed")
     require(generation.get("category_pages") == 33, "Category-page count changed")
     require(generation.get("portal_pages") == 9, "Portal-page count changed")
     source_text = "\n".join(path.read_text(encoding="utf-8") for path in source_pages)
@@ -157,12 +157,18 @@ def main() -> None:
         "duplicate_slugs",
         "duplicate_titles",
         "uncategorized_records",
+        "unknown_categories",
+        "invalid_category_parents",
+        "category_cycles",
         "malformed_records",
         "canon_draft_leakage",
     }
     require(required_integrity <= set(integrity), "Depth report is missing required integrity checks")
     require(not integrity.get("duplicate_slugs"), "Generated records contain duplicate slugs")
     require(not integrity.get("uncategorized_records"), "Content records without categories were generated")
+    require(not integrity.get("unknown_categories"), "Records reference undefined categories")
+    require(not integrity.get("invalid_category_parents"), "Taxonomy contains undefined parent categories")
+    require(not integrity.get("category_cycles"), "Taxonomy contains parent cycles")
     require(not integrity.get("malformed_records"), "Malformed content metadata was generated")
     require(not integrity.get("canon_draft_leakage"), "Canon/draft authority leakage was detected")
     ambiguous_links = depth.get("ambiguous_links")
@@ -272,6 +278,8 @@ def main() -> None:
         "special/most-linked.html",
         "special/orphaned.html",
         "special/wanted-links.html",
+        "special/disambiguation.html",
+        "special/taxonomy.html",
         "special/short-pages.html",
         "special/long-pages.html",
         "special/statistics.html",

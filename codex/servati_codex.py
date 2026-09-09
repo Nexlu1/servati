@@ -943,6 +943,12 @@ def generate_category_pages(source: Source, entries: list[Entry]) -> list[Entry]
                 members[category].append(entry)
     for category, (label, parent, description) in CATEGORY_DEFINITIONS.items():
         children = [key for key, value in CATEGORY_DEFINITIONS.items() if value[1] == category]
+        descendant_members = {
+            entry.rel
+            for path, path_members in members.items()
+            if path == category or path.startswith(category + "/")
+            for entry in path_members
+        }
         child_links = "\n".join(
             f"- {category_link(child)} — {CATEGORY_DEFINITIONS[child][2]}" for child in children
         )
@@ -950,7 +956,7 @@ def generate_category_pages(source: Source, entries: list[Entry]) -> list[Entry]
             [wikilink(entry.title, entry.rel), entry.record_type, entry.status, str(entry.word_count)]
             for entry in sorted(members.get(category, []), key=lambda item: item.title.casefold())
         ]
-        body = f"""<div class="category-header"><span>CATEGORY</span><strong>{html.escape(label)}</strong><b>{len(member_rows)} records</b></div>
+        body = f"""<div class="category-header"><span>CATEGORY</span><strong>{html.escape(label)}</strong><b>{len(member_rows)} direct / {len(descendant_members)} total</b></div>
 
 {description}
 
@@ -979,7 +985,21 @@ def generate_category_pages(source: Source, entries: list[Entry]) -> list[Entry]
             )
         )
     root_rows = [
-        [category_link(category), description, str(len(members.get(category, [])))]
+        [
+            category_link(category),
+            description,
+            str(len(members.get(category, []))),
+            str(
+                len(
+                    {
+                        entry.rel
+                        for path, path_members in members.items()
+                        if path == category or path.startswith(category + "/")
+                        for entry in path_members
+                    }
+                )
+            ),
+        ]
         for category, (label, parent, description) in CATEGORY_DEFINITIONS.items()
         if parent is None
     ]
@@ -989,7 +1009,7 @@ def generate_category_pages(source: Source, entries: list[Entry]) -> list[Entry]
             "categories/index.md",
             "SERVATI Categories",
             "Hierarchical category paths connect broad archive domains to controlled records.\n\n"
-            + table(root_rows, ["Category", "Scope", "Direct records"]),
+            + table(root_rows, ["Category", "Scope", "Direct records", "All descendants"]),
             "category-index",
             "category index",
             "Categories",
@@ -1098,6 +1118,52 @@ def generate_special_pages(
         + "\n\n## Ambiguous targets\n\n"
         + (table(ambiguous_rows, ["Ambiguous title", "References", "Candidate records"]) if ambiguous_rows else "No ambiguous link targets were found."),
     )
+    duplicate_titles: dict[str, list[Entry]] = defaultdict(list)
+    for entry in listed:
+        duplicate_titles[entry.title.casefold()].append(entry)
+    duplicate_rows = [
+        [
+            candidates[0].title,
+            str(len(candidates)),
+            ", ".join(
+                f"{wikilink(candidate.title, candidate.rel)} ({candidate.record_type}; {candidate.status})"
+                for candidate in sorted(candidates, key=lambda item: item.rel)
+            ),
+        ]
+        for candidates in duplicate_titles.values()
+        if len(candidates) > 1
+    ]
+    special(
+        "disambiguation",
+        "Special: Disambiguation",
+        "Titles shared by multiple controlled records remain separate because their source roles or authority states differ. Use the type and canon state to select the intended record.\n\n"
+        + table(duplicate_rows, ["Shared title", "Records", "Candidates"]),
+    )
+    taxonomy_rows = []
+    for category, (label, parent, description) in CATEGORY_DEFINITIONS.items():
+        direct = len([entry for entry in listed if category in entry.categories])
+        descendants = len(
+            {
+                entry.rel
+                for entry in listed
+                if any(path == category or path.startswith(category + "/") for path in entry.categories)
+            }
+        )
+        taxonomy_rows.append(
+            [
+                category_link(category),
+                category_link(parent) if parent else "Root",
+                str(direct),
+                str(descendants),
+                description,
+            ]
+        )
+    special(
+        "taxonomy",
+        "Special: Taxonomy Tree",
+        "The controlled hierarchy separates eras, entity kinds, inheritance logics, canon state, and evidence state. Totals include records assigned to descendant categories.\n\n"
+        + table(taxonomy_rows, ["Category", "Parent", "Direct", "All descendants", "Scope"]),
+    )
     special(
         "short-pages",
         "Special: Short Records",
@@ -1159,6 +1225,8 @@ def generate_special_pages(
                 ("most-linked", "Most Linked Records"),
                 ("orphaned", "Orphaned Records"),
                 ("wanted-links", "Wanted and Missing Links"),
+                ("disambiguation", "Disambiguation"),
+                ("taxonomy", "Taxonomy Tree"),
                 ("short-pages", "Short Records"),
                 ("long-pages", "Long Records"),
                 ("statistics", "Statistics"),
@@ -1398,6 +1466,24 @@ def validate_entries(entries: list[Entry]) -> dict[str, object]:
         title_groups[entry.title.casefold()].append(entry.rel)
     duplicate_titles = {title: paths for title, paths in title_groups.items() if len(paths) > 1}
     uncategorized = [entry.rel for entry in entries if entry.listed and not entry.categories]
+    unknown_categories = sorted(
+        {category for entry in entries for category in entry.categories if category not in CATEGORY_DEFINITIONS}
+    )
+    invalid_category_parents = sorted(
+        category
+        for category, (_, parent, _) in CATEGORY_DEFINITIONS.items()
+        if parent is not None and parent not in CATEGORY_DEFINITIONS
+    )
+    category_cycles = []
+    for category in CATEGORY_DEFINITIONS:
+        path = []
+        current: str | None = category
+        while current is not None:
+            if current in path:
+                category_cycles.append(category)
+                break
+            path.append(current)
+            current = CATEGORY_DEFINITIONS[current][1]
     malformed = [entry.rel for entry in entries if not entry.source.commit or not entry.source.path or not entry.status]
     leakage = [
         entry.rel
@@ -1407,14 +1493,20 @@ def validate_entries(entries: list[Entry]) -> dict[str, object]:
     ]
     if duplicate_slugs:
         raise SystemExit(f"Duplicate generated slugs: {duplicate_slugs}")
-    if uncategorized or malformed or leakage:
+    if uncategorized or unknown_categories or invalid_category_parents or category_cycles or malformed or leakage:
         raise SystemExit(
-            f"Entry integrity failure: uncategorized={uncategorized}, malformed={malformed}, leakage={leakage}"
+            "Entry integrity failure: "
+            f"uncategorized={uncategorized}, unknown_categories={unknown_categories}, "
+            f"invalid_category_parents={invalid_category_parents}, category_cycles={category_cycles}, "
+            f"malformed={malformed}, leakage={leakage}"
         )
     return {
         "duplicate_slugs": duplicate_slugs,
         "duplicate_titles": duplicate_titles,
         "uncategorized_records": uncategorized,
+        "unknown_categories": unknown_categories,
+        "invalid_category_parents": invalid_category_parents,
+        "category_cycles": category_cycles,
         "malformed_records": malformed,
         "canon_draft_leakage": leakage,
     }
