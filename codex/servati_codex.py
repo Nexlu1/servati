@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import html
 import json
+import posixpath
 import re
 import shutil
 import subprocess
@@ -222,7 +223,12 @@ def global_navigation(current_rel: str) -> str:
     items = []
     for label, target, prefixes in links:
         active = any(current == prefix or current.startswith(prefix) for prefix in prefixes)
-        items.append(html_link(label, target, current_rel, "current" if active else None))
+        href = posixpath.relpath(
+            Path(target).with_suffix("").as_posix(),
+            Path(current_rel).parent.as_posix(),
+        )
+        classes = ' class="current"' if active else ""
+        items.append(f'<a href="{href}"{classes}>{html.escape(label)}</a>')
     return '<nav class="codex-navbar" aria-label="SERVATI encyclopedia">' + "".join(items) + "</nav>"
 
 
