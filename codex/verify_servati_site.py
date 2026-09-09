@@ -239,9 +239,13 @@ def main() -> None:
 
     index_html = (args.output / "index.html").read_text(encoding="utf-8").lower()
     site_html = "\n".join(path.read_text(encoding="utf-8").lower() for path in html_pages)
+    broken_links = re.findall(
+        r'<a\b(?=[^>]*class="[^"]*\bbroken\b)[^>]*>.*?</a>',
+        site_html,
+    )
     require(
-        not re.search(r'class="[^"]*\bbroken\b', site_html),
-        "Built site contains broken internal links",
+        not broken_links,
+        f"Built site contains broken internal links: {broken_links[:5]}",
     )
     for signature in (
         'class="archive-portals"',

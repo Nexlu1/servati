@@ -215,7 +215,7 @@ def global_navigation(current_rel: str) -> str:
                 "categories/entities",
             ),
         ),
-        ("Timeline", "portals/timeline.md", ("timeline/", "portals/timeline")),
+        ("Timeline", "timeline/index.md", ("timeline/",)),
         ("Inheritance", "categories/inheritance.md", ("categories/inheritance",)),
         ("V12 Draft", "portals/v12-draft.md", ("v12-draft/", "portals/v12-draft")),
         ("Special", "special/index.md", ("special/",)),
