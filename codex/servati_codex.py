@@ -1247,7 +1247,7 @@ def generate_special_pages(
 
     def facet_links(tags: list[str]) -> str:
         return " ".join(
-            f'<a href="tags/{tag}"><span>#</span>{html.escape(tag)}</a>'
+            f'<span><b>#</b>{html.escape(tag)}</span>'
             for tag in tags
         )
 

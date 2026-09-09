@@ -759,27 +759,21 @@ body[data-slug^="v12-draft/"] .record-identity > span:first-child {
   flex-wrap: wrap;
   gap: 0.35rem;
 
-  > a {
+  > span {
     padding: 0.3rem 0.5rem;
     border: 1px solid var(--archive-line-bright);
     color: var(--archive-cyan);
     font-family: var(--codeFont);
     font-size: 0.68rem;
-    text-decoration: none;
   }
 
-  > a:hover {
-    border-color: var(--archive-cyan);
-    background: var(--highlight);
-  }
-
-  span {
+  b {
     margin-right: 0.1rem;
     color: var(--archive-amber);
   }
 }
 
-.search-facets--dense > a {
+.search-facets--dense > span {
   font-size: 0.62rem;
 }
 
