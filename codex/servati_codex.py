@@ -120,6 +120,20 @@ CATEGORY_DEFINITIONS: dict[str, tuple[str, str | None, str]] = {
     "evidence/reconstructed": ("Reconstructed", "evidence", "Records explicitly presented as archaeological reconstruction."),
     "evidence/doctrinal": ("Doctrinal", "evidence", "Records explicitly concerned with doctrine or faith."),
 }
+REGISTER_PATHS = {
+    "History": ("history/index.md", "History Register"),
+    "Timeline": ("timeline/index.md", "Timeline Register"),
+    "Worlds & Environments": ("worlds-and-places/index.md", "Worlds & Environments Register"),
+    "Post-Human Lineages": ("lineages/index.md", "Post-Human Lineages Register"),
+    "Core Terms": ("core-terms/index.md", "Core Terms Register"),
+    "Faiths & Doctrines": ("faiths/index.md", "Faiths & Doctrines Register"),
+    "Choir Civilizations": ("choirs/index.md", "Choir Civilizations Register"),
+    "Events, Crises & Wars": ("events-and-crises/index.md", "Events, Crises & Wars Register"),
+    "Artefacts & Technologies": ("artefacts-and-technologies/index.md", "Artefacts & Technologies Register"),
+    "People & Collective Minds": ("people-and-collective-minds/index.md", "People & Collective Minds Register"),
+    "Recovered Records": ("recovered-records/index.md", "Recovered Records Register"),
+    "Version 12 Development": ("v12-draft/index.md", "Version 12 Development Register"),
+}
 
 
 def run_git(repo: Path, *args: str) -> str:
@@ -731,17 +745,42 @@ def type_label(entry: Entry) -> str:
 
 
 def render_navbox(entry: Entry, entries_by_rel: dict[str, Entry]) -> str:
-    related = [entries_by_rel[rel] for rel in sorted(entry.outgoing) if rel in entries_by_rel]
-    if not related:
-        return ""
-    links = "\n".join(
-        f'<a href="{relative_href(entry.rel, target.rel)}" data-status="{slug(target.status)}"><span>{html.escape(type_label(target))}</span><strong>{html.escape(target.title)}</strong></a>'
-        for target in related[:18]
+    register = sorted(
+        (
+            candidate
+            for candidate in entries_by_rel.values()
+            if candidate.listed and candidate.register == entry.register
+        ),
+        key=lambda candidate: (candidate.source.key, candidate.source_order, candidate.title),
+    )
+    position = register.index(entry)
+    sequence = []
+    if position:
+        sequence.append(("Previous in register", register[position - 1]))
+    if position + 1 < len(register):
+        sequence.append(("Next in register", register[position + 1]))
+    sequence_rels = {target.rel for _, target in sequence}
+    related = [
+        entries_by_rel[rel]
+        for rel in sorted(entry.outgoing)
+        if rel in entries_by_rel and rel not in sequence_rels
+    ]
+    register_rel, register_title = REGISTER_PATHS[entry.register]
+    links = [
+        f'<a href="{relative_href(entry.rel, register_rel)}"><span>Register index</span><strong>{html.escape(register_title)}</strong></a>'
+    ]
+    links.extend(
+        f'<a href="{relative_href(entry.rel, target.rel)}" data-status="{slug(target.status)}"><span>{label}</span><strong>{html.escape(target.title)}</strong></a>'
+        for label, target in sequence
+    )
+    links.extend(
+        f'<a href="{relative_href(entry.rel, target.rel)}" data-status="{slug(target.status)}"><span>Related · {html.escape(type_label(target))}</span><strong>{html.escape(target.title)}</strong></a>'
+        for target in related[:15]
     )
     return f"""## Related records
 
-<nav class="record-navbox" aria-label="Related SERVATI records">
-{links}
+<nav class="record-navbox" aria-label="Register sequence and related SERVATI records">
+{chr(10).join(links)}
 </nav>
 """
 
@@ -1429,22 +1468,8 @@ def generate_portals(source: Source, entries: list[Entry]) -> list[Entry]:
 
 
 def generate_register_indexes(source: Source, entries: list[Entry]) -> list[Entry]:
-    paths = {
-        "History": ("history/index.md", "History Register"),
-        "Timeline": ("timeline/index.md", "Timeline Register"),
-        "Worlds & Environments": ("worlds-and-places/index.md", "Worlds & Environments Register"),
-        "Post-Human Lineages": ("lineages/index.md", "Post-Human Lineages Register"),
-        "Core Terms": ("core-terms/index.md", "Core Terms Register"),
-        "Faiths & Doctrines": ("faiths/index.md", "Faiths & Doctrines Register"),
-        "Choir Civilizations": ("choirs/index.md", "Choir Civilizations Register"),
-        "Events, Crises & Wars": ("events-and-crises/index.md", "Events, Crises & Wars Register"),
-        "Artefacts & Technologies": ("artefacts-and-technologies/index.md", "Artefacts & Technologies Register"),
-        "People & Collective Minds": ("people-and-collective-minds/index.md", "People & Collective Minds Register"),
-        "Recovered Records": ("recovered-records/index.md", "Recovered Records Register"),
-        "Version 12 Development": ("v12-draft/index.md", "Version 12 Development Register"),
-    }
     pages = []
-    for register, (rel, title) in paths.items():
+    for register, (rel, title) in REGISTER_PATHS.items():
         members = sorted((entry for entry in entries if entry.listed and entry.register == register), key=lambda item: (item.source_order, item.title))
         body = table(record_rows(members), ["Record", "Type", "State", "Register", "Words"]) if members else "No records currently exist in this register."
         pages.append(page_entry(source, rel, title, body, "register-index", "register index", register))

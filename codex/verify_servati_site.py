@@ -304,6 +304,9 @@ def main() -> None:
     ).read_text(encoding="utf-8")
     for signature in ("Semantic record links", "Generated navigation and indexes", "Generated navigation backlinks"):
         require(signature in what_links_html, f"What Links Here is missing {signature}")
+    chapter_html = (args.output / "history" / "01-intake-exceeded.html").read_text(encoding="utf-8")
+    for signature in ("Register index", "Next in register", "note-properties", "metadata-container"):
+        require(signature in chapter_html, f"Context-aware record navigation is missing {signature}")
     feature_signatures = {
         "search": r'class="[^"]*\bsearch\b',
         "explorer": r'class="[^"]*\bexplorer\b',

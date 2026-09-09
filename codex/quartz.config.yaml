@@ -136,7 +136,7 @@ plugins:
       delimiters: "---"
       language: yaml
     order: 5
-    layout: {position: beforeBody, priority: 15, display: all}
+    layout: {position: right, priority: 10, display: all}
   - source: "./plugin-sources/content-meta"
     enabled: true
     options: {showReadingTime: true, showComma: false}
