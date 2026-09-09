@@ -277,6 +277,7 @@ def main() -> None:
         "Foundation": {"doctrine": line(256).removeprefix("Shared answer: ").strip("*")},
         "servati": metadata(refusal_id, WORLDS[0], "Tranche 06, source lines 235-256", "Something important survives between states"),
     }
+    refusal_entry["servati"]["inheritance_logic"] = [world.logic for world in WORLDS]
     ids_by_name["The Refusal Correspondence"] = str(refusal_entry["Id"])
     entries.append(refusal_entry)
 
@@ -342,7 +343,11 @@ def main() -> None:
         "entries": entries,
     }
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(json.dumps(dataset, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    OUTPUT.write_text(
+        json.dumps(dataset, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
     print(json.dumps({"output": str(OUTPUT), "entries": len(entries), "source_sha256": SOURCE_SHA256}, indent=2))
 
 

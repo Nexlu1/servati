@@ -2619,7 +2619,12 @@
         "canon_status": "DRAFT",
         "era": "Choir age",
         "inheritance_logic": [
-          "Remains"
+          "Remains",
+          "Memory",
+          "Seed",
+          "Ritual",
+          "Structure",
+          "Pattern"
         ],
         "provenance": [
           {

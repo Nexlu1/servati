@@ -937,6 +937,7 @@ def excerpt(text: str, position: int, length: int = 260) -> str:
 def analyze_relations(entries: list[Entry]) -> tuple[dict[str, list[tuple[Entry, str]]], Counter[str]]:
     aliases = build_alias_map(entries)
     by_rel = {entry.rel: entry for entry in entries}
+    by_slug = {entry.slug: entry.rel for entry in entries}
     incoming: dict[str, list[tuple[Entry, str]]] = defaultdict(list)
     wanted = Counter()
     title_candidates = sorted(aliases, key=len, reverse=True)
@@ -944,7 +945,8 @@ def analyze_relations(entries: list[Entry]) -> tuple[dict[str, list[tuple[Entry,
     for entry in entries:
         for match in re.finditer(r"\[\[([^\]|#]+)(?:\|[^\]]+)?\]\]", entry.body):
             label = match.group(1).strip()
-            targets = aliases.get(label.casefold(), set())
+            direct_target = by_slug.get(Path(label).with_suffix("").as_posix())
+            targets = {direct_target} if direct_target else aliases.get(label.casefold(), set())
             if len(targets) == 1:
                 target = next(iter(targets))
                 if target != entry.rel:
@@ -993,10 +995,17 @@ def analyze_relations(entries: list[Entry]) -> tuple[dict[str, list[tuple[Entry,
 
 
 def resolve_source_links(body: str, aliases: dict[str, set[str]], entry: Entry) -> str:
+    known_slugs = {
+        Path(rel).with_suffix("").as_posix(): rel
+        for targets in aliases.values()
+        for rel in targets
+    }
+
     def replace_wikilink(match: re.Match[str]) -> str:
         target_name = match.group(1).strip()
         label = (match.group(2) or target_name).strip()
-        targets = aliases.get(target_name.casefold(), set())
+        direct_target = known_slugs.get(Path(target_name).with_suffix("").as_posix())
+        targets = {direct_target} if direct_target else aliases.get(target_name.casefold(), set())
         if len(targets) == 1:
             return wikilink(label, next(iter(targets)))
         kind = "ambiguous" if len(targets) > 1 else "missing"
