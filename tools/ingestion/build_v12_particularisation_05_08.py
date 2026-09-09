@@ -146,7 +146,7 @@ def main() -> None:
             "inheritance_logic": [world.logic],
             "provenance": [
                 {
-                    "source_kind": "working-pack",
+                    "source_kind": "repository-baseline",
                     "source_ref": SOURCE_REL,
                     "source_location": location,
                     "verification": "VERIFIED",

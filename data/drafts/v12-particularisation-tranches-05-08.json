@@ -62,7 +62,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05 lines 15-31; Tranche 06 lines 123-138; Tranche 07 lines 260-279; Tranche 08 lines 412-433",
             "verification": "VERIFIED",
@@ -149,7 +149,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05 lines 33-49; Tranche 06 lines 140-158; Tranche 07 lines 281-300; Tranche 08 lines 435-458",
             "verification": "VERIFIED",
@@ -238,7 +238,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05 lines 51-67; Tranche 06 lines 160-178; Tranche 07 lines 302-321; Tranche 08 lines 460-485",
             "verification": "VERIFIED",
@@ -326,7 +326,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05 lines 69-84; Tranche 06 lines 180-197; Tranche 07 lines 323-342; Tranche 08 lines 487-512",
             "verification": "VERIFIED",
@@ -415,7 +415,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05 lines 86-102; Tranche 06 lines 199-214; Tranche 07 lines 344-363; Tranche 08 lines 514-539",
             "verification": "VERIFIED",
@@ -503,7 +503,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05 lines 104-119; Tranche 06 lines 216-233; Tranche 07 lines 365-384; Tranche 08 lines 541-566",
             "verification": "VERIFIED",
@@ -562,7 +562,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 16",
             "verification": "VERIFIED",
@@ -594,7 +594,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 18",
             "verification": "VERIFIED",
@@ -634,7 +634,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 20",
             "verification": "VERIFIED",
@@ -669,7 +669,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 22",
             "verification": "VERIFIED",
@@ -703,7 +703,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 24",
             "verification": "VERIFIED",
@@ -732,7 +732,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 34",
             "verification": "VERIFIED",
@@ -764,7 +764,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 36",
             "verification": "VERIFIED",
@@ -804,7 +804,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 38",
             "verification": "VERIFIED",
@@ -839,7 +839,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 40",
             "verification": "VERIFIED",
@@ -873,7 +873,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 42",
             "verification": "VERIFIED",
@@ -902,7 +902,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 52",
             "verification": "VERIFIED",
@@ -934,7 +934,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 54",
             "verification": "VERIFIED",
@@ -974,7 +974,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 56",
             "verification": "VERIFIED",
@@ -1009,7 +1009,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 58",
             "verification": "VERIFIED",
@@ -1043,7 +1043,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 60",
             "verification": "VERIFIED",
@@ -1072,7 +1072,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 70",
             "verification": "VERIFIED",
@@ -1104,7 +1104,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 72",
             "verification": "VERIFIED",
@@ -1144,7 +1144,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 74",
             "verification": "VERIFIED",
@@ -1179,7 +1179,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 76",
             "verification": "VERIFIED",
@@ -1213,7 +1213,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 78",
             "verification": "VERIFIED",
@@ -1242,7 +1242,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 87",
             "verification": "VERIFIED",
@@ -1274,7 +1274,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 89",
             "verification": "VERIFIED",
@@ -1314,7 +1314,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 91",
             "verification": "VERIFIED",
@@ -1349,7 +1349,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 93",
             "verification": "VERIFIED",
@@ -1383,7 +1383,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 95",
             "verification": "VERIFIED",
@@ -1412,7 +1412,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 105",
             "verification": "VERIFIED",
@@ -1444,7 +1444,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 107",
             "verification": "VERIFIED",
@@ -1484,7 +1484,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 109",
             "verification": "VERIFIED",
@@ -1519,7 +1519,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 111",
             "verification": "VERIFIED",
@@ -1553,7 +1553,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source line 113",
             "verification": "VERIFIED",
@@ -1582,7 +1582,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 124",
             "verification": "VERIFIED",
@@ -1614,7 +1614,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 126",
             "verification": "VERIFIED",
@@ -1646,7 +1646,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 130",
             "verification": "VERIFIED",
@@ -1681,7 +1681,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 132",
             "verification": "VERIFIED",
@@ -1715,7 +1715,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 141",
             "verification": "VERIFIED",
@@ -1747,7 +1747,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 143",
             "verification": "VERIFIED",
@@ -1779,7 +1779,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 149",
             "verification": "VERIFIED",
@@ -1814,7 +1814,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 151",
             "verification": "VERIFIED",
@@ -1848,7 +1848,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 161",
             "verification": "VERIFIED",
@@ -1880,7 +1880,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 163",
             "verification": "VERIFIED",
@@ -1912,7 +1912,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 169",
             "verification": "VERIFIED",
@@ -1947,7 +1947,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 171",
             "verification": "VERIFIED",
@@ -1981,7 +1981,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 181",
             "verification": "VERIFIED",
@@ -2013,7 +2013,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 183",
             "verification": "VERIFIED",
@@ -2045,7 +2045,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 189",
             "verification": "VERIFIED",
@@ -2080,7 +2080,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 191",
             "verification": "VERIFIED",
@@ -2114,7 +2114,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 200",
             "verification": "VERIFIED",
@@ -2146,7 +2146,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 202",
             "verification": "VERIFIED",
@@ -2178,7 +2178,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 206",
             "verification": "VERIFIED",
@@ -2213,7 +2213,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 208",
             "verification": "VERIFIED",
@@ -2247,7 +2247,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 217",
             "verification": "VERIFIED",
@@ -2279,7 +2279,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 219",
             "verification": "VERIFIED",
@@ -2311,7 +2311,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 225",
             "verification": "VERIFIED",
@@ -2346,7 +2346,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 227",
             "verification": "VERIFIED",
@@ -2383,7 +2383,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 128",
             "verification": "VERIFIED",
@@ -2423,7 +2423,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 145",
             "verification": "VERIFIED",
@@ -2463,7 +2463,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 165",
             "verification": "VERIFIED",
@@ -2503,7 +2503,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 185",
             "verification": "VERIFIED",
@@ -2543,7 +2543,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 204",
             "verification": "VERIFIED",
@@ -2583,7 +2583,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source line 221",
             "verification": "VERIFIED",
@@ -2628,7 +2628,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source lines 235-256",
             "verification": "VERIFIED",
@@ -2683,7 +2683,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source lines 28-31",
             "verification": "VERIFIED",
@@ -2720,7 +2720,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source lines 46-49",
             "verification": "VERIFIED",
@@ -2757,7 +2757,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source lines 64-67",
             "verification": "VERIFIED",
@@ -2794,7 +2794,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source lines 82-84",
             "verification": "VERIFIED",
@@ -2831,7 +2831,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source lines 99-102",
             "verification": "VERIFIED",
@@ -2868,7 +2868,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 05, source lines 117-119",
             "verification": "VERIFIED",
@@ -2905,7 +2905,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source lines 134-138",
             "verification": "VERIFIED",
@@ -2942,7 +2942,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source lines 153-158",
             "verification": "VERIFIED",
@@ -2979,7 +2979,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source lines 173-178",
             "verification": "VERIFIED",
@@ -3016,7 +3016,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source lines 193-197",
             "verification": "VERIFIED",
@@ -3053,7 +3053,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source lines 210-214",
             "verification": "VERIFIED",
@@ -3090,7 +3090,7 @@
         ],
         "provenance": [
           {
-            "source_kind": "working-pack",
+            "source_kind": "repository-baseline",
             "source_ref": "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md",
             "source_location": "Tranche 06, source lines 229-233",
             "verification": "VERIFIED",

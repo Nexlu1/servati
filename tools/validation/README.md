@@ -25,6 +25,14 @@ check-jsonschema --builtin-schema vendor.github-workflows .github/workflows/*.ym
 python tools/validation/validate_servati.py
 ```
 
+Reproduce the Particularisation 05-08 dataset from its hash-pinned creative
+source before validating it:
+
+```sh
+python tools/ingestion/build_v12_particularisation_05_08.py
+git diff --exit-code -- data/drafts/v12-particularisation-tranches-05-08.json
+```
+
 Run lychee v0.24.2 separately for the same link check used in CI:
 
 ```sh

@@ -14,7 +14,7 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 
-EXPECTED_SOURCE_PAGES = 608
+EXPECTED_SOURCE_PAGES = 772
 BASE_PATH = "/servati"
 EXPECTED_SOURCE_REFS = {
     "SERVATI_V11_AUTHORITATIVE_MANUSCRIPT.md": "21b72ea0bbdaa4c8f9372270bb06b9501c5b9965",
@@ -22,7 +22,9 @@ EXPECTED_SOURCE_REFS = {
     "drafts/v12/tranche-01/custody-war-incidents.md": "5bd417299c4e99163404f655e569dcc2fc03789b",
     "drafts/v12/tranche-02/archive-faiths.md": "5bd417299c4e99163404f655e569dcc2fc03789b",
     "drafts/v12/tranche-03/choirs-custody-wars.md": "5bd417299c4e99163404f655e569dcc2fc03789b",
+    "sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md": "HEAD",
 }
+PARTICULARISATION_SHA256 = "efd87f65a33cfaf560fcf0d239f8c6fa2ebddc754c8e6cf6a3c19346ff5505f0"
 EXPECTED_AMBIGUOUS_TITLES = {
     "Choir Ascendants",
     "Hollow Archivists",
@@ -131,10 +133,11 @@ def main() -> None:
     generated_count = generation.get("generated_pages")
     require(generated_count == len(source_pages), "Generation manifest does not match Markdown count")
     require(generated_count == EXPECTED_SOURCE_PAGES, f"Expected {EXPECTED_SOURCE_PAGES} source pages, found {generated_count}")
-    require(generation.get("content_records") == 268, "Content record count changed")
-    require(generation.get("special_pages") == 285, "Special-page count changed")
-    require(generation.get("category_pages") == 33, "Category-page count changed")
+    require(generation.get("content_records") == 347, "Content record count changed")
+    require(generation.get("special_pages") == 364, "Special-page count changed")
+    require(generation.get("category_pages") == 36, "Category-page count changed")
     require(generation.get("portal_pages") == 9, "Portal-page count changed")
+    require(generation.get("register_pages") == 15, "Register-page count changed")
     source_text = "\n".join(path.read_text(encoding="utf-8") for path in source_pages)
     require(not re.search(r"^#\s+", source_text, re.M), "Generated content contains body-level H1 headings")
     require(
@@ -158,7 +161,7 @@ def main() -> None:
         "Generated navigation backlink graph is unexpectedly sparse",
     )
     require(
-        statistics.get("records_with_navigation_backlinks") == 268,
+        statistics.get("records_with_navigation_backlinks") == 347,
         "Not every record is represented in generated navigation",
     )
     integrity = depth.get("integrity", {})
@@ -185,10 +188,10 @@ def main() -> None:
     require(set(ambiguous_links) == EXPECTED_AMBIGUOUS_TITLES, "Ambiguous-title analysis changed")
     require(all(len(paths) == 2 for paths in ambiguous_links.values()), "Ambiguous targets are incomplete")
     require(depth.get("wanted_links") == {"Transfer Site Nine": 1}, "Wanted-link analysis changed")
-    require(len(depth.get("record_depth", {})) == 268, "Per-record depth metrics are incomplete")
+    require(len(depth.get("record_depth", {})) == 347, "Per-record depth metrics are incomplete")
     category_population = depth.get("category_population", {})
     require(
-        len(category_population) == 32
+        len(category_population) == 35
         and all(set(population) == {"direct", "descendants"} for population in category_population.values()),
         "Category population analysis is malformed",
     )
@@ -196,7 +199,7 @@ def main() -> None:
     require(isinstance(depth.get("isolated_records"), list), "Semantic isolation analysis is missing")
     require(isinstance(depth.get("no_semantic_backlinks"), list), "Semantic backlink coverage is missing")
     record_provenance = depth.get("record_provenance", {})
-    require(len(record_provenance) == 268, "Record-level Git provenance is incomplete")
+    require(len(record_provenance) == 347, "Record-level Git provenance is incomplete")
     require(
         all(
             re.fullmatch(r"[0-9a-f]{64}", provenance.get("body_sha256", ""))
@@ -219,6 +222,11 @@ def main() -> None:
             committed_source_hash(args.repo.resolve(), source_ref, source_path) == expected_hash,
             f"Source hash does not match committed bytes for {source_path}",
         )
+    require(
+        source_files["sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md"]["sha256"]
+        == PARTICULARISATION_SHA256,
+        "Particularisation source hash differs from the local ingestion authority",
+    )
     generator = depth.get("generator", {})
     generator_path = generator.get("path")
     head = subprocess.run(
@@ -294,6 +302,9 @@ def main() -> None:
         "event-crisis-war",
         "artefact-technology",
         "person-collective-mind",
+        "institution",
+        "site-location",
+        "draft-term",
         "recovered-record",
     }
     for template in entity_templates:
@@ -365,6 +376,16 @@ def main() -> None:
         "portals/custody.html",
         "portals/faiths.html",
         "portals/choirs.html",
+        "v12-draft/institutions/index.html",
+        "v12-draft/sites/index.html",
+        "v12-draft/terms/index.html",
+        "v12-draft/worlds/low-receiving-world-k-11.html",
+        "v12-draft/worlds/paired-index-basins.html",
+        "v12-draft/worlds/reserve-world-thirty-one-outer.html",
+        "v12-draft/worlds/long-bell-meridian.html",
+        "v12-draft/worlds/world-of-seven-approaches.html",
+        "v12-draft/worlds/detuned-sea.html",
+        "v12-draft/institutions/the-refusal-correspondence.html",
     ]
     for route in required_routes:
         require((args.output / route).is_file(), f"Required encyclopedia route is missing: {route}")
@@ -397,7 +418,7 @@ def main() -> None:
     require("core terms" in index_html and "all portals" in index_html, "Homepage portal discovery is incomplete")
     v12_index_html = (args.output / "v12-draft" / "index.html").read_text(encoding="utf-8")
     require(
-        "58 records" in v12_index_html and "No records currently exist" not in v12_index_html,
+        "137 records" in v12_index_html and "No records currently exist" not in v12_index_html,
         "V12 development register does not expose its draft records",
     )
     require('class="register-header"' in v12_index_html, "Register masthead is missing")
@@ -406,6 +427,32 @@ def main() -> None:
         for signature in ("portal-statistics", "portal-lenses", "V11 canon records", "V12 draft records", "Source strata"):
             require(signature in portal_html, f"Portal {portal} is missing curated section {signature}")
         require("Browse this portal" not in portal_html, f"Portal {portal} repeats its full record inventory")
+    world_dossiers = {
+        "low-receiving-world-k-11": "The Low Concordance",
+        "paired-index-basins": "The Counterarchive",
+        "reserve-world-thirty-one-outer": "The Unopened Chorus",
+        "long-bell-meridian": "The Processional Measure",
+        "world-of-seven-approaches": "The Threshold Assembly",
+        "detuned-sea": "The Divergent Harmonic",
+    }
+    for world, choir in world_dossiers.items():
+        world_html = (args.output / "v12-draft" / "worlds" / f"{world}.html").read_text(encoding="utf-8")
+        for signature in (
+            "V12 DRAFT",
+            "Everyday Life and Material Culture",
+            "Social Life, Intimacy and Culture",
+            "Structured relationships",
+            choir,
+            "source_lines",
+        ):
+            require(signature in world_html, f"Particularised world {world} is missing {signature}")
+    refusal_html = (
+        args.output / "v12-draft" / "institutions" / "the-refusal-correspondence.html"
+    ).read_text(encoding="utf-8")
+    for signature in ("Cross-world material contrast", "Cross-world intimacy model", "Something important survives"):
+        require(signature in refusal_html, f"Refusal Correspondence is missing {signature}")
+    low_choir_html = (args.output / "v12-draft" / "entries" / "the-low-concordance.html").read_text(encoding="utf-8")
+    require("Low Receiving World K-11" in low_choir_html, "Existing Choir records were not enriched by world backlinks")
     feature_signatures = {
         "search": r'class="[^"]*\bsearch\b',
         "explorer": r'class="[^"]*\bexplorer\b',
@@ -421,6 +468,9 @@ def main() -> None:
         "chapter": find_sample(args.content, args.output, "history"),
         "lineage": find_sample(args.content, args.output, "lineages"),
         "environment": find_sample(args.content, args.output, "worlds-and-places"),
+        "particularised_world": Path("v12-draft/worlds/low-receiving-world-k-11.html"),
+        "particularised_actor": Path("v12-draft/actors/rest-clerk-seventeen.html"),
+        "particularised_record": Path("v12-draft/recovered-records/detuned-sea-recovered-record-06.html"),
     }
     page_paths = [
         BASE_PATH + "/"

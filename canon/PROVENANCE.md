@@ -41,3 +41,12 @@ The SHA-256 hash identifies the exact pack reviewed. Its V11-derived assertions
 must cite the authoritative manuscript, not the pack, once directly compared.
 Only the exact manuscript-supported basis becomes `VERIFIED`; new names and
 particulars from the pack remain DRAFT even when that basis is verified.
+
+## Authoritative Version 12 draft source
+
+[`SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md`](../sources/v12/SERVATI_V12_PARTICULARISATION_TRANCHES_05_08_AUTHORITATIVE_DRAFT.md)
+is the creative authority for Particularisation Tranches 05-08, SHA-256
+`efd87f65a33cfaf560fcf0d239f8c6fa2ebddc754c8e6cf6a3c19346ff5505f0`.
+`VERIFIED` provenance against this file verifies wording and source location
+only. Every derived record remains `DRAFT`; this source cannot promote or alter
+Version 11 canon.
