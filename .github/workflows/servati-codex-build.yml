@@ -53,6 +53,7 @@ jobs:
         run: |
           cp codex/quartz.config.yaml quartz-work/quartz.config.yaml
           cp codex/custom.scss quartz-work/quartz/styles/custom.scss
+          cp codex/codex-random-modes.js quartz-work/quartz/static/codex-random-modes.js
 
       - name: Generate SERVATI Codex pages
         run: |

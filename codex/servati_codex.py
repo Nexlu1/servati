@@ -1241,16 +1241,63 @@ def generate_special_pages(
         ["Source files", str(stats["source_files"])],
     ]
     special("statistics", "Special: Statistics", table(stat_rows, ["Measure", "Count"]))
+    type_tags = sorted({f"type/{slug(entry.record_type)}" for entry in listed})
+    register_tags = sorted({f"register/{slug(entry.register)}" for entry in listed})
+    category_tags = [f"category/{category}" for category in CATEGORY_DEFINITIONS]
+
+    def facet_links(tags: list[str]) -> str:
+        return " ".join(
+            f'<a href="tags/{tag}"><span>#</span>{html.escape(tag)}</a>'
+            for tag in tags
+        )
+
+    type_options = "\n".join(
+        f'<option value="{tag}">{html.escape(tag.removeprefix("type/").replace("-", " ").title())}</option>'
+        for tag in type_tags
+    )
+    category_options = "\n".join(
+        f'<option value="{tag}">{html.escape(CATEGORY_DEFINITIONS[tag.removeprefix("category/")][0])}</option>'
+        for tag in category_tags
+    )
     special(
         "search",
-        "Special: Search",
-        "Use the Search control from the permanent navigation. Search supports full text, keyboard navigation, highlighted matches, and conjunctive hierarchical tag filters.\n\n"
-        "## Useful filters\n\n"
-        "- `#canon/v11` — released canon only\n"
-        "- `#canon/v12-draft` — development records only\n"
-        "- `#type/chapter` — chapters\n"
-        "- `#category/entities/lineages` — lineages\n"
-        "- `#category/inheritance/memory` — Memory inheritance\n",
+        "Special: Search and Discovery",
+        f"""Use the Search control in the left archive rail or press `Ctrl/Cmd + K`. Free text and `#tag` terms can be combined; multiple tags are conjunctive.
+
+## Search facets
+
+### Canon state
+
+<div class="search-facets">{facet_links(["canon/v11", "canon/v12-draft"])}</div>
+
+### Entity type
+
+<div class="search-facets">{facet_links(type_tags)}</div>
+
+### Register
+
+<div class="search-facets">{facet_links(register_tags)}</div>
+
+### Hierarchical category
+
+<div class="search-facets search-facets--dense">{facet_links(category_tags)}</div>
+
+## Random discovery modes
+
+<div class="codex-random-modes" data-base-path="/servati/">
+  <button type="button" data-random-tag="">Any record</button>
+  <button type="button" data-random-tag="canon/v11">V11 canon</button>
+  <button type="button" data-random-tag="canon/v12-draft">V12 draft</button>
+  <label for="random-type">Entity type</label>
+  <select id="random-type">{type_options}</select>
+  <button type="button" data-random-select="#random-type">Random type record</button>
+  <label for="random-category">Category</label>
+  <select id="random-category">{category_options}</select>
+  <button type="button" data-random-select="#random-category">Random category record</button>
+</div>
+
+<script src="../static/codex-random-modes.js"></script>
+""",
     )
     special(
         "index",

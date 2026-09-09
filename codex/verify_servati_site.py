@@ -251,6 +251,9 @@ def main() -> None:
         f"Implausibly low HTML count: {len(html_pages)} for {generated_count} source pages",
     )
     require((args.output / "static" / "contentIndex.json").is_file(), "Search content index is missing")
+    random_modes_script = args.output / "static" / "codex-random-modes.js"
+    require(random_modes_script.is_file(), "Random discovery modes script is missing")
+    require("fetchData" in random_modes_script.read_text(encoding="utf-8"), "Random modes do not use the search content index")
 
     index_html = (args.output / "index.html").read_text(encoding="utf-8").lower()
     site_html = "\n".join(path.read_text(encoding="utf-8").lower() for path in html_pages)
@@ -307,6 +310,9 @@ def main() -> None:
     chapter_html = (args.output / "history" / "01-intake-exceeded.html").read_text(encoding="utf-8")
     for signature in ("Register index", "Next in register", "note-properties", "metadata-container"):
         require(signature in chapter_html, f"Context-aware record navigation is missing {signature}")
+    search_html = (args.output / "special" / "search.html").read_text(encoding="utf-8")
+    for signature in ("search-facets", "codex-random-modes", "canon/v11", "random-category"):
+        require(signature in search_html, f"Search and random discovery is missing {signature}")
     feature_signatures = {
         "search": r'class="[^"]*\bsearch\b',
         "explorer": r'class="[^"]*\bexplorer\b',
