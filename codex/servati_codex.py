@@ -817,6 +817,48 @@ def type_label(entry: Entry) -> str:
     return entry.record_type.upper().replace(" / ", " · ")
 
 
+def render_template_dossier(entry: Entry) -> str:
+    profiles = {
+        "chapter": ("NARRATIVE PLATE", "Chapter sequence"),
+        "chronology-stage": ("CHRONOLOGY MARKER", "Timeline sequence"),
+        "core-term": ("CONTROLLED LEXICON", "Lexicon position"),
+        "environment": ("ENVIRONMENT DOSSIER", "Environment position"),
+        "world-environment": ("WORLD / LAMP DOSSIER", "Development position"),
+        "lineage": ("DESCENT RECORD", "Lineage position"),
+        "faith-doctrine": ("DOCTRINE RECORD", "Doctrine position"),
+        "choir-civilization": ("CHOIR LEDGER", "Choir position"),
+        "event-crisis-war": ("INCIDENT FILE", "Incident position"),
+        "artefact-technology": ("CUSTODY OBJECT", "Object position"),
+        "person-collective-mind": ("ACTOR RECORD", "Actor position"),
+        "recovered-record": ("RECOVERED EVIDENCE", "Fragment position"),
+    }
+    code, sequence_label = profiles[entry.template]
+    fields = [
+        ("Canon state", entry.status),
+        ("Register", entry.register),
+        (sequence_label, f"{entry.source_order:02d}"),
+    ]
+    if entry.part:
+        fields.append(("Narrative part", entry.part))
+    elif entry.era:
+        fields.append(("Era / descent", entry.era))
+    if entry.inheritance:
+        fields.append(("Inheritance", " / ".join(entry.inheritance)))
+    if entry.template == "recovered-record":
+        fields.append(("Evidence state", "Reconstructed fragment"))
+    elif entry.template == "faith-doctrine":
+        fields.append(("Evidence state", "Doctrine / schism"))
+    field_html = "\n".join(
+        f"<div><dt>{html.escape(label)}</dt><dd>{html.escape(value)}</dd></div>"
+        for label, value in fields
+    )
+    return f"""<header class="entity-template entity-template--{entry.template}">
+  <div class="entity-template__heading"><span>{code}</span><strong>{html.escape(type_label(entry))}</strong></div>
+  <dl>{field_html}</dl>
+</header>
+"""
+
+
 def render_navbox(entry: Entry, entries_by_rel: dict[str, Entry]) -> str:
     register = sorted(
         (
@@ -866,15 +908,7 @@ def render_entry(
 ) -> str:
     aliases = build_alias_map(list(entries_by_rel.values()))
     body = resolve_source_links(demote_headings(entry.body), aliases, entry)
-    inheritance = " / ".join(entry.inheritance) if entry.inheritance else "Not explicitly assigned"
-    context = f"""<div class="record-identity record-identity--{slug(entry.template)}">
-  <span>{html.escape(entry.status)}</span>
-  <span>{html.escape(type_label(entry))}</span>
-  <span>{html.escape(entry.register)}</span>
-</div>
-"""
-    if entry.inheritance:
-        context += f'<p class="record-inheritance"><strong>Inheritance:</strong> {html.escape(inheritance)}</p>\n'
+    context = render_template_dossier(entry)
 
     incoming_records = [
         item for item in incoming.get(entry.rel, []) if item[1] != "Register navigation."

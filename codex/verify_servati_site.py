@@ -268,6 +268,25 @@ def main() -> None:
 
     index_html = (args.output / "index.html").read_text(encoding="utf-8").lower()
     site_html = "\n".join(path.read_text(encoding="utf-8").lower() for path in html_pages)
+    entity_templates = {
+        "chapter",
+        "chronology-stage",
+        "core-term",
+        "environment",
+        "world-environment",
+        "lineage",
+        "faith-doctrine",
+        "choir-civilization",
+        "event-crisis-war",
+        "artefact-technology",
+        "person-collective-mind",
+        "recovered-record",
+    }
+    for template in entity_templates:
+        require(
+            f'class="entity-template entity-template--{template}"' in site_html,
+            f"Distinct entity renderer is missing for {template}",
+        )
     broken_links = re.findall(
         r'<a\b(?=[^>]*class="[^"]*\bbroken\b)[^>]*>.*?</a>',
         site_html,

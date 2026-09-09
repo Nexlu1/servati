@@ -710,6 +710,92 @@ body[data-slug^="v12-draft/"] .record-identity > span:first-child {
   font-size: 0.72rem;
 }
 
+.entity-template {
+  --template-accent: var(--archive-cyan);
+  margin-bottom: 1.35rem;
+  border: 1px solid var(--archive-line-bright);
+  border-top: 3px solid var(--template-accent);
+  background: linear-gradient(135deg, rgb(20 25 29 / 78%), rgb(11 14 16 / 45%));
+
+  .entity-template__heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.65rem 0.8rem;
+    border-bottom: 1px solid var(--archive-line);
+  }
+
+  .entity-template__heading span {
+    color: var(--template-accent);
+    font: 0.64rem var(--codeFont);
+    letter-spacing: 0.13em;
+  }
+
+  .entity-template__heading strong {
+    color: var(--archive-bone);
+    font: 0.74rem var(--headerFont);
+  }
+
+  dl {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin: 0;
+  }
+
+  dl > div {
+    min-width: 0;
+    padding: 0.55rem 0.7rem;
+    border-right: 1px solid var(--archive-line);
+    border-bottom: 1px solid var(--archive-line);
+  }
+
+  dt {
+    color: var(--archive-muted);
+    font: 0.58rem var(--codeFont);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  dd {
+    margin: 0.2rem 0 0;
+    color: var(--archive-bone);
+    font-size: 0.74rem;
+    line-height: 1.35;
+  }
+}
+
+.entity-template--chapter,
+.entity-template--core-term,
+.entity-template--artefact-technology {
+  --template-accent: var(--archive-amber);
+}
+
+.entity-template--lineage,
+.entity-template--person-collective-mind {
+  --template-accent: var(--archive-verified);
+}
+
+.entity-template--recovered-record,
+.entity-template--event-crisis-war {
+  --template-accent: var(--archive-breach);
+}
+
+.entity-template--faith-doctrine,
+.entity-template--choir-civilization {
+  border-top-style: double;
+  border-top-width: 5px;
+}
+
+.entity-template--environment,
+.entity-template--world-environment {
+  background: linear-gradient(145deg, rgb(19 31 34 / 82%), rgb(11 14 16 / 48%));
+}
+
+.entity-template--chronology-stage .entity-template__heading {
+  border-bottom-style: dashed;
+}
+
 .mention-list {
   margin: 0;
   padding: 0;
@@ -1248,6 +1334,10 @@ footer {
   .portal-masthead {
     grid-template-columns: 1fr;
     gap: 0.35rem;
+  }
+
+  .entity-template dl {
+    grid-template-columns: 1fr;
   }
 
   .record-navbox,
