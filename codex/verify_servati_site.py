@@ -394,7 +394,7 @@ def main() -> None:
     for signature in ("search-facets", "codex-random-modes", "canon/v11", "random-category"):
         require(signature in search_html, f"Search and random discovery is missing {signature}")
     require("codex-random-modes.js" in search_html, "Search page does not load random discovery modes")
-    require("Core Terms" in index_html and "All portals" in index_html, "Homepage portal discovery is incomplete")
+    require("core terms" in index_html and "all portals" in index_html, "Homepage portal discovery is incomplete")
     v12_index_html = (args.output / "v12-draft" / "index.html").read_text(encoding="utf-8")
     require(
         "58 records" in v12_index_html and "No records currently exist" not in v12_index_html,
