@@ -5,3 +5,8 @@ SERVATI_V12_GITHUB_FIRST_WORKING_PACK_R1.zip
 # Common local/editor artefacts.
 .DS_Store
 Thumbs.db
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/

@@ -1,0 +1,73 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": [
+    ".opencode/ESTATE_STORAGE.md"
+  ],
+  "permission": {
+    "read": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.env.example": "allow",
+      "*credentials*": "ask",
+      "*credential*": "ask",
+      "*secrets*": "ask",
+      "*.pem": "deny",
+      "*.key": "deny",
+      "*id_rsa*": "deny",
+      "*id_ed25519*": "deny"
+    },
+    "edit": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.env.example": "allow",
+      "*credentials*": "deny",
+      "*credential*": "deny",
+      "*secrets*": "deny",
+      "*.pem": "deny",
+      "*.key": "deny",
+      "*id_rsa*": "deny",
+      "*id_ed25519*": "deny",
+      "C:/*": "deny",
+      "C:\\*": "deny"
+    },
+    "external_directory": {
+      "*": "ask",
+      "E:/*": "allow",
+      "E:\\*": "allow",
+      "F:/*": "allow",
+      "F:\\*": "allow",
+      "G:/*": "allow",
+      "G:\\*": "allow",
+      "C:/*": "deny",
+      "C:\\*": "deny"
+    },
+    "bash": {
+      "*": "allow",
+      "*git push*": "ask",
+      "*gh pr create*": "ask",
+      "*gh release create*": "ask",
+      "*git clean *": "ask",
+      "*git restore *": "ask",
+      "*git checkout -- *": "ask",
+      "*Remove-Item*-Recurse*": "ask",
+      "*rm *-rf*": "ask",
+      "*rmdir*/s*": "ask",
+      "*git reset --hard*": "deny",
+      "*git push --force*": "deny",
+      "*git push -f*": "deny",
+      "*Format-Volume*": "deny",
+      "*Clear-Disk*": "deny",
+      "*Remove-Partition*": "deny",
+      "*diskpart*": "deny"
+    },
+    "task": "allow",
+    "todowrite": "allow",
+    "question": "allow",
+    "webfetch": "allow",
+    "websearch": "allow",
+    "skill": "allow",
+    "doom_loop": "ask"
+  }
+}
